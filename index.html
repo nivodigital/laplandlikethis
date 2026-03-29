@@ -3,181 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Where should I go in Lapland? We moved our family of five from the UK to Levi. Three years living here — and hundreds of conversations with travellers — give us an honest take on how to do Lapland properly.">
+<meta name="description" content="Where should I go in Lapland? We moved our family of five from Bristol to Levi in 2023. Honest answers, real flight routes, no agenda. Find your top 3 Lapland destinations.">
 <meta name="keywords" content="where should I go in Lapland, best Lapland destination, Levi vs Rovaniemi, Lapland travel guide, Lapland with kids, Lapland trip planner">
-<title>Lapland Like This — Where Should I Go in Lapland?</title>
+<title>Where Should I Go in Lapland? — Lapland Like This</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Lapland Like This","url":"https://laplandlikethis.com","description":"Where should I go in Lapland? Honest travel guidance from a family living in Levi, Finnish Lapland."}
+</script>
 <style>
-/* ─── RESET & VARIABLES ─── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --forest:#1F3D2B;--forest-mid:#2A5239;--forest-lt:#3B6B4A;
-  --snow:#F5F7F6;--snow-dim:#E8EBE9;
+  --snow:#F5F7F6;--snow-dim:#E8EBE9;--off:#F0F2F0;
   --amber:#D9A441;--amber-lt:#F0C06A;--amber-dim:rgba(217,164,65,0.15);
-  --sky:#A7C7E7;--charcoal:#2B2B2B;
-  --mist:rgba(245,247,246,0.6);--faint:rgba(245,247,246,0.12);
-  --serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
+  --charcoal:#2B2B2B;--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--snow);color:var(--charcoal);overflow-x:hidden}
 
-/* ─── NAV ─── */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(31,61,43,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(245,247,246,0.08)}
-.nav-logo{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--snow);letter-spacing:.02em;text-decoration:none}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;transition:background .4s,backdrop-filter .4s}
+nav.scrolled{background:rgba(31,61,43,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,247,246,0.08)}
+.nav-logo{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--snow);text-decoration:none;letter-spacing:.01em}
 .nav-logo span{color:var(--amber)}
 .nav-links{display:flex;gap:2rem;align-items:center}
-.nav-links a{font-size:13px;color:rgba(245,247,246,0.7);text-decoration:none;letter-spacing:.03em;transition:color .2s}
+.nav-links a{font-size:13px;color:rgba(245,247,246,0.8);text-decoration:none;letter-spacing:.03em;transition:color .2s}
 .nav-links a:hover{color:var(--snow)}
-.nav-cta{background:var(--amber)!important;color:var(--forest)!important;padding:.55rem 1.25rem;border-radius:6px;font-weight:500!important}
+.nav-cta{background:var(--amber)!important;color:var(--forest)!important;padding:.6rem 1.35rem;border-radius:6px;font-weight:500!important;font-size:13px!important;transition:background .2s!important}
 .nav-cta:hover{background:var(--amber-lt)!important}
-.nav-toggle{display:none;border:none;background:transparent;color:var(--snow);cursor:pointer;width:32px;height:24px;position:relative;align-items:center;justify-content:center;gap:4px}
-.nav-toggle span{display:block;width:100%;height:3px;background:var(--snow);border-radius:999px;transition:transform .2s ease,opacity .2s ease}
-.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
-.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
-/* ─── HERO ─── */
-.hero{min-height:100vh;background:var(--forest);display:flex;flex-direction:column;justify-content:flex-end;padding:0 2rem 5rem;position:relative;overflow:hidden}
-.hero-sky{position:absolute;top:0;left:0;right:0;height:55%;background:linear-gradient(180deg,#0D1F16 0%,#1F3D2B 100%)}
-.aurora-1{position:absolute;top:8%;left:-10%;width:70%;height:35%;background:radial-gradient(ellipse,rgba(62,203,140,.08) 0%,transparent 65%);animation:drift 12s ease-in-out infinite alternate}
-.aurora-2{position:absolute;top:15%;right:-5%;width:55%;height:30%;background:radial-gradient(ellipse,rgba(167,199,231,.07) 0%,transparent 65%);animation:drift 9s ease-in-out infinite alternate-reverse}
-@keyframes drift{from{transform:translateX(0) translateY(0)}to{transform:translateX(30px) translateY(-20px)}}
-.treeline{position:absolute;bottom:0;left:0;right:0;height:40%;background:var(--forest);clip-path:polygon(0% 100%,0% 60%,2% 45%,4% 60%,5% 35%,7% 55%,8% 30%,10% 50%,11% 25%,13% 48%,14% 20%,16% 45%,17% 18%,19% 42%,20% 22%,22% 40%,23% 16%,25% 38%,26% 20%,28% 42%,29% 15%,31% 38%,32% 24%,34% 44%,35% 18%,37% 40%,38% 22%,40% 45%,41% 20%,43% 42%,44% 16%,46% 38%,47% 22%,49% 45%,50% 18%,52% 40%,53% 24%,55% 46%,56% 20%,58% 42%,59% 15%,61% 36%,62% 22%,64% 44%,65% 18%,67% 40%,68% 24%,70% 46%,71% 20%,73% 42%,74% 18%,76% 38%,77% 24%,79% 44%,80% 18%,82% 40%,83% 22%,85% 46%,86% 20%,88% 42%,90% 16%,92% 38%,93% 24%,95% 44%,96% 18%,98% 40%,100% 22%,100% 100%)}
-.stars{position:absolute;top:0;left:0;right:0;height:60%;background-image:radial-gradient(1px 1px at 15% 20%,rgba(245,247,246,.6) 0%,transparent 100%),radial-gradient(1px 1px at 32% 10%,rgba(245,247,246,.4) 0%,transparent 100%),radial-gradient(1px 1px at 55% 15%,rgba(245,247,246,.5) 0%,transparent 100%),radial-gradient(1px 1px at 70% 8%,rgba(245,247,246,.3) 0%,transparent 100%),radial-gradient(1px 1px at 85% 25%,rgba(245,247,246,.5) 0%,transparent 100%),radial-gradient(1px 1px at 22% 35%,rgba(245,247,246,.3) 0%,transparent 100%),radial-gradient(1px 1px at 45% 28%,rgba(245,247,246,.4) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 60% 5%,rgba(245,247,246,.7) 0%,transparent 100%)}
-.hero-content{position:relative;z-index:10;max-width:820px;animation:heroReveal 1.2s cubic-bezier(.16,1,.3,1) forwards;opacity:0}
-@keyframes heroReveal{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:500;margin-bottom:1.5rem}
-.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--amber)}
-.hero-headline{font-family:var(--serif);font-size:clamp(2.4rem,6vw,4.8rem);font-weight:300;color:var(--snow);line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.02em}
-.hero-headline em{font-style:italic;color:var(--amber-lt)}
-.hero-body{font-size:clamp(15px,1.8vw,17px);color:rgba(245,247,246,.75);line-height:1.8;max-width:580px;margin-bottom:2.5rem}
-.hero-body strong{color:var(--snow);font-weight:500}
+/* HERO — full bleed photo */
+.hero{position:relative;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:flex-end}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.1) 40%,rgba(10,25,16,0.75) 75%,rgba(10,25,16,0.92) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 2.5rem 5rem;max-width:900px;animation:heroIn 1.2s cubic-bezier(.16,1,.3,1) forwards;opacity:0}
+@keyframes heroIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(217,164,65,0.2);border:1px solid rgba(217,164,65,0.4);border-radius:20px;padding:.4rem 1rem;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-lt);font-weight:500;margin-bottom:1.5rem;backdrop-filter:blur(4px)}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--amber)}
+.hero-h1{font-family:var(--serif);font-size:clamp(2.6rem,6vw,5.2rem);font-weight:300;color:var(--snow);line-height:1.05;letter-spacing:-.03em;margin-bottom:1.25rem}
+.hero-h1 em{font-style:italic;color:var(--amber-lt)}
+.hero-sub{font-size:clamp(14px,1.8vw,17px);color:rgba(245,247,246,0.75);line-height:1.8;max-width:560px;margin-bottom:2.25rem}
+.hero-sub strong{color:var(--snow);font-weight:500}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:3rem}
-.btn-primary{background:var(--amber);color:var(--forest);border:none;border-radius:8px;padding:1rem 2rem;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;letter-spacing:.02em;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-primary{background:var(--amber);color:var(--forest);border:none;border-radius:8px;padding:.95rem 2rem;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;letter-spacing:.01em}
 .btn-primary:hover{background:var(--amber-lt);transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:rgba(245,247,246,.75);border:1px solid rgba(245,247,246,.25);border-radius:8px;padding:1rem 1.75rem;font-family:var(--sans);font-size:14px;cursor:pointer;letter-spacing:.02em;transition:all .2s;text-decoration:none;display:inline-block}
-.btn-ghost:hover{border-color:rgba(245,247,246,.5);color:var(--snow)}
-.hero-proof{display:flex;gap:2.5rem;flex-wrap:wrap;border-top:1px solid rgba(245,247,246,.1);padding-top:2rem}
-.proof-item{display:flex;flex-direction:column;gap:3px}
-.proof-num{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--amber-lt)}
-.proof-label{font-size:12px;color:rgba(245,247,246,.5);letter-spacing:.03em}
-.scroll-hint{position:absolute;bottom:2rem;right:2rem;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(245,247,246,.35);font-size:10px;letter-spacing:.1em;text-transform:uppercase;animation:fadeIn 2s 1.5s forwards;opacity:0}
-.scroll-hint::after{content:'';display:block;width:1px;height:40px;background:rgba(245,247,246,.2);animation:scrollLine 2s ease-in-out infinite}
-@keyframes scrollLine{0%,100%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+.btn-ghost{background:rgba(245,247,246,0.1);color:rgba(245,247,246,0.85);border:1px solid rgba(245,247,246,0.3);border-radius:8px;padding:.95rem 1.75rem;font-family:var(--sans);font-size:14px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;backdrop-filter:blur(4px)}
+.btn-ghost:hover{background:rgba(245,247,246,0.18);color:var(--snow)}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid rgba(245,247,246,0.15)}
+.hstat{display:flex;flex-direction:column;gap:3px}
+.hstat-n{font-family:var(--serif);font-size:1.7rem;font-weight:300;color:var(--amber-lt);line-height:1}
+.hstat-l{font-size:11px;color:rgba(245,247,246,0.5);letter-spacing:.04em}
+.hero-scroll{position:absolute;bottom:2rem;right:2.5rem;z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(245,247,246,0.35);font-size:10px;letter-spacing:.1em;text-transform:uppercase;animation:fadeIn 2s 1.5s forwards;opacity:0}
+.hero-scroll::after{content:'';width:1px;height:44px;background:rgba(245,247,246,0.2);animation:scrollPulse 2s ease-in-out infinite}
+@keyframes scrollPulse{0%,100%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
 @keyframes fadeIn{to{opacity:1}}
 
-/* ─── PROOF BAND ─── */
-.proof-band{background:var(--amber);padding:1.25rem 2rem;overflow:hidden}
-.proof-scroll{display:flex;gap:4rem;align-items:center;animation:scrollProof 30s linear infinite;white-space:nowrap}
-@keyframes scrollProof{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.proof-item-band{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--forest);flex-shrink:0}
-.proof-sep{width:4px;height:4px;border-radius:50%;background:rgba(31,61,43,.4);flex-shrink:0}
+/* PROOF BAND */
+.proof-band{background:var(--amber);padding:1.1rem 0;overflow:hidden}
+.proof-track{display:flex;gap:3.5rem;align-items:center;animation:trackScroll 35s linear infinite;white-space:nowrap;width:max-content}
+@keyframes trackScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.proof-quote{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--forest);flex-shrink:0}
+.proof-dot{width:4px;height:4px;border-radius:50%;background:rgba(31,61,43,0.35);flex-shrink:0}
 
-/* ─── SHARED SECTION STYLES ─── */
-.section-eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-lt);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
-.section-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--forest-lt)}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+/* STORY SECTION */
+.story{padding:7rem 2.5rem;background:var(--snow)}
+.story-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.story-img-wrap{position:relative}
+.story-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px;display:block}
+.story-img-label{position:absolute;top:-1rem;right:-1rem;background:var(--amber);color:var(--forest);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 1rem;border-radius:4px}
+.story-accent{position:absolute;bottom:-1.5rem;left:1.5rem;width:56px;height:3px;background:var(--amber)}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-lt);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+.eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--forest-lt)}
+.section-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;color:var(--forest);margin-bottom:1.5rem}
+.section-h2 em{font-style:italic;color:var(--forest-lt)}
+.body-p{font-size:15px;line-height:1.9;color:#444;margin-bottom:1.25rem}
+.pull-q{border-left:3px solid var(--amber);padding:.85rem 0 .85rem 1.25rem;margin:1.75rem 0;font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--forest);line-height:1.6}
+.creds{display:flex;flex-direction:column;gap:8px;margin-top:1.5rem}
+.cred{display:flex;align-items:center;gap:10px;font-size:13px;color:#555}
+.cred::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0}
 
-/* ─── STORY ─── */
-.story{padding:7rem 2rem;background:var(--snow);max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
-.story-visual{position:relative}
-.story-img-placeholder{width:100%;aspect-ratio:4/5;background:var(--forest);border-radius:3px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
-.story-img-placeholder::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(31,61,43,.9) 100%)}
-.story-img-trees{position:absolute;bottom:0;left:0;right:0;height:45%;background:#162E1F;clip-path:polygon(0 100%,0 40%,5% 20%,10% 45%,15% 15%,20% 40%,25% 10%,30% 38%,35% 18%,40% 42%,45% 12%,50% 36%,55% 16%,60% 40%,65% 12%,70% 38%,75% 18%,80% 44%,85% 14%,90% 38%,95% 20%,100% 42%,100% 100%)}
-.story-img-caption{position:relative;z-index:2;padding:1.5rem;font-family:var(--serif);font-size:1.1rem;font-style:italic;color:rgba(245,247,246,.8);line-height:1.5}
-.story-img-label{position:absolute;top:-1rem;right:-1rem;background:var(--amber);color:var(--forest);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 1rem;border-radius:4px;z-index:10}
-.story-accent-line{position:absolute;bottom:-2rem;left:2rem;width:60px;height:3px;background:var(--amber)}
-.story-headline{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;color:var(--forest);margin-bottom:1.5rem}
-.story-headline em{font-style:italic;color:var(--forest-lt)}
-.story-body{font-size:15px;line-height:1.85;color:#444;margin-bottom:1.25rem}
-.story-quote{border-left:3px solid var(--amber);padding:.85rem 0 .85rem 1.25rem;margin:1.75rem 0;font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--forest);line-height:1.6}
-.story-credentials{display:flex;flex-direction:column;gap:8px;margin-top:1.75rem}
-.cred-row{display:flex;align-items:center;gap:10px;font-size:13px;color:#555}
-.cred-dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex-shrink:0}
-
-/* ─── DIFFERENT ─── */
-.different{background:var(--forest);padding:7rem 2rem}
-.different-inner{max-width:1100px;margin:0 auto}
-.different-header{max-width:600px;margin-bottom:4rem}
-.different-header .section-eyebrow{color:rgba(217,164,65,.8)}
-.different-header .section-eyebrow::before{background:rgba(217,164,65,.8)}
-.different-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;color:var(--snow)}
-.different-h2 em{font-style:italic;color:var(--amber-lt)}
+/* DIFFERENT */
+.different{background:var(--forest);padding:7rem 2.5rem}
+.different-inner{max-width:1140px;margin:0 auto}
+.diff-header{max-width:580px;margin-bottom:4rem}
+.diff-eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(217,164,65,.7);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+.diff-eyebrow::before{content:'';display:block;width:24px;height:1px;background:rgba(217,164,65,.7)}
+.diff-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;color:var(--snow)}
+.diff-h2 em{font-style:italic;color:var(--amber-lt)}
 .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px}
-.pillar{background:rgba(245,247,246,.03);border:1px solid rgba(245,247,246,.08);padding:2rem 1.75rem;transition:background .3s}
+.pillar{background:rgba(245,247,246,.03);border:1px solid rgba(245,247,246,.07);padding:2rem 1.75rem;transition:background .3s}
 .pillar:hover{background:rgba(245,247,246,.06)}
-.pillar-num{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:rgba(217,164,65,.25);margin-bottom:.75rem;display:block}
-.pillar-title{font-size:14px;font-weight:500;color:var(--snow);margin-bottom:.65rem}
-.pillar-body{font-size:13px;color:rgba(245,247,246,.55);line-height:1.7}
+.pillar-n{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:rgba(217,164,65,.2);display:block;margin-bottom:.65rem}
+.pillar-t{font-size:14px;font-weight:500;color:var(--snow);margin-bottom:.5rem}
+.pillar-b{font-size:13px;color:rgba(245,247,246,.5);line-height:1.7}
 
-/* ─── TOOL SECTION ─── */
-.tool-section{padding:7rem 2rem;background:var(--snow-dim)}
-.tool-intro{max-width:1100px;margin:0 auto 4rem}
-.tool-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-bottom:3rem}
+/* DESTINATIONS — editorial photo grid */
+.destinations{padding:7rem 2.5rem;background:var(--snow)}
+.destinations-inner{max-width:1140px;margin:0 auto}
+.dest-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;gap:2rem;flex-wrap:wrap}
+.dest-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:300;color:var(--forest);line-height:1.2}
+.dest-h2 em{font-style:italic}
+.dest-sub{font-size:14px;color:#666;max-width:340px;line-height:1.65}
+
+/* Featured card — large */
+.dest-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:1.25rem}
+.dest-card{position:relative;border-radius:10px;overflow:hidden;display:block;text-decoration:none;cursor:pointer}
+.dest-card.featured{grid-row:span 2}
+.dest-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.dest-card.featured img{height:100%;min-height:560px}
+.dest-card:not(.featured) img{height:260px}
+.dest-card:hover img{transform:scale(1.04)}
+.dest-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,25,16,0.88) 0%,rgba(10,25,16,0.3) 50%,transparent 100%)}
+.dest-body{position:absolute;bottom:0;left:0;right:0;padding:1.75rem}
+.dest-badge{display:inline-block;background:rgba(217,164,65,0.25);border:1px solid rgba(217,164,65,0.4);color:var(--amber-lt);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:.6rem;backdrop-filter:blur(4px)}
+.dest-name{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--snow);margin-bottom:.35rem;line-height:1.2}
+.dest-card:not(.featured) .dest-name{font-size:1.2rem}
+.dest-desc{font-size:12px;color:rgba(245,247,246,.65);line-height:1.6;margin-bottom:.75rem}
+.dest-card:not(.featured) .dest-desc{display:none}
+.dest-link{font-size:12px;color:var(--amber);display:flex;align-items:center;gap:6px;letter-spacing:.04em}
+.dest-link::after{content:'→';transition:transform .2s}
+.dest-card:hover .dest-link::after{transform:translateX(4px)}
+
+/* ACTIVITIES — split photo sections */
+.activities{padding:7rem 2.5rem;background:var(--off)}
+.activities-inner{max-width:1140px;margin:0 auto}
+.act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.act-card{border-radius:10px;overflow:hidden;position:relative;display:block;text-decoration:none}
+.act-card img{width:100%;height:300px;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.act-card:hover img{transform:scale(1.05)}
+.act-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,25,16,0.85) 0%,transparent 55%)}
+.act-body{position:absolute;bottom:0;left:0;right:0;padding:1.5rem}
+.act-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:.4rem;font-weight:500}
+.act-title{font-family:var(--serif);font-size:1.15rem;color:var(--snow);line-height:1.3;margin-bottom:.35rem}
+.act-verdict{font-size:11px;color:rgba(245,247,246,.6);line-height:1.5}
+
+/* TOOL SECTION */
+.tool-section{padding:7rem 2.5rem;background:var(--snow-dim);background:var(--snow)}
+.tool-section-inner{max-width:1140px;margin:0 auto}
+.tool-intro{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-bottom:4rem}
 .tool-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;color:var(--forest);margin-bottom:1.25rem}
 .tool-h2 em{font-style:italic}
-.tool-body{font-size:15px;line-height:1.85;color:#444;margin-bottom:1.75rem}
-.tool-answers{display:flex;flex-direction:column;gap:12px;margin-bottom:2rem}
-.tool-answer-row{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#333;line-height:1.5}
-.ta-icon{width:22px;height:22px;border-radius:50%;background:var(--forest);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:10px;color:var(--snow)}
-.tool-right{text-align:right}
-.tool-right p{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:#666;line-height:1.7;margin-bottom:1rem}
-.tool-right small{font-size:12px;color:#999}
+.tool-body{font-size:15px;line-height:1.9;color:#444;margin-bottom:1.5rem}
+.tool-checks{display:flex;flex-direction:column;gap:10px;margin-bottom:1.75rem}
+.tc{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#333;line-height:1.5}
+.tc-icon{width:22px;height:22px;border-radius:50%;background:var(--forest);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:var(--snow);margin-top:1px}
+.tool-quote{font-family:var(--serif);font-size:1.05rem;font-style:italic;color:#666;line-height:1.7;margin-bottom:.75rem}
+.tool-quote-attr{font-size:12px;color:#999}
 
-/* ─── QUIZ WRAPPER ─── */
-.quiz-wrapper{max-width:1100px;margin:0 auto;background:var(--forest);border-radius:20px;overflow:hidden;box-shadow:0 40px 80px rgba(31,61,43,.2)}
-.quiz-wrapper-header{background:rgba(255,255,255,.06);padding:1.1rem 1.5rem;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(245,247,246,.08)}
-.qw-dot{width:11px;height:11px;border-radius:50%}
-.qw-title{font-size:12px;color:rgba(245,247,246,.35);margin-left:auto;letter-spacing:.08em;text-transform:uppercase}
-.quiz-body{padding:2.5rem}
+/* QUIZ EMBED */
+.quiz-frame{background:var(--forest);border-radius:18px;overflow:hidden;box-shadow:0 32px 64px rgba(31,61,43,0.2)}
+.qf-header{background:rgba(255,255,255,.05);padding:1rem 1.5rem;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(245,247,246,.08)}
+.qf-dot{width:11px;height:11px;border-radius:50%}
+.qf-title{font-size:11px;color:rgba(245,247,246,.3);margin-left:auto;letter-spacing:.08em;text-transform:uppercase}
+.quiz-inner{padding:2rem 1.75rem}
 
-/* ─── QUIZ ENGINE ─── */
+/* QUIZ ENGINE */
 .q-app{font-family:var(--sans);color:var(--snow)}
 .q-step{display:none;animation:qfi .35s ease}
 .q-step.active{display:block}
 @keyframes qfi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .q-pbar{display:flex;gap:5px;margin-bottom:2rem}
 .q-pd{height:3px;flex:1;border-radius:2px;background:rgba(245,247,246,.1);transition:background .4s}
-.q-pd.done{background:var(--amber)}.q-pd.act{background:rgba(217,164,65,.5)}
-.q-eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.5rem;font-weight:500}
-.q-title{font-family:var(--serif);font-size:clamp(1.4rem,4vw,1.9rem);line-height:1.25;margin-bottom:.6rem}
-.q-hint{font-size:13px;color:rgba(245,247,246,.55);margin-bottom:1.5rem;line-height:1.65}
-.q-olist{display:flex;flex-direction:column;gap:7px;margin-bottom:1.5rem}
+.q-pd.done{background:var(--amber)}.q-pd.act{background:rgba(217,164,65,.45)}
+.q-ey{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.5rem;font-weight:500}
+.q-title{font-family:var(--serif);font-size:clamp(1.3rem,3.5vw,1.75rem);line-height:1.25;margin-bottom:.55rem}
+.q-hint{font-size:13px;color:rgba(245,247,246,.5);margin-bottom:1.4rem;line-height:1.6}
+.q-olist{display:flex;flex-direction:column;gap:7px;margin-bottom:1.4rem}
 .q-or{background:rgba(245,247,246,.05);border:1px solid rgba(245,247,246,.1);border-radius:10px;padding:.8rem 1rem;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .2s}
 .q-or:hover{border-color:rgba(217,164,65,.4);background:rgba(245,247,246,.08)}
 .q-or.sel{border-color:var(--amber);background:rgba(217,164,65,.12)}
-.q-or .rt .rl{font-size:13px;font-weight:500;color:var(--snow)}
-.q-or .rt .rs{font-size:11px;color:rgba(245,247,246,.5);margin-top:2px}
+.q-or .rl{font-size:13px;font-weight:500;color:var(--snow)}
+.q-or .rs{font-size:11px;color:rgba(245,247,246,.45);margin-top:2px}
 .q-or .ck{margin-left:auto;width:16px;height:16px;border-radius:50%;border:1.5px solid rgba(245,247,246,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .q-or.sel .ck{background:var(--amber);border-color:var(--amber)}
 .q-or.sel .ck::after{content:'';display:block;width:5px;height:5px;border-radius:50%;background:var(--forest)}
-.q-ogrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:1.5rem}
-.q-oc{background:rgba(245,247,246,.05);border:1px solid rgba(245,247,246,.1);border-radius:10px;padding:.9rem .85rem;cursor:pointer;transition:all .2s}
+.q-ogrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:7px;margin-bottom:1.4rem}
+.q-oc{background:rgba(245,247,246,.05);border:1px solid rgba(245,247,246,.1);border-radius:10px;padding:.85rem .8rem;cursor:pointer;transition:all .2s}
 .q-oc:hover{border-color:rgba(217,164,65,.4);background:rgba(245,247,246,.08)}
 .q-oc.sel{border-color:var(--amber);background:rgba(217,164,65,.12)}
 .q-oc .ql{font-size:13px;font-weight:500;color:var(--snow);display:block}
-.q-oc .qs{font-size:11px;color:rgba(245,247,246,.5);display:block;margin-top:2px}
+.q-oc .qs{font-size:11px;color:rgba(245,247,246,.45);display:block;margin-top:2px}
 .q-btn{width:100%;background:var(--amber);color:var(--forest);border:none;border-radius:9px;padding:.85rem;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s}
 .q-btn:hover{background:var(--amber-lt);transform:translateY(-1px)}
-.q-btn:disabled{opacity:.25;cursor:not-allowed;transform:none}
-.q-bk{background:transparent;border:none;color:rgba(245,247,246,.5);font-size:13px;cursor:pointer;padding:.5rem 0;display:flex;align-items:center;gap:5px;margin-bottom:.85rem;font-family:var(--sans)}
+.q-btn:disabled{opacity:.22;cursor:not-allowed;transform:none}
+.q-bk{background:transparent;border:none;color:rgba(245,247,246,.45);font-size:13px;cursor:pointer;padding:.5rem 0;display:flex;align-items:center;gap:5px;margin-bottom:.85rem;font-family:var(--sans)}
 .q-bk:hover{color:var(--snow)}
-.q-sw{margin-bottom:1.5rem}
+.q-sw{margin-bottom:1.4rem}
 .q-sl{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.85rem}
 .q-sv{font-family:var(--serif);font-size:1.4rem;color:var(--amber)}
-.q-su{font-size:11px;color:rgba(245,247,246,.5)}
+.q-su{font-size:11px;color:rgba(245,247,246,.45)}
 input[type=range]{width:100%;height:4px;background:rgba(245,247,246,.15);border-radius:4px;outline:none;border:none;cursor:pointer;-webkit-appearance:none;appearance:none}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--amber);border:3px solid var(--forest);cursor:pointer}
 .q-rl{display:flex;justify-content:space-between;margin-top:6px}
-.q-rl span{font-size:10px;color:rgba(245,247,246,.5)}
-/* city search */
+.q-rl span{font-size:10px;color:rgba(245,247,246,.45)}
 .q-search input[type=text]{width:100%;background:rgba(245,247,246,.07);border:1px solid rgba(245,247,246,.15);border-radius:9px;padding:.75rem 1rem;color:var(--snow);font-size:13px;font-family:var(--sans);outline:none;transition:border .2s;margin-bottom:.5rem}
 .q-search input[type=text]:focus{border-color:rgba(217,164,65,.5)}
-.q-search input[type=text]::placeholder{color:rgba(245,247,246,.35)}
-.q-sugg{background:rgba(20,34,51,.95);border:1px solid rgba(245,247,246,.12);border-radius:9px;overflow:hidden;max-height:190px;overflow-y:auto;margin-bottom:.5rem}
+.q-search input[type=text]::placeholder{color:rgba(245,247,246,.3)}
+.q-sugg{background:rgba(15,30,20,.97);border:1px solid rgba(245,247,246,.12);border-radius:9px;overflow:hidden;max-height:180px;overflow-y:auto;margin-bottom:.5rem}
 .q-si{padding:.6rem 1rem;font-size:13px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(245,247,246,.06);transition:background .15s}
 .q-si:last-child{border-bottom:none}
 .q-si:hover{background:rgba(245,247,246,.07)}
@@ -187,135 +210,113 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
 .q-clr:hover{color:var(--snow)}
 /* gate */
 .q-gate-icon{width:48px;height:48px;border-radius:50%;background:rgba(217,164,65,.12);border:1px solid rgba(217,164,65,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
-.q-gate-title{font-family:var(--serif);font-size:clamp(1.3rem,3.5vw,1.7rem);margin-bottom:.6rem;line-height:1.3;text-align:center}
-.q-gate-body{font-size:13px;color:rgba(245,247,246,.55);margin-bottom:1.75rem;line-height:1.7;max-width:420px;margin-left:auto;margin-right:auto;text-align:center}
-.q-field{width:100%;background:rgba(245,247,246,.07);border:1px solid rgba(245,247,246,.12);border-radius:9px;padding:.8rem 1rem;color:var(--snow);font-size:14px;font-family:var(--sans);outline:none;transition:border .2s;margin-bottom:.75rem}
+.q-gate-title{font-family:var(--serif);font-size:clamp(1.2rem,3vw,1.65rem);margin-bottom:.55rem;line-height:1.3;text-align:center;color:var(--snow)}
+.q-gate-body{font-size:13px;color:rgba(245,247,246,.5);margin-bottom:1.5rem;line-height:1.7;max-width:400px;margin-left:auto;margin-right:auto;text-align:center}
+.q-field{width:100%;background:rgba(245,247,246,.07);border:1px solid rgba(245,247,246,.12);border-radius:9px;padding:.8rem 1rem;color:var(--snow);font-size:14px;font-family:var(--sans);outline:none;transition:border .2s;margin-bottom:.65rem}
 .q-field:focus{border-color:rgba(217,164,65,.5)}
-.q-field::placeholder{color:rgba(245,247,246,.35)}
-.q-consent-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:1.25rem}
+.q-field::placeholder{color:rgba(245,247,246,.3)}
+.q-consent-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:1.1rem}
 .q-consent-row input[type=checkbox]{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--amber);cursor:pointer}
-.q-consent-label{font-size:12px;color:rgba(245,247,246,.5);line-height:1.55;cursor:pointer}
-.q-consent-label span{color:rgba(245,247,246,.8)}
-.q-err{font-size:12px;color:#E05C6A;margin-bottom:.75rem;display:none}
-.q-trust{font-size:10px;color:rgba(245,247,246,.3);margin-top:.85rem;line-height:1.6;text-align:center}
+.q-consent-label{font-size:12px;color:rgba(245,247,246,.45);line-height:1.55;cursor:pointer}
+.q-consent-label span{color:rgba(245,247,246,.75)}
+.q-err{font-size:12px;color:#E05C6A;margin-bottom:.65rem;display:none}
+.q-trust{font-size:10px;color:rgba(245,247,246,.25);margin-top:.75rem;line-height:1.6;text-align:center}
 /* results */
-.r-header{text-align:center;padding:.75rem 0 1.75rem;border-bottom:1px solid rgba(245,247,246,.1);margin-bottom:1.75rem}
-.r-eyebrow{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--amber);margin-bottom:.65rem}
-.r-title{font-family:var(--serif);font-size:clamp(1.5rem,4.5vw,2.1rem);line-height:1.2;margin-bottom:.6rem}
+.r-hdr{text-align:center;padding:.5rem 0 1.5rem;border-bottom:1px solid rgba(245,247,246,.1);margin-bottom:1.5rem}
+.r-ey{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--amber);margin-bottom:.6rem}
+.r-title{font-family:var(--serif);font-size:clamp(1.4rem,4vw,2rem);line-height:1.2;margin-bottom:.5rem;color:var(--snow)}
 .r-title em{color:var(--amber-lt);font-style:italic}
-.r-sub{font-size:12px;color:rgba(245,247,246,.5);line-height:1.65}
-.r-stitle{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,247,246,.4);margin-bottom:1rem}
-.rank-card{border-radius:13px;padding:1.25rem;margin-bottom:1rem;border:1px solid rgba(245,247,246,.08)}
+.r-sub{font-size:12px;color:rgba(245,247,246,.45);line-height:1.6}
+.r-stitle{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,247,246,.35);margin-bottom:.85rem}
+.rank-card{border-radius:12px;padding:1.15rem;margin-bottom:.85rem;border:1px solid rgba(245,247,246,.08)}
 .rank-card.rank-1{background:rgba(245,247,246,.06);border:1.5px solid rgba(217,164,65,.35)}
 .rank-card.rank-2{background:rgba(245,247,246,.03)}
 .rank-card.rank-3{background:rgba(245,247,246,.02)}
-.rank-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:.9rem}
+.rank-hdr{display:flex;align-items:flex-start;gap:11px;margin-bottom:.8rem}
 .rank-badge{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:2px}
-.rank-num{font-family:var(--serif);font-size:1.5rem;line-height:1}
+.rank-num{font-family:var(--serif);font-size:1.4rem;line-height:1}
 .rank-1 .rank-num{color:var(--amber-lt)}
-.rank-2 .rank-num{color:rgba(245,247,246,.4)}
-.rank-3 .rank-num{color:rgba(245,247,246,.25)}
-.rank-label{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,247,246,.35)}
-.rank-1 .rank-label{color:rgba(217,164,65,.7)}
-.rank-name{font-family:var(--serif);font-size:1.2rem;margin-bottom:3px;color:var(--snow)}
-.rank-tag{font-size:11px;margin-bottom:.65rem}
-.rank-1 .rank-tag{color:var(--amber)}
-.rank-2 .rank-tag,.rank-3 .rank-tag{color:rgba(245,247,246,.45)}
-.rank-why{font-size:13px;color:rgba(245,247,246,.75);line-height:1.7;margin-bottom:.85rem}
-.rank-why-matches{font-size:11px;color:var(--amber);margin-bottom:.65rem;line-height:1.6}
-.rank-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.9rem}
-.rp{background:rgba(245,247,246,.07);border:1px solid rgba(245,247,246,.1);border-radius:20px;padding:4px 11px;font-size:11px;color:var(--snow)}
-.rp.match{background:rgba(217,164,65,.12);border-color:rgba(217,164,65,.3);color:var(--amber-lt)}
-.rank-flight{background:rgba(245,247,246,.05);border:1px solid rgba(245,247,246,.1);border-radius:9px;padding:.7rem .9rem;font-size:12px;line-height:1.6;color:rgba(245,247,246,.65)}
-.rank-flight strong{color:var(--snow)}
-.rank-1 .rank-flight{background:rgba(217,164,65,.08);border-color:rgba(217,164,65,.2)}
-.avoid-block{background:rgba(212,136,42,.1);border:1px solid rgba(212,136,42,.25);border-radius:9px;padding:.65rem .85rem;font-size:12px;color:rgba(245,247,246,.65);line-height:1.55;margin-top:.65rem;display:flex;gap:8px}
-.avoid-block::before{content:'!';color:var(--amber);font-weight:500;flex-shrink:0}
-.flight-block{background:rgba(245,247,246,.04);border:1px solid rgba(245,247,246,.08);border-radius:12px;padding:1.1rem;margin-bottom:1.5rem}
-.f-badge{display:inline-block;background:rgba(217,164,65,.12);border:1px solid rgba(217,164,65,.25);border-radius:20px;padding:3px 10px;font-size:10px;color:var(--amber);margin-bottom:.75rem;letter-spacing:.04em}
-.f-badge.alt{background:rgba(245,247,246,.06);border-color:rgba(245,247,246,.12);color:rgba(245,247,246,.6)}
-.f-leg{display:flex;align-items:center;gap:8px;margin-bottom:.6rem;flex-wrap:wrap}
-.f-ap{background:rgba(245,247,246,.07);border:1px solid rgba(245,247,246,.1);border-radius:8px;padding:5px 10px;min-width:72px;text-align:center}
-.f-ap-code{font-family:var(--serif);font-size:1rem;color:var(--snow);display:block}
-.f-ap-city{font-size:10px;color:rgba(245,247,246,.45);display:block}
-.f-arr{color:var(--amber);font-size:12px;flex:1;text-align:center}
-.f-det{font-size:12px;color:rgba(245,247,246,.5);line-height:1.6;margin-bottom:.4rem}
+.rank-2 .rank-num{color:rgba(245,247,246,.35)}
+.rank-3 .rank-num{color:rgba(245,247,246,.2)}
+.rank-lbl{font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,247,246,.3)}
+.rank-1 .rank-lbl{color:rgba(217,164,65,.6)}
+.rk-name{font-family:var(--serif);font-size:1.15rem;margin-bottom:3px;color:var(--snow)}
+.rk-tag{font-size:11px;margin-bottom:.6rem}
+.rank-1 .rk-tag{color:var(--amber)}
+.rank-2 .rk-tag,.rank-3 .rk-tag{color:rgba(245,247,246,.4)}
+.rk-why{font-size:13px;color:rgba(245,247,246,.7);line-height:1.65;margin-bottom:.75rem}
+.rk-matches{font-size:11px;color:var(--amber);margin-bottom:.6rem;line-height:1.6}
+.rk-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:.75rem}
+.rp{background:rgba(245,247,246,.07);border:1px solid rgba(245,247,246,.1);border-radius:20px;padding:3px 10px;font-size:11px;color:var(--snow)}
+.rp.m{background:rgba(217,164,65,.12);border-color:rgba(217,164,65,.3);color:var(--amber-lt)}
+.rk-flight{background:rgba(245,247,246,.05);border:1px solid rgba(245,247,246,.08);border-radius:8px;padding:.65rem .85rem;font-size:12px;line-height:1.55;color:rgba(245,247,246,.6)}
+.rk-flight strong{color:var(--snow)}
+.rank-1 .rk-flight{background:rgba(217,164,65,.08);border-color:rgba(217,164,65,.2)}
+.avoid-b{background:rgba(212,136,42,.1);border:1px solid rgba(212,136,42,.22);border-radius:8px;padding:.6rem .8rem;font-size:12px;color:rgba(245,247,246,.6);line-height:1.5;margin-top:.6rem;display:flex;gap:8px}
+.avoid-b::before{content:'!';color:var(--amber);font-weight:500;flex-shrink:0}
+.f-block{background:rgba(245,247,246,.04);border:1px solid rgba(245,247,246,.08);border-radius:11px;padding:1rem;margin-bottom:1.25rem}
+.f-badge{display:inline-block;background:rgba(217,164,65,.12);border:1px solid rgba(217,164,65,.25);border-radius:20px;padding:3px 9px;font-size:10px;color:var(--amber);margin-bottom:.65rem;letter-spacing:.04em}
+.f-badge.alt{background:rgba(245,247,246,.06);border-color:rgba(245,247,246,.1);color:rgba(245,247,246,.55)}
+.f-leg{display:flex;align-items:center;gap:7px;margin-bottom:.55rem;flex-wrap:wrap}
+.f-ap{background:rgba(245,247,246,.07);border:1px solid rgba(245,247,246,.1);border-radius:7px;padding:4px 9px;min-width:66px;text-align:center}
+.f-ap-code{font-family:var(--serif);font-size:.95rem;color:var(--snow);display:block}
+.f-ap-city{font-size:10px;color:rgba(245,247,246,.4);display:block}
+.f-arr{color:var(--amber);font-size:11px;flex:1;text-align:center}
+.f-det{font-size:12px;color:rgba(245,247,246,.45);line-height:1.55;margin-bottom:.35rem}
 .f-det strong{color:var(--snow)}
-.f-trnote{background:rgba(217,164,65,.06);border-radius:7px;padding:.55rem .75rem;font-size:12px;color:rgba(245,247,246,.6);line-height:1.55;margin-top:.5rem}
-.f-trnote strong{color:var(--amber)}
-.r-sep{height:1px;background:rgba(245,247,246,.08);margin:1.5rem 0}
-.r-cta{background:rgba(217,164,65,.1);border:1px solid rgba(217,164,65,.25);border-radius:13px;padding:1.5rem;text-align:center;margin-top:1.75rem}
-.r-cta-title{font-family:var(--serif);font-size:1.15rem;margin-bottom:.5rem;color:var(--snow)}
-.r-cta-body{font-size:12px;color:rgba(245,247,246,.5);margin-bottom:1.1rem;line-height:1.65}
-.r-cta-btn{background:var(--amber);color:var(--forest);border:none;border-radius:8px;padding:.75rem 1.75rem;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--sans);transition:all .2s}
+.f-tr{background:rgba(217,164,65,.06);border-radius:6px;padding:.5rem .7rem;font-size:12px;color:rgba(245,247,246,.55);line-height:1.5;margin-top:.4rem}
+.f-tr strong{color:var(--amber)}
+.r-sep{height:1px;background:rgba(245,247,246,.08);margin:1.25rem 0}
+.r-cta-b{background:rgba(217,164,65,.1);border:1px solid rgba(217,164,65,.25);border-radius:12px;padding:1.35rem;text-align:center;margin-top:1.5rem}
+.r-cta-t{font-family:var(--serif);font-size:1.1rem;margin-bottom:.45rem;color:var(--snow)}
+.r-cta-p{font-size:12px;color:rgba(245,247,246,.45);margin-bottom:1rem;line-height:1.6}
+.r-cta-btn{background:var(--amber);color:var(--forest);border:none;border-radius:7px;padding:.7rem 1.5rem;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--sans);transition:all .2s}
 .r-cta-btn:hover{background:var(--amber-lt)}
-.r-trust{font-size:10px;color:rgba(245,247,246,.3);margin-top:.65rem}
-.q-restart{width:100%;background:transparent;border:1px solid rgba(245,247,246,.1);border-radius:8px;padding:.6rem;color:rgba(245,247,246,.4);font-size:11px;cursor:pointer;margin-top:.85rem;font-family:var(--sans);transition:all .2s}
-.q-restart:hover{border-color:rgba(245,247,246,.2);color:rgba(245,247,246,.7)}
+.r-tr{font-size:10px;color:rgba(245,247,246,.25);margin-top:.6rem}
+.q-restart{width:100%;background:transparent;border:1px solid rgba(245,247,246,.1);border-radius:7px;padding:.55rem;color:rgba(245,247,246,.35);font-size:11px;cursor:pointer;margin-top:.75rem;font-family:var(--sans);transition:all .2s}
+.q-restart:hover{border-color:rgba(245,247,246,.2);color:rgba(245,247,246,.65)}
 
-/* ─── DESTINATIONS ─── */
-.destinations{padding:7rem 2rem;background:var(--snow)}
-.destinations-inner{max-width:1100px;margin:0 auto}
-.dest-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;gap:2rem;flex-wrap:wrap}
-.dest-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:300;color:var(--forest);line-height:1.2}
-.dest-h2 em{font-style:italic}
-.dest-sub{font-size:14px;color:#666;max-width:340px;line-height:1.6}
-.dest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
-.dest-card{background:var(--forest);border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .3s;text-decoration:none;display:block}
-.dest-card:hover{transform:translateY(-4px)}
-.dest-card-img{height:180px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
-.d-sky-1{background:#0F2518}.d-sky-2{background:#112015}.d-sky-3{background:#0E1D14}.d-sky-4{background:#131A11}
-.d-trees{position:absolute;bottom:0;left:0;right:0;height:55%;background:#162E1F;clip-path:polygon(0 100%,0 45%,5% 20%,10% 50%,15% 18%,20% 45%,25% 15%,30% 42%,35% 22%,40% 48%,45% 18%,50% 40%,55% 22%,60% 46%,65% 18%,70% 42%,75% 22%,80% 46%,85% 18%,90% 42%,95% 22%,100% 45%,100% 100%)}
-.d-aurora{position:absolute;top:25%;left:20%;width:60%;height:30%;background:radial-gradient(ellipse,rgba(62,200,130,.15) 0%,transparent 70%)}
-.dest-card-body{padding:1.25rem 1.25rem 1.5rem}
-.dest-badge{display:inline-block;background:rgba(217,164,65,.2);border:1px solid rgba(217,164,65,.3);color:var(--amber-lt);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:.65rem}
-.dest-name{font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--snow);margin-bottom:.4rem}
-.dest-desc{font-size:12px;color:rgba(245,247,246,.55);line-height:1.6;margin-bottom:.85rem}
-.dest-arrow{font-size:12px;color:var(--amber);display:flex;align-items:center;gap:6px;letter-spacing:.05em}
-.dest-arrow::after{content:'→';transition:transform .2s}
-.dest-card:hover .dest-arrow::after{transform:translateX(4px)}
-
-/* ─── HONEST ─── */
-.honest{padding:7rem 2rem;background:#F0F2F0}
-.honest-inner{max-width:900px;margin:0 auto;text-align:center}
+/* HONEST */
+.honest{padding:7rem 2.5rem;background:var(--off)}
+.honest-inner{max-width:960px;margin:0 auto;text-align:center}
 .honest-h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;line-height:1.2;color:var(--forest);margin-bottom:1.25rem}
 .honest-h2 em{font-style:italic}
-.honest-body{font-size:16px;line-height:1.9;color:#444;max-width:680px;margin:0 auto 1rem}
-.honest-examples{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;text-align:left;margin-top:3rem}
-.honest-card{background:var(--snow);border-radius:10px;padding:1.5rem;border:1px solid rgba(31,61,43,.08)}
-.honest-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:.85rem;display:flex;align-items:center;gap:8px}
-.honest-label .dot{width:5px;height:5px;border-radius:50%;background:var(--amber)}
-.honest-quote{font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--forest);line-height:1.6}
-.honest-not{font-size:12px;color:#bbb;text-decoration:line-through;line-height:1.6;margin-top:.5rem}
+.honest-body{font-size:16px;line-height:1.9;color:#444;max-width:680px;margin:0 auto 3rem}
+.honest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;text-align:left}
+.hc{background:var(--snow);border-radius:10px;padding:1.5rem;border:1px solid rgba(31,61,43,.08)}
+.hc-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:.8rem;display:flex;align-items:center;gap:8px}
+.hc-label::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0}
+.hc-quote{font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--forest);line-height:1.6}
+.hc-not{font-size:12px;color:#bbb;text-decoration:line-through;line-height:1.6;margin-top:.5rem}
 
-/* ─── TESTIMONIALS ─── */
-.testimonials{padding:7rem 2rem;background:var(--forest)}
-.test-inner{max-width:1100px;margin:0 auto}
+/* TESTIMONIALS */
+.testimonials{padding:7rem 2.5rem;background:var(--forest)}
+.test-inner{max-width:1140px;margin:0 auto}
 .test-h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;color:var(--snow);margin-bottom:3rem}
 .test-h2 em{font-style:italic;color:var(--amber-lt)}
 .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
-.test-card{background:rgba(245,247,246,.04);border:1px solid rgba(245,247,246,.08);border-radius:10px;padding:1.5rem}
-.test-stars{color:var(--amber);font-size:12px;margin-bottom:.75rem;letter-spacing:2px}
-.test-quote{font-family:var(--serif);font-size:.95rem;font-style:italic;color:rgba(245,247,246,.85);line-height:1.7;margin-bottom:1rem}
-.test-person{display:flex;align-items:center;gap:10px}
-.test-avatar{width:34px;height:34px;border-radius:50%;background:var(--forest-mid);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--amber-lt);border:1px solid rgba(217,164,65,.3);flex-shrink:0}
-.test-name{font-size:13px;font-weight:500;color:var(--snow)}
-.test-detail{font-size:11px;color:rgba(245,247,246,.4);margin-top:1px}
+.tc-card{background:rgba(245,247,246,.04);border:1px solid rgba(245,247,246,.08);border-radius:10px;padding:1.5rem}
+.tc-stars{color:var(--amber);font-size:12px;margin-bottom:.7rem;letter-spacing:2px}
+.tc-quote{font-family:var(--serif);font-size:.95rem;font-style:italic;color:rgba(245,247,246,.85);line-height:1.7;margin-bottom:1rem}
+.tc-person{display:flex;align-items:center;gap:10px}
+.tc-avatar{width:34px;height:34px;border-radius:50%;background:var(--forest-mid);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--amber-lt);border:1px solid rgba(217,164,65,.3);flex-shrink:0}
+.tc-name{font-size:13px;font-weight:500;color:var(--snow)}
+.tc-detail{font-size:11px;color:rgba(245,247,246,.4);margin-top:1px}
 
-/* ─── FINAL CTA ─── */
-.final-cta{padding:8rem 2rem;background:var(--snow);text-align:center}
-.final-cta-inner{max-width:660px;margin:0 auto}
-.final-h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.15;color:var(--forest);margin-bottom:1.25rem}
-.final-h2 em{font-style:italic}
-.final-body{font-size:16px;line-height:1.8;color:#555;margin-bottom:2.5rem}
-.final-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+/* FINAL CTA */
+.final-cta{padding:8rem 2.5rem;background:var(--snow);text-align:center}
+.fcta-inner{max-width:660px;margin:0 auto}
+.fcta-h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.15;color:var(--forest);margin-bottom:1.25rem}
+.fcta-h2 em{font-style:italic}
+.fcta-body{font-size:16px;line-height:1.8;color:#555;margin-bottom:2.5rem}
+.fcta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .btn-dark{background:var(--forest);color:var(--snow);border:none;border-radius:8px;padding:1rem 2rem;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
 .btn-dark:hover{background:var(--forest-mid);transform:translateY(-2px)}
-.btn-outline{background:transparent;color:#555;border:1px solid rgba(31,61,43,.25);border-radius:8px;padding:1rem 1.75rem;font-family:var(--sans);font-size:14px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-outline{background:transparent;color:#555;border:1px solid rgba(31,61,43,.2);border-radius:8px;padding:1rem 1.75rem;font-family:var(--sans);font-size:14px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
 .btn-outline:hover{border-color:var(--forest);color:var(--forest)}
 
-/* ─── FOOTER ─── */
-footer{background:#111C14;padding:3rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;border-top:1px solid rgba(245,247,246,.06)}
+/* FOOTER */
+footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;border-top:1px solid rgba(245,247,246,.06)}
 .footer-logo{font-family:var(--serif);font-size:1rem;color:rgba(245,247,246,.5)}
 .footer-logo span{color:var(--amber)}
 .footer-links{display:flex;gap:1.75rem;flex-wrap:wrap}
@@ -323,22 +324,23 @@ footer{background:#111C14;padding:3rem 2rem;display:flex;justify-content:space-b
 .footer-links a:hover{color:rgba(245,247,246,.65)}
 .footer-note{font-size:11px;color:rgba(245,247,246,.25)}
 
-/* ─── RESPONSIVE ─── */
-@media(max-width:768px){
-  nav{padding:1rem 1.25rem}
-  .nav-toggle{display:flex}
-  .nav-links{position:fixed;top:72px;left:0;right:0;max-height:0;overflow:hidden;background:rgba(31,61,43,0.95);flex-direction:column;align-items:center;gap:0.6rem;padding:0 1.25rem;transition:max-height .35s ease, padding .35s ease;z-index:99}
-  .nav-links.open{max-height:280px;padding:1rem 1.25rem}
-  .nav-links a{display:block;width:100%;padding:.75rem 0;text-align:center}
-  .nav-links .nav-cta{width:100%}
-  .hero{padding:0 1.25rem 4rem}
-  .story{grid-template-columns:1fr;gap:3rem;padding:5rem 1.25rem}
-  .story-visual{order:-1}
-  .different{padding:5rem 1.25rem}
-  .tool-section{padding:5rem 1.25rem}
-  .tool-intro-grid{grid-template-columns:1fr}
-  .quiz-body{padding:1.5rem}
-  .destinations,.honest,.testimonials,.final-cta{padding:5rem 1.25rem}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:1rem 1.25rem}.nav-links{display:none}
+  .hero-content{padding:0 1.25rem 4rem}
+  .story,.different,.destinations,.activities,.tool-section,.honest,.testimonials,.final-cta{padding:5rem 1.25rem}
+  .story-inner{grid-template-columns:1fr;gap:3rem}
+  .dest-grid{grid-template-columns:1fr}
+  .dest-card.featured{grid-row:auto}
+  .dest-card.featured img{min-height:300px}
+  .act-grid{grid-template-columns:1fr}
+  .tool-intro{grid-template-columns:1fr;gap:2.5rem}
+  .test-grid{grid-template-columns:1fr}
   footer{flex-direction:column;text-align:center;padding:2rem 1.25rem}
 }
 </style>
@@ -346,428 +348,462 @@ footer{background:#111C14;padding:3rem 2rem;display:flex;justify-content:space-b
 <body>
 
 <!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">Lapland <span>Like This</span></a>
-  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">Lapland <span>Like This</span></a>
   <div class="nav-links">
     <a href="#destinations">Destinations</a>
-    <a href="#about">About us</a>
-    <a href="#guide">Planning guide</a>
+    <a href="about.html">About us</a>
+    <a href="#tool">Trip builder</a>
     <a href="#tool" class="nav-cta">Plan my trip</a>
   </div>
 </nav>
 
-<!-- ═══════════════ HERO ═══════════════ -->
+<!-- HERO — full bleed aurora photo -->
 <section class="hero">
-  <div class="hero-sky"></div>
-  <div class="aurora-1"></div><div class="aurora-2"></div>
-  <div class="stars"></div>
-  <div class="treeline"></div>
+  <img class="hero-img" src="images/lapland-aurora-night.png" alt="Northern lights over snow-laden pine forest in Levi, Finnish Lapland — people watching the aurora">
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">We live here — Levi, Finnish Lapland</div>
-    <h1 class="hero-headline">Where should I go<br>in Lapland?<br><em>We'll give you our honest take.</em></h1>
-    <p class="hero-body">We moved our family of five from the UK to Levi three years ago. Since then we've explored every corner of Finnish Lapland — and talked to <strong>hundreds of travellers</strong> who got it right, and many who didn't. This is what we actually know.</p>
+    <div class="hero-tag">We live here — Levi, Finnish Lapland</div>
+    <h1 class="hero-h1">Where should I go<br>in Lapland?<br><em>We'll give you our honest take.</em></h1>
+    <p class="hero-sub">We moved our family of five from Bristol to Levi in 2023. Since then we've talked to <strong>hundreds of travellers</strong> who got it right — and many who didn't. This is what we actually know.</p>
     <div class="hero-actions">
       <a href="#tool" class="btn-primary">Find my Lapland →</a>
-      <a href="#story" class="btn-ghost">Our story</a>
+      <a href="about.html" class="btn-ghost">Our story</a>
     </div>
-    <div class="hero-proof">
-      <div class="proof-item"><span class="proof-num">3</span><span class="proof-label">Years living in Levi</span></div>
-      <div class="proof-item"><span class="proof-num">500+</span><span class="proof-label">Travellers we've spoken to</span></div>
-      <div class="proof-item"><span class="proof-num">0</span><span class="proof-label">Paid partnerships or commissions</span></div>
-      <div class="proof-item"><span class="proof-num">5</span><span class="proof-label">Of us who call this home</span></div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-n">3</span><span class="hstat-l">Years living in Levi</span></div>
+      <div class="hstat"><span class="hstat-n">500+</span><span class="hstat-l">Travellers we've spoken to</span></div>
+      <div class="hstat"><span class="hstat-n">0</span><span class="hstat-l">Paid partnerships</span></div>
+      <div class="hstat"><span class="hstat-n">5</span><span class="hstat-l">Of us who call this home</span></div>
     </div>
   </div>
-  <div class="scroll-hint">Scroll</div>
+  <div class="hero-scroll">Scroll</div>
 </section>
 
 <!-- PROOF BAND -->
 <div class="proof-band">
-  <div class="proof-scroll">
-    <span class="proof-item-band">"Finally — honest advice about Lapland that isn't trying to sell me something"</span><span class="proof-sep"></span>
-    <span class="proof-item-band">"We wish we'd found this before booking"</span><span class="proof-sep"></span>
-    <span class="proof-item-band">"The only guide that told us what to avoid"</span><span class="proof-sep"></span>
-    <span class="proof-item-band">"Felt like getting advice from a friend who actually lives there"</span><span class="proof-sep"></span>
-    <span class="proof-item-band">"Saved us from making two expensive mistakes"</span><span class="proof-sep"></span>
-    <span class="proof-item-band">"Finally — honest advice about Lapland that isn't trying to sell me something"</span><span class="proof-sep"></span>
-    <span class="proof-item-band">"We wish we'd found this before booking"</span><span class="proof-sep"></span>
-    <span class="proof-item-band">"The only guide that told us what to avoid"</span><span class="proof-sep"></span>
-    <span class="proof-item-band">"Felt like getting advice from a friend who actually lives there"</span><span class="proof-sep"></span>
-    <span class="proof-item-band">"Saved us from making two expensive mistakes"</span><span class="proof-sep"></span>
+  <div class="proof-track">
+    <span class="proof-quote">"Finally — honest advice about Lapland that isn't trying to sell me something"</span><span class="proof-dot"></span>
+    <span class="proof-quote">"We wish we'd found this before booking"</span><span class="proof-dot"></span>
+    <span class="proof-quote">"The only guide that told us what to avoid"</span><span class="proof-dot"></span>
+    <span class="proof-quote">"Felt like advice from a friend who actually lives there"</span><span class="proof-dot"></span>
+    <span class="proof-quote">"Saved us from two expensive mistakes"</span><span class="proof-dot"></span>
+    <span class="proof-quote">"Finally — honest advice about Lapland that isn't trying to sell me something"</span><span class="proof-dot"></span>
+    <span class="proof-quote">"We wish we'd found this before booking"</span><span class="proof-dot"></span>
+    <span class="proof-quote">"The only guide that told us what to avoid"</span><span class="proof-dot"></span>
+    <span class="proof-quote">"Felt like advice from a friend who actually lives there"</span><span class="proof-dot"></span>
+    <span class="proof-quote">"Saved us from two expensive mistakes"</span><span class="proof-dot"></span>
   </div>
 </div>
 
-<!-- ═══════════════ STORY ═══════════════ -->
-<section id="story" style="background:var(--snow);padding:7rem 2rem">
-  <div class="story">
-    <div class="story-visual reveal">
-      <div class="story-img-label">Living in Levi since 2022</div>
-      <div class="story-img-placeholder">
-        <div class="story-img-trees"></div>
-        <div class="story-img-caption">"We didn't come here to run a travel blog.<br>We came because Lapland got into us."</div>
-      </div>
-      <div class="story-accent-line"></div>
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="story-inner">
+    <div class="story-img-wrap reveal">
+      <div class="story-img-label">Living in Levi since 2023</div>
+      <img class="story-img" src="images/lapland_like_this.JPG" alt="Colin, Livi and the boys with reindeer in Levi, Finnish Lapland">
+      <div class="story-accent"></div>
     </div>
-    <div class="story-text">
-      <div class="section-eyebrow">Who we are</div>
-      <h2 class="story-headline">We're not travel writers.<br><em>We just moved here.</em></h2>
-      <p class="story-body">In 2022, we packed up our life in the UK and moved our family of five to Levi — a fell resort in Finnish Lapland, 170km above the Arctic Circle. No remote office. No travel grants. Just a decision that Lapland was where we wanted to be.</p>
-      <p class="story-body">Since then, we've experienced every season here. We've watched hundreds of families arrive with high expectations — and seen exactly which ones left disappointed, and which ones left changed. Usually the difference came down to one thing: preparation.</p>
-      <blockquote class="story-quote">"Most Lapland content is written by people who visited once. We live here. That's the difference."</blockquote>
-      <p class="story-body">We built Lapland Like This because the honest, useful guide we wanted to hand every arriving traveller didn't exist. Now it does.</p>
-      <div class="story-credentials">
-        <div class="cred-row"><span class="cred-dot"></span>Backgrounds in hospitality, travel and customer experience</div>
-        <div class="cred-row"><span class="cred-dot"></span>Three winters, three springs — every season, properly</div>
-        <div class="cred-row"><span class="cred-dot"></span>No affiliate deals. No tour operator partnerships. No agenda.</div>
-        <div class="cred-row"><span class="cred-dot"></span>Five of us — which means we understand family travel from the inside</div>
+    <div class="reveal rd2">
+      <div class="eyebrow">Who we are</div>
+      <h2 class="section-h2">We're not travel writers.<br><em>We just moved here.</em></h2>
+      <p class="body-p">Colin flew to Levi in May 2023 to remote work for a few weeks. His first time in Lapland. On day three he found a house being built and put an offer in — no mortgage, no residency plan, no idea if it would work.</p>
+      <p class="body-p">Livi was at home in Cheltenham nursing one-year-old Finley when he called. She said "let's see." Keys in November 2023. Trial Christmas. Drove back for good in January 2024 with Hugo (7), Rowan (3) and Finley (1).</p>
+      <blockquote class="pull-q">"Most Lapland content is written by people who visited once. We live here. That's the difference."</blockquote>
+      <div class="creds">
+        <div class="cred">Three winters, three springs — every season, properly</div>
+        <div class="cred">No affiliate deals, no tour operator partnerships, no agenda</div>
+        <div class="cred">Hugo, Rowan and Finley now speak fluent Finnish. We're getting there.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ WHY DIFFERENT ═══════════════ -->
-<section class="different" id="about">
+<!-- DIFFERENT -->
+<section class="different">
   <div class="different-inner">
-    <div class="different-header reveal">
-      <div class="section-eyebrow" style="color:rgba(217,164,65,.8)"><span style="background:rgba(217,164,65,.8)"></span>Why this is different</div>
-      <h2 class="different-h2">Most Lapland advice is<br><em>trying to sell you something.</em><br>Ours isn't.</h2>
+    <div class="diff-header reveal">
+      <div class="diff-eyebrow">Why this is different</div>
+      <h2 class="diff-h2">Most Lapland advice is<br><em>trying to sell you something.</em><br>Ours isn't.</h2>
     </div>
     <div class="pillars">
-      <div class="pillar reveal reveal-d1"><span class="pillar-num">01</span><div class="pillar-title">We're commercially unbiased</div><p class="pillar-body">No commission. No affiliate links. No tour operator partnerships. When we recommend something, it's because we actually think it's worth it.</p></div>
-      <div class="pillar reveal reveal-d2"><span class="pillar-num">02</span><div class="pillar-title">We'll tell you what to skip</div><p class="pillar-body">Most travel content only tells you what's good. We'll tell you what's overpriced, what's underwhelming, and what to avoid spending your money on.</p></div>
-      <div class="pillar reveal reveal-d3"><span class="pillar-num">03</span><div class="pillar-title">We know the travellers who got it right</div><p class="pillar-body">We've spoken to hundreds of families and couples who visited. We know what made their trip — and what let it down. That shapes everything we say.</p></div>
-      <div class="pillar reveal reveal-d1"><span class="pillar-num">04</span><div class="pillar-title">We support local, not packages</div><p class="pillar-body">The best Lapland experiences come from small, local operators — not the packaged tours that dominate booking sites. We'll point you toward the real thing.</p></div>
+      <div class="pillar reveal rd1"><span class="pillar-n">01</span><div class="pillar-t">Commercially unbiased</div><p class="pillar-b">No commission. No affiliate links. No tour operator deals. When we recommend something, it's because we think it's worth it.</p></div>
+      <div class="pillar reveal rd2"><span class="pillar-n">02</span><div class="pillar-t">We'll tell you what to skip</div><p class="pillar-b">Most travel content only tells you what's good. We'll tell you what's overpriced, what's underwhelming, and what to avoid entirely.</p></div>
+      <div class="pillar reveal rd3"><span class="pillar-n">03</span><div class="pillar-t">We know the travellers who got it right</div><p class="pillar-b">Hundreds of families and couples. We know what made their trip and what let it down. That shapes everything we say.</p></div>
+      <div class="pillar reveal rd1"><span class="pillar-n">04</span><div class="pillar-t">We support local</div><p class="pillar-b">The best Lapland experiences come from small local operators — not packaged tours. We'll point you toward the real thing.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ TRIP BUILDER ═══════════════ -->
-<section class="tool-section" id="tool">
-  <div class="tool-intro">
-    <div class="tool-intro-grid">
-      <div class="reveal">
-        <div class="section-eyebrow">The trip builder</div>
-        <h2 class="tool-h2">Answer 6 questions.<br>Get your <em>top 3 destinations</em><br>and exactly how to reach them.</h2>
-        <p class="tool-body">Most people search "where should I go in Lapland" and get a generic listicle. Tell us where you're flying from, who you're travelling with, and what matters most — we'll give you a personalised top 3 with honest rationale, real flight routes, and what to avoid.</p>
-        <div class="tool-answers">
-          <div class="tool-answer-row"><div class="ta-icon">✓</div><span>Where to go — Levi, Rovaniemi, Saariselkä and more</span></div>
-          <div class="tool-answer-row"><div class="ta-icon">✓</div><span>Which airport to fly into, from anywhere in the world</span></div>
-          <div class="tool-answer-row"><div class="ta-icon">✓</div><span>What experiences actually suit your group</span></div>
-          <div class="tool-answer-row"><div class="ta-icon">✓</div><span>What to avoid wasting money on</span></div>
-        </div>
-      </div>
-      <div class="reveal reveal-d2" style="text-align:right;padding-top:2rem">
-        <p style="font-family:var(--serif);font-size:1.15rem;font-style:italic;color:#666;line-height:1.7;margin-bottom:1rem">"We see people make the same expensive mistakes every year. A few honest answers up front changes everything."</p>
-        <small style="font-size:12px;color:#999">— From three years of watching Lapland trips go right and wrong</small>
-      </div>
-    </div>
-  </div>
-
-  <!-- THE EMBEDDED TOOL -->
-  <div class="quiz-wrapper" id="start-tool">
-    <div class="quiz-wrapper-header">
-      <div class="qw-dot" style="background:#E05C5C"></div>
-      <div class="qw-dot" style="background:#E0A85C"></div>
-      <div class="qw-dot" style="background:#5CE07A"></div>
-      <span class="qw-title">Lapland Like This — Trip Builder</span>
-    </div>
-    <div class="quiz-body">
-      <div class="q-app">
-        <div id="qpb"><div class="q-pbar" id="qprog"></div></div>
-
-        <!-- Q0 WELCOME -->
-        <div class="q-step active" id="qs0">
-          <div style="text-align:center;padding:1rem 0 1.5rem">
-            <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem">Lapland Like This</div>
-            <div style="font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.2rem);line-height:1.2;margin-bottom:.85rem;color:var(--snow)">Where should I go<br>in Lapland?<br><em style="color:var(--amber-lt);font-style:italic">We'll tell you honestly.</em></div>
-            <div style="font-size:13px;color:rgba(245,247,246,.5);max-width:360px;margin:0 auto 2rem;line-height:1.75">Answer 6 quick questions and get your personalised top 3 — with the exact flights, rationale, and what to avoid.</div>
-            <button class="q-btn" onclick="qgo(0)" style="max-width:240px;margin:0 auto;display:block">Find my Lapland →</button>
-            <div style="font-size:10px;color:rgba(245,247,246,.3);margin-top:.85rem">2 minutes · No sign-up to start · Honest guidance</div>
-          </div>
-        </div>
-
-        <!-- Q1 ORIGIN -->
-        <div class="q-step" id="qs1">
-          <button class="q-bk" onclick="qback(1)">← Back</button>
-          <div class="q-eyebrow">Step 1 of 6</div>
-          <div class="q-title">Where are you flying from?</div>
-          <div class="q-hint">Type your city — we'll find what flies directly to Lapland from you.</div>
-          <div class="q-search" id="qsw">
-            <input type="text" id="qcity" placeholder="e.g. London, New York, Sydney, Tokyo..." oninput="qfilterC(this.value)" autocomplete="off">
-            <div id="qsugg" class="q-sugg" style="display:none"></div>
-          </div>
-          <div id="qorig" style="display:none"></div>
-          <div style="font-size:12px;color:rgba(245,247,246,.4);margin-bottom:.6rem">Or pick your region:</div>
-          <div class="q-ogrid" id="qrg">
-            <div class="q-oc" onclick="qsetReg('uk',this)"><span class="ql">UK</span><span class="qs">London, Manchester...</span></div>
-            <div class="q-oc" onclick="qsetReg('ireland',this)"><span class="ql">Ireland</span><span class="qs">Dublin, Shannon</span></div>
-            <div class="q-oc" onclick="qsetReg('germany',this)"><span class="ql">Germany</span><span class="qs">Frankfurt, Munich...</span></div>
-            <div class="q-oc" onclick="qsetReg('france',this)"><span class="ql">France</span><span class="qs">Paris, Lyon, Nice...</span></div>
-            <div class="q-oc" onclick="qsetReg('netherlands',this)"><span class="ql">Netherlands</span><span class="qs">Amsterdam</span></div>
-            <div class="q-oc" onclick="qsetReg('nordics',this)"><span class="ql">Scandinavia</span><span class="qs">Norway, Sweden, DK</span></div>
-            <div class="q-oc" onclick="qsetReg('italy',this)"><span class="ql">Italy</span><span class="qs">Milan, Rome...</span></div>
-            <div class="q-oc" onclick="qsetReg('switzerland',this)"><span class="ql">Switzerland</span><span class="qs">Zurich, Geneva</span></div>
-            <div class="q-oc" onclick="qsetReg('austria',this)"><span class="ql">Austria</span><span class="qs">Vienna</span></div>
-            <div class="q-oc" onclick="qsetReg('belgium',this)"><span class="ql">Belgium</span><span class="qs">Brussels</span></div>
-            <div class="q-oc" onclick="qsetReg('poland',this)"><span class="ql">Poland</span><span class="qs">Warsaw</span></div>
-            <div class="q-oc" onclick="qsetReg('usa',this)"><span class="ql">USA</span><span class="qs">Any city</span></div>
-            <div class="q-oc" onclick="qsetReg('canada',this)"><span class="ql">Canada</span><span class="qs">Any city</span></div>
-            <div class="q-oc" onclick="qsetReg('australia',this)"><span class="ql">Australia/NZ</span><span class="qs">Any city</span></div>
-            <div class="q-oc" onclick="qsetReg('asia',this)"><span class="ql">Asia</span><span class="qs">Japan, SE Asia...</span></div>
-            <div class="q-oc" onclick="qsetReg('middle-east',this)"><span class="ql">Middle East</span><span class="qs">UAE, Israel, Turkey</span></div>
-          </div>
-          <button class="q-btn" id="qb1" onclick="qgo(1)" disabled>Continue</button>
-        </div>
-
-        <!-- Q2 GROUP -->
-        <div class="q-step" id="qs2">
-          <button class="q-bk" onclick="qback(2)">← Back</button>
-          <div class="q-eyebrow">Step 2 of 6</div>
-          <div class="q-title">Who's making this trip?</div>
-          <div class="q-hint">Be honest — a couple and a family with toddlers need completely different Laplands.</div>
-          <div class="q-olist">
-            <div class="q-or" onclick="qpick('group','couple',this)"><div class="rt"><div class="rl">Just the two of us</div><div class="rs">Couple — we want magic and wilderness</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('group','family-young',this)"><div class="rt"><div class="rl">Family with young kids</div><div class="rs">Under 8 — Santa age, pure wonder</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('group','family-older',this)"><div class="rt"><div class="rl">Family with older kids</div><div class="rs">8–15 — want adventure too, not just magic</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('group','solo',this)"><div class="rt"><div class="rl">Solo</div><div class="rs">My trip, my pace, my rules</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('group','friends',this)"><div class="rt"><div class="rl">Friends group</div><div class="rs">2–8 adults after a real experience</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('group','multigem',this)"><div class="rt"><div class="rl">Multi-generational family</div><div class="rs">Grandparents to grandchildren</div></div><div class="ck"></div></div>
-          </div>
-          <button class="q-btn" id="qb2" onclick="qgo(2)" disabled>Continue</button>
-        </div>
-
-        <!-- Q3 BUDGET + NIGHTS -->
-        <div class="q-step" id="qs3">
-          <button class="q-bk" onclick="qback(3)">← Back</button>
-          <div class="q-eyebrow">Step 3 of 6</div>
-          <div class="q-title">How long, and what's your budget?</div>
-          <div class="q-hint">Be real — Lapland is expensive. Knowing your range stops us recommending things that will disappoint.</div>
-          <div class="q-sw">
-            <div class="q-sl"><span style="font-size:12px;color:rgba(245,247,246,.5)">Trip length</span><span><span class="q-sv" id="qnv">5</span><span class="q-su"> nights</span></span></div>
-            <input type="range" min="3" max="10" value="5" step="1" id="qns" oninput="document.getElementById('qnv').textContent=this.value;QA.nights=+this.value">
-            <div class="q-rl"><span>3 nights</span><span>10 nights</span></div>
-          </div>
-          <div class="q-olist">
-            <div class="q-or" onclick="qpick('budget','low',this)"><div class="rt"><div class="rl">Under £2,000 / €2,300 per person</div><div class="rs">Tight but possible with smart choices</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('budget','mid',this)"><div class="rt"><div class="rl">£2,000–£3,500 / €2,300–€4,000 pp</div><div class="rs">The sweet spot — proper trip, no compromises</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('budget','high',this)"><div class="rt"><div class="rl">£3,500–£6,000 / €4,000–€7,000 pp</div><div class="rs">Comfortable — glass igloos, private guides</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('budget','luxury',this)"><div class="rt"><div class="rl">£6,000+ / €7,000+ per person</div><div class="rs">Full Arctic immersion — nothing off-limits</div></div><div class="ck"></div></div>
-          </div>
-          <button class="q-btn" id="qb3" onclick="qgo(3)" disabled>Continue</button>
-        </div>
-
-        <!-- Q4 SEASON + PRIORITIES -->
-        <div class="q-step" id="qs4">
-          <button class="q-bk" onclick="qback(4)">← Back</button>
-          <div class="q-eyebrow">Step 4 of 6</div>
-          <div class="q-title">When, and what matters most?</div>
-          <div class="q-hint">Season changes which flights exist and which destinations work best.</div>
-          <div style="font-size:12px;font-weight:500;margin-bottom:.6rem;color:rgba(245,247,246,.8)">When are you going?</div>
-          <div class="q-ogrid" id="qseason">
-            <div class="q-oc" onclick="qpick('season','nov-dec',this)"><span class="ql">Nov–Dec</span><span class="qs">Christmas magic, first snow</span></div>
-            <div class="q-oc" onclick="qpick('season','jan-feb',this)"><span class="ql">Jan–Feb</span><span class="qs">Best aurora, coldest</span></div>
-            <div class="q-oc" onclick="qpick('season','mar-apr',this)"><span class="ql">Mar–Apr</span><span class="qs">Sun returns, snow stays</span></div>
-            <div class="q-oc" onclick="qpick('season','flexible',this)"><span class="ql">Flexible</span><span class="qs">Tell me the best time</span></div>
-          </div>
-          <div style="font-size:12px;font-weight:500;margin:.9rem 0 .35rem;color:rgba(245,247,246,.8)">Non-negotiables <span style="font-weight:400;color:rgba(245,247,246,.4)">(pick up to 3)</span></div>
-          <div class="q-ogrid" id="qprio">
-            <div class="q-oc" onclick="qmulti('priority','aurora',this,3)"><span class="ql">Northern lights</span></div>
-            <div class="q-oc" onclick="qmulti('priority','santa',this,3)"><span class="ql">Santa experience</span></div>
-            <div class="q-oc" onclick="qmulti('priority','husky',this,3)"><span class="ql">Husky safari</span></div>
-            <div class="q-oc" onclick="qmulti('priority','reindeer',this,3)"><span class="ql">Reindeer farm</span></div>
-            <div class="q-oc" onclick="qmulti('priority','snowmobile',this,3)"><span class="ql">Snowmobile</span></div>
-            <div class="q-oc" onclick="qmulti('priority','skiing',this,3)"><span class="ql">Skiing</span></div>
-            <div class="q-oc" onclick="qmulti('priority','culture',this,3)"><span class="ql">Sámi culture</span></div>
-            <div class="q-oc" onclick="qmulti('priority','sauna',this,3)"><span class="ql">Sauna + ice swim</span></div>
-          </div>
-          <button class="q-btn" id="qb4" onclick="qgo(4)" disabled>Continue</button>
-        </div>
-
-        <!-- Q5 STYLE -->
-        <div class="q-step" id="qs5">
-          <button class="q-bk" onclick="qback(5)">← Back</button>
-          <div class="q-eyebrow">Step 5 of 6</div>
-          <div class="q-title">What kind of trip is this?</div>
-          <div class="q-olist">
-            <div class="q-or" onclick="qpick('accom','igloo',this)"><div class="rt"><div class="rl">Glass igloo or sky cabin</div><div class="rs">Sleep under the stars — the bucket-list one</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('accom','cabin',this)"><div class="rt"><div class="rl">Private log cabin</div><div class="rs">Your own sauna, forest setting, space</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('accom','hotel',this)"><div class="rt"><div class="rl">Hotel or resort</div><div class="rs">Easier with kids, meals sorted, sociable</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('accom','mix',this)"><div class="rt"><div class="rl">Mix — cabin base + one igloo night</div><div class="rs">Comfort plus the special moment</div></div><div class="ck"></div></div>
-          </div>
-          <div style="font-size:12px;font-weight:500;margin:.75rem 0 .6rem;color:rgba(245,247,246,.8)">Trip pace</div>
-          <div class="q-olist">
-            <div class="q-or" onclick="qpick('pace','packed',this)"><div class="rt"><div class="rl">Activity-packed</div><div class="rs">Something every day</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('pace','balanced',this)"><div class="rt"><div class="rl">Balanced</div><div class="rs">2–3 activities, then space to exist</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('pace','slow',this)"><div class="rt"><div class="rl">Slow and immersive</div><div class="rs">Fewer things, done properly</div></div><div class="ck"></div></div>
-          </div>
-          <button class="q-btn" id="qb5" onclick="qgo(5)" disabled>Continue</button>
-        </div>
-
-        <!-- Q6 EXPERIENCE -->
-        <div class="q-step" id="qs6">
-          <button class="q-bk" onclick="qback(6)">← Back</button>
-          <div class="q-eyebrow">Last one — Step 6 of 6</div>
-          <div class="q-title">Any winter travel experience?</div>
-          <div class="q-hint">Not fitness — this is about knowing what −20°C actually means in practice.</div>
-          <div class="q-olist">
-            <div class="q-or" onclick="qpick('exp','first',this)"><div class="rt"><div class="rl">First real winter trip</div><div class="rs">Never worn serious thermal layers before</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('exp','some',this)"><div class="rt"><div class="rl">Done a ski holiday or two</div><div class="rs">Know it's cold, know to layer up</div></div><div class="ck"></div></div>
-            <div class="q-or" onclick="qpick('exp','experienced',this)"><div class="rt"><div class="rl">Comfortable in serious cold</div><div class="rs">Arctic conditions are fine</div></div><div class="ck"></div></div>
-          </div>
-          <button class="q-btn" id="qb6" onclick="qgo(6)" disabled>Continue to my results →</button>
-        </div>
-
-        <!-- Q7 EMAIL GATE -->
-        <div class="q-step" id="qs7">
-          <div style="text-align:center;padding:.5rem 0">
-            <div class="q-gate-icon">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="5" width="18" height="13" rx="2" stroke="#D9A441" stroke-width="1.5"/><path d="M2 8l9 6 9-6" stroke="#D9A441" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <div class="q-gate-title" style="color:var(--snow)">Your top 3 Lapland destinations are ready</div>
-            <p class="q-gate-body">Enter your details to reveal your personalised recommendations — flights, rationale, and what to avoid.</p>
-            <input type="text" class="q-field" id="qfname" placeholder="Your first name">
-            <input type="email" class="q-field" id="qfemail" placeholder="Your email address" oninput="qcheckGate()">
-            <div class="q-consent-row">
-              <input type="checkbox" id="qconsent" onchange="qcheckGate()">
-              <label class="q-consent-label" for="qconsent"><span>Yes, send me Lapland travel tips, seasonal guides and honest advice</span> from Lapland Like This. No spam — unsubscribe anytime.</label>
-            </div>
-            <div class="q-err" id="qgate-err">Please enter a valid email address to continue.</div>
-            <button class="q-btn" id="qgate-btn" onclick="qsubmitGate()" disabled>Reveal my top 3 →</button>
-            <div class="q-trust">Your details are never sold or shared.<br>We send 1–2 emails per month — only when we have something useful to say.</div>
-          </div>
-        </div>
-
-        <!-- Q8 RESULTS -->
-        <div class="q-step" id="qs8">
-          <div id="qr-header"></div>
-          <div id="qr-top3"></div>
-          <div id="qr-flight"></div>
-          <div id="qr-cta"></div>
-          <button class="q-restart" onclick="qrestart()">Start over with different answers</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ DESTINATIONS ═══════════════ -->
+<!-- DESTINATIONS -->
 <section class="destinations" id="destinations">
   <div class="destinations-inner">
     <div class="dest-header reveal">
       <div>
-        <div class="section-eyebrow">Where to go</div>
-        <h2 class="dest-h2">The main destinations —<br><em>and the honest truth about each one</em></h2>
+        <div class="eyebrow">Where to go</div>
+        <h2 class="dest-h2">The main destinations —<br><em>the honest truth about each one</em></h2>
       </div>
       <p class="dest-sub">We've spent time in all of them. Here's what actually makes each one right — or wrong — for different travellers.</p>
     </div>
     <div class="dest-grid">
-      <a href="#" class="dest-card reveal reveal-d1">
-        <div class="dest-card-img d-sky-1"><div class="d-aurora"></div><div class="d-trees"></div></div>
-        <div class="dest-card-body"><span class="dest-badge">We live here</span><div class="dest-name">Levi</div><p class="dest-desc">The most connected resort. Direct flights from across Europe. Everything within reach — no hire car needed.</p><div class="dest-arrow">Read our honest take</div></div>
+      <!-- Featured — Levi -->
+      <a href="destinations/levi.html" class="dest-card featured reveal">
+        <img src="images/levi-ski-resort.jpeg" alt="Levi ski resort at night, Finnish Lapland — floodlit slopes">
+        <div class="dest-overlay"></div>
+        <div class="dest-body">
+          <span class="dest-badge">We live here</span>
+          <div class="dest-name">Levi</div>
+          <p class="dest-desc">The most connected resort in Finnish Lapland. Direct flights from across Europe, 15 minutes from the airport. Everything within reach — no hire car needed. Finland's best ski resort, four years running.</p>
+          <div class="dest-link">Read our honest guide</div>
+        </div>
       </a>
-      <a href="#" class="dest-card reveal reveal-d2">
-        <div class="dest-card-img d-sky-2"><div class="d-trees"></div></div>
-        <div class="dest-card-body"><span class="dest-badge">Arctic Circle</span><div class="dest-name">Rovaniemi</div><p class="dest-desc">The gateway. Most flights, widest choice. Best for first-timers and families chasing Santa — but there are traps.</p><div class="dest-arrow">Read our honest take</div></div>
+      <!-- Rovaniemi -->
+      <a href="destinations/rovaniemi.html" class="dest-card reveal rd1">
+        <img src="images/IMG_1797.jpeg" alt="Northern lights over Lapland landscape at night">
+        <div class="dest-overlay"></div>
+        <div class="dest-body">
+          <span class="dest-badge">Arctic Circle</span>
+          <div class="dest-name">Rovaniemi</div>
+          <p class="dest-desc">The gateway — most flights, widest choice. But there are traps.</p>
+          <div class="dest-link">Read our honest guide</div>
+        </div>
       </a>
-      <a href="#" class="dest-card reveal reveal-d3">
-        <div class="dest-card-img d-sky-3"><div class="d-aurora" style="opacity:.7"></div><div class="d-trees"></div></div>
-        <div class="dest-card-body"><span class="dest-badge">Best aurora odds</span><div class="dest-name">Saariselkä</div><p class="dest-desc">Wilder. Further north. 260km above the Arctic Circle and the best darkness in Finland. For people who mean it.</p><div class="dest-arrow">Read our honest take</div></div>
-      </a>
-      <a href="#" class="dest-card reveal reveal-d1">
-        <div class="dest-card-img d-sky-4"><div class="d-trees"></div></div>
-        <div class="dest-card-body"><span class="dest-badge">The quiet one</span><div class="dest-name">Ylläs</div><p class="dest-desc">Same flights as Levi, half the crowds. Finland's highest fell. If you want what Levi offers without the bustle.</p><div class="dest-arrow">Read our honest take</div></div>
+      <!-- Saariselkä -->
+      <a href="destinations/saariselka.html" class="dest-card reveal rd2">
+        <img src="images/IMG_8744 (3).jpeg" alt="Aurora borealis green northern lights in Finnish Lapland">
+        <div class="dest-overlay"></div>
+        <div class="dest-body">
+          <span class="dest-badge">Best aurora odds</span>
+          <div class="dest-name">Saariselkä</div>
+          <p class="dest-desc">Wilder. Further north. For people who mean it.</p>
+          <div class="dest-link">Read our honest guide</div>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ HONEST SECTION ═══════════════ -->
+<!-- ACTIVITIES -->
+<section class="activities">
+  <div class="activities-inner">
+    <div class="reveal">
+      <div class="eyebrow">Experiences</div>
+      <h2 class="section-h2" style="color:var(--forest)">What's worth doing —<br><em>and what to skip</em></h2>
+    </div>
+    <div class="act-grid">
+      <a href="#tool" class="act-card reveal rd1">
+        <img src="images/IMG_1849 (1).JPG" alt="Children with reindeer in Lapland — family reindeer farm experience">
+        <div class="act-overlay"></div>
+        <div class="act-body">
+          <div class="act-label">Worth it</div>
+          <div class="act-title">Reindeer farm</div>
+          <div class="act-verdict">Find a small, local farm. Not a tourist operation.</div>
+        </div>
+      </a>
+      <a href="#tool" class="act-card reveal rd2">
+        <img src="images/IMG_3814.jpg" alt="Family skiing together in Levi, Finnish Lapland — Colin and the boys">
+        <div class="act-overlay"></div>
+        <div class="act-body">
+          <div class="act-label">Our daily life</div>
+          <div class="act-title">Skiing the fells</div>
+          <div class="act-verdict">Colin's out most mornings November through April.</div>
+        </div>
+      </a>
+      <a href="#tool" class="act-card reveal rd3">
+        <img src="images/IMG_1870.JPG" alt="Outdoor hot tub sauna experience in snowy Lapland winter">
+        <div class="act-overlay"></div>
+        <div class="act-body">
+          <div class="act-label">Don't skip this</div>
+          <div class="act-title">Sauna + ice swim</div>
+          <div class="act-verdict">Not optional. This is the whole point of winter in Finland.</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRIP BUILDER -->
+<section class="tool-section" id="tool">
+  <div class="tool-section-inner">
+    <div class="tool-intro">
+      <div class="reveal">
+        <div class="eyebrow">The trip builder</div>
+        <h2 class="tool-h2">Answer 6 questions.<br>Get your <em>top 3 destinations</em><br>and exactly how to reach them.</h2>
+        <p class="tool-body">Where you're flying from, who you're travelling with, what matters most. We'll give you a personalised top 3 with honest rationale, real flight routes, and what to avoid.</p>
+        <div class="tool-checks">
+          <div class="tc"><div class="tc-icon">✓</div><span>Where to go — Levi, Rovaniemi, Saariselkä and more</span></div>
+          <div class="tc"><div class="tc-icon">✓</div><span>Which airport to fly into, from anywhere in the world</span></div>
+          <div class="tc"><div class="tc-icon">✓</div><span>What experiences suit your group</span></div>
+          <div class="tc"><div class="tc-icon">✓</div><span>What to avoid wasting money on</span></div>
+        </div>
+      </div>
+      <div class="reveal rd2">
+        <p class="tool-quote">"We see people make the same expensive mistakes every year. A few honest answers up front changes everything."</p>
+        <p class="tool-quote-attr">— From three years of watching Lapland trips go right and wrong</p>
+      </div>
+    </div>
+
+    <div class="quiz-frame" id="start-tool">
+      <div class="qf-header">
+        <div class="qf-dot" style="background:#E05C5C"></div>
+        <div class="qf-dot" style="background:#E0A85C"></div>
+        <div class="qf-dot" style="background:#5CE07A"></div>
+        <span class="qf-title">Trip Builder — Lapland Like This</span>
+      </div>
+      <div class="quiz-inner">
+        <div class="q-app">
+          <div id="qpb"><div class="q-pbar" id="qprog"></div></div>
+
+          <div class="q-step active" id="qs0">
+            <div style="text-align:center;padding:1rem 0 1.25rem">
+              <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem">Lapland Like This</div>
+              <div style="font-family:var(--serif);font-size:clamp(1.5rem,3.5vw,2rem);line-height:1.2;margin-bottom:.75rem;color:var(--snow)">Where should I go<br>in Lapland?<br><em style="color:var(--amber-lt);font-style:italic">We'll tell you honestly.</em></div>
+              <div style="font-size:13px;color:rgba(245,247,246,.45);max-width:340px;margin:0 auto 1.75rem;line-height:1.75">6 questions. Your personalised top 3 — with flights, rationale and what to avoid.</div>
+              <button class="q-btn" onclick="qgo(0)" style="max-width:220px;margin:0 auto;display:block">Find my Lapland →</button>
+              <div style="font-size:10px;color:rgba(245,247,246,.25);margin-top:.75rem">2 minutes · No sign-up to start</div>
+            </div>
+          </div>
+
+          <div class="q-step" id="qs1">
+            <button class="q-bk" onclick="qback(1)">← Back</button>
+            <div class="q-ey">Step 1 of 6</div>
+            <div class="q-title">Where are you flying from?</div>
+            <div class="q-hint">Type your city or pick your region below.</div>
+            <div class="q-search" id="qsw">
+              <input type="text" id="qcity" placeholder="e.g. London, New York, Sydney..." oninput="qfilterC(this.value)" autocomplete="off">
+              <div id="qsugg" class="q-sugg" style="display:none"></div>
+            </div>
+            <div id="qorig" style="display:none"></div>
+            <div style="font-size:11px;color:rgba(245,247,246,.35);margin-bottom:.6rem">Or pick your region:</div>
+            <div class="q-ogrid" id="qrg">
+              <div class="q-oc" onclick="qsetReg('uk',this)"><span class="ql">UK</span><span class="qs">London, Manchester...</span></div>
+              <div class="q-oc" onclick="qsetReg('ireland',this)"><span class="ql">Ireland</span><span class="qs">Dublin, Shannon</span></div>
+              <div class="q-oc" onclick="qsetReg('germany',this)"><span class="ql">Germany</span><span class="qs">Frankfurt, Munich...</span></div>
+              <div class="q-oc" onclick="qsetReg('france',this)"><span class="ql">France</span><span class="qs">Paris, Lyon, Nice...</span></div>
+              <div class="q-oc" onclick="qsetReg('netherlands',this)"><span class="ql">Netherlands</span><span class="qs">Amsterdam</span></div>
+              <div class="q-oc" onclick="qsetReg('nordics',this)"><span class="ql">Scandinavia</span><span class="qs">Norway, Sweden, DK</span></div>
+              <div class="q-oc" onclick="qsetReg('italy',this)"><span class="ql">Italy</span><span class="qs">Milan, Rome...</span></div>
+              <div class="q-oc" onclick="qsetReg('switzerland',this)"><span class="ql">Switzerland</span><span class="qs">Zurich</span></div>
+              <div class="q-oc" onclick="qsetReg('austria',this)"><span class="ql">Austria</span><span class="qs">Vienna</span></div>
+              <div class="q-oc" onclick="qsetReg('belgium',this)"><span class="ql">Belgium</span><span class="qs">Brussels</span></div>
+              <div class="q-oc" onclick="qsetReg('poland',this)"><span class="ql">Poland</span><span class="qs">Warsaw</span></div>
+              <div class="q-oc" onclick="qsetReg('usa',this)"><span class="ql">USA</span><span class="qs">Any city</span></div>
+              <div class="q-oc" onclick="qsetReg('canada',this)"><span class="ql">Canada</span><span class="qs">Any city</span></div>
+              <div class="q-oc" onclick="qsetReg('australia',this)"><span class="ql">Australia/NZ</span><span class="qs">Any city</span></div>
+              <div class="q-oc" onclick="qsetReg('asia',this)"><span class="ql">Asia</span><span class="qs">Japan, SE Asia...</span></div>
+              <div class="q-oc" onclick="qsetReg('middle-east',this)"><span class="ql">Middle East</span><span class="qs">UAE, Israel, Turkey</span></div>
+            </div>
+            <button class="q-btn" id="qb1" onclick="qgo(1)" disabled>Continue</button>
+          </div>
+
+          <div class="q-step" id="qs2">
+            <button class="q-bk" onclick="qback(2)">← Back</button>
+            <div class="q-ey">Step 2 of 6</div>
+            <div class="q-title">Who's making this trip?</div>
+            <div class="q-hint">A couple and a family with toddlers need completely different Laplands.</div>
+            <div class="q-olist">
+              <div class="q-or" onclick="qpick('group','couple',this)"><div><div class="rl">Just the two of us</div><div class="rs">Couple — magic and wilderness</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('group','family-young',this)"><div><div class="rl">Family — young kids</div><div class="rs">Under 8 — Santa age, pure wonder</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('group','family-older',this)"><div><div class="rl">Family — older kids</div><div class="rs">8–15 — want adventure too</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('group','solo',this)"><div><div class="rl">Solo</div><div class="rs">My trip, my pace</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('group','friends',this)"><div><div class="rl">Friends group</div><div class="rs">2–8 adults</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('group','multigem',this)"><div><div class="rl">Multi-generational family</div><div class="rs">Grandparents to grandchildren</div></div><div class="ck"></div></div>
+            </div>
+            <button class="q-btn" id="qb2" onclick="qgo(2)" disabled>Continue</button>
+          </div>
+
+          <div class="q-step" id="qs3">
+            <button class="q-bk" onclick="qback(3)">← Back</button>
+            <div class="q-ey">Step 3 of 6</div>
+            <div class="q-title">How long, and what's your budget?</div>
+            <div class="q-hint">Lapland is expensive. Knowing your real range stops us recommending things that will disappoint.</div>
+            <div class="q-sw">
+              <div class="q-sl"><span style="font-size:12px;color:rgba(245,247,246,.45)">Trip length</span><span><span class="q-sv" id="qnv">5</span><span class="q-su"> nights</span></span></div>
+              <input type="range" min="3" max="10" value="5" step="1" id="qns" oninput="document.getElementById('qnv').textContent=this.value;QA.nights=+this.value">
+              <div class="q-rl"><span>3 nights</span><span>10 nights</span></div>
+            </div>
+            <div class="q-olist">
+              <div class="q-or" onclick="qpick('budget','low',this)"><div><div class="rl">Under £2,000 / €2,300 pp</div><div class="rs">Tight but possible</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('budget','mid',this)"><div><div class="rl">£2,000–£3,500 / €2,300–€4,000 pp</div><div class="rs">The sweet spot</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('budget','high',this)"><div><div class="rl">£3,500–£6,000 / €4,000–€7,000 pp</div><div class="rs">Glass igloos, private guides</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('budget','luxury',this)"><div><div class="rl">£6,000+ / €7,000+ pp</div><div class="rs">Full Arctic immersion</div></div><div class="ck"></div></div>
+            </div>
+            <button class="q-btn" id="qb3" onclick="qgo(3)" disabled>Continue</button>
+          </div>
+
+          <div class="q-step" id="qs4">
+            <button class="q-bk" onclick="qback(4)">← Back</button>
+            <div class="q-ey">Step 4 of 6</div>
+            <div class="q-title">When, and what matters most?</div>
+            <div style="font-size:12px;font-weight:500;margin-bottom:.55rem;color:rgba(245,247,246,.8)">When are you going?</div>
+            <div class="q-ogrid" id="qseason">
+              <div class="q-oc" onclick="qpick('season','nov-dec',this)"><span class="ql">Nov–Dec</span><span class="qs">Christmas magic</span></div>
+              <div class="q-oc" onclick="qpick('season','jan-feb',this)"><span class="ql">Jan–Feb</span><span class="qs">Best aurora</span></div>
+              <div class="q-oc" onclick="qpick('season','mar-apr',this)"><span class="ql">Mar–Apr</span><span class="qs">Sun returns</span></div>
+              <div class="q-oc" onclick="qpick('season','flexible',this)"><span class="ql">Flexible</span><span class="qs">Tell me the best</span></div>
+            </div>
+            <div style="font-size:12px;font-weight:500;margin:.75rem 0 .35rem;color:rgba(245,247,246,.8)">Non-negotiables <span style="font-weight:400;color:rgba(245,247,246,.35)">(up to 3)</span></div>
+            <div class="q-ogrid" id="qprio">
+              <div class="q-oc" onclick="qmulti('priority','aurora',this,3)"><span class="ql">Northern lights</span></div>
+              <div class="q-oc" onclick="qmulti('priority','santa',this,3)"><span class="ql">Santa experience</span></div>
+              <div class="q-oc" onclick="qmulti('priority','husky',this,3)"><span class="ql">Husky safari</span></div>
+              <div class="q-oc" onclick="qmulti('priority','reindeer',this,3)"><span class="ql">Reindeer farm</span></div>
+              <div class="q-oc" onclick="qmulti('priority','snowmobile',this,3)"><span class="ql">Snowmobile</span></div>
+              <div class="q-oc" onclick="qmulti('priority','skiing',this,3)"><span class="ql">Skiing</span></div>
+              <div class="q-oc" onclick="qmulti('priority','culture',this,3)"><span class="ql">Sámi culture</span></div>
+              <div class="q-oc" onclick="qmulti('priority','sauna',this,3)"><span class="ql">Sauna + ice swim</span></div>
+            </div>
+            <button class="q-btn" id="qb4" onclick="qgo(4)" disabled>Continue</button>
+          </div>
+
+          <div class="q-step" id="qs5">
+            <button class="q-bk" onclick="qback(5)">← Back</button>
+            <div class="q-ey">Step 5 of 6</div>
+            <div class="q-title">What kind of trip?</div>
+            <div class="q-olist">
+              <div class="q-or" onclick="qpick('accom','igloo',this)"><div><div class="rl">Glass igloo or sky cabin</div><div class="rs">The bucket-list one</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('accom','cabin',this)"><div><div class="rl">Private log cabin</div><div class="rs">Own sauna, forest, space</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('accom','hotel',this)"><div><div class="rl">Hotel or resort</div><div class="rs">Easier with kids</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('accom','mix',this)"><div><div class="rl">Mix — cabin + one igloo night</div><div class="rs">Comfort plus the special moment</div></div><div class="ck"></div></div>
+            </div>
+            <div style="font-size:12px;font-weight:500;margin:.65rem 0 .55rem;color:rgba(245,247,246,.8)">Trip pace</div>
+            <div class="q-olist">
+              <div class="q-or" onclick="qpick('pace','packed',this)"><div><div class="rl">Activity-packed</div><div class="rs">Something every day</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('pace','balanced',this)"><div><div class="rl">Balanced</div><div class="rs">Activities plus space</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('pace','slow',this)"><div><div class="rl">Slow and immersive</div><div class="rs">Fewer things, done properly</div></div><div class="ck"></div></div>
+            </div>
+            <button class="q-btn" id="qb5" onclick="qgo(5)" disabled>Continue</button>
+          </div>
+
+          <div class="q-step" id="qs6">
+            <button class="q-bk" onclick="qback(6)">← Back</button>
+            <div class="q-ey">Last one — Step 6 of 6</div>
+            <div class="q-title">Any winter travel experience?</div>
+            <div class="q-hint">This is about knowing what −20°C actually means — not fitness.</div>
+            <div class="q-olist">
+              <div class="q-or" onclick="qpick('exp','first',this)"><div><div class="rl">First real winter trip</div><div class="rs">Never worn serious thermal layers</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('exp','some',this)"><div><div class="rl">Done a ski holiday or two</div><div class="rs">Know it's cold, know to layer</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('exp','experienced',this)"><div><div class="rl">Comfortable in serious cold</div><div class="rs">Arctic conditions are fine</div></div><div class="ck"></div></div>
+            </div>
+            <button class="q-btn" id="qb6" onclick="qgo(6)" disabled>Continue to my results →</button>
+          </div>
+
+          <div class="q-step" id="qs7">
+            <div style="text-align:center;padding:.5rem 0">
+              <div class="q-gate-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="5" width="18" height="13" rx="2" stroke="#D9A441" stroke-width="1.5"/><path d="M2 8l9 6 9-6" stroke="#D9A441" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+              <div class="q-gate-title">Your top 3 Lapland destinations are ready</div>
+              <p class="q-gate-body">Enter your details to reveal your personalised recommendations — flights, rationale, and what to avoid.</p>
+              <input type="text" class="q-field" id="qfname" placeholder="Your first name">
+              <input type="email" class="q-field" id="qfemail" placeholder="Your email address" oninput="qcheckGate()">
+              <div class="q-consent-row">
+                <input type="checkbox" id="qconsent" onchange="qcheckGate()">
+                <label class="q-consent-label" for="qconsent"><span>Yes, send me Lapland travel tips and honest advice</span> from Lapland Like This. No spam — unsubscribe anytime.</label>
+              </div>
+              <div class="q-err" id="qgate-err">Please enter a valid email address.</div>
+              <button class="q-btn" id="qgate-btn" onclick="qsubmitGate()" disabled>Reveal my top 3 →</button>
+              <div class="q-trust">Your details are never sold or shared · 1–2 emails per month</div>
+            </div>
+          </div>
+
+          <div class="q-step" id="qs8">
+            <div id="qr-header"></div>
+            <div id="qr-top3"></div>
+            <div id="qr-flight"></div>
+            <div id="qr-cta"></div>
+            <button class="q-restart" onclick="qrestart()">Start over with different answers</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEST -->
 <section class="honest">
   <div class="honest-inner reveal">
-    <div class="section-eyebrow" style="justify-content:center"><span style="width:24px;height:1px;background:var(--forest-lt);display:block"></span>Our tone</div>
+    <div class="eyebrow" style="justify-content:center">Our tone</div>
     <h2 class="honest-h2">We say what we actually think.<br><em>Even when it's not what you want to hear.</em></h2>
-    <p class="honest-body">Every piece of content we create is written the way we'd talk to a friend who asked us. No hype. No "must-do" lists. If something wasn't worth it, we'll tell you.</p>
-    <div class="honest-examples">
-      <div class="honest-card reveal reveal-d1">
-        <div class="honest-label"><span class="dot"></span>What we actually say</div>
-        <div class="honest-quote">"The Santa Village at Rovaniemi airport is a theme park. If you want something that will actually move your kids, drive 40 minutes out. We'll tell you where."</div>
-        <div class="honest-not">"This is a must-do magical experience for the whole family!"</div>
+    <p class="honest-body">Every piece of content we create is written the way we'd talk to a friend. No hype. No "must-do" lists. If something wasn't worth it, we'll say so.</p>
+    <div class="honest-grid">
+      <div class="hc reveal rd1">
+        <div class="hc-label">What we actually say</div>
+        <div class="hc-quote">"The Santa Village at Rovaniemi airport is a theme park. If you want something that will actually move your kids, drive 40 minutes out. We'll tell you where."</div>
+        <div class="hc-not">"This is a must-do magical experience for the whole family!"</div>
       </div>
-      <div class="honest-card reveal reveal-d2">
-        <div class="honest-label"><span class="dot"></span>What we actually say</div>
-        <div class="honest-quote">"The glass igloo photos are real, but December isn't aurora season. If that's why you're going, you need January or February. We see people get this wrong every year."</div>
-        <div class="honest-not">"Book a glass igloo for the perfect Christmas aurora experience!"</div>
+      <div class="hc reveal rd2">
+        <div class="hc-label">What we actually say</div>
+        <div class="hc-quote">"The glass igloo photos are real, but December isn't aurora season. If that's why you're going, you need January or February. We see people get this wrong every year."</div>
+        <div class="hc-not">"Book a glass igloo for the perfect Christmas aurora experience!"</div>
       </div>
-      <div class="honest-card reveal reveal-d3">
-        <div class="honest-label"><span class="dot"></span>What we actually say</div>
-        <div class="honest-quote">"The husky safari is worth it. One time. Do it once, do it properly, and use the money elsewhere. The second one is the same thing with more frostbite."</div>
-        <div class="honest-not">"Experience the magic of Lapland's huskies on multiple thrilling safaris!"</div>
+      <div class="hc reveal rd3">
+        <div class="hc-label">What we actually say</div>
+        <div class="hc-quote">"The husky safari is worth it. Once. Do it once, do it properly, and use the money elsewhere. The second one is the same thing with more frostbite."</div>
+        <div class="hc-not">"Experience the magic of Lapland's huskies on multiple thrilling safaris!"</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+<!-- TESTIMONIALS -->
 <section class="testimonials">
   <div class="test-inner">
     <h2 class="test-h2 reveal">What travellers say<br><em>after using our guide</em></h2>
     <div class="test-grid">
-      <div class="test-card reveal reveal-d1">
-        <div class="test-stars">★★★★★</div>
-        <p class="test-quote">"We'd already half-planned a trip to Rovaniemi before we found this. The tool pointed us to Levi — direct flight from Manchester, 15 minutes to the resort. That alone saved us hours of transfer stress with two young kids."</p>
-        <div class="test-person"><div class="test-avatar">SR</div><div><div class="test-name">Sarah R.</div><div class="test-detail">Family of 4 · Manchester, UK</div></div></div>
+      <div class="tc-card reveal rd1">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-quote">"We'd already half-planned Rovaniemi before we found this. The tool pointed us to Levi — direct flight from Manchester, 15 minutes to the resort. Saved hours of transfer stress with two young kids."</p>
+        <div class="tc-person"><div class="tc-avatar">SR</div><div><div class="tc-name">Sarah R.</div><div class="tc-detail">Family of 4 · Manchester, UK</div></div></div>
       </div>
-      <div class="test-card reveal reveal-d2">
-        <div class="test-stars">★★★★★</div>
-        <p class="test-quote">"I've been to Lapland twice and got it wrong both times. Wrong season for aurora. Wrong resort. The third time I used Lapland Like This. Different experience entirely."</p>
-        <div class="test-person"><div class="test-avatar">MK</div><div><div class="test-name">Marcus K.</div><div class="test-detail">Couple · Amsterdam, NL</div></div></div>
+      <div class="tc-card reveal rd2">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-quote">"I've been to Lapland twice and got it wrong both times. Wrong season for aurora. Wrong resort. The third time I used Lapland Like This. Different experience entirely."</p>
+        <div class="tc-person"><div class="tc-avatar">MK</div><div><div class="tc-name">Marcus K.</div><div class="tc-detail">Couple · Amsterdam, NL</div></div></div>
       </div>
-      <div class="test-card reveal reveal-d3">
-        <div class="test-stars">★★★★★</div>
-        <p class="test-quote">"The honest section about what NOT to do saved us at least £400. We skipped two 'must-do' tourist traps and put that money into a private reindeer farm visit instead. Night and day difference."</p>
-        <div class="test-person"><div class="test-avatar">JP</div><div><div class="test-name">James & Priya</div><div class="test-detail">Couple · London, UK</div></div></div>
+      <div class="tc-card reveal rd3">
+        <div class="tc-stars">★★★★★</div>
+        <p class="tc-quote">"The honest section about what NOT to do saved us at least £400. Skipped two tourist traps and put that money into a private reindeer farm instead. Night and day difference."</p>
+        <div class="tc-person"><div class="tc-avatar">JP</div><div><div class="tc-name">James & Priya</div><div class="tc-detail">Couple · London, UK</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ FINAL CTA ═══════════════ -->
+<!-- FINAL CTA -->
 <section class="final-cta">
-  <div class="final-cta-inner reveal">
-    <div class="section-eyebrow" style="justify-content:center"><span style="width:24px;height:1px;background:var(--forest-lt);display:block"></span>Ready to plan properly?</div>
-    <h2 class="final-h2">Your Lapland trip.<br><em>Done like this.</em></h2>
-    <p class="final-body">Two minutes. Six questions. Your personalised top 3 — with real flights, honest rationale, and a guide to what's actually worth your money.</p>
-    <div class="final-actions">
+  <div class="fcta-inner reveal">
+    <div class="eyebrow" style="justify-content:center">Ready to plan properly?</div>
+    <h2 class="fcta-h2">Your Lapland trip.<br><em>Done like this.</em></h2>
+    <p class="fcta-body">Two minutes. Six questions. Your personalised top 3 — with real flights, honest rationale, and a guide to what's actually worth your money.</p>
+    <div class="fcta-actions">
       <a href="#start-tool" class="btn-primary">Find my Lapland →</a>
       <a href="#destinations" class="btn-outline">Browse destinations</a>
     </div>
-    <div style="font-size:12px;color:#888;margin-top:1.5rem;line-height:1.6">No sign-up to start · No affiliate links · No agenda — just honest guidance from people who live here.</div>
+    <div style="font-size:12px;color:#888;margin-top:1.5rem;line-height:1.6">No sign-up to start · No affiliate links · Honest guidance from people who live here</div>
   </div>
 </section>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
   <div class="footer-logo">Lapland <span>Like This</span></div>
   <div class="footer-links">
     <a href="#destinations">Destinations</a>
-    <a href="#guide">Planning guide</a>
-    <a href="#about">About us</a>
+    <a href="about.html">About us</a>
     <a href="#tool">Trip builder</a>
     <a href="#">Privacy</a>
   </div>
-  <div class="footer-note">© 2025 Lapland Like This · Levi, Finnish Lapland</div>
+  <div class="footer-note">© 2025 Lapland Like This · Colin, Livi, Hugo, Rowan & Finley · Levi, Finnish Lapland</div>
 </footer>
 
 <script>
-/* ─── SCROLL REVEAL ─── */
-const revObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+/* NAV SCROLL */
+window.addEventListener('scroll',()=>{
+  document.getElementById('main-nav').classList.toggle('scrolled',window.scrollY>60);
+});
 
-/* ─── SMOOTH SCROLL WITH NAV OFFSET ─── */
+/* REVEAL */
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* SMOOTH SCROLL */
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
     const id=a.getAttribute('href').slice(1);
@@ -776,9 +812,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-/* ─── QUIZ ENGINE ─── */
+/* QUIZ */
 const QA={origin:null,region:null,group:null,budget:null,season:null,priority:[],accom:null,pace:null,exp:null,nights:5,originLabel:''};
-
 const QCITIES=[
   {city:'London',country:'UK',region:'uk'},{city:'Manchester',country:'UK',region:'uk'},
   {city:'Birmingham',country:'UK',region:'uk'},{city:'Bristol',country:'UK',region:'uk'},
@@ -793,57 +828,52 @@ const QCITIES=[
   {city:'Brussels',country:'Belgium',region:'belgium'},{city:'Milan',country:'Italy',region:'italy'},
   {city:'Rome',country:'Italy',region:'italy'},{city:'Warsaw',country:'Poland',region:'poland'},
   {city:'Copenhagen',country:'Denmark',region:'nordics'},{city:'Stockholm',country:'Sweden',region:'nordics'},
-  {city:'Oslo',country:'Norway',region:'nordics'},{city:'Riga',country:'Latvia',region:'baltics'},
-  {city:'Barcelona',country:'Spain',region:'spain'},{city:'New York',country:'USA',region:'usa'},
-  {city:'Los Angeles',country:'USA',region:'usa'},{city:'Chicago',country:'USA',region:'usa'},
-  {city:'Boston',country:'USA',region:'usa'},{city:'Toronto',country:'Canada',region:'canada'},
-  {city:'Vancouver',country:'Canada',region:'canada'},{city:'Sydney',country:'Australia',region:'australia'},
-  {city:'Melbourne',country:'Australia',region:'australia'},{city:'Auckland',country:'New Zealand',region:'australia'},
+  {city:'Oslo',country:'Norway',region:'nordics'},{city:'Barcelona',country:'Spain',region:'spain'},
+  {city:'New York',country:'USA',region:'usa'},{city:'Los Angeles',country:'USA',region:'usa'},
+  {city:'Chicago',country:'USA',region:'usa'},{city:'Toronto',country:'Canada',region:'canada'},
+  {city:'Sydney',country:'Australia',region:'australia'},{city:'Melbourne',country:'Australia',region:'australia'},
   {city:'Tokyo',country:'Japan',region:'asia'},{city:'Seoul',country:'South Korea',region:'asia'},
   {city:'Singapore',country:'Singapore',region:'asia'},{city:'Bangkok',country:'Thailand',region:'asia'},
   {city:'Dubai',country:'UAE',region:'middle-east'},{city:'Tel Aviv',country:'Israel',region:'middle-east'},
   {city:'Istanbul',country:'Turkey',region:'middle-east'},
 ];
-
 const QDESTS={
-  rovaniemi:{name:'Rovaniemi',tag:'Arctic Capital — best access, most flights, the Circle itself',why:'The gateway to Finnish Lapland and easiest to reach from almost anywhere. Sits right on the Arctic Circle with the widest range of flights in winter. Best for first-timers who want to get it right without guesswork — Santa, huskies, glass igloos all available 30–40 min from the airport.',bestFor:['First-time visitors','Families with young kids','Widest flight choice','Santa experience','Short trips 3–5 nights'],avoid:'Book Santa at the airport "village" — it\'s a theme park. Find a small private farm 30 min outside instead.',airport:'Rovaniemi (RVN)',transfer:'10 min to city. For Levi: 170km, 1h45 by car or bus.'},
-  levi:{name:'Levi',tag:'Lapland\'s most connected ski resort — fly straight in, no car needed',why:'The only Lapland resort where you fly directly in and take a 15-minute bus to your hotel. No hire car required. Best combination of direct international flights and on-resort experience — husky farms, reindeer, snowmobiles, glass igloos and ski slopes all within easy reach.',bestFor:['Ski + activities combo','UK and European travellers','No hire car needed','Couples and friend groups','Glass igloo stays'],avoid:'The all-inclusive resort packages — they trap you inside the bubble and keep you away from the real Lapland just outside.',airport:'Kittilä (KTT)',transfer:'Direct airport bus to Levi: 15 min. No car needed.'},
-  saariselka:{name:'Saariselkä',tag:'Wilder, darker, further north — best aurora odds in Finland',why:'260km above the Arctic Circle — one of the northernmost resorts in Europe with the best darkness and clear skies for northern lights. Less commercial than Rovaniemi, more genuine immersion. Fly to Ivalo (IVL), 30 minutes away.',bestFor:['Northern lights priority','Couples wanting wilderness','Jan–Mar travel','Authentic over commercial','Sámi culture access'],avoid:'Coming in November — minimal snow and very dark. December at earliest. Book your Ivalo transfer in advance — this is remote.',airport:'Ivalo (IVL)',transfer:'30 min from Ivalo. Pre-book your transfer.'},
-  kakslauttanen:{name:'Kakslauttanen Arctic Resort',tag:'The glass igloo you\'ve seen in photos — this is where they are',why:'If you\'ve seen the iconic glass dome photo in a snowy forest, this is the place. Kakslauttanen pioneered the concept. Deep wilderness near Saariselkä — genuinely magical. Best for couples with one specific bucket-list moment in mind and the budget to do it properly.',bestFor:['Bucket-list glass igloo','Couples (romantic)','Jan–Mar for aurora under glass','Budget: high or luxury','One unforgettable night'],avoid:'Booking a glass igloo in December for aurora — peak season is Jan–March. The magic is in being there, not just photographing it.',airport:'Ivalo (IVL)',transfer:'~40 min. Resort arranges transfers — book when you book accommodation.'},
-  yllas:{name:'Ylläs',tag:'Quieter, less commercial — Finland\'s highest fell, fewer crowds',why:'Ylläs is Levi\'s quieter neighbour — Finland\'s highest fell resort with better cross-country skiing and a more local feel. Also served by Kittilä Airport (KTT). Same great flight access as Levi but more peaceful, less resort-feeling.',bestFor:['Cross-country skiing','Quieter alternative to Levi','Nature over nightlife','Families avoiding crowds','Also flies into KTT'],avoid:'Expecting Levi-style après-ski — Ylläs is quieter by design. That\'s its appeal.',airport:'Kittilä (KTT)',transfer:'45–60 min from Kittilä. Transfer or hire car needed.'}
+  rovaniemi:{name:'Rovaniemi',tag:'Arctic Capital — best access, most flights, the Circle itself',why:'The gateway to Finnish Lapland. Widest range of flights, widest choice of activities, right on the Arctic Circle. Best for first-timers who want to get it right without guesswork.',bestFor:['First-time visitors','Families with young kids','Widest flight choice','Santa experience'],avoid:"Book Santa at the airport village — it's a theme park. Find a small private farm 30 min outside instead.",airport:'Rovaniemi (RVN)',transfer:'10 min to city. Levi: 170km, 1h45 by car or bus.'},
+  levi:{name:'Levi',tag:"Lapland's most connected ski resort — fly straight in, no car needed",why:'The only Lapland resort where you fly directly in and take a 15-minute bus to your hotel. No hire car required. Best combination of direct international flights and on-resort experience. Finland\'s best ski resort.',bestFor:['Ski + activities combo','UK and European travellers','No hire car needed','Couples and friend groups'],avoid:'The all-inclusive resort packages — they trap you inside the bubble and keep you away from the real Lapland just outside.',airport:'Kittilä (KTT)',transfer:'Direct airport bus to Levi village: 15 min. No car needed.'},
+  saariselka:{name:'Saariselkä',tag:'Wilder, darker, further north — best aurora odds in Finland',why:'260km above the Arctic Circle — the best darkness and clear skies for northern lights in Finnish Lapland. Less commercial, more genuine immersion. Fly to Ivalo (IVL), 30 minutes away.',bestFor:['Northern lights priority','Couples wanting wilderness','Jan–Mar travel','Authentic over commercial'],avoid:'Coming in November — minimal snow, very dark, not yet right. December at earliest. Pre-book your Ivalo transfer.',airport:'Ivalo (IVL)',transfer:'30 min from Ivalo. Pre-book your transfer.'},
+  kakslauttanen:{name:'Kakslauttanen Arctic Resort',tag:'The glass igloo you\'ve seen in photos — this is where they are',why:'If you\'ve seen the iconic glass dome photo, this is the place. Deep wilderness near Saariselkä. Best for couples with one specific bucket-list moment in mind and the budget to do it properly.',bestFor:['Bucket-list glass igloo','Couples (romantic)','Jan–Mar for aurora under glass','Budget: high or luxury'],avoid:'Booking a glass igloo in December for aurora — peak season is Jan–March.',airport:'Ivalo (IVL)',transfer:'~40 min. Resort arranges transfers.'},
+  yllas:{name:'Ylläs',tag:"Quieter, less commercial — Finland's highest fell, fewer crowds",why:"Ylläs is Levi's quieter neighbour — same Kittilä Airport, same direct flights, half the crowds. Finland's highest fell resort with better cross-country skiing and a more local feel.",bestFor:['Cross-country skiing','Quieter alternative to Levi','Nature over nightlife','Same flights as Levi'],avoid:'Expecting Levi-style après-ski — Ylläs is quieter by design. That\'s its appeal.',airport:'Kittilä (KTT)',transfer:'45–60 min from Kittilä. Transfer or hire car needed.'}
 };
-
 const QROUTES={
-  uk:{p:{badge:'Direct to Kittilä (KTT) — fly straight to Levi',legs:[{from:'London Gatwick / Manchester',to:'Kittilä (KTT)',airlines:'easyJet / TUI',freq:'2–4x/week',season:'Dec–Feb'}],transfer:'15 min bus to Levi — no hire car needed.',bestFor:'Levi / Ylläs'},a:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'London (LGW/LTN/STN), Manchester, Birmingham, Bristol, Edinburgh, Belfast',to:'Rovaniemi (RVN)',airlines:'easyJet / Ryanair / TUI / Norwegian',freq:'Daily (multiple)',season:'Nov–Mar'}],transfer:'Levi: hire car or bus 170km, 1h45. Saariselkä via Ivalo: 2h30 drive north.',bestFor:'Rovaniemi · Levi with car'}},
-  ireland:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Dublin / Shannon',to:'Rovaniemi (RVN)',airlines:'Ryanair',freq:'3–4x/week',season:'Oct–Mar'}],transfer:'Levi: hire car 1h45.',bestFor:'Rovaniemi · Levi with car'},a:{badge:'Via Helsinki (HEL)',legs:[{from:'Dublin',to:'Helsinki (HEL)',airlines:'Finnair / Aer Lingus'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair',freq:'Multiple daily'}],bestFor:'All destinations'}},
-  germany:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Frankfurt / Munich / Düsseldorf / Berlin',to:'Kittilä (KTT)',airlines:'Discover Airlines / Lufthansa / Eurowings',freq:'1–3x/week',season:'Dec–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Frankfurt / Munich / Berlin / Hamburg',to:'Rovaniemi (RVN)',airlines:'Lufthansa / easyJet / Eurowings / Norwegian',freq:'1–3x/week',season:'Nov–Mar'}],bestFor:'Rovaniemi · Levi with car'}},
+  uk:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'London Gatwick / Manchester',to:'Kittilä (KTT)',airlines:'easyJet / TUI',freq:'2–4x/week',season:'Dec–Feb'}],transfer:'15 min bus to Levi.',bestFor:'Levi / Ylläs'},a:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'London (LGW/LTN/STN), Manchester, Birmingham, Bristol, Edinburgh, Belfast',to:'Rovaniemi (RVN)',airlines:'easyJet / Ryanair / TUI / Norwegian',freq:'Daily multiple',season:'Nov–Mar'}],transfer:'Levi: hire car or bus 170km, 1h45.',bestFor:'Rovaniemi · Levi with car'}},
+  ireland:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Dublin / Shannon',to:'Rovaniemi (RVN)',airlines:'Ryanair',freq:'3–4x/week',season:'Oct–Mar'}],bestFor:'Rovaniemi · Levi with car'},a:{badge:'Via Helsinki (HEL)',legs:[{from:'Dublin',to:'Helsinki (HEL)',airlines:'Finnair'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair',freq:'Multiple daily'}],bestFor:'All destinations'}},
+  germany:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Frankfurt / Munich / Düsseldorf / Berlin',to:'Kittilä (KTT)',airlines:'Discover / Lufthansa / Eurowings',freq:'1–3x/week',season:'Dec–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Frankfurt / Munich / Berlin / Hamburg',to:'Rovaniemi (RVN)',airlines:'Lufthansa / easyJet / Eurowings / Norwegian',freq:'1–3x/week',season:'Nov–Mar'}],bestFor:'Rovaniemi · Levi with car'}},
   france:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Paris CDG',to:'Kittilä (KTT)',airlines:'Air France',freq:'Saturdays',season:'Dec–Mar'},{from:'Paris Orly',to:'Kittilä (KTT)',airlines:'Transavia',freq:'2x/week',season:'Dec–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Paris / Lyon / Bordeaux / Nice',to:'Rovaniemi (RVN)',airlines:'easyJet / Transavia',freq:'1–2x/week',season:'Nov–Mar'}],bestFor:'Rovaniemi · Levi with car'}},
   netherlands:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Amsterdam (AMS)',to:'Kittilä (KTT)',airlines:'KLM / TUI Fly',freq:'4x/week',season:'Nov–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Amsterdam (AMS)',to:'Rovaniemi (RVN)',airlines:'KLM / easyJet',freq:'2–3x/week',season:'Dec–Mar'}],bestFor:'Rovaniemi · Levi with car'}},
-  switzerland:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Zurich (ZRH)',to:'Kittilä (KTT)',airlines:'Edelweiss Air / Helvetic',freq:'4x/week',season:'Dec–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Via Helsinki (HEL)',legs:[{from:'Zurich',to:'Helsinki',airlines:'Finnair / SWISS'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair'}],bestFor:'All destinations'}},
+  switzerland:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Zurich (ZRH)',to:'Kittilä (KTT)',airlines:'Edelweiss / Helvetic',freq:'4x/week',season:'Dec–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Via Helsinki',legs:[{from:'Zurich',to:'Helsinki',airlines:'Finnair / SWISS'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair'}],bestFor:'All destinations'}},
   austria:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Vienna (VIE)',to:'Kittilä (KTT)',airlines:'Austrian Airlines',freq:'Weekly Sun',season:'Dec–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Vienna (VIE)',to:'Rovaniemi (RVN)',airlines:'Austrian Airlines',freq:'Weekly',season:'Nov–Mar'}],bestFor:'Rovaniemi'}},
   belgium:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Brussels Charleroi (CRL)',to:'Rovaniemi (RVN)',airlines:'Ryanair',freq:'3x/week',season:'Oct–Mar'}],bestFor:'Rovaniemi · Levi with car'},a:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Brussels (BRU)',to:'Kittilä (KTT)',airlines:'TUI Fly Belgium',freq:'1x/week',season:'Jan–Feb'}],transfer:'15 min bus to Levi.',bestFor:'Levi'}},
-  italy:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Milan Bergamo (BGY)',to:'Rovaniemi (RVN)',airlines:'Ryanair',freq:'Year-round'},{from:'Rome FCO / Milan MXP / Verona',to:'Rovaniemi (RVN)',airlines:'Neos / easyJet',freq:'1–2x/week',season:'Dec–Feb'}],bestFor:'Rovaniemi · Levi with car'},a:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Milan Malpensa (MXP)',to:'Kittilä (KTT)',airlines:'easyJet',freq:'2x/week',season:'Dec–Feb'}],bestFor:'Levi'}},
+  italy:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Milan Bergamo (BGY)',to:'Rovaniemi (RVN)',airlines:'Ryanair',freq:'Year-round'},{from:'Rome FCO / Milan MXP',to:'Rovaniemi (RVN)',airlines:'Neos / easyJet',freq:'1–2x/week',season:'Dec–Feb'}],bestFor:'Rovaniemi · Levi with car'},a:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Milan Malpensa (MXP)',to:'Kittilä (KTT)',airlines:'easyJet',freq:'2x/week',season:'Dec–Feb'}],bestFor:'Levi'}},
   poland:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Warsaw (WAW)',to:'Rovaniemi (RVN)',airlines:'LOT Polish Airlines',freq:'2x/week',season:'Nov–Feb'}],bestFor:'Rovaniemi · Levi with car'},a:{badge:'Via Helsinki (HEL)',legs:[{from:'Warsaw',to:'Helsinki',airlines:'Finnair / LOT'},{from:'Helsinki',to:'Lapland',airlines:'Finnair',freq:'Multiple daily'}],bestFor:'All destinations'}},
   nordics:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Copenhagen (CPH)',to:'Rovaniemi (RVN)',airlines:'SAS',freq:'2x/week',season:'Dec–Jan'}],bestFor:'Rovaniemi'},a:{badge:'Via Helsinki (HEL)',legs:[{from:'Scandinavia',to:'Helsinki',airlines:'Finnair / SAS'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair'}],bestFor:'All destinations'}},
-  usa:{p:{badge:'Via Helsinki (HEL) — the smart route',legs:[{from:'New York JFK / Chicago / Boston / LA',to:'Helsinki (HEL)',airlines:'Finnair direct (JFK) / connections'},{from:'Helsinki (HEL)',to:'Rovaniemi / Kittilä / Ivalo',airlines:'Finnair',freq:'Up to 10x/day RVN'}],transfer:'Finnair JFK→HEL direct (8.5hrs). Book as one Finnair ticket.',note:'Best: JFK→HEL→RVN as one Finnair booking.',bestFor:'All destinations'},a:{badge:'Via London then direct',legs:[{from:'US city',to:'London LGW / STN',airlines:'Multiple'},{from:'London',to:'Rovaniemi / Kittilä',airlines:'easyJet / Ryanair',season:'Nov–Mar'}],bestFor:'Rovaniemi · Levi (2-stop)'}},
-  canada:{p:{badge:'Via Helsinki (HEL)',legs:[{from:'Toronto / Montreal / Vancouver',to:'Helsinki (HEL)',airlines:'Finnair / Air Canada via EU hubs'},{from:'Helsinki',to:'Rovaniemi / Kittilä',airlines:'Finnair',freq:'Multiple daily'}],transfer:'8–9hrs to HEL via one stop.',bestFor:'All destinations'},a:{badge:'Via London',legs:[{from:'Canada',to:'London',airlines:'Air Canada / BA'},{from:'London',to:'Rovaniemi / Kittilä',airlines:'easyJet / Ryanair'}],bestFor:'Rovaniemi · Levi'}},
-  australia:{p:{badge:'Via Helsinki (HEL) — Finnair Asia hub',legs:[{from:'Sydney / Melbourne / Auckland',to:'Helsinki (HEL)',airlines:'Finnair via Bangkok/Singapore / Qatar or Emirates to HEL'},{from:'Helsinki',to:'Rovaniemi / Kittilä',airlines:'Finnair',freq:'Multiple daily'}],transfer:'~20–24hrs total. Plan 2 nights in Helsinki.',note:'Sydney → Singapore → Helsinki is the smoothest route.',bestFor:'All destinations — add Helsinki nights'},a:{badge:'Via London',legs:[{from:'Australia / NZ',to:'London',airlines:'Qantas / BA'},{from:'London',to:'Rovaniemi / Kittilä',airlines:'easyJet / Ryanair'}],bestFor:'Rovaniemi · Levi'}},
-  asia:{p:{badge:'Via Helsinki (HEL) — Finnair is the best Asia hub',legs:[{from:'Tokyo / Seoul / Singapore / Bangkok / HK',to:'Helsinki (HEL)',airlines:'Finnair direct from Tokyo, Seoul, Singapore, Bangkok, HKG'},{from:'Helsinki',to:'Rovaniemi / Kittilä / Ivalo',airlines:'Finnair',freq:'Up to 10x/day RVN'}],transfer:'HEL layover 1–3hrs. Clean, fast airport.',note:'Book as one Finnair ticket from Asia through to Lapland.',bestFor:'All destinations'},a:{badge:'Via European hub',legs:[{from:'Asian city',to:'London / Amsterdam / Frankfurt',airlines:'Multiple'},{from:'EU hub',to:'Rovaniemi / Kittilä',airlines:'easyJet / KLM / Eurowings'}],bestFor:'Rovaniemi · Levi (2-stop)'}},
-  'middle-east':{p:{badge:'Direct or via Helsinki',legs:[{from:'Istanbul (IST)',to:'Rovaniemi (RVN)',airlines:'Turkish Airlines',freq:'Seasonal',season:'Dec–Feb'},{from:'Tel Aviv (TLV)',to:'Rovaniemi (RVN)',airlines:'Israir',freq:'Seasonal',season:'Mar–Apr'}],bestFor:'Rovaniemi'},a:{badge:'Via Helsinki (HEL)',legs:[{from:'Dubai / Tel Aviv / Istanbul',to:'Helsinki',airlines:'Emirates / Finnair / Turkish'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair',freq:'Multiple daily'}],bestFor:'All destinations'}},
-  baltics:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Riga (RIX)',to:'Kittilä (KTT)',airlines:'airBaltic',freq:'Saturdays',season:'Dec–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Via Helsinki',legs:[{from:'Riga / Tallinn / Vilnius',to:'Helsinki',airlines:'airBaltic / Finnair'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair'}],bestFor:'All destinations'}},
-  spain:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Barcelona (BCN)',to:'Rovaniemi (RVN)',airlines:'Norwegian',freq:'2x/week',season:'Dec–Feb'}],bestFor:'Rovaniemi · Levi with car'},a:{badge:'Via Helsinki',legs:[{from:'Madrid / Barcelona',to:'Helsinki',airlines:'Finnair / Iberia'},{from:'Helsinki',to:'Lapland',airlines:'Finnair'}],bestFor:'All destinations'}}
+  usa:{p:{badge:'Via Helsinki (HEL) — the smart route',legs:[{from:'New York JFK / Chicago / Boston',to:'Helsinki (HEL)',airlines:'Finnair direct (JFK) / connections'},{from:'Helsinki (HEL)',to:'Rovaniemi / Kittilä',airlines:'Finnair',freq:'Up to 10x/day RVN'}],transfer:'Finnair JFK→HEL direct (8.5hrs). Book as one Finnair ticket.',bestFor:'All destinations'},a:{badge:'Via London then direct',legs:[{from:'US city',to:'London LGW / STN',airlines:'Multiple'},{from:'London',to:'Rovaniemi / Kittilä',airlines:'easyJet / Ryanair',season:'Nov–Mar'}],bestFor:'Rovaniemi · Levi (2-stop)'}},
+  canada:{p:{badge:'Via Helsinki (HEL)',legs:[{from:'Toronto / Montreal / Vancouver',to:'Helsinki (HEL)',airlines:'Finnair / Air Canada via EU hubs'},{from:'Helsinki',to:'Rovaniemi / Kittilä',airlines:'Finnair',freq:'Multiple daily'}],bestFor:'All destinations'},a:{badge:'Via London',legs:[{from:'Canada',to:'London',airlines:'Air Canada / BA'},{from:'London',to:'Rovaniemi / Kittilä',airlines:'easyJet / Ryanair'}],bestFor:'Rovaniemi · Levi'}},
+  australia:{p:{badge:'Via Helsinki (HEL)',legs:[{from:'Sydney / Melbourne',to:'Helsinki (HEL)',airlines:'Finnair via Singapore / Qatar or Emirates'},{from:'Helsinki',to:'Rovaniemi / Kittilä',airlines:'Finnair',freq:'Multiple daily'}],transfer:'~20–24hrs total. Plan 2 nights in Helsinki.',bestFor:'All destinations'},a:{badge:'Via London',legs:[{from:'Australia / NZ',to:'London',airlines:'Qantas / BA'},{from:'London',to:'Rovaniemi / Kittilä',airlines:'easyJet / Ryanair'}],bestFor:'Rovaniemi · Levi'}},
+  asia:{p:{badge:'Via Helsinki (HEL) — Finnair hub',legs:[{from:'Tokyo / Seoul / Singapore / Bangkok',to:'Helsinki (HEL)',airlines:'Finnair direct from all major Asian cities'},{from:'Helsinki',to:'Rovaniemi / Kittilä / Ivalo',airlines:'Finnair',freq:'Up to 10x/day RVN'}],transfer:'HEL layover 1–3hrs.',note:'Book as one Finnair ticket from Asia.',bestFor:'All destinations'},a:{badge:'Via European hub',legs:[{from:'Asian city',to:'London / Amsterdam / Frankfurt',airlines:'Multiple'},{from:'EU hub',to:'Rovaniemi / Kittilä',airlines:'easyJet / KLM / Eurowings'}],bestFor:'Rovaniemi · Levi'}},
+  'middle-east':{p:{badge:'Direct or via Helsinki',legs:[{from:'Istanbul (IST)',to:'Rovaniemi (RVN)',airlines:'Turkish Airlines',season:'Dec–Feb'},{from:'Tel Aviv (TLV)',to:'Rovaniemi (RVN)',airlines:'Israir',season:'Mar–Apr'}],bestFor:'Rovaniemi'},a:{badge:'Via Helsinki (HEL)',legs:[{from:'Dubai / Tel Aviv / Istanbul',to:'Helsinki',airlines:'Emirates / Finnair / Turkish'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair',freq:'Multiple daily'}],bestFor:'All destinations'}},
+  spain:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Barcelona (BCN)',to:'Rovaniemi (RVN)',airlines:'Norwegian',freq:'2x/week',season:'Dec–Feb'}],bestFor:'Rovaniemi · Levi with car'},a:{badge:'Via Helsinki',legs:[{from:'Madrid / Barcelona',to:'Helsinki',airlines:'Finnair / Iberia'},{from:'Helsinki',to:'Lapland',airlines:'Finnair'}],bestFor:'All destinations'}},
+  baltics:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Riga (RIX)',to:'Kittilä (KTT)',airlines:'airBaltic',freq:'Saturdays',season:'Dec–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Via Helsinki',legs:[{from:'Riga / Tallinn / Vilnius',to:'Helsinki',airlines:'airBaltic / Finnair'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair'}],bestFor:'All destinations'}}
 };
 
-function qfilterC(val){
-  const box=document.getElementById('qsugg');
-  if(!val||val.length<2){box.style.display='none';return}
-  const q=val.toLowerCase();
+function qfilterC(v){
+  const b=document.getElementById('qsugg');
+  if(!v||v.length<2){b.style.display='none';return}
+  const q=v.toLowerCase();
   const m=QCITIES.filter(c=>c.city.toLowerCase().includes(q)||c.country.toLowerCase().includes(q)).slice(0,6);
-  if(!m.length){box.style.display='none';return}
-  box.innerHTML=m.map(c=>`<div class="q-si" onclick="qselCity('${c.city}','${c.country}','${c.region}')"><span class="sc">${c.city}, ${c.country}</span><span class="sk">${c.region.toUpperCase()}</span></div>`).join('');
-  box.style.display='block';
+  if(!m.length){b.style.display='none';return}
+  b.innerHTML=m.map(c=>`<div class="q-si" onclick="qselCity('${c.city}','${c.country}','${c.region}')"><span class="sc">${c.city}, ${c.country}</span><span class="sk">${c.region.toUpperCase()}</span></div>`).join('');
+  b.style.display='block';
 }
-
 function qselCity(city,country,region){
   QA.origin=city;QA.region=region;QA.originLabel=city+', '+country;
   document.getElementById('qsugg').style.display='none';
@@ -853,7 +883,6 @@ function qselCity(city,country,region){
   document.querySelectorAll('#qrg .q-oc').forEach(e=>e.classList.remove('sel'));
   document.getElementById('qb1').disabled=false;
 }
-
 function qclrOrig(){
   QA.origin=null;QA.region=null;QA.originLabel='';
   document.getElementById('qcity').style.display='block';
@@ -861,11 +890,10 @@ function qclrOrig(){
   document.getElementById('qorig').style.display='none';
   document.getElementById('qb1').disabled=true;
 }
-
 function qsetReg(r,el){
   QA.region=r;QA.origin=r;
-  const lbl={uk:'United Kingdom',ireland:'Ireland',germany:'Germany',france:'France',netherlands:'Netherlands',nordics:'Scandinavia',italy:'Italy',switzerland:'Switzerland',austria:'Austria',belgium:'Belgium',poland:'Poland',usa:'USA',canada:'Canada',australia:'Australia/NZ',asia:'Asia',baltics:'Baltic States',spain:'Spain','middle-east':'Middle East'};
-  QA.originLabel=lbl[r]||r;
+  const L={uk:'United Kingdom',ireland:'Ireland',germany:'Germany',france:'France',netherlands:'Netherlands',nordics:'Scandinavia',italy:'Italy',switzerland:'Switzerland',austria:'Austria',belgium:'Belgium',poland:'Poland',usa:'USA',canada:'Canada',australia:'Australia/NZ',asia:'Asia',baltics:'Baltic States',spain:'Spain','middle-east':'Middle East'};
+  QA.originLabel=L[r]||r;
   document.querySelectorAll('#qrg .q-oc').forEach(e=>e.classList.remove('sel'));
   el.classList.add('sel');
   document.getElementById('qcity').value='';
@@ -874,9 +902,8 @@ function qsetReg(r,el){
   document.getElementById('qcity').style.display='block';
   document.getElementById('qb1').disabled=false;
 }
-
-function qpick(key,val,el){
-  QA[key]=val;
+function qpick(k,v,el){
+  QA[k]=v;
   const p=el.closest('.q-olist,.q-ogrid');
   p.querySelectorAll('.q-or,.q-oc').forEach(c=>c.classList.remove('sel'));
   el.classList.add('sel');
@@ -884,14 +911,12 @@ function qpick(key,val,el){
   const btn=document.getElementById('qb'+sid);
   if(btn)btn.disabled=!qcanGo(+sid);
 }
-
-function qmulti(key,val,el,max){
-  const i=QA[key].indexOf(val);
-  if(i>-1){QA[key].splice(i,1);el.classList.remove('sel')}
-  else{if(QA[key].length>=max)return;QA[key].push(val);el.classList.add('sel')}
+function qmulti(k,v,el,max){
+  const i=QA[k].indexOf(v);
+  if(i>-1){QA[k].splice(i,1);el.classList.remove('sel')}
+  else{if(QA[k].length>=max)return;QA[k].push(v);el.classList.add('sel')}
   document.getElementById('qb4').disabled=!qcanGo(4);
 }
-
 function qcanGo(s){
   if(s===1)return!!QA.origin;
   if(s===2)return!!QA.group;
@@ -901,129 +926,85 @@ function qcanGo(s){
   if(s===6)return!!QA.exp;
   return true;
 }
-
-function qgo(from){
-  if(!qcanGo(from))return;
-  document.getElementById('qs'+from).classList.remove('active');
-  document.getElementById('qs'+(from+1)).classList.add('active');
-  qrenderProg(from+1);
-  // scroll tool into view on mobile
+function qgo(f){
+  if(!qcanGo(f))return;
+  document.getElementById('qs'+f).classList.remove('active');
+  document.getElementById('qs'+(f+1)).classList.add('active');
+  qrProg(f+1);
   document.getElementById('start-tool').scrollIntoView({behavior:'smooth',block:'start'});
 }
-
-function qback(from){
-  document.getElementById('qs'+from).classList.remove('active');
-  document.getElementById('qs'+(from-1)).classList.add('active');
-  qrenderProg(from-1<=0?0:from-1);
+function qback(f){
+  document.getElementById('qs'+f).classList.remove('active');
+  document.getElementById('qs'+(f-1)).classList.add('active');
+  qrProg(f-1<=0?0:f-1);
 }
-
-function qrenderProg(cur){
+function qrProg(cur){
   const b=document.getElementById('qprog');b.innerHTML='';
   for(let i=1;i<=7;i++){const d=document.createElement('div');d.className='q-pd'+(i<cur?' done':i===cur?' act':'');b.appendChild(d);}
 }
-
 function qcheckGate(){
   const e=document.getElementById('qfemail').value;
   const c=document.getElementById('qconsent').checked;
   document.getElementById('qgate-btn').disabled=!(e&&e.includes('@')&&c);
 }
-
 function qsubmitGate(){
   const email=document.getElementById('qfemail').value.trim();
   if(!email||!email.includes('@')){document.getElementById('qgate-err').style.display='block';return}
   document.getElementById('qgate-err').style.display='none';
-  const name=document.getElementById('qfname').value.trim();
-  qbuildResult(name,email);
+  qbuildResult(document.getElementById('qfname').value.trim(),email);
 }
-
-function qscoreDestinations(){
+function qscoreDests(){
   const g=QA.group,b=QA.budget,s=QA.season,p=QA.priority,acc=QA.accom,r=QA.region;
   const sc={rovaniemi:0,levi:0,saariselka:0,kakslauttanen:0,yllas:0};
   const rs={rovaniemi:[],levi:[],saariselka:[],kakslauttanen:[],yllas:[]};
   if(p.includes('santa')){sc.rovaniemi+=4;rs.rovaniemi.push('Best Santa experience operators')}
-  if(p.includes('skiing')){sc.levi+=3;rs.levi.push('Best ski slopes in Finnish Lapland');sc.yllas+=3;rs.yllas.push("Finland's highest fell resort")}
+  if(p.includes('skiing')){sc.levi+=3;rs.levi.push('Best ski slopes in Finnish Lapland');sc.yllas+=3;rs.yllas.push("Finland's highest fell")}
   if(p.includes('aurora')){sc.saariselka+=3;rs.saariselka.push('Best aurora odds — furthest north');sc.kakslauttanen+=3;rs.kakslauttanen.push('Sleep under aurora in glass igloo')}
   if(p.includes('culture')){sc.saariselka+=2;rs.saariselka.push('Close to Inari Sámi capital')}
-  if(p.includes('husky')){sc.levi+=1;sc.rovaniemi+=1;sc.saariselka+=1}
-  if(acc==='igloo'){sc.kakslauttanen+=4;rs.kakslauttanen.push('The original glass igloo resort');sc.saariselka+=2;rs.saariselka.push('Multiple igloo options near Ivalo')}
-  if(acc==='cabin'){sc.levi+=2;rs.levi.push('Best private cabin availability');sc.saariselka+=2}
-  if(acc==='hotel'){sc.rovaniemi+=2;rs.rovaniemi.push('Widest hotel and resort range');sc.levi+=1}
-  if(g==='family-young'){sc.rovaniemi+=3;rs.rovaniemi.push('Best infrastructure for young families');sc.levi+=2;rs.levi.push('Family-friendly resort setup')}
+  if(acc==='igloo'){sc.kakslauttanen+=4;rs.kakslauttanen.push('The original glass igloo resort');sc.saariselka+=2}
+  if(acc==='cabin'){sc.levi+=2;rs.levi.push('Best private cabin availability')}
+  if(acc==='hotel'){sc.rovaniemi+=2;rs.rovaniemi.push('Widest hotel and resort range')}
+  if(g==='family-young'){sc.rovaniemi+=3;rs.rovaniemi.push('Best infrastructure for young families');sc.levi+=2}
   if(g==='couple'){sc.kakslauttanen+=2;rs.kakslauttanen.push('Most romantic destination');sc.levi+=2;rs.levi.push('Easy arrival, romantic cabins')}
-  if(g==='friends'){sc.levi+=2;rs.levi.push('Best group activity mix');sc.rovaniemi+=1}
-  if(g==='multigem'){sc.rovaniemi+=3;rs.rovaniemi.push('Best for mixed age groups');sc.levi+=1}
+  if(g==='friends'){sc.levi+=2;rs.levi.push('Best group activity mix')}
+  if(g==='multigem'){sc.rovaniemi+=3;rs.rovaniemi.push('Best for mixed age groups')}
   if(g==='solo'){sc.saariselka+=2;rs.saariselka.push('Best for independent explorers')}
   if(s==='jan-feb'){sc.saariselka+=3;rs.saariselka.push('Darkest skies, peak aurora Jan–Feb');sc.kakslauttanen+=2}
   if(s==='nov-dec'){sc.rovaniemi+=3;rs.rovaniemi.push('Best Christmas atmosphere');sc.levi+=1}
-  if(s==='mar-apr'){sc.saariselka+=3;rs.saariselka.push('Best spring snow and sun');sc.levi+=2;rs.levi.push('Sunny skiing in March–April')}
-  if(b==='low'){sc.rovaniemi+=2;rs.rovaniemi.push('Best value — widest budget range');sc.levi+=1}
-  if(b==='high'||b==='luxury'){sc.kakslauttanen+=3;rs.kakslauttanen.push('Matches your budget perfectly');sc.levi+=2;rs.levi.push('Premium cabins and guides available')}
-  if(['uk','netherlands','switzerland','austria','germany'].includes(r)){sc.levi+=2;rs.levi.push('Direct flight from your region lands 15 min away')}
-  if(['uk','ireland','italy','belgium'].includes(r)){sc.rovaniemi+=1;rs.rovaniemi.push('Multiple direct flights from your region')}
+  if(s==='mar-apr'){sc.saariselka+=3;rs.saariselka.push('Best spring snow and sun');sc.levi+=2}
+  if(b==='low'){sc.rovaniemi+=2;rs.rovaniemi.push('Best value — widest budget range')}
+  if(b==='high'||b==='luxury'){sc.kakslauttanen+=3;rs.kakslauttanen.push('Matches your budget perfectly');sc.levi+=2}
+  if(['uk','netherlands','switzerland','austria','germany'].includes(r)){sc.levi+=2;rs.levi.push('Direct flight lands 15 min from resort')}
+  if(['uk','ireland','italy','belgium'].includes(r)){sc.rovaniemi+=1}
   return Object.keys(sc).sort((a,b2)=>sc[b2]-sc[a]).slice(0,3).map((k,i)=>({key:k,rank:i+1,reasons:rs[k]}));
 }
-
 function qbuildResult(name,email){
   document.getElementById('qs7').classList.remove('active');
   document.getElementById('qs8').classList.add('active');
   document.querySelectorAll('#qprog .q-pd').forEach(d=>{d.classList.add('done');d.classList.remove('act')});
   document.getElementById('start-tool').scrollIntoView({behavior:'smooth',block:'start'});
-
-  const top3=qscoreDestinations();
-  const greeting=name?name.split(' ')[0]:'';
-  const rankLabels=['Best match','Strong alternative','Also worth considering'];
-
-  document.getElementById('qr-header').innerHTML=`
-    <div class="r-header">
-      <div class="r-eyebrow">Lapland Like This — your results</div>
-      <div class="r-title">${greeting?'<em>'+greeting+'</em>, your':'Your'} top 3<br>Lapland destinations</div>
-      <div class="r-sub">Flying from ${QA.originLabel} · ${QA.nights} nights · ${QA.priority.slice(0,2).join(' + ')} · ${QA.season}</div>
-    </div>`;
-
-  const top3HTML=top3.map((item,i)=>{
-    const d=QDESTS[item.key];
-    const rank=i+1;
-    const pills=d.bestFor.slice(0,4).map((bf,j)=>`<span class="rp${j<2?' match':''}">${bf}</span>`).join('');
-    const whyM=item.reasons.length?`<div class="rank-why-matches">${item.reasons.slice(0,2).map(r=>'+ '+r).join(' · ')}</div>`:'';
-    return `<div class="rank-card rank-${rank}">
-      <div class="rank-header">
-        <div class="rank-badge"><span class="rank-num">${rank}</span><span class="rank-label">${rankLabels[i]}</span></div>
-        <div><div class="rank-name">${d.name}</div><div class="rank-tag">${d.tag}</div></div>
-      </div>
-      ${whyM}
-      <div class="rank-why">${d.why}</div>
-      <div class="rank-pills">${pills}</div>
-      <div class="rank-flight"><strong>Fly into:</strong> ${d.airport} · ${d.transfer}</div>
-      <div class="avoid-block">${d.avoid}</div>
-    </div>`;
+  const top3=qscoreDests();
+  const g=name?name.split(' ')[0]:'';
+  const rL=['Best match','Strong alternative','Also worth considering'];
+  document.getElementById('qr-header').innerHTML=`<div class="r-hdr"><div class="r-ey">Lapland Like This — your results</div><div class="r-title">${g?'<em>'+g+'</em>, your':'Your'} top 3<br>Lapland destinations</div><div class="r-sub">Flying from ${QA.originLabel} · ${QA.nights} nights · ${QA.priority.slice(0,2).join(' + ')}</div></div>`;
+  const t3HTML=top3.map((item,i)=>{
+    const d=QDESTS[item.key];const rank=i+1;
+    const pills=d.bestFor.slice(0,4).map((bf,j)=>`<span class="rp${j<2?' m':''}">${bf}</span>`).join('');
+    const wm=item.reasons.length?`<div class="rk-matches">${item.reasons.slice(0,2).map(r=>'+ '+r).join(' · ')}</div>`:'';
+    return `<div class="rank-card rank-${rank}"><div class="rank-hdr"><div class="rank-badge"><span class="rank-num">${rank}</span><span class="rank-lbl">${rL[i]}</span></div><div><div class="rk-name">${d.name}</div><div class="rk-tag">${d.tag}</div></div></div>${wm}<div class="rk-why">${d.why}</div><div class="rk-pills">${pills}</div><div class="rk-flight"><strong>Fly into:</strong> ${d.airport} · ${d.transfer}</div><div class="avoid-b">${d.avoid}</div></div>`;
   }).join('');
-
-  document.getElementById('qr-top3').innerHTML=`<div class="r-stitle">Your personalised top 3</div>${top3HTML}<div class="r-sep"></div>`;
-
+  document.getElementById('qr-top3').innerHTML=`<div class="r-stitle">Your personalised top 3</div>${t3HTML}<div class="r-sep"></div>`;
   const rd=QROUTES[QA.region]||QROUTES['usa'];
   function fleg(l){
     const fc=l.from.match(/\(([A-Z]{3})\)/);const tc=l.to.match(/\(([A-Z]{3})\)/);
-    return `<div class="f-leg"><div class="f-ap"><span class="f-ap-code">${fc?fc[1]:'---'}</span><span class="f-ap-city">${l.from.replace(/\s*\([A-Z]{3,}\)/g,'').split('/')[0].trim().substring(0,14)}</span></div><span class="f-arr">──→</span><div class="f-ap"><span class="f-ap-code">${tc?tc[1]:'---'}</span><span class="f-ap-city">${l.to.replace(/\s*\([A-Z]{3,}\)/g,'').split('/')[0].trim().substring(0,14)}</span></div></div><div class="f-det"><strong>${l.airlines}</strong>${l.freq?' · '+l.freq:''}${l.season?' · '+l.season:''}</div>`;
+    return `<div class="f-leg"><div class="f-ap"><span class="f-ap-code">${fc?fc[1]:'---'}</span><span class="f-ap-city">${l.from.replace(/\s*\([A-Z]{3,}\)/g,'').split('/')[0].trim().substring(0,13)}</span></div><span class="f-arr">──→</span><div class="f-ap"><span class="f-ap-code">${tc?tc[1]:'---'}</span><span class="f-ap-city">${l.to.replace(/\s*\([A-Z]{3,}\)/g,'').split('/')[0].trim().substring(0,13)}</span></div></div><div class="f-det"><strong>${l.airlines}</strong>${l.freq?' · '+l.freq:''}${l.season?' · '+l.season:''}</div>`;
   }
   function fcard(r,isAlt){
-    const legs=r.legs.map(fleg).join('');
-    const tr=r.transfer?`<div class="f-trnote"><strong>Transfer:</strong> ${r.transfer}</div>`:'';
-    const nt=r.note?`<div class="f-det" style="margin-top:6px;font-style:italic">${r.note}</div>`:'';
-    const bf=r.bestFor?`<div class="f-det" style="margin-top:6px"><strong>Best for:</strong> ${r.bestFor}</div>`:'';
-    return `<div class="flight-block"><div class="f-badge${isAlt?' alt':''}">${r.badge}</div>${legs}${tr}${nt}${bf}</div>`;
+    return `<div class="f-block"><div class="f-badge${isAlt?' alt':''}">${r.badge}</div>${r.legs.map(fleg).join('')}${r.transfer?`<div class="f-tr"><strong>Transfer:</strong> ${r.transfer}</div>`:''}${r.note?`<div class="f-det" style="margin-top:5px;font-style:italic">${r.note}</div>`:''}${r.bestFor?`<div class="f-det" style="margin-top:5px"><strong>Best for:</strong> ${r.bestFor}</div>`:''}</div>`;
   }
-
   document.getElementById('qr-flight').innerHTML=`<div class="r-stitle">How to get there from ${QA.originLabel}</div>${fcard(rd.p,false)}${rd.a?fcard(rd.a,true):''}<div class="r-sep"></div>`;
-
-  document.getElementById('qr-cta').innerHTML=`
-    <div class="r-cta">
-      <div class="r-cta-title">Want the full day-by-day plan?</div>
-      <p class="r-cta-body">We build detailed Lapland itineraries — specific lodges, activity operators, honest costs and what to book first. No packages. No commission.</p>
-      <button class="r-cta-btn" onclick="alert('→ Contact form / itinerary builder')">Build my full itinerary →</button>
-      <div class="r-trust">No obligation · No spam · We reply within 24 hours</div>
-    </div>`;
+  document.getElementById('qr-cta').innerHTML=`<div class="r-cta-b"><div class="r-cta-t">Want the full day-by-day plan?</div><p class="r-cta-p">We build detailed Lapland itineraries — specific lodges, operators, honest costs. No packages. No commission.</p><button class="r-cta-btn" onclick="alert('→ Opens itinerary planner')">Build my full itinerary →</button><div class="r-tr">No obligation · No spam · We reply within 24 hours</div></div>`;
 }
-
 function qrestart(){
   Object.assign(QA,{origin:null,region:null,group:null,budget:null,season:null,priority:[],accom:null,pace:null,exp:null,nights:5,originLabel:''});
   document.querySelectorAll('.q-or,.q-oc').forEach(e=>e.classList.remove('sel'));
@@ -1038,28 +1019,10 @@ function qrestart(){
   document.getElementById('qcity').value='';
   document.getElementById('qsugg').style.display='none';
   document.getElementById('qorig').style.display='none';
-  qrenderProg(0);
+  qrProg(0);
   document.getElementById('start-tool').scrollIntoView({behavior:'smooth',block:'start'});
 }
-
-qrenderProg(0);
-
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => {
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!expanded));
-    navLinks.classList.toggle('open');
-  });
-  document.addEventListener('click', (event) => {
-    if (!navLinks.contains(event.target) && !navToggle.contains(event.target) && navLinks.classList.contains('open')) {
-      navLinks.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-}
-
+qrProg(0);
 </script>
 </body>
 </html>
