@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="We're Colin and Livi. Colin flew to Levi to remote work in May 2023 — his first time in Lapland. On day three he found a house being built and put an offer in. He had no mortgage, no residency plan, no idea if it would work. It did. This is our story.">
+<title>About Us — Lapland Like This</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#1F3D2B;--forest-mid:#2A5239;--forest-lt:#3B6B4A;
+  --snow:#F5F7F6;--snow-dim:#E8EBE9;--off:#F0F2F0;
+  --amber:#D9A441;--amber-lt:#F0C06A;--amber-dim:rgba(217,164,65,0.15);
+  --charcoal:#2B2B2B;--mid-text:#555;--light-text:#888;
+  --serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--snow);color:var(--charcoal);overflow-x:hidden}
+
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(31,61,43,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(245,247,246,0.08)}
+.nav-logo{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--snow);text-decoration:none}
+.nav-logo span{color:var(--amber)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:13px;color:rgba(245,247,246,0.7);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--snow)}
+.nav-cta{background:var(--amber)!important;color:var(--forest)!important;padding:.55rem 1.25rem;border-radius:6px;font-weight:500!important}
+.nav-toggle{display:none;border:none;background:transparent;color:var(--snow);cursor:pointer;width:32px;height:24px;position:relative;align-items:center;justify-content:center;gap:4px}
+.nav-toggle span{display:block;width:100%;height:3px;background:var(--snow);border-radius:999px;transition:transform .2s ease,opacity .2s ease}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* ─── HERO ─── */
+.hero{min-height:100vh;background:var(--forest);display:grid;grid-template-columns:1fr 1fr;align-items:stretch;padding-top:72px;position:relative;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 3rem 5rem 4rem;position:relative;z-index:2}
+.hero-right{position:relative;background:#0D1F16;overflow:hidden}
+.scene-sky{position:absolute;inset:0;background:linear-gradient(180deg,#071410 0%,#0F2518 45%,#1A3828 100%)}
+.scene-aurora{position:absolute;top:10%;left:5%;width:90%;height:40%;background:radial-gradient(ellipse at 40% 50%,rgba(62,203,140,0.12) 0%,transparent 60%);animation:auroraDrift 10s ease-in-out infinite alternate}
+.scene-aurora-2{position:absolute;top:20%;right:-10%;width:70%;height:35%;background:radial-gradient(ellipse,rgba(167,199,231,0.07) 0%,transparent 65%);animation:auroraDrift 14s ease-in-out infinite alternate-reverse}
+@keyframes auroraDrift{from{transform:translateX(0) translateY(0)}to{transform:translateX(20px) translateY(-15px)}}
+.scene-stars{position:absolute;top:0;left:0;right:0;height:65%;background-image:radial-gradient(1px 1px at 10% 15%,rgba(245,247,246,.7) 0%,transparent 100%),radial-gradient(1px 1px at 28% 8%,rgba(245,247,246,.5) 0%,transparent 100%),radial-gradient(1px 1px at 45% 20%,rgba(245,247,246,.4) 0%,transparent 100%),radial-gradient(1px 1px at 62% 6%,rgba(245,247,246,.6) 0%,transparent 100%),radial-gradient(1px 1px at 78% 18%,rgba(245,247,246,.3) 0%,transparent 100%),radial-gradient(1px 1px at 88% 10%,rgba(245,247,246,.5) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 52% 4%,rgba(245,247,246,.8) 0%,transparent 100%),radial-gradient(1px 1px at 35% 30%,rgba(245,247,246,.3) 0%,transparent 100%)}
+.scene-treeline{position:absolute;bottom:0;left:0;right:0;height:50%;background:#0F2518;clip-path:polygon(0 100%,0 55%,2% 38%,4% 55%,5% 28%,7% 48%,8% 22%,10% 44%,11% 18%,13% 40%,14% 15%,16% 38%,17% 12%,19% 36%,20% 16%,22% 34%,23% 10%,25% 32%,26% 16%,28% 36%,29% 10%,31% 32%,32% 18%,34% 38%,35% 12%,37% 34%,38% 16%,40% 38%,41% 14%,43% 36%,44% 10%,46% 32%,47% 16%,49% 38%,50% 12%,52% 34%,53% 18%,55% 40%,56% 14%,58% 36%,59% 10%,61% 30%,62% 16%,64% 38%,65% 12%,67% 34%,68% 18%,70% 40%,71% 14%,73% 36%,74% 12%,76% 32%,77% 18%,79% 38%,80% 12%,82% 34%,83% 16%,85% 40%,86% 14%,88% 36%,90% 10%,92% 32%,93% 18%,95% 38%,96% 12%,98% 34%,100% 16%,100% 100%)}
+.photo-hint{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:5;background:rgba(15,37,24,0.75);border:1px dashed rgba(217,164,65,0.4);border-radius:12px;padding:1.5rem 2rem}
+.photo-hint strong{color:var(--amber-lt);display:block;margin-bottom:.4rem;font-size:13px}
+.photo-hint p{font-size:11px;color:rgba(217,164,65,0.6);line-height:1.7}
+
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:500;margin-bottom:1.5rem}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--amber)}
+.hero-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.6rem);font-weight:300;line-height:1.1;color:var(--snow);letter-spacing:-.02em;margin-bottom:1.5rem}
+.hero-title em{font-style:italic;color:var(--amber-lt)}
+.hero-intro{font-size:15px;color:rgba(245,247,246,0.7);line-height:1.85;max-width:480px;margin-bottom:2rem}
+.hero-intro strong{color:var(--snow);font-weight:500}
+
+.family-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem}
+.ftag{background:rgba(245,247,246,0.05);border:1px solid rgba(245,247,246,0.1);border-radius:8px;padding:.55rem .9rem;display:flex;flex-direction:column;gap:2px}
+.ftag-name{font-size:13px;font-weight:500;color:var(--snow)}
+.ftag-detail{font-size:10px;color:rgba(245,247,246,0.4)}
+.ftag.hi{background:rgba(217,164,65,0.1);border-color:rgba(217,164,65,0.25)}
+.ftag.hi .ftag-name{color:var(--amber-lt)}
+
+.hero-scroll{display:flex;align-items:center;gap:10px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,247,246,0.3)}
+.hero-scroll::after{content:'';display:block;width:40px;height:1px;background:rgba(245,247,246,0.15)}
+
+/* ─── SHARED ─── */
+.section-eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-lt);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+.section-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--forest-lt)}
+.section-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;color:var(--forest);margin-bottom:1.5rem}
+.section-h2 em{font-style:italic;color:var(--forest-lt)}
+.body-text{font-size:15px;line-height:1.9;color:#444;margin-bottom:1.25rem}
+.pull-quote{border-left:3px solid var(--amber);padding:.9rem 0 .9rem 1.25rem;margin:2rem 0;font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--forest);line-height:1.6}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+/* ─── THE CALL SECTION ─── */
+.the-call{padding:7rem 2rem;background:var(--snow)}
+.the-call-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+
+/* Timeline */
+.timeline{display:flex;flex-direction:column}
+.tl-item{display:flex;gap:1.5rem;position:relative}
+.tl-item:not(:last-child)::after{content:'';position:absolute;left:17px;top:36px;width:1px;height:100%;background:rgba(31,61,43,0.1)}
+.tl-dot{width:36px;height:36px;border-radius:50%;border:2px solid var(--amber);background:var(--snow);display:flex;align-items:center;justify-content:center;flex-shrink:0;z-index:1;margin-top:2px}
+.tl-dot-inner{width:10px;height:10px;border-radius:50%;background:var(--amber)}
+.tl-dot.big{border-color:var(--forest);background:var(--forest)}
+.tl-dot.big .tl-dot-inner{background:var(--amber-lt)}
+.tl-content{padding-bottom:2.5rem;flex:1}
+.tl-date{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:.3rem;font-weight:500}
+.tl-title{font-size:15px;font-weight:500;color:var(--forest);margin-bottom:.4rem}
+.tl-body{font-size:13px;color:#666;line-height:1.7}
+.tl-body strong{color:var(--charcoal);font-weight:500}
+
+/* ─── THE HOUSE ─── */
+.the-house{padding:7rem 2rem;background:var(--forest);position:relative;overflow:hidden}
+.the-house::before{content:'';position:absolute;top:-30%;right:-5%;width:50%;height:160%;background:radial-gradient(ellipse,rgba(62,203,140,0.04) 0%,transparent 60%)}
+.the-house-inner{max-width:900px;margin:0 auto;text-align:center}
+.house-eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(217,164,65,.7);font-weight:500;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:1.25rem}
+.house-eyebrow::before,.house-eyebrow::after{content:'';display:block;width:24px;height:1px;background:rgba(217,164,65,.7)}
+.house-h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,3rem);font-weight:300;line-height:1.2;color:var(--snow);margin-bottom:1.5rem}
+.house-h2 em{font-style:italic;color:var(--amber-lt)}
+.house-body{font-size:15px;line-height:1.9;color:rgba(245,247,246,0.7);margin-bottom:1.25rem;max-width:720px;margin-left:auto;margin-right:auto}
+.house-body strong{color:var(--snow);font-weight:500}
+.house-pull{font-family:var(--serif);font-size:clamp(1.2rem,2.5vw,1.6rem);font-style:italic;color:rgba(245,247,246,0.9);line-height:1.5;max-width:680px;margin:2.5rem auto;padding:2rem 0;border-top:1px solid rgba(245,247,246,0.1);border-bottom:1px solid rgba(245,247,246,0.1)}
+.chaos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;margin-top:3rem}
+.chaos-card{background:rgba(245,247,246,0.04);border:1px solid rgba(245,247,246,0.07);padding:1.5rem;text-align:left}
+.chaos-card:first-child{border-radius:12px 0 0 12px}
+.chaos-card:last-child{border-radius:0 12px 12px 0}
+.chaos-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(217,164,65,.6);margin-bottom:.5rem}
+.chaos-value{font-family:var(--serif);font-size:1.3rem;color:var(--snow);font-weight:300;margin-bottom:.3rem}
+.chaos-detail{font-size:12px;color:rgba(245,247,246,0.4);line-height:1.5}
+
+/* ─── ROOTS ─── */
+.roots{padding:7rem 2rem;background:var(--off)}
+.roots-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.roots-visual{position:relative}
+.roots-card{background:var(--forest);border-radius:12px;overflow:hidden}
+.roots-card-header{padding:1.5rem;background:rgba(245,247,246,0.04);border-bottom:1px solid rgba(245,247,246,0.08)}
+.roots-card-title{font-family:var(--serif);font-size:1rem;color:rgba(245,247,246,0.6);font-style:italic}
+.roots-lineage{display:flex;flex-direction:column;gap:0}
+.lineage-row{display:flex;align-items:center;gap:1rem;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(245,247,246,0.06)}
+.lineage-row:last-child{border-bottom:none}
+.lin-gen{width:32px;height:32px;border-radius:50%;background:rgba(217,164,65,0.15);border:1px solid rgba(217,164,65,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:var(--amber);font-weight:500}
+.lin-name{font-size:14px;font-weight:500;color:var(--snow)}
+.lin-detail{font-size:12px;color:rgba(245,247,246,0.45);margin-top:1px}
+.lineage-arrow{width:1px;height:20px;background:rgba(217,164,65,0.2);margin-left:15px}
+
+.roots-text .section-eyebrow{color:var(--forest-lt)}
+.roots-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;color:var(--forest);margin-bottom:1.5rem}
+.roots-h2 em{font-style:italic}
+
+/* ─── THE BOYS ─── */
+.boys-section{padding:7rem 2rem;background:var(--snow)}
+.boys-inner{max-width:1100px;margin:0 auto}
+.boys-header{text-align:center;max-width:680px;margin:0 auto 4rem}
+.boys-h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:300;line-height:1.2;color:var(--forest);margin-bottom:1rem}
+.boys-h2 em{font-style:italic}
+.boys-sub{font-size:15px;color:#555;line-height:1.8}
+.boys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.boy-card{background:var(--snow);border-radius:16px;overflow:hidden;border:1px solid rgba(31,61,43,0.08)}
+.boy-photo{height:200px;background:var(--forest);position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.boy-sky{position:absolute;inset:0;background:linear-gradient(180deg,#0D1F16 0%,#1F3D2B 100%)}
+.boy-trees{position:absolute;bottom:0;left:0;right:0;height:50%;background:#162E1F;clip-path:polygon(0 100%,0 45%,8% 15%,16% 45%,24% 12%,32% 42%,40% 18%,48% 44%,56% 14%,64% 40%,72% 18%,80% 44%,88% 12%,96% 38%,100% 20%,100% 100%)}
+.boy-glow{position:absolute;top:20%;left:10%;width:80%;height:35%;background:radial-gradient(ellipse,rgba(62,200,130,0.12) 0%,transparent 70%)}
+.boy-ph{position:relative;z-index:2;padding:1rem;width:100%;text-align:center}
+.boy-ph p{font-size:10px;color:rgba(217,164,65,0.55);border:1px dashed rgba(217,164,65,0.25);border-radius:6px;padding:.4rem;line-height:1.4}
+.boy-body{padding:1.5rem}
+.boy-name{font-family:var(--serif);font-size:1.35rem;font-weight:400;color:var(--forest);margin-bottom:2px}
+.boy-age{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-bottom:.7rem;font-weight:500}
+.boy-desc{font-size:13px;line-height:1.7;color:#555}
+.boy-finn{display:inline-flex;align-items:center;gap:6px;margin-top:.75rem;background:rgba(31,61,43,0.06);border-radius:20px;padding:.35rem .85rem;font-size:11px;color:var(--forest-lt);font-weight:500}
+.boy-finn::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0}
+
+/* ─── PARENTS ─── */
+.parents{padding:7rem 2rem;background:var(--off)}
+.parents-inner{max-width:1100px;margin:0 auto}
+.parents-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:300;color:var(--forest);margin-bottom:4rem;text-align:center}
+.parents-h2 em{font-style:italic}
+.parents-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.parent-card{display:grid;grid-template-columns:90px 1fr;gap:1.5rem;align-items:start}
+.parent-photo{width:90px;height:110px;background:var(--forest);border-radius:10px;overflow:hidden;position:relative;flex-shrink:0}
+.pp-sky{position:absolute;inset:0;background:linear-gradient(160deg,#0F2518,#1F3D2B)}
+.pp-trees{position:absolute;bottom:0;left:0;right:0;height:40%;background:#162E1F;clip-path:polygon(0 100%,0 50%,15% 20%,30% 50%,45% 18%,60% 46%,75% 15%,90% 42%,100% 22%,100% 100%)}
+.pp-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2}
+.pp-hint p{font-size:9px;color:rgba(217,164,65,0.5);text-align:center;padding:.3rem;line-height:1.4;border:1px dashed rgba(217,164,65,0.25);border-radius:4px;margin:.4rem}
+.parent-name{font-family:var(--serif);font-size:1.4rem;font-weight:400;color:var(--forest);margin-bottom:2px}
+.parent-role{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-bottom:.75rem;font-weight:500}
+.parent-bio{font-size:14px;line-height:1.75;color:#555}
+.parent-fact{display:flex;align-items:flex-start;gap:8px;margin-top:.75rem;font-size:13px;color:var(--forest-lt)}
+.parent-fact::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0;margin-top:5px}
+
+/* ─── FINN MOMENT ─── */
+.finn-moment{padding:5rem 2rem;background:var(--amber);text-align:center}
+.fm-inner{max-width:760px;margin:0 auto}
+.fm-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(31,61,43,0.6);font-weight:500;margin-bottom:1.25rem}
+.fm-quote{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2.2rem);font-weight:300;line-height:1.35;color:var(--forest);margin-bottom:1.25rem}
+.fm-quote em{font-style:italic}
+.fm-attr{font-size:13px;color:rgba(31,61,43,0.6)}
+
+/* ─── WHAT WE KNOW ─── */
+.know{padding:7rem 2rem;background:var(--forest)}
+.know-inner{max-width:1100px;margin:0 auto}
+.know-header{max-width:600px;margin-bottom:4rem}
+.know-header .section-eyebrow{color:rgba(217,164,65,.7)}
+.know-header .section-eyebrow::before{background:rgba(217,164,65,.7)}
+.know-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;color:var(--snow)}
+.know-h2 em{font-style:italic;color:var(--amber-lt)}
+.know-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.know-card{background:rgba(245,247,246,0.04);border:1px solid rgba(245,247,246,0.07);border-radius:12px;padding:1.5rem;transition:background .3s}
+.know-card:hover{background:rgba(245,247,246,0.07)}
+.know-num{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:rgba(217,164,65,.2);display:block;margin-bottom:.5rem}
+.know-title{font-size:14px;font-weight:500;color:var(--snow);margin-bottom:.5rem}
+.know-body{font-size:13px;color:rgba(245,247,246,0.5);line-height:1.7}
+
+/* ─── FINAL CTA ─── */
+.about-cta{padding:7rem 2rem;background:var(--snow);text-align:center}
+.about-cta-inner{max-width:660px;margin:0 auto}
+.cta-h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.15;color:var(--forest);margin-bottom:1.25rem}
+.cta-h2 em{font-style:italic}
+.cta-body{font-size:16px;line-height:1.8;color:#555;margin-bottom:2.5rem}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--amber);color:var(--forest);border:none;border-radius:8px;padding:1rem 2rem;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:var(--amber-lt);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:#555;border:1px solid rgba(31,61,43,0.2);border-radius:8px;padding:1rem 1.75rem;font-family:var(--sans);font-size:14px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-outline:hover{border-color:var(--forest);color:var(--forest)}
+
+/* ─── FOOTER ─── */
+footer{background:#111C14;padding:3rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;border-top:1px solid rgba(245,247,246,.06)}
+.footer-logo{font-family:var(--serif);font-size:1rem;color:rgba(245,247,246,.5)}
+.footer-logo span{color:var(--amber)}
+.footer-links{display:flex;gap:1.75rem;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:rgba(245,247,246,.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:rgba(245,247,246,.65)}
+.footer-note{font-size:11px;color:rgba(245,247,246,.25)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  nav{padding:1rem 1.25rem}
+  .nav-toggle{display:flex}
+  .nav-links{position:fixed;top:72px;left:0;right:0;max-height:0;overflow:hidden;background:rgba(31,61,43,0.95);flex-direction:column;align-items:center;gap:0.6rem;padding:0 1.25rem;transition:max-height .35s ease, padding .35s ease;z-index:99}
+  .nav-links.open{max-height:280px;padding:1rem 1.25rem}
+  .nav-links a{display:block;width:100%;padding:.75rem 0;text-align:center}
+  .nav-links .nav-cta{width:100%}
+  .hero{grid-template-columns:1fr;min-height:auto}.hero-right{height:280px}.hero-left{padding:3rem 1.5rem}
+  .the-call-inner,.roots-inner,.parents-grid{grid-template-columns:1fr;gap:3rem}
+  .boys-grid{grid-template-columns:1fr}
+  .chaos-grid{grid-template-columns:1fr 1fr}
+  .the-call,.the-house,.roots,.boys-section,.parents,.know,.about-cta{padding:5rem 1.25rem}
+  footer{flex-direction:column;text-align:center;padding:2rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="lapland-like-this.html" class="nav-logo">Lapland <span>Like This</span></a>
+  <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nav-links">
+    <a href="lapland-like-this.html#destinations">Destinations</a>
+    <a href="lapland-like-this.html#tool">Trip builder</a>
+    <a href="about-us.html" style="color:var(--snow)">About us</a>
+    <a href="lapland-like-this.html#tool" class="nav-cta">Plan my trip</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Levi, Finnish Lapland — since January 2024</div>
+    <h1 class="hero-title">
+      We're Colin<br>and Livi.<br>
+      <em>Colin found a house<br>on day three.</em>
+    </h1>
+    <p class="hero-intro">
+      Colin flew to Levi in May 2023 to remote work for a few weeks. His first time in Lapland. On day three he found a house being built, <strong>put an offer in with no mortgage, no residency plan and no idea whether any of it would work.</strong> Livi was at home in Cheltenham nursing a one-year-old. She wasn't surprised.
+    </p>
+    <div class="family-tags">
+      <div class="ftag hi"><span class="ftag-name">Colin</span><span class="ftag-detail">Dad · snowboarder · Finnish: getting there</span></div>
+      <div class="ftag hi"><span class="ftag-name">Livi</span><span class="ftag-detail">Mum · the organised one · Finnish: better than Colin</span></div>
+      <div class="ftag"><span class="ftag-name">Hugo</span><span class="ftag-detail">Age 9 · speaks fluent Finnish</span></div>
+      <div class="ftag"><span class="ftag-name">Rowan</span><span class="ftag-detail">Age 6 · speaks fluent Finnish</span></div>
+      <div class="ftag"><span class="ftag-name">Finley</span><span class="ftag-detail">Age 3 · speaks fluent Finnish</span></div>
+    </div>
+    <div class="hero-scroll">Read the story</div>
+  </div>
+  <div class="hero-right">
+    <div class="scene-sky"></div>
+    <div class="scene-aurora"></div>
+    <div class="scene-aurora-2"></div>
+    <div class="scene-stars"></div>
+    <div class="scene-treeline"></div>
+    <div class="photo-hint">
+      <strong>Family photo here</strong>
+      <p>Colin, Livi, Hugo, Rowan + Finley<br>Outdoors in Levi — natural, unposed</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE CALL ═══ -->
+<section class="the-call">
+  <div class="the-call-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">How it actually happened</div>
+      <h2 class="section-h2">May 2023.<br>First time in Lapland.<br><em>Day three.</em></h2>
+      <p class="body-text">
+        Colin flew to Levi on a remote working trip — a few weeks with a laptop and a snowboard, testing whether Finnish Lapland in the off-season was as good as people said. He had no particular plan beyond that.
+      </p>
+      <p class="body-text">
+        On day three he found a plot of land with a house being built on it. Log construction, south-facing, surrounded by forest. Everything he'd spent years drawing in his head when people asked what his dream home looked like. He called the estate agent. Then he called Livi.
+      </p>
+      <blockquote class="pull-quote">
+        "I rang her and said I'd found it. She was nursing Finley — he was one — and she just said 'okay, let's see.' She's used to me. She wasn't wrong to trust it."
+      </blockquote>
+      <p class="body-text">
+        The offer was accepted. Colin now had four months to sort out Finnish residency, a mortgage with a Finnish bank, and everything else that comes with buying a house in a country you've been in for seventy-two hours.
+      </p>
+      <p class="body-text">
+        They got the keys in November 2023 — mortgage through Nordea, residency sorted, somehow. The family flew out for Christmas — three weeks to walk the schools, feel the cold properly, and answer the honest question: <em>could we actually live here?</em> By January they knew the answer.
+      </p>
+      <blockquote class="pull-quote">
+        "We flew back in January. Then packed up the house. Then drove back. We weren't visiting anymore."
+      </blockquote>
+    </div>
+
+    <div class="timeline reveal rd2">
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">May 2023</div>
+          <div class="tl-title">First time in Lapland</div>
+          <div class="tl-body">Colin flies to Levi to remote work. First visit ever to Finnish Lapland. Brings a laptop and a snowboard. <strong>Day three: finds the house.</strong></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot big"><div class="tl-dot-inner"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">May 2023 — Day 3</div>
+          <div class="tl-title">Offer accepted</div>
+          <div class="tl-body">No mortgage. No residency. No plan beyond "I know this is it." Four months to figure out the rest. Livi says "let's see" from Cheltenham while nursing a one-year-old.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">November 2023</div>
+          <div class="tl-title">Keys. Mortgage. Done.</div>
+          <div class="tl-body">Nordea mortgage, Finnish residency, keys in hand. Colin drives out with half a house of belongings. The rest goes into storage in the UK.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">December 2023</div>
+          <div class="tl-title">The trial Christmas</div>
+          <div class="tl-body">The whole family fly out for three weeks. Schools, temperatures, the feel of it. The unspoken question: <em>can we picture this as our life?</em> Answer: yes.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">January 2024</div>
+          <div class="tl-title">Flew back. Packed up. Drove back.</div>
+          <div class="tl-body">Returned to Cheltenham, packed the house, drove back to Finland. Full time. Hugo (7), Rowan (3), Finley (1) in tow.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><div class="tl-dot-inner"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">Summer 2024</div>
+          <div class="tl-title">Drove back for the rest</div>
+          <div class="tl-body">Once the boys were settled at Finnish school, drove back to the UK to collect the other half of the house from storage. Finland was home now. That was final.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot big"><div class="tl-dot-inner"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">Now</div>
+          <div class="tl-title">Still here. Still don't regret it.</div>
+          <div class="tl-body">Three years in Levi. Three boys who speak better Finnish than their parents. One family that made the leap and landed well.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE HOUSE ═══ -->
+<section class="the-house">
+  <div class="the-house-inner reveal">
+    <div class="house-eyebrow">The four months in between</div>
+    <h2 class="house-h2">No mortgage.<br>No residency.<br><em>No idea. Just yes.</em></h2>
+    <p class="house-body">Between the offer being accepted in May and getting the keys in November, Colin had four months to make the impossible logistics of moving a family of five to Finland actually work. Finnish mortgage applications. Residency permits. Selling a life in the UK. He did it.</p>
+    <div class="house-pull">"Most people would have talked themselves out of it somewhere between the residency application and the Nordea mortgage forms. We didn't. I'm not sure whether that's confidence or just stubbornness."</div>
+    <div class="chaos-grid">
+      <div class="chaos-card">
+        <div class="chaos-label">The offer</div>
+        <div class="chaos-value">Day 3</div>
+        <div class="chaos-detail">Of his first ever trip to Lapland</div>
+      </div>
+      <div class="chaos-card">
+        <div class="chaos-label">Time to sort everything</div>
+        <div class="chaos-value">4 months</div>
+        <div class="chaos-detail">Mortgage, residency, the lot</div>
+      </div>
+      <div class="chaos-card">
+        <div class="chaos-label">Livi's reaction</div>
+        <div class="chaos-value">"Let's see"</div>
+        <div class="chaos-detail">While nursing a one-year-old</div>
+      </div>
+      <div class="chaos-card">
+        <div class="chaos-label">The mortgage</div>
+        <div class="chaos-value">Nordea</div>
+        <div class="chaos-detail">Finnish bank. Keys: November 2023.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROOTS ═══ -->
+<section class="roots">
+  <div class="roots-inner">
+    <div class="roots-visual reveal">
+      <div class="roots-card">
+        <div class="roots-card-header">
+          <div class="roots-card-title">The Finnish thread — three generations</div>
+        </div>
+        <div class="roots-lineage">
+          <div class="lineage-row">
+            <div class="lin-gen">G</div>
+            <div>
+              <div class="lin-name">Colin's grandparents</div>
+              <div class="lin-detail">Lived in Helsinki in the 1960s — Colin's mum grew up here</div>
+            </div>
+          </div>
+          <div class="lineage-arrow"></div>
+          <div class="lineage-row">
+            <div class="lin-gen">M</div>
+            <div>
+              <div class="lin-name">Colin's mum</div>
+              <div class="lin-detail">Grew up in Helsinki. Always spoke fondly of Finland. Never stopped. Was part of the inspiration — and loves that it happened.</div>
+            </div>
+          </div>
+          <div class="lineage-arrow"></div>
+          <div class="lineage-row">
+            <div class="lin-gen">C</div>
+            <div>
+              <div class="lin-name">Colin</div>
+              <div class="lin-detail">Heard about Finland his whole life. Flew there for the first time in 2023. Bought a house on day three.</div>
+            </div>
+          </div>
+          <div class="lineage-arrow"></div>
+          <div class="lineage-row">
+            <div class="lin-gen">3</div>
+            <div>
+              <div class="lin-name">Hugo, Rowan and Finley</div>
+              <div class="lin-detail">Finnish school. Finnish friends. Finnish as their second language. The thread continues.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="roots-text reveal rd2">
+      <div class="section-eyebrow">Where it all comes from</div>
+      <h2 class="roots-h2">Finland was already<br><em>in the family.</em></h2>
+      <p class="body-text">
+        Colin's mum grew up in Helsinki in the 1960s — his grandparents lived there, and she always talked about Finland with a particular warmth. The kind of warmth that stays with you. Finland was always a name that meant something in the family, even though Colin never visited as a child.
+      </p>
+      <p class="body-text">
+        The skiing came separately — Colin's parents took him to the French and Austrian Alps every year growing up, and it became his thing. The mountains, the cold, the physical freedom of it. Snowboarding took over from skiing and never let go.
+      </p>
+      <p class="body-text">
+        When he landed in Levi in May 2023 — Finland, mountains, snow, everything his childhood had pointed at — something clicked. His mum was part of the reason he went. She loves that he stayed.
+      </p>
+      <blockquote class="pull-quote">
+        "She always talked about Finland. I grew up hearing about it. I just never thought I'd end up living there. She finds that quietly hilarious."
+      </blockquote>
+      <p class="body-text">
+        In 2012, Colin and Livi had lived in the Alps for a year — they knew what a life built around mountains and outdoor living felt like, and they'd never quite stopped wanting to get back to it. The Alps were the dream for a long time. Lapland turned out to be the answer.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE BOYS ═══ -->
+<section class="boys-section">
+  <div class="boys-inner">
+    <div class="boys-header reveal">
+      <div class="section-eyebrow" style="justify-content:center">The three of them</div>
+      <h2 class="boys-h2">They arrived as 7, 3 and 1.<br><em>They're Lappish now.</em></h2>
+      <p class="boys-sub">Hugo, Rowan and Finley all speak fluent Finnish. We are proud and slightly humbled in equal measure. They are, by every measure, more at home here than we are — and that was always the point.</p>
+    </div>
+    <div class="boys-grid">
+      <div class="boy-card reveal rd1">
+        <div class="boy-photo">
+          <div class="boy-sky"></div><div class="boy-glow"></div><div class="boy-trees"></div>
+          <div class="boy-ph"><p>Hugo's photo here</p></div>
+        </div>
+        <div class="boy-body">
+          <div class="boy-name">Hugo</div>
+          <div class="boy-age">Age 9 · arrived age 7</div>
+          <p class="boy-desc">The eldest. Old enough when he arrived to understand the move properly — and curious enough to embrace it completely. In Finnish school within weeks, speaking the language within months. He now corrects our pronunciation, kindly, which makes it considerably worse.</p>
+          <span class="boy-finn">Fluent Finnish</span>
+        </div>
+      </div>
+      <div class="boy-card reveal rd2">
+        <div class="boy-photo">
+          <div class="boy-sky"></div><div class="boy-glow"></div><div class="boy-trees"></div>
+          <div class="boy-ph"><p>Rowan's photo here</p></div>
+        </div>
+        <div class="boy-body">
+          <div class="boy-name">Rowan</div>
+          <div class="boy-age">Age 6 · arrived age 3</div>
+          <p class="boy-desc">Rowan arrived at the perfect age for everything to just become normal. He doesn't remember not living here. Snow in October is simply October. A frozen lake is simply a lake. His complete lack of drama about Lapland is one of the best things about living here.</p>
+          <span class="boy-finn">Fluent Finnish</span>
+        </div>
+      </div>
+      <div class="boy-card reveal rd3">
+        <div class="boy-photo">
+          <div class="boy-sky"></div><div class="boy-glow"></div><div class="boy-trees"></div>
+          <div class="boy-ph"><p>Finley's photo here</p></div>
+        </div>
+        <div class="boy-body">
+          <div class="boy-name">Finley</div>
+          <div class="boy-age">Age 3 · arrived age 1</div>
+          <p class="boy-desc">Finley is Lapland. He has never known anything else. Finnish is just the language he learned. He has no concept that this life is unusual or remarkable. He is, without knowing it, our strongest argument for the decision we made.</p>
+          <span class="boy-finn">Fluent Finnish</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COLIN + LIVI ═══ -->
+<section class="parents">
+  <div class="parents-inner">
+    <h2 class="parents-h2 reveal">The two of us —<br><em>what we each bring to this</em></h2>
+    <div class="parents-grid">
+      <div class="parent-card reveal rd1">
+        <div class="parent-photo">
+          <div class="pp-sky"></div><div class="pp-trees"></div>
+          <div class="pp-hint"><p>Colin's photo here</p></div>
+        </div>
+        <div>
+          <div class="parent-name">Colin</div>
+          <div class="parent-role">The impulse decision one · snowboarder · Finnish: getting there</div>
+          <p class="parent-bio">Colin has spent his career in hospitality and customer experience — which means he thinks about what actually makes something work, not just how it looks. He grew up skiing in the French and Austrian Alps, switched to snowboarding and never looked back. He knows the fells around Levi the way most people know their commute, and he'll tell you honestly whether an activity, a resort, or an experience is worth your money — because he's been watching people spend it here for three years.</p>
+          <div class="parent-fact">On the slopes most mornings November through April</div>
+          <div class="parent-fact">Will tell you exactly which operators are worth it and which aren't</div>
+          <div class="parent-fact">Has his mum's Finnish warmth in him, even if the language is taking a while</div>
+        </div>
+      </div>
+      <div class="parent-card reveal rd2">
+        <div class="parent-photo">
+          <div class="pp-sky"></div><div class="pp-trees"></div>
+          <div class="pp-hint"><p>Livi's photo here</p></div>
+        </div>
+        <div>
+          <div class="parent-name">Livi</div>
+          <div class="parent-role">The organised one · the one who made it actually work · Finnish: better than Colin</div>
+          <p class="parent-bio">When Colin called from Levi on day three with a house, Livi was at home with a one-year-old and two other children. She said "let's see" — and then spent the next eight months making it logistically possible. The residency paperwork, the school research, the trial Christmas, the packing of an entire family life into a removal van. She's the reason this happened. She also knows, practically and honestly, what families need when they arrive in Lapland — because she is a family that arrived in Lapland.</p>
+          <div class="parent-fact">Has lived in the Alps and knows what an outdoor life actually requires</div>
+          <div class="parent-fact">Knows exactly what works for small kids in Arctic temperatures and what doesn't</div>
+          <div class="parent-fact">Finnish is coming along. She won't say she's better than Colin. She is.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINNISH MOMENT ═══ -->
+<section class="finn-moment">
+  <div class="fm-inner reveal">
+    <div class="fm-label">The thing that gets us every time</div>
+    <div class="fm-quote">"Colin's mum grew up in Helsinki in the 1960s<br>and always talked about Finland.<br><em>Our boys speak it fluently now.<br>She loves that. So do we."</em></div>
+    <div class="fm-attr">— Colin and Livi, Levi, Finnish Lapland</div>
+  </div>
+</section>
+
+<!-- ═══ WHAT WE KNOW ═══ -->
+<section class="know">
+  <div class="know-inner">
+    <div class="know-header reveal">
+      <div class="section-eyebrow">Why any of this matters for your trip</div>
+      <h2 class="know-h2">We didn't visit Lapland.<br><em>We moved here on day three.</em></h2>
+    </div>
+    <div class="know-grid">
+      <div class="know-card reveal rd1">
+        <span class="know-num">01</span>
+        <div class="know-title">We know the difference between visiting and living</div>
+        <p class="know-body">Most Lapland content is written by people who came for a week. We moved here on an impulse on day three of our first ever visit. That's a different kind of knowledge.</p>
+      </div>
+      <div class="know-card reveal rd2">
+        <span class="know-num">02</span>
+        <div class="know-title">We've watched hundreds of trips unfold</div>
+        <p class="know-body">Three years of living here means three years of watching families and couples arrive, navigate Lapland, and leave. We know what worked, what didn't, and what they wished they'd known before they came.</p>
+      </div>
+      <div class="know-card reveal rd3">
+        <span class="know-num">03</span>
+        <div class="know-title">We know what families actually need</div>
+        <p class="know-body">We moved here with a 1, 3 and 7-year-old. We know what works with small children in Arctic conditions, what age things start clicking, and what not to attempt with a tired three-year-old at −18°C.</p>
+      </div>
+      <div class="know-card reveal rd1">
+        <span class="know-num">04</span>
+        <div class="know-title">We have no commercial agenda</div>
+        <p class="know-body">No commissions. No paid partnerships. No tour operator relationships. We built this because the honest guide we wanted to give arriving travellers didn't exist. It does now.</p>
+      </div>
+      <div class="know-card reveal rd2">
+        <span class="know-num">05</span>
+        <div class="know-title">We'll tell you what to skip</div>
+        <p class="know-body">This is the thing most Lapland content won't do. If something isn't worth the money, we'll say so. If there's a better version of an experience that costs half the price, we'll tell you where to find it.</p>
+      </div>
+      <div class="know-card reveal rd3">
+        <span class="know-num">06</span>
+        <div class="know-title">Lapland got into us on day three</div>
+        <p class="know-body">We can't fully explain why Colin put an offer on a house on day three of his first ever visit. But we've seen enough travellers leave here changed to know it wasn't just us. This place does something to people. We want to help you find it properly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="about-cta">
+  <div class="about-cta-inner reveal">
+    <div class="section-eyebrow" style="justify-content:center"><span style="width:24px;height:1px;background:var(--forest-lt);display:block"></span>Ready?</div>
+    <h2 class="cta-h2">Let us help you<br><em>get Lapland right.</em></h2>
+    <p class="cta-body">We moved here on day three of our first visit. We're not going to give you generic travel advice. We're going to tell you what we actually know — and help you build a trip that works.</p>
+    <div class="cta-actions">
+      <a href="lapland-like-this.html#tool" class="btn-primary">Find my Lapland →</a>
+      <a href="lapland-like-this.html#destinations" class="btn-outline">Browse destinations</a>
+    </div>
+    <div style="font-size:12px;color:#888;margin-top:1.5rem;line-height:1.6">No sign-up · No selling · Honest guidance from people who live here</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Lapland <span>Like This</span></div>
+  <div class="footer-links">
+    <a href="lapland-like-this.html#destinations">Destinations</a>
+    <a href="lapland-like-this.html#tool">Trip builder</a>
+    <a href="about-us.html">About us</a>
+    <a href="#">Privacy</a>
+  </div>
+  <div class="footer-note">© 2025 Lapland Like This · Colin, Livi, Hugo, Rowan & Finley · Levi, Finnish Lapland</div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script>
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+if(navToggle && navLinks){
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!expanded));
+    navLinks.classList.toggle('open');
+  });
+  document.addEventListener('click', (event) => {
+    if (!navLinks.contains(event.target) && !navToggle.contains(event.target) && navLinks.classList.contains('open')) {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+</script>
+</body>
+</html>
