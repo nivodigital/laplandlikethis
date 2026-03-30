@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rovaniemi travel guide — the honest version. Best flights, what's worth doing, what to skip, and why the Santa Village at the airport isn't the real thing.">
+<title>Rovaniemi Travel Guide — What to Do, See and Avoid — Lapland Like This</title>
+<link rel="canonical" href="https://laplandlikethis.com/destinations/rovaniemi">
+<meta property="og:title" content="Rovaniemi Travel Guide — Lapland Like This">
+<meta property="og:description" content="Honest Rovaniemi guide from a family living in Finnish Lapland. Flights, activities, where to stay and the traps to avoid.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TravelGuide","name":"Rovaniemi Travel Guide","url":"https://laplandlikethis.com/destinations/rovaniemi","description":"Honest Rovaniemi travel guide — flights, activities, where to stay and what to avoid.","about":{"@type":"TouristDestination","name":"Rovaniemi","containedInPlace":{"@type":"Place","name":"Finnish Lapland, Finland"}},"author":{"@type":"Person","name":"Colin","jobTitle":"Resident of Levi, Finnish Lapland since 2023"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Rovaniemi or Levi better?","acceptedAnswer":{"@type":"Answer","text":"It depends on what you want. Rovaniemi has more direct flights from more airports, better Santa infrastructure, and a city base. Levi is better for skiing, requires no hire car, and has a proper resort feel. We live in Levi but send many families to Rovaniemi — especially those flying from smaller UK airports or wanting the full Santa experience."}},{"@type":"Question","name":"Do I need a hire car in Rovaniemi?","acceptedAnswer":{"@type":"Answer","text":"You need one if you want the best experiences. The forest resorts 30-45 minutes outside the city are significantly better than staying in the centre. Without a car you're limited to city-centre hotels and organised transfers. A hire car opens up the real Rovaniemi."}},{"@type":"Question","name":"What is the best time to visit Rovaniemi?","acceptedAnswer":{"@type":"Answer","text":"November to March for winter. December for Christmas atmosphere but aurora odds are lower. January and February for best aurora odds and deep snow. March for the equinox effect and spring sunshine with snow still on the ground. Avoid November for aurora — too cloudy and snow cover is unreliable."}}]}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--forest:#1F3D2B;--forest-mid:#2A5239;--forest-lt:#3B6B4A;--snow:#F5F7F6;--snow-dim:#E8EBE9;--off:#F0F2F0;--amber:#D9A441;--amber-lt:#F0C06A;--amber-dim:rgba(217,164,65,0.15);--charcoal:#2B2B2B;--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--snow);color:var(--charcoal);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(31,61,43,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,247,246,0.08)}
+.nav-logo{font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--snow);text-decoration:none}
+.nav-logo span{color:var(--amber)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:13px;color:rgba(245,247,246,0.7);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--snow)}
+.nav-cta{background:var(--amber)!important;color:var(--forest)!important;padding:.55rem 1.25rem;border-radius:6px;font-weight:500!important}
+.hero{position:relative;height:88vh;min-height:560px;overflow:hidden;display:flex;align-items:flex-end;padding-top:72px}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.1) 40%,rgba(10,25,16,0.82) 75%,rgba(10,25,16,0.96) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 2.5rem 4.5rem;max-width:860px;animation:heroIn 1s cubic-bezier(.16,1,.3,1) forwards;opacity:0}
+@keyframes heroIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-breadcrumb{font-size:12px;color:rgba(245,247,246,0.5);margin-bottom:1.25rem;display:flex;align-items:center;gap:8px}
+.hero-breadcrumb a{color:rgba(245,247,246,0.5);text-decoration:none;transition:color .2s}
+.hero-breadcrumb a:hover{color:var(--amber)}
+.hero-breadcrumb span{color:rgba(245,247,246,0.25)}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(217,164,65,0.2);border:1px solid rgba(217,164,65,0.4);border-radius:20px;padding:.4rem 1rem;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-lt);font-weight:500;margin-bottom:1.25rem}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--amber)}
+h1{font-family:var(--serif);font-size:clamp(2.4rem,5.5vw,4.5rem);font-weight:300;color:var(--snow);line-height:1.05;letter-spacing:-.03em;margin-bottom:1rem}
+h1 em{font-style:italic;color:var(--amber-lt)}
+.hero-sub{font-size:16px;color:rgba(245,247,246,0.75);line-height:1.75;max-width:580px;margin-bottom:2rem}
+.hero-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:rgba(245,247,246,0.1);border-radius:10px;overflow:hidden;max-width:680px}
+.hfact{background:rgba(10,25,16,0.6);backdrop-filter:blur(8px);padding:.9rem 1.1rem}
+.hfact-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,247,246,0.4);margin-bottom:.35rem}
+.hfact-val{font-size:14px;font-weight:500;color:var(--snow);line-height:1.3}
+.hfact-val span{color:var(--amber)}
+.sec{padding:6rem 2.5rem}
+.sec-inner{max-width:1140px;margin:0 auto}
+.sec-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-lt);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+.eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--forest-lt)}
+.eyebrow-lt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(217,164,65,.7);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+.eyebrow-lt::before{content:'';display:block;width:24px;height:1px;background:rgba(217,164,65,.7)}
+h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;margin-bottom:1.5rem}
+h2.light{color:var(--snow)}
+h2.light em{font-style:italic;color:var(--amber-lt)}
+h2.dark{color:var(--forest)}
+h2.dark em{font-style:italic;color:var(--forest-lt)}
+p.body{font-size:15px;line-height:1.9;color:#444;margin-bottom:1.25rem}
+p.body-lt{font-size:15px;line-height:1.9;color:rgba(245,247,246,0.7);margin-bottom:1.25rem}
+blockquote{border-left:3px solid var(--amber);padding:.85rem 0 .85rem 1.25rem;margin:1.75rem 0;font-family:var(--serif);font-size:1.1rem;font-style:italic;line-height:1.6}
+blockquote.dark{color:var(--forest)}
+blockquote.light{color:rgba(245,247,246,.85)}
+.last-updated{font-size:12px;color:#888;margin-bottom:2rem;display:flex;align-items:center;gap:6px}
+.last-updated::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0}
+.author-note{background:var(--off);border-left:3px solid var(--forest-lt);border-radius:0 8px 8px 0;padding:1rem 1.25rem;margin:1.75rem 0;font-size:13px;color:#555;line-height:1.6}
+.author-note strong{color:var(--forest);font-weight:500}
+.sec-img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+/* flights */
+.flight-card{background:var(--snow);border-radius:12px;padding:1.5rem;border:1px solid rgba(31,61,43,.1);margin-bottom:1.25rem}
+.flight-card.primary{border-color:rgba(217,164,65,.35);border-width:1.5px}
+.fc-badge{display:inline-block;background:var(--amber-dim);border:1px solid rgba(217,164,65,.3);color:var(--amber);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:.85rem;font-weight:500}
+.fc-badge.alt{background:rgba(31,61,43,.06);border-color:rgba(31,61,43,.12);color:var(--forest-lt)}
+.ft{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:.85rem}
+.ft th{text-align:left;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#888;font-weight:500;padding:.5rem 0;border-bottom:1px solid rgba(31,61,43,.1)}
+.ft td{padding:.6rem 0;border-bottom:1px solid rgba(31,61,43,.05);color:#444;vertical-align:top;line-height:1.4}
+.ft td:first-child{font-weight:500;color:var(--charcoal);padding-right:1rem}
+.ft tr:last-child td{border-bottom:none}
+.tnote{background:rgba(217,164,65,.1);border-radius:8px;padding:.75rem 1rem;font-size:13px;color:var(--forest);line-height:1.55;margin-top:.5rem}
+.tnote strong{font-weight:500}
+.hire-car-warning{background:rgba(217,164,65,.12);border:1px solid rgba(217,164,65,.3);border-radius:10px;padding:1rem 1.25rem;font-size:14px;color:var(--forest);line-height:1.65;margin-top:1.5rem}
+.hire-car-warning strong{font-weight:500;display:block;margin-bottom:.35rem}
+/* season cards */
+.season-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem;margin-top:3rem}
+.sc{border-radius:12px;padding:1.5rem;border:1px solid rgba(245,247,246,.08);background:rgba(245,247,246,.03)}
+.sc.best{border-color:rgba(217,164,65,.35);background:rgba(217,164,65,.07)}
+.sc-month{font-family:var(--serif);font-size:1.2rem;color:var(--snow);margin-bottom:.35rem}
+.sc-tag{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-bottom:.75rem}
+.sc-body{font-size:13px;color:rgba(245,247,246,.55);line-height:1.7}
+/* activity items */
+.act-list{display:flex;flex-direction:column;gap:1.5rem;margin-top:3rem}
+.act-item{display:grid;grid-template-columns:260px 1fr;gap:0;border:1px solid rgba(31,61,43,.08);border-radius:12px;overflow:hidden}
+.act-item:nth-child(even){grid-template-columns:1fr 260px}
+.act-item:nth-child(even) .act-img-wrap{order:2}
+.act-item:nth-child(even) .act-text{order:1}
+.act-img{width:100%;height:220px;object-fit:cover;display:block}
+.act-text{padding:1.5rem}
+.act-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:.5rem;font-weight:500}
+.act-title{font-family:var(--serif);font-size:1.2rem;color:var(--forest);margin-bottom:.65rem}
+.act-body{font-size:14px;line-height:1.75;color:#555;margin-bottom:1rem}
+.act-meta{display:flex;flex-wrap:wrap;gap:.6rem}
+.act-meta span{background:var(--off);border-radius:6px;padding:.35rem .8rem;font-size:12px;color:#555}
+.act-meta span strong{color:var(--charcoal);font-weight:500}
+.verdict{font-size:13px;font-style:italic;color:var(--forest-lt);margin-top:.75rem;display:flex;align-items:flex-start;gap:6px}
+.verdict::before{content:'—';color:var(--amber);flex-shrink:0}
+/* avoid */
+.avoid-list{display:flex;flex-direction:column;gap:1rem;margin-top:3rem}
+.avoid-item{background:rgba(245,247,246,.04);border:1px solid rgba(245,247,246,.08);border-radius:12px;padding:1.5rem;display:grid;grid-template-columns:36px 1fr;gap:1.25rem}
+.avoid-num{width:36px;height:36px;border-radius:50%;background:rgba(217,164,65,.15);border:1px solid rgba(217,164,65,.3);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:var(--amber);flex-shrink:0}
+.avoid-title{font-size:14px;font-weight:500;color:var(--snow);margin-bottom:.4rem}
+.avoid-body{font-size:13px;color:rgba(245,247,246,.55);line-height:1.65}
+.avoid-instead{font-size:13px;color:var(--amber);margin-top:.5rem;display:flex;gap:6px}
+.avoid-instead::before{content:'→';flex-shrink:0}
+/* comparison */
+.comp-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:2.5rem}
+.comp-table th{text-align:left;padding:1rem 1.25rem;background:var(--forest);color:var(--snow);font-weight:500;font-size:13px}
+.comp-table th:first-child{border-radius:10px 0 0 0}
+.comp-table th:last-child{border-radius:0 10px 0 0}
+.comp-table th.hl{background:var(--forest-mid);color:var(--amber-lt)}
+.comp-table td{padding:.9rem 1.25rem;border-bottom:1px solid rgba(31,61,43,.07);color:#444;vertical-align:top;line-height:1.5}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table td:first-child{font-weight:500;color:var(--charcoal);background:rgba(31,61,43,.03)}
+.comp-table td.hl{background:rgba(217,164,65,.06)}
+.comp-verdict{margin-top:2rem;background:var(--off);border-radius:12px;padding:1.5rem}
+.cv-title{font-family:var(--serif);font-size:1.1rem;color:var(--forest);margin-bottom:.65rem}
+.cv-body{font-size:14px;line-height:1.75;color:#555}
+/* faq */
+.faq-list{margin-top:3rem;border:1px solid rgba(31,61,43,.1);border-radius:12px;overflow:hidden}
+.faq-item{border-bottom:1px solid rgba(31,61,43,.1)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{padding:1.25rem 1.5rem;font-size:15px;font-weight:500;color:var(--forest);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:var(--snow);transition:background .2s}
+.faq-q:hover{background:rgba(31,61,43,.03)}
+.faq-q.open{background:rgba(31,61,43,.04)}
+.faq-arrow{font-size:18px;color:var(--amber);flex-shrink:0;transition:transform .25s;font-family:var(--serif)}
+.faq-q.open .faq-arrow{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 1.5rem 1.25rem;font-size:14px;line-height:1.8;color:#555;background:var(--snow)}
+.faq-a.open{display:block}
+/* cta */
+.tool-cta{padding:6rem 2.5rem;background:var(--forest);text-align:center}
+.tc-inner{max-width:640px;margin:0 auto}
+.tc-h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:300;line-height:1.2;color:var(--snow);margin-bottom:1rem}
+.tc-h2 em{font-style:italic;color:var(--amber-lt)}
+.tc-body{font-size:15px;line-height:1.8;color:rgba(245,247,246,.65);margin-bottom:2rem}
+.btn-primary{background:var(--amber);color:var(--forest);border:none;border-radius:8px;padding:1rem 2rem;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:var(--amber-lt);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:rgba(245,247,246,.7);border:1px solid rgba(245,247,246,.25);border-radius:8px;padding:1rem 1.75rem;font-family:var(--sans);font-size:14px;text-decoration:none;transition:all .2s;display:inline-block;margin-left:1rem}
+.btn-ghost:hover{color:var(--snow);border-color:rgba(245,247,246,.5)}
+.tc-trust{font-size:12px;color:rgba(245,247,246,.3);margin-top:1.25rem}
+footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;border-top:1px solid rgba(245,247,246,.06)}
+.footer-logo{font-family:var(--serif);font-size:1rem;color:rgba(245,247,246,.5)}
+.footer-logo span{color:var(--amber)}
+.footer-links{display:flex;gap:1.75rem;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:rgba(245,247,246,.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:rgba(245,247,246,.65)}
+.footer-note{font-size:11px;color:rgba(245,247,246,.25)}
+@media(max-width:900px){nav{padding:1rem 1.25rem}.nav-links{display:none}.hero-content{padding:0 1.25rem 3.5rem}.sec{padding:4.5rem 1.25rem}.sec-grid{grid-template-columns:1fr;gap:2.5rem}.act-item,.act-item:nth-child(even){grid-template-columns:1fr}.act-item:nth-child(even) .act-img-wrap{order:0}.act-item:nth-child(even) .act-text{order:1}.act-img{height:200px}footer{flex-direction:column;text-align:center;padding:2rem 1.25rem}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">Lapland <span>Like This</span></a>
+  <div class="nav-links">
+    <a href="../index.html#destinations">Destinations</a>
+    <a href="../about.html">About us</a>
+    <a href="../index.html#tool">Trip builder</a>
+    <a href="../index.html#tool" class="nav-cta">Plan my trip</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <img class="hero-img" src="../images/IMG_1797.jpeg" alt="Northern lights aurora over Rovaniemi Finnish Lapland winter landscape">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../index.html#destinations">Destinations</a><span>/</span>Rovaniemi</div>
+    <div class="hero-tag">Arctic Capital</div>
+    <h1>Rovaniemi — the gateway<br>to Lapland and where<br><em>most people start</em></h1>
+    <p class="hero-sub">The most flights, the widest choice, right on the Arctic Circle. Best for first-timers and families. But there are traps — and we'll tell you exactly what they are.</p>
+    <div class="hero-facts">
+      <div class="hfact"><div class="hfact-label">Airport</div><div class="hfact-val"><span>RVN</span> Rovaniemi</div></div>
+      <div class="hfact"><div class="hfact-label">Transfer</div><div class="hfact-val"><span>10 min</span> to city</div></div>
+      <div class="hfact"><div class="hfact-label">Latitude</div><div class="hfact-val"><span>66.5°N</span> Arctic Circle</div></div>
+      <div class="hfact"><div class="hfact-label">Int'l airports</div><div class="hfact-val"><span>38</span> direct routes</div></div>
+      <div class="hfact"><div class="hfact-label">Hire car</div><div class="hfact-val"><span>Recommended</span></div></div>
+      <div class="hfact"><div class="hfact-label">Best for</div><div class="hfact-val"><span>First-timers</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--snow)">
+  <div class="sec-inner">
+    <div class="sec-grid">
+      <div class="reveal">
+        <div class="eyebrow">Honest overview</div>
+        <h2 class="dark">Rovaniemi is right for<br>many travellers.<br><em>But know what you're getting.</em></h2>
+        <p class="last-updated">Last updated March 2026 — flights verified for winter 2025–26 season</p>
+        <p class="body">Rovaniemi is the capital of Finnish Lapland and the easiest place to reach from almost anywhere. In winter 2025–26, Finavia reported direct scheduled flights from 38 international airports — more than any other Lapland destination. For first-time visitors, families wanting the full Santa experience, or travellers from airports without direct Levi routes, Rovaniemi is the right answer.</p>
+        <p class="body">The airport is 10 minutes from the city centre, and Santa Claus Village is just 3km from the runway. The infrastructure is better than anywhere else in Lapland — which is also partly the problem. Rovaniemi has become very tourist-facing in places.</p>
+        <blockquote class="dark">"We send families to Rovaniemi regularly — especially those flying from airports without direct Levi routes, or families where the Santa experience is the priority. We just tell them where to actually stay and what to skip."</blockquote>
+        <p class="body"><strong>Who Rovaniemi is NOT right for:</strong> If you want wilderness solitude, Saariselkä is better. If you want skiing as the main activity, Levi is better. If you want no hire car, Levi is better. Rovaniemi rewards travellers who know how to use it — the best of it is outside the city.</p>
+        <div class="author-note"><strong>Written by Livi</strong> — resident of Levi, Finnish Lapland since January 2024. We've explored Rovaniemi extensively and know what families arriving here need.</div>
+      </div>
+      <div class="reveal rd2">
+        <img class="sec-img" src="../images/IMG_1865.JPG" alt="Log cabin accommodation in Finnish Lapland near Rovaniemi in winter snow">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--off)">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="eyebrow">How to get here</div>
+      <h2 class="dark">More direct flights than<br><em>any other Lapland airport</em></h2>
+      <p class="body">Rovaniemi Airport (RVN) has direct scheduled flights from 38 international airports in winter 2025–26 — the widest choice in Finnish Lapland. If your city has a direct route to Lapland, there's a good chance it goes to Rovaniemi.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem">
+      <div class="flight-card primary reveal rd1">
+        <div class="fc-badge recommended">UK direct routes</div>
+        <table class="ft">
+          <thead><tr><th>From</th><th>Airline</th><th>Season</th></tr></thead>
+          <tbody>
+            <tr><td>London Gatwick</td><td>easyJet / TUI</td><td>Nov–Mar</td></tr>
+            <tr><td>London Stansted</td><td>Ryanair</td><td>Year-round</td></tr>
+            <tr><td>London Luton</td><td>easyJet</td><td>Nov–Feb</td></tr>
+            <tr><td>London Southend</td><td>easyJet</td><td>Dec–Jan</td></tr>
+            <tr><td>Manchester</td><td>easyJet / Ryanair</td><td>Nov–Feb</td></tr>
+            <tr><td>Birmingham</td><td>easyJet / Ryanair</td><td>Nov–Jan</td></tr>
+            <tr><td>Bristol</td><td>easyJet</td><td>Nov–Jan</td></tr>
+            <tr><td>Edinburgh</td><td>easyJet</td><td>Nov–Jan</td></tr>
+            <tr><td>Belfast</td><td>easyJet</td><td>Dec only</td></tr>
+            <tr><td>Dublin</td><td>Ryanair</td><td>Oct–Mar</td></tr>
+            <tr><td>Shannon</td><td>Ryanair</td><td>Oct–Mar</td></tr>
+          </tbody>
+        </table>
+        <div class="tnote"><strong>Transfer:</strong> 10 min to Rovaniemi city centre. Santa Claus Village 3km from airport. Hire car recommended — forest resorts 30–45 min out.</div>
+      </div>
+      <div class="reveal rd2">
+        <div class="flight-card" style="margin-bottom:1.25rem">
+          <div class="fc-badge">European direct routes (selection)</div>
+          <table class="ft">
+            <thead><tr><th>From</th><th>Airline</th><th>Season</th></tr></thead>
+            <tbody>
+              <tr><td>Amsterdam</td><td>KLM / easyJet</td><td>Dec–Mar</td></tr>
+              <tr><td>Paris CDG / Orly</td><td>Air France / Transavia</td><td>Nov–Mar</td></tr>
+              <tr><td>Frankfurt</td><td>Lufthansa</td><td>Nov–Mar</td></tr>
+              <tr><td>Munich</td><td>Norwegian</td><td>Dec–Mar</td></tr>
+              <tr><td>Berlin</td><td>easyJet / Eurowings</td><td>Dec–Mar</td></tr>
+              <tr><td>Hamburg</td><td>Eurowings</td><td>Dec–Mar</td></tr>
+              <tr><td>Milan Bergamo</td><td>Ryanair</td><td>Year-round</td></tr>
+              <tr><td>Warsaw</td><td>LOT</td><td>Nov–Feb</td></tr>
+              <tr><td>Barcelona</td><td>Norwegian</td><td>Dec–Feb</td></tr>
+              <tr><td>Vienna</td><td>Austrian</td><td>Nov–Mar</td></tr>
+              <tr><td>Istanbul</td><td>Turkish Airlines</td><td>Dec–Feb</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="hire-car-warning reveal">
+          <strong>You need a hire car.</strong>
+          The best Rovaniemi experiences — small reindeer farms, private husky operators, forest resorts — are 30–45 minutes outside the city. Without a car you're limited to the city centre and the airport Santa Village. A hire car transforms what's possible here.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--forest)">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="eyebrow-lt">Best time to go</div>
+      <h2 class="light">When to visit Rovaniemi —<br><em>month by month, honestly</em></h2>
+    </div>
+    <div class="season-grid">
+      <div class="sc reveal rd1"><div class="sc-month">November</div><div class="sc-tag">Early season</div><p class="sc-body">First snows, Christmas atmosphere building. Aurora possible but clouds frequent. Good for early-season trips at lower prices. Snow cover less reliable than January.</p></div>
+      <div class="sc best reveal rd2"><div class="sc-month">December</div><div class="sc-tag">Peak Christmas</div><p class="sc-body">The most popular month. Full Christmas atmosphere, Santa Village buzzing, good snow. Aurora odds lower than January due to December cloud patterns. Books out first — plan 6–12 months ahead for December.</p></div>
+      <div class="sc best reveal rd3"><div class="sc-month">January–February</div><div class="sc-tag">Our recommendation</div><p class="sc-body">Best aurora odds. Deep snow. Quieter than December. Temperatures −15°C to −25°C — dress properly. January and February statistically have the clearest skies. The real Lapland winter.</p></div>
+      <div class="sc best reveal rd1"><div class="sc-month">March</div><div class="sc-tag">Underrated</div><p class="sc-body">Sun returns, snow stays. The equinox effect boosts aurora activity. Spring skiing, longer days, still proper cold. Often 20–30% cheaper than December. Genuinely excellent.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--snow)">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="eyebrow">What's worth doing</div>
+      <h2 class="dark">Activities — the honest<br><em>verdict on each one</em></h2>
+    </div>
+    <div class="act-list">
+      <div class="act-item reveal">
+        <div class="act-img-wrap"><img class="act-img" src="../images/IMG_1849 (1).JPG" alt="Children with reindeer at a farm in Finnish Lapland"></div>
+        <div class="act-text">
+          <div class="act-label">The best experience here — if you find the right one</div>
+          <div class="act-title">Private reindeer farm</div>
+          <p class="act-body">This is the genuine Rovaniemi experience — not the Santa Village. A small family farm 30–45 minutes outside the city, a sleigh ride through forest, feeding the reindeer, coffee and bread in a lávvu. It requires a hire car. It is worth it. The difference between a small local farm and a large tourist-facing operation is enormous — ask about group size before booking.</p>
+          <div class="act-meta"><span><strong>Cost:</strong> €70–130 pp</span><span><strong>Duration:</strong> 2–3 hours</span><span><strong>Hire car:</strong> Needed</span></div>
+          <div class="verdict">The real Rovaniemi experience. Skip the Santa Village — come here instead.</div>
+        </div>
+      </div>
+      <div class="act-item reveal">
+        <div class="act-img-wrap"><img class="act-img" src="../images/IMG_9396" alt="Forest snowshoeing in Finnish Lapland winter"></div>
+        <div class="act-text">
+          <div class="act-label">Worth doing once</div>
+          <div class="act-title">Husky safari</div>
+          <p class="act-body">Same advice as anywhere in Lapland — worth doing once, do it properly, small group. The Rovaniemi area has good operators. Ask for 2+ hours minimum, maximum 12 people in the group. Older children can steer their own sled from around age 5.</p>
+          <div class="act-meta"><span><strong>Cost:</strong> €80–150 pp half-day</span><span><strong>Kids:</strong> From ~age 3 as passenger</span></div>
+          <div class="verdict">Once. Properly. Then spend the money on the reindeer farm.</div>
+        </div>
+      </div>
+      <div class="act-item reveal">
+        <div class="act-img-wrap"><img class="act-img" src="../images/levi_finland.jpg" alt="Northern lights aurora hunting at night in Finnish Lapland"></div>
+        <div class="act-text">
+          <div class="act-label">Worth it — with the right expectations</div>
+          <div class="act-title">Aurora hunting</div>
+          <p class="act-body">Rovaniemi sits at 66.5°N — right on the Arctic Circle — and has good aurora odds from November to March. A guided night aurora hunt by snowmobile, taking you away from city light pollution into the forest, is the best way to chase them. Download the Northern Lights Alert app. Come in January or February for the best odds. Cloud cover is the main obstacle — stay at least 4 nights to give yourself a real chance.</p>
+          <div class="act-meta"><span><strong>Guided hunt:</strong> €80–120 pp</span><span><strong>Best months:</strong> Jan–Mar</span></div>
+          <div class="verdict">If aurora is your priority, Saariselkä further north has better odds. But Rovaniemi is still very good.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--forest)">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="eyebrow-lt">What to avoid</div>
+      <h2 class="light">The traps most people<br><em>fall into in Rovaniemi</em></h2>
+    </div>
+    <div class="avoid-list">
+      <div class="avoid-item reveal">
+        <div class="avoid-num">1</div>
+        <div>
+          <div class="avoid-title">The Santa Village at the airport</div>
+          <p class="avoid-body">Santa Claus Village is a well-marketed theme park. It's fine — the setting is pretty and the logistics are easy. But the Santa visits are expensive, feel rushed, and share a queue with hundreds of others. It is not the meaningful experience most families are hoping for.</p>
+          <div class="avoid-instead">Drive 30–40 minutes out to a small private farm. The Santa experience there — in a log cabin, just your family, with proper time — is what people remember.</div>
+        </div>
+      </div>
+      <div class="avoid-item reveal">
+        <div class="avoid-num">2</div>
+        <div>
+          <div class="avoid-title">Staying in the city centre</div>
+          <p class="avoid-body">Rovaniemi city centre is practical — good restaurants, shops, easy logistics. But the Lapland experience people are imagining is in the forest. The best forest resorts are 30–45 minutes from the airport.</p>
+          <div class="avoid-instead">Stay in a forest cabin or resort outside the city. Base the hire car there and drive in when you need the city.</div>
+        </div>
+      </div>
+      <div class="avoid-item reveal">
+        <div class="avoid-num">3</div>
+        <div>
+          <div class="avoid-title">Coming without a hire car</div>
+          <p class="avoid-body">Rovaniemi without a hire car limits you to the city centre, the airport area and organised transfers. The genuine local operators, the small farms, the remote forest stays — all require a car.</p>
+          <div class="avoid-instead">Book a hire car. Roads are well-maintained in winter and cars come with winter tyres as standard. It transforms what's possible.</div>
+        </div>
+      </div>
+      <div class="avoid-item reveal">
+        <div class="avoid-num">4</div>
+        <div>
+          <div class="avoid-title">Expecting aurora in December</div>
+          <p class="avoid-body">December is the most popular month and has the worst aurora odds of the winter — cloud cover is significantly higher. Many families book December expecting the aurora and are disappointed.</p>
+          <div class="avoid-instead">If aurora matters, go in January or February. December is excellent for Christmas atmosphere and activities — just don't plan your trip around seeing the lights in December.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--snow)">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="eyebrow">Rovaniemi vs Levi</div>
+      <h2 class="dark">The comparison everyone<br><em>wants answered honestly</em></h2>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="comp-table reveal">
+        <thead><tr><th></th><th class="hl">Rovaniemi (RVN)</th><th>Levi (KTT)</th></tr></thead>
+        <tbody>
+          <tr><td>Direct UK airports</td><td class="hl">9+ airports including all London options</td><td>Gatwick, Manchester</td></tr>
+          <tr><td>Hire car needed?</td><td class="hl">Yes — strongly recommended</td><td>No — free bus to resort</td></tr>
+          <tr><td>Transfer time</td><td class="hl">10 min to city</td><td>15 min to resort</td></tr>
+          <tr><td>Santa experience</td><td class="hl">More infrastructure — but airport village is commercial</td><td>Smaller, more personal</td></tr>
+          <tr><td>Skiing</td><td class="hl">Small hill — not a ski destination</td><td>Finland's best ski resort, 43 slopes</td></tr>
+          <tr><td>Aurora odds</td><td class="hl">Good — 66.5°N</td><td>Similar — 67.8°N</td></tr>
+          <tr><td>Wilderness feel</td><td class="hl">City base with forest options 30–45 min out</td><td>Resort with direct forest access</td></tr>
+          <tr><td>Best for</td><td class="hl">First-timers, widest flight choice, Santa, families</td><td>Skiing, no hire car, couples, resort feel</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="comp-verdict reveal">
+      <div class="cv-title">Our honest position</div>
+      <p class="cv-body">We live in Levi and love it. But we'd send a first-time family flying from Bristol or Edinburgh to Rovaniemi without hesitation. The flight options are broader, the Santa infrastructure is better, and for families who aren't skiing, the activity mix is equally good. The key is knowing what you're getting — use the hire car, skip the airport village, stay outside the city. Do that and Rovaniemi is excellent.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--off)">
+  <div class="sec-inner" style="max-width:800px">
+    <div class="reveal">
+      <div class="eyebrow">Common questions</div>
+      <h2 class="dark">Questions about Rovaniemi —<br><em>answered honestly</em></h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is Rovaniemi or Levi better?<span class="faq-arrow">+</span></div><div class="faq-a">It depends on what you want. Rovaniemi has more direct flights from more airports, better Santa infrastructure, and a city base with more options. Levi is better for skiing, has no hire car requirement, and has a proper resort feel. We live in Levi but send many families to Rovaniemi — especially those flying from airports without direct Levi routes or wanting the full Santa experience.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need a hire car in Rovaniemi?<span class="faq-arrow">+</span></div><div class="faq-a">Yes — you need one if you want the best experiences. The genuine small farms, private operators and forest resorts are 30–45 minutes outside the city. Without a car you're limited to city-centre hotels and the airport Santa Village. A hire car is not optional for the Rovaniemi we'd recommend. Finnish winter roads are well-maintained and cars come with winter tyres as standard.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is the best time to visit Rovaniemi?<span class="faq-arrow">+</span></div><div class="faq-a">November to March for winter. December for Christmas atmosphere — but aurora odds are lower due to higher cloud cover. January and February for best aurora odds and deep snow. March for the equinox effect and spring sunshine with snow still on the ground. Avoid expecting aurora in December — the statistics don't support it. If you're going in December, go for the atmosphere and activities, not the lights.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is the Santa Village worth it?<span class="faq-arrow">+</span></div><div class="faq-a">The setting is pretty and the logistics are easy. The Santa experience itself is expensive, feels rushed, and is shared with hundreds of other families. It is not the meaningful, personal experience most families are imagining when they book Lapland for Christmas. Our advice: use the hire car to find a small private farm 30–40 minutes out of town. The difference is significant.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is Rovaniemi good for families with young children?<span class="faq-arrow">+</span></div><div class="faq-a">Yes — Rovaniemi is probably the best Lapland destination for families with young children specifically because of the Santa infrastructure and the widest range of family-oriented activities. The key is clothing — at −20°C, small children need proper thermal layers and boots rated for serious cold. Book activities well in advance in December as the best operators sell out 6–8 weeks ahead.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tool-cta">
+  <div class="tc-inner reveal">
+    <div class="eyebrow-lt" style="justify-content:center">Not sure Rovaniemi is right for you?</div>
+    <h2 class="tc-h2">Answer 6 questions.<br><em>Get your personalised top 3.</em></h2>
+    <p class="tc-body">Tell us where you're flying from, who you're with and what matters most. We'll tell you honestly whether Rovaniemi is the right answer — or whether Levi, Saariselkä or somewhere else suits you better.</p>
+    <a href="../index.html#tool" class="btn-primary">Start the trip builder →</a>
+    <a href="../index.html#destinations" class="btn-ghost">Browse all destinations</a>
+    <div class="tc-trust">No sign-up · No selling · Honest guidance from people who live here</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Lapland <span>Like This</span></div>
+  <div class="footer-links"><a href="../index.html#destinations">Destinations</a><a href="../about.html">About us</a><a href="../index.html#tool">Trip builder</a><a href="../privacy.html">Privacy</a></div>
+  <div class="footer-note">© 2025 Lapland Like This · Colin, Livi, Hugo, Rowan & Finley · Levi, Finnish Lapland</div>
+</footer>
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function toggleFaq(el){const a=el.nextElementSibling;const isOpen=a.classList.contains('open');document.querySelectorAll('.faq-q').forEach(q=>q.classList.remove('open'));document.querySelectorAll('.faq-a').forEach(a=>a.classList.remove('open'));if(!isOpen){el.classList.add('open');a.classList.add('open')}}
+</script>
+</body>
+</html>
