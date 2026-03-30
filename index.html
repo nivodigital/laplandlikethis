@@ -67,10 +67,9 @@ nav.scrolled{background:rgba(31,61,43,0.97);backdrop-filter:blur(12px);border-bo
 .proof-dot{width:4px;height:4px;border-radius:50%;background:rgba(31,61,43,0.35);flex-shrink:0}
 
 /* STORY SECTION */
-.story{padding:5rem 2.5rem;background:var(--snow)}
-.story-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.story-img-wrap{position:relative;order:1}
-.story-inner > div:last-child{order:2}
+.story{padding:7rem 2.5rem;background:var(--snow)}
+.story-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.story-img-wrap{position:relative}
 .story-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px;display:block}
 .story-img-label{position:absolute;top:-1rem;right:-1rem;background:var(--amber);color:var(--forest);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 1rem;border-radius:4px}
 .story-accent{position:absolute;bottom:-1.5rem;left:1.5rem;width:56px;height:3px;background:var(--amber)}
@@ -85,7 +84,7 @@ nav.scrolled{background:rgba(31,61,43,0.97);backdrop-filter:blur(12px);border-bo
 .cred::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0}
 
 /* DIFFERENT */
-.different{background:var(--forest);padding:5rem 2.5rem}
+.different{background:var(--forest);padding:7rem 2.5rem}
 .different-inner{max-width:1140px;margin:0 auto}
 .diff-header{max-width:580px;margin-bottom:4rem}
 .diff-eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(217,164,65,.7);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
@@ -100,7 +99,7 @@ nav.scrolled{background:rgba(31,61,43,0.97);backdrop-filter:blur(12px);border-bo
 .pillar-b{font-size:13px;color:rgba(245,247,246,.5);line-height:1.7}
 
 /* DESTINATIONS — editorial photo grid */
-.destinations{padding:5rem 2.5rem;background:var(--snow)}
+.destinations{padding:7rem 2.5rem;background:var(--snow)}
 .destinations-inner{max-width:1140px;margin:0 auto}
 .dest-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;gap:2rem;flex-wrap:wrap}
 .dest-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:300;color:var(--forest);line-height:1.2}
@@ -108,9 +107,9 @@ nav.scrolled{background:rgba(31,61,43,0.97);backdrop-filter:blur(12px);border-bo
 .dest-sub{font-size:14px;color:#666;max-width:340px;line-height:1.65}
 
 /* Featured card — large */
-.dest-grid{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:auto auto;gap:1.25rem}
+.dest-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:1.25rem}
 .dest-card{position:relative;border-radius:10px;overflow:hidden;display:block;text-decoration:none;cursor:pointer}
-.dest-card.featured{grid-row:span 2;grid-column:1}
+.dest-card.featured{grid-row:span 2}
 .dest-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1)}
 .dest-card.featured img{height:100%;min-height:560px}
 .dest-card:not(.featured) img{height:260px}
@@ -127,11 +126,11 @@ nav.scrolled{background:rgba(31,61,43,0.97);backdrop-filter:blur(12px);border-bo
 .dest-card:hover .dest-link::after{transform:translateX(4px)}
 
 /* ACTIVITIES — split photo sections */
-.activities{padding:5rem 2.5rem;background:var(--off)}
+.activities{padding:7rem 2.5rem;background:var(--off)}
 .activities-inner{max-width:1140px;margin:0 auto}
-.act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2rem}
+.act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
 .act-card{border-radius:10px;overflow:hidden;position:relative;display:block;text-decoration:none}
-.act-card img{width:100%;height:240px;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.act-card img{width:100%;height:300px;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1)}
 .act-card:hover img{transform:scale(1.05)}
 .act-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,25,16,0.85) 0%,transparent 55%)}
 .act-body{position:absolute;bottom:0;left:0;right:0;padding:1.5rem}
@@ -140,9 +139,9 @@ nav.scrolled{background:rgba(31,61,43,0.97);backdrop-filter:blur(12px);border-bo
 .act-verdict{font-size:11px;color:rgba(245,247,246,.6);line-height:1.5}
 
 /* TOOL SECTION */
-.tool-section{padding:5rem 2.5rem;background:var(--snow-dim);background:var(--snow)}
+.tool-section{padding:7rem 2.5rem;background:var(--snow-dim);background:var(--snow)}
 .tool-section-inner{max-width:1140px;margin:0 auto}
-.tool-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:3rem}
+.tool-intro{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-bottom:4rem}
 .tool-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;color:var(--forest);margin-bottom:1.25rem}
 .tool-h2 em{font-style:italic}
 .tool-body{font-size:15px;line-height:1.9;color:#444;margin-bottom:1.5rem}
@@ -278,7 +277,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
 .q-restart:hover{border-color:rgba(245,247,246,.2);color:rgba(245,247,246,.65)}
 
 /* HONEST */
-.honest{padding:5rem 2.5rem;background:var(--off)}
+.honest{padding:7rem 2.5rem;background:var(--off)}
 .honest-inner{max-width:960px;margin:0 auto;text-align:center}
 .honest-h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;line-height:1.2;color:var(--forest);margin-bottom:1.25rem}
 .honest-h2 em{font-style:italic}
@@ -291,11 +290,11 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
 .hc-not{font-size:12px;color:#bbb;text-decoration:line-through;line-height:1.6;margin-top:.5rem}
 
 /* TESTIMONIALS */
-.testimonials{padding:5rem 2.5rem;background:var(--forest)}
+.testimonials{padding:7rem 2.5rem;background:var(--forest)}
 .test-inner{max-width:1140px;margin:0 auto}
-.test-h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;color:var(--snow);margin-bottom:2rem}
+.test-h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;color:var(--snow);margin-bottom:3rem}
 .test-h2 em{font-style:italic;color:var(--amber-lt)}
-.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
 .tc-card{background:rgba(245,247,246,.04);border:1px solid rgba(245,247,246,.08);border-radius:10px;padding:1.5rem}
 .tc-stars{color:var(--amber);font-size:12px;margin-bottom:.7rem;letter-spacing:2px}
 .tc-quote{font-family:var(--serif);font-size:.95rem;font-style:italic;color:rgba(245,247,246,.85);line-height:1.7;margin-bottom:1rem}
@@ -305,7 +304,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
 .tc-detail{font-size:11px;color:rgba(245,247,246,.4);margin-top:1px}
 
 /* FINAL CTA */
-.final-cta{padding:6rem 2.5rem;background:var(--snow);text-align:center}
+.final-cta{padding:8rem 2.5rem;background:var(--snow);text-align:center}
 .fcta-inner{max-width:660px;margin:0 auto}
 .fcta-h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.15;color:var(--forest);margin-bottom:1.25rem}
 .fcta-h2 em{font-style:italic}
@@ -330,7 +329,9 @@ footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space
 .reveal.visible{opacity:1;transform:translateY(0)}
 .rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
 
-.nav-links{display:none}
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:1rem 1.25rem}.nav-links{display:none}
   .hero-content{padding:0 1.25rem 4rem}
   .story,.different,.destinations,.activities,.tool-section,.honest,.testimonials,.final-cta{padding:5rem 1.25rem}
   .story-inner{grid-template-columns:1fr;gap:3rem}
@@ -342,47 +343,6 @@ footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space
   .test-grid{grid-template-columns:1fr}
   footer{flex-direction:column;text-align:center;padding:2rem 1.25rem}
 }
-
-/* HAMBURGER + MOBILE MENU */
-.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:210;position:relative}
-.nav-hamburger span{display:block;width:24px;height:2px;background:var(--snow);border-radius:2px;transition:all .3s}
-.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.nav-hamburger.open span:nth-child(2){opacity:0}
-.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(31,61,43,0.98);z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:2rem;padding:2rem}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--serif);font-size:1.5rem;font-weight:300;color:rgba(245,247,246,0.85);text-decoration:none;transition:color .2s}
-.mobile-menu a:hover{color:var(--amber)}
-.mobile-menu .m-cta{font-size:1rem!important;font-family:var(--sans)!important;background:var(--amber);color:var(--forest)!important;border-radius:8px;padding:.85rem 2rem;font-weight:500!important;margin-top:.5rem}
-
-/* RESPONSIVE - IMPROVED */
-@media(max-width:900px){
-  nav{padding:1rem 1.25rem}
-  .nav-links{display:none}
-  .nav-hamburger{display:flex}
-  .hero-content{padding:0 1.25rem 4rem}
-  .story,.different,.destinations,.activities,.tool-section,.honest,.testimonials,.final-cta{padding:5rem 1.25rem}
-  .story-inner{grid-template-columns:1fr;gap:3rem}
-  .dest-grid{grid-template-columns:1fr}
-  .dest-card.featured{grid-row:auto}
-  .dest-card.featured img{min-height:280px;height:280px}
-  .dest-card:not(.featured) img{height:220px}
-  .act-grid{grid-template-columns:1fr 1fr}
-  .tool-intro{grid-template-columns:1fr;gap:2.5rem}
-  .test-grid{grid-template-columns:1fr}
-  footer{flex-direction:column;text-align:center;padding:2rem 1.25rem}
-  .footer-links{justify-content:center}
-}
-@media(max-width:480px){
-  .act-grid{grid-template-columns:1fr}
-  .hero-stats{gap:1.25rem}
-  .hero-h1{font-size:clamp(2rem,9vw,3rem)}
-  .hero-actions{flex-direction:column;align-items:flex-start}
-  .btn-primary,.btn-ghost{width:100%;text-align:center;display:block}
-  .q-ogrid{grid-template-columns:1fr 1fr}
-  .fcta-actions{flex-direction:column;align-items:center}
-}
-
 </style>
 </head>
 <body>
@@ -396,20 +356,7 @@ footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space
     <a href="#tool">Trip builder</a>
     <a href="#tool" class="nav-cta">Plan my trip</a>
   </div>
-  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
-<div class="mobile-menu" id="mobile-menu">
-  <a href="#destinations" onclick="toggleMenu()">Destinations</a>
-  <a href="about.html">About us</a>
-  <a href="#tool" onclick="toggleMenu()">Trip builder</a>
-  <a href="destinations/levi.html">Levi guide</a>
-  <a href="destinations/rovaniemi.html">Rovaniemi</a>
-  <a href="guides/when-to-go.html">When to go</a>
-  <a href="guides/lapland-with-kids.html">With kids</a>
-  <a href="#tool" class="m-cta" onclick="toggleMenu()">Plan my trip →</a>
-</div>
 
 <!-- HERO — full bleed aurora photo -->
 <section class="hero">
@@ -529,21 +476,6 @@ footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space
           <span class="dest-badge">Best aurora odds</span>
           <div class="dest-name">Saariselkä</div>
           <p class="dest-desc">Wilder. Further north. For people who mean it.</p>
-          <div class="dest-link">Read our honest guide</div>
-        </div>
-      </a>
-    </div>
-    <!-- Ylläs — wide card below grid -->
-    <div style="margin-top:1.25rem">
-      <a href="destinations/yllas.html" class="dest-card reveal" style="display:block;position:relative;border-radius:10px;overflow:hidden;text-decoration:none">
-        <img src="images/IMG_3184.jpeg" alt="Cross-country ski trail through pine forest — Ylläs Finnish Lapland" style="width:100%;height:220px;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1)">
-        <div class="dest-overlay"></div>
-        <div class="dest-body" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
-          <div>
-            <span class="dest-badge">The quiet one</span>
-            <div class="dest-name">Ylläs</div>
-            <p style="font-size:12px;color:rgba(245,247,246,.65);line-height:1.5;margin-top:.25rem">Same Kittilä Airport as Levi. Finland's highest fell. Half the crowds.</p>
-          </div>
           <div class="dest-link">Read our honest guide</div>
         </div>
       </a>
@@ -854,38 +786,14 @@ footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space
   <div class="footer-logo">Lapland <span>Like This</span></div>
   <div class="footer-links">
     <a href="#destinations">Destinations</a>
-    <a href="destinations/levi.html">Levi</a>
-    <a href="destinations/rovaniemi.html">Rovaniemi</a>
-    <a href="destinations/saariselka.html">Saariselkä</a>
-    <a href="destinations/yllas.html">Ylläs</a>
-    <a href="guides/when-to-go.html">When to go</a>
-    <a href="guides/lapland-with-kids.html">Lapland with kids</a>
-    <a href="guides/what-to-pack.html">What to pack</a>
     <a href="about.html">About us</a>
     <a href="#tool">Trip builder</a>
-    <a href="privacy.html">Privacy</a>
+    <a href="#">Privacy</a>
   </div>
   <div class="footer-note">© 2025 Lapland Like This · Colin, Livi, Hugo, Rowan & Finley · Levi, Finnish Lapland</div>
 </footer>
 
 <script>
-/* MOBILE MENU */
-function toggleMenu(){
-  const h=document.getElementById('hamburger');
-  const m=document.getElementById('mobile-menu');
-  h.classList.toggle('open');
-  m.classList.toggle('open');
-  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
-}
-document.addEventListener('click',function(e){
-  const m=document.getElementById('mobile-menu');
-  const h=document.getElementById('hamburger');
-  if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!h.contains(e.target)){
-    m.classList.remove('open');h.classList.remove('open');
-    document.body.style.overflow='';
-  }
-});
-
 /* NAV SCROLL */
 window.addEventListener('scroll',()=>{
   document.getElementById('main-nav').classList.toggle('scrolled',window.scrollY>60);
