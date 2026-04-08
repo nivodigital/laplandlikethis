@@ -1101,9 +1101,12 @@ function qcheckGate(){
 }
 function qsubmitGate(){
   const email=document.getElementById('qfemail').value.trim();
+  const name=document.getElementById('qfname').value.trim();
   if(!email||!email.includes('@')){document.getElementById('qgate-err').style.display='block';return}
   document.getElementById('qgate-err').style.display='none';
-  qbuildResult(document.getElementById('qfname').value.trim(),email);
+  const top3=qscoreDests();
+  qbuildResult(name,email,top3);
+  qsendQuizEmailSubmission(name,email,top3);
 }
 function qscoreDests(){
   const g=QA.group,b=QA.budget,s=QA.season,p=QA.priority,acc=QA.accom,r=QA.region;
@@ -1130,12 +1133,11 @@ function qscoreDests(){
   if(['uk','ireland','italy','belgium'].includes(r)){sc.rovaniemi+=1}
   return Object.keys(sc).sort((a,b2)=>sc[b2]-sc[a]).slice(0,3).map((k,i)=>({key:k,rank:i+1,reasons:rs[k]}));
 }
-function qbuildResult(name,email){
+function qbuildResult(name,email,top3){
   document.getElementById('qs7').classList.remove('active');
   document.getElementById('qs8').classList.add('active');
   document.querySelectorAll('#qprog .q-pd').forEach(d=>{d.classList.add('done');d.classList.remove('act')});
   document.getElementById('start-tool').scrollIntoView({behavior:'smooth',block:'start'});
-  const top3=qscoreDests();
   const g=name?name.split(' ')[0]:'';
   const rL=['Best match','Strong alternative','Also worth considering'];
   document.getElementById('qr-header').innerHTML=`<div class="r-hdr"><div class="r-ey">Lapland Like This — your results</div><div class="r-title">${g?'<em>'+g+'</em>, your':'Your'} top 3<br>Lapland destinations</div><div class="r-sub">Flying from ${QA.originLabel} · ${QA.nights} nights · ${QA.priority.slice(0,2).join(' + ')}</div></div>`;
@@ -1156,6 +1158,60 @@ function qbuildResult(name,email){
   }
   document.getElementById('qr-flight').innerHTML=`<div class="r-stitle">How to get there from ${QA.originLabel}</div>${fcard(rd.p,false)}${rd.a?fcard(rd.a,true):''}<div class="r-sep"></div>`;
   document.getElementById('qr-cta').innerHTML=`<div class="r-cta-b"><div class="r-cta-t">Want the full day-by-day plan?</div><p class="r-cta-p">We build detailed Lapland itineraries — specific lodges, operators, honest costs. No packages. No commission.</p><button class="r-cta-btn" onclick="alert('→ Opens itinerary planner')" type="button">Build my full itinerary →</button><div class="r-tr">No obligation · No spam · We reply within 24 hours</div></div>`;
+}
+
+function qlabel(key,val){
+  const labels={
+    group:{couple:'Just the two of us', 'family-young':'Family — young kids', 'family-older':'Family — older kids', solo:'Solo', friends:'Friends group', multigem:'Multi-generational family'},
+    budget:{low:'Under £2,000 / €2,300 pp', mid:'£2,000–£3,500 / €2,300–€4,000 pp', high:'£3,500–£6,000 / €4,000–€7,000 pp', luxury:'£6,000+ / €7,000+ pp'},
+    season:{'nov-dec':'Nov–Dec', 'jan-feb':'Jan–Feb', 'mar-apr':'Mar–Apr', flexible:'Flexible'},
+    accom:{igloo:'Glass igloo or sky cabin', cabin:'Private log cabin', hotel:'Hotel or resort', mix:'Mix — cabin + one igloo night'},
+    pace:{packed:'Activity-packed', balanced:'Balanced', slow:'Slow and immersive'},
+    exp:{first:'First real winter trip', some:'Done a ski holiday or two', experienced:'Comfortable in serious cold'},
+    priority:{aurora:'Northern lights', santa:'Santa experience', husky:'Husky safari', reindeer:'Reindeer farm', snowmobile:'Snowmobile', skiing:'Skiing', culture:'Sámi culture', sauna:'Sauna + ice swim'}
+  };
+  return (labels[key]&&labels[key][val])?labels[key][val]:val;
+}
+
+async function qsendQuizEmailSubmission(name,email,top3){
+  const payload={
+    submittedAt:new Date().toISOString(),
+    lead:{name:name||'',email,consent:document.getElementById('qconsent').checked},
+    answers:{
+      origin:QA.originLabel,
+      region:QA.region,
+      group:qlabel('group',QA.group),
+      nights:QA.nights,
+      budget:qlabel('budget',QA.budget),
+      season:qlabel('season',QA.season),
+      priorities:QA.priority.map(p=>qlabel('priority',p)),
+      accommodation:qlabel('accom',QA.accom),
+      pace:qlabel('pace',QA.pace),
+      winterExperience:qlabel('exp',QA.exp)
+    },
+    recommendations:top3.map((item,idx)=>({
+      rank:idx+1,
+      destination:QDESTS[item.key].name,
+      tag:QDESTS[item.key].tag,
+      reasons:item.reasons,
+      airport:QDESTS[item.key].airport,
+      transfer:QDESTS[item.key].transfer,
+      avoid:QDESTS[item.key].avoid
+    }))
+  };
+
+  try{
+    const res=await fetch('/api/quiz-submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload)
+    });
+    if(!res.ok){
+      console.error('Quiz submission email failed with status',res.status);
+    }
+  }catch(err){
+    console.error('Quiz submission email request failed',err);
+  }
 }
 function qrestart(){
   Object.assign(QA,{origin:null,region:null,group:null,budget:null,season:null,priority:[],accom:null,pace:null,exp:null,nights:5,originLabel:''});
