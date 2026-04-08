@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lapland Word Wall — Lapland Like This</title>
+  <meta name="description" content="How did Lapland make you feel? Add your word to the wall — in any language.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+    :root{
+      --forest:#1F3D2B;
+      --forest-mid:#2A5239;
+      --forest-lt:#3B6B4A;
+      --snow:#F5F7F6;
+      --snow-dim:#E8EBE9;
+      --off:#F0F2F0;
+      --amber:#D9A441;
+      --amber-lt:#F0C06A;
+      --amber-dim:rgba(217,164,65,0.15);
+      --charcoal:#2B2B2B;
+      --serif:'Fraunces',Georgia,serif;
+      --sans:'DM Sans',system-ui,sans-serif;
+      --terracotta:#C97A5A;
+    }
+
+    html{scroll-behavior:smooth}
+
+    body{
+      font-family:var(--sans);
+      background:#132419;
+      color:var(--snow);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;transition:background .4s,backdrop-filter .4s}
+    nav.scrolled{background:rgba(31,61,43,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,247,246,0.08)}
+    .nav-logo{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--snow);text-decoration:none;letter-spacing:.01em}
+    .nav-logo span{color:var(--amber)}
+    .nav-links{display:flex;gap:2rem;align-items:center}
+    .nav-links a{font-size:13px;color:rgba(245,247,246,0.8);text-decoration:none;letter-spacing:.03em;transition:color .2s}
+    .nav-links a:hover{color:var(--snow)}
+    .nav-cta{background:var(--amber)!important;color:var(--forest)!important;padding:.6rem 1.35rem;border-radius:6px;font-weight:500!important;font-size:13px!important;transition:background .2s!important}
+    .nav-cta:hover{background:var(--amber-lt)!important}
+    .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:210}
+    .nav-hamburger span{display:block;width:24px;height:2px;background:var(--snow);border-radius:2px;transition:all .3s}
+    .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .nav-hamburger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+    .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .mobile-menu{display:none;position:fixed;inset:0;background:rgba(20,42,28,0.98);z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:2rem;padding:2rem;backdrop-filter:blur(8px)}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{font-family:var(--serif);font-size:1.6rem;font-weight:300;color:rgba(245,247,246,0.82);text-decoration:none;transition:color .2s;letter-spacing:-.01em}
+    .mobile-menu a:hover{color:var(--amber-lt)}
+    .mobile-menu .mm-cta{font-family:var(--sans)!important;font-size:1rem!important;background:var(--amber);color:var(--forest)!important;border-radius:8px;padding:.9rem 2.25rem;font-weight:500!important;margin-top:.75rem}
+    .mobile-menu .mm-cta:hover{background:var(--amber-lt)!important;color:var(--forest)!important}
+    .mm-divider{width:40px;height:1px;background:rgba(245,247,246,.12);margin:.5rem 0}
+
+    .aurora-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse at 20% 50%,#102115 0%,#132419 100%)}
+    .aurora-layer{position:absolute;width:200%;height:200%;top:-50%;left:-50%;border-radius:50%}
+    .al1{background:radial-gradient(ellipse 70% 35% at 35% 30%,rgba(112,186,145,.16) 0%,transparent 65%);animation:al1 20s ease-in-out infinite alternate}
+    .al2{background:radial-gradient(ellipse 55% 45% at 65% 65%,rgba(217,164,65,.10) 0%,transparent 60%);animation:al2 26s ease-in-out infinite alternate}
+    .al3{background:radial-gradient(ellipse 65% 28% at 50% 85%,rgba(245,247,246,.06) 0%,transparent 55%);animation:al3 31s ease-in-out infinite alternate}
+    .al4{background:radial-gradient(ellipse 40% 60% at 80% 20%,rgba(31,61,43,.65) 0%,transparent 70%);animation:al4 17s ease-in-out infinite alternate}
+    @keyframes al1{0%{transform:translate(-5%,-5%) rotate(-3deg) scale(1)}100%{transform:translate(6%,9%) rotate(6deg) scale(1.12)}}
+    @keyframes al2{0%{transform:translate(9%,4%) rotate(2deg) scale(1.04)}100%{transform:translate(-7%,-4%) rotate(-5deg) scale(.93)}}
+    @keyframes al3{0%{transform:translate(-4%,11%) rotate(-5deg)}100%{transform:translate(8%,-9%) rotate(4deg)}}
+    @keyframes al4{0%{transform:translate(0%,0%)}100%{transform:translate(-8%,6%) rotate(-2deg)}}
+
+    .stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+    .star{position:absolute;background:white;border-radius:50%;opacity:0;animation:twinkle var(--dur) ease-in-out infinite var(--delay)}
+    @keyframes twinkle{0%,100%{opacity:0}50%{opacity:var(--b)}}
+
+    .page-shell{position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:7.5rem 24px 5rem}
+
+    .hero{display:grid;grid-template-columns:minmax(0,.95fr) minmax(320px,1.05fr);gap:2rem;align-items:end;margin-bottom:2rem}
+    .hero-copy{max-width:620px}
+    .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(217,164,65,.82);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+    .eyebrow::before{content:'';display:block;width:24px;height:1px;background:rgba(217,164,65,.7)}
+    h1{font-family:var(--serif);font-size:clamp(2.35rem,5.8vw,4.7rem);font-weight:300;line-height:1.03;color:var(--snow);margin-bottom:1rem;letter-spacing:-.03em}
+    h1 em{font-style:italic;color:var(--amber-lt)}
+    .subtitle{font-size:16px;font-weight:300;color:rgba(245,247,246,.68);max-width:560px;line-height:1.85}
+    .hero-note{justify-self:end;max-width:360px;background:rgba(245,247,246,.05);border:1px solid rgba(245,247,246,.08);border-radius:18px;padding:1.3rem 1.35rem;backdrop-filter:blur(10px)}
+    .hero-note-title{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(217,164,65,.7);margin-bottom:.7rem}
+    .hero-note p{font-size:13px;line-height:1.7;color:rgba(245,247,246,.56)}
+
+    .wall-panel{background:rgba(245,247,246,.05);border:1px solid rgba(245,247,246,.08);border-radius:24px;padding:1.4rem;backdrop-filter:blur(12px);box-shadow:0 30px 70px rgba(6,14,10,.26)}
+    .panel-head{display:flex;align-items:center;gap:8px;padding:0 .25rem 1rem}
+    .panel-dot{width:10px;height:10px;border-radius:50%}
+    .panel-title{margin-left:auto;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,247,246,.3)}
+    .panel-body{border-radius:18px;border:1px solid rgba(245,247,246,.08);background:linear-gradient(180deg,rgba(14,28,19,.74) 0%,rgba(18,35,24,.62) 100%);padding:2rem 1.5rem}
+
+    .counter-wrap{text-align:center;margin-bottom:20px}
+    .counter-number{display:block;font-family:var(--serif);font-size:clamp(3.1rem,8vw,5.8rem);font-weight:300;color:var(--snow);line-height:1;letter-spacing:-.04em}
+    .counter-label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,247,246,.38);margin-top:10px;display:block}
+    .divider{width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--amber),transparent);margin:30px auto 26px}
+
+    .votes-notice{text-align:center;font-size:13px;color:rgba(245,247,246,.48);margin-bottom:30px;min-height:20px;transition:all .4s}
+    .votes-notice strong{color:var(--amber-lt);font-weight:500}
+    .votes-notice.done{color:rgba(240,192,106,.7)}
+
+    .word-cloud{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 14px;padding:12px 8px 42px;min-height:280px}
+    .cloud-loading{width:100%;text-align:center;padding:80px 20px;color:rgba(245,247,246,.3);font-style:italic;font-size:14px}
+    .word-item{position:relative;font-family:var(--serif);font-weight:300;cursor:pointer;border-radius:4px;padding:3px 6px;transition:transform .2s ease,color .2s ease,text-shadow .2s ease;user-select:none;-webkit-user-select:none;opacity:0;animation:wordIn .5s ease forwards;letter-spacing:-.02em}
+    @keyframes wordIn{from{opacity:0;transform:translateY(8px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+    .word-item:hover:not(.locked):not(.voted){transform:translateY(-3px) scale(1.08);text-shadow:0 0 20px rgba(217,164,65,.28)}
+    .word-item.voted{color:var(--amber-lt)!important;text-shadow:0 0 16px rgba(217,164,65,.35)}
+    .word-item.voted::before{content:'✦';position:absolute;top:-6px;right:-6px;font-size:9px;color:var(--amber-lt);opacity:.9}
+    .word-item.locked{cursor:default;opacity:.55!important}
+    .word-count{font-size:.42em;font-weight:400;opacity:.45;margin-left:3px;vertical-align:super}
+
+    .plus-one{position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-family:var(--sans);font-size:13px;font-weight:700;color:var(--amber-lt);pointer-events:none;white-space:nowrap;animation:floatUp .9s ease-out forwards;z-index:10}
+    @keyframes floatUp{0%{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}60%{opacity:1}100%{opacity:0;transform:translateX(-50%) translateY(-36px) scale(.8)}}
+
+    .submit-section{max-width:620px;margin:0 auto;text-align:center;padding-top:10px}
+    .submit-title{font-family:var(--serif);font-size:1.35rem;font-weight:300;color:var(--snow);margin-bottom:8px}
+    .submit-sub{font-size:13px;color:rgba(245,247,246,.48);margin-bottom:20px;line-height:1.6}
+    .input-row{display:flex;gap:10px}
+    .word-input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:10px;padding:14px 18px;font-family:var(--sans);font-size:.95rem;color:var(--snow);outline:none;transition:border-color .2s,background .2s}
+    .word-input::placeholder{color:rgba(249,250,251,.28)}
+    .word-input:focus{border-color:rgba(217,164,65,.48);background:rgba(217,164,65,.08)}
+    .submit-btn{background:var(--amber);color:var(--forest);border:none;border-radius:10px;padding:14px 22px;font-family:var(--sans);font-size:.9rem;font-weight:500;cursor:pointer;transition:transform .2s,background .2s,opacity .2s;white-space:nowrap;letter-spacing:.01em}
+    .submit-btn:hover:not(:disabled){transform:translateY(-2px);background:var(--amber-lt)}
+    .submit-btn:disabled{opacity:.5;cursor:default;transform:none}
+
+    .msg{margin-top:14px;padding:12px 16px;border-radius:8px;font-size:13.5px;line-height:1.5;display:none;text-align:left}
+    .msg.show{display:block}
+    .msg.pending{background:rgba(217,164,65,.12);border:1px solid rgba(217,164,65,.26);color:var(--amber-lt)}
+    .msg.error{background:rgba(239,68,68,.10);border:1px solid rgba(239,68,68,.25);color:#FCA5A5}
+
+    .char-count{text-align:right;font-size:11px;color:rgba(249,250,251,.25);margin-top:6px}
+    .char-count.near{color:rgba(201,122,90,.8)}
+
+    .admin-wrap{text-align:center;margin-top:2rem}
+    .admin-link{font-size:10px;color:rgba(245,247,246,.18);text-decoration:none;letter-spacing:.16em;text-transform:uppercase;transition:color .2s}
+    .admin-link:hover{color:rgba(245,247,246,.36)}
+
+    .social-support{margin-top:2.5rem;background:rgba(245,247,246,.04);border:1px solid rgba(245,247,246,.08);border-radius:20px;padding:1.5rem}
+    .social-title{font-family:var(--serif);font-size:1.4rem;font-weight:300;color:var(--snow);margin-bottom:.45rem}
+    .social-copy{font-size:13px;line-height:1.75;color:rgba(245,247,246,.58);margin-bottom:1rem;max-width:620px}
+    .social-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+    .social-link{display:flex;justify-content:space-between;align-items:center;gap:.75rem;background:rgba(245,247,246,.03);border:1px solid rgba(245,247,246,.08);border-radius:12px;padding:.95rem 1rem;text-decoration:none;transition:transform .2s,border-color .2s,background .2s}
+    .social-link:hover{transform:translateY(-2px);border-color:rgba(217,164,65,.35);background:rgba(245,247,246,.06)}
+    .social-platform{font-family:var(--serif);font-size:1.05rem;font-weight:300;color:var(--snow)}
+    .social-handle{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,247,246,.4)}
+    .social-arrow{font-size:13px;color:var(--amber-lt)}
+
+    footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;border-top:1px solid rgba(245,247,246,.06);position:relative;z-index:1}
+    .footer-logo{font-family:var(--serif);font-size:1rem;color:rgba(245,247,246,.5)}
+    .footer-logo span{color:var(--amber)}
+    .footer-links{display:flex;gap:1.75rem;flex-wrap:wrap}
+    .footer-links a{font-size:12px;color:rgba(245,247,246,.35);text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:rgba(245,247,246,.65)}
+    .footer-note{font-size:11px;color:rgba(245,247,246,.25)}
+
+    .wc0{color:#F5F7F6}
+    .wc1{color:#F0C06A}
+    .wc2{color:#DDE8E1}
+    .wc3{color:#E8EBE9}
+    .wc4{color:#C8D7CD}
+    .wc5{color:#F5F7F6}
+    .wc6{color:#D7B56D}
+    .wc7{color:#E8EBE9}
+
+    @media(max-width:900px){
+      nav{padding:1rem 1.5rem}
+      .nav-links{display:none}
+      .nav-hamburger{display:flex}
+      .page-shell{padding:6.5rem 16px 4rem}
+      .hero{grid-template-columns:1fr;gap:1.25rem}
+      .hero-note{justify-self:stretch;max-width:none}
+      .panel-body{padding:1.6rem 1rem}
+      footer{flex-direction:column;align-items:center;text-align:center;padding:2rem 1.25rem}
+      .footer-links{justify-content:center}
+    }
+
+    @media(max-width:600px){
+      .input-row{flex-direction:column}
+      .submit-btn{width:100%;justify-content:center}
+      h1{font-size:clamp(2rem,11vw,3rem)}
+      .social-links{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="aurora-bg">
+    <div class="aurora-layer al1"></div>
+    <div class="aurora-layer al2"></div>
+    <div class="aurora-layer al3"></div>
+    <div class="aurora-layer al4"></div>
+  </div>
+  <div class="stars" id="stars"></div>
+
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">Lapland <span>Like This</span></a>
+    <div class="nav-links">
+      <a href="/destinations/">Destinations</a>
+      <a href="/guides/">Guides</a>
+      <a href="/lapland-tools.html" style="color:var(--snow)">Lapland Tools</a>
+      <a href="/where-go-lapland.html">Where to go</a>
+      <a href="about.html">About us</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" type="button">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
+    <a href="/destinations/" onclick="closeMenu()">Destinations</a>
+    <a href="/guides/" onclick="closeMenu()">Guides</a>
+    <a href="/lapland-tools.html" onclick="closeMenu()">Lapland Tools</a>
+    <div class="mm-divider"></div>
+    <a href="/destinations/levi.html" onclick="closeMenu()">Levi</a>
+    <a href="/destinations/rovaniemi.html" onclick="closeMenu()">Rovaniemi</a>
+    <a href="/destinations/saariselka.html" onclick="closeMenu()">Saariselkä</a>
+    <a href="/destinations/yllas.html" onclick="closeMenu()">Ylläs</a>
+    <div class="mm-divider"></div>
+    <a href="/guides/when-to-go.html" onclick="closeMenu()">When to go</a>
+    <a href="/guides/lapland-with-kids.html" onclick="closeMenu()">Lapland with kids</a>
+    <a href="/guides/what-to-pack.html" onclick="closeMenu()">What to pack</a>
+    <div class="mm-divider"></div>
+    <a href="/where-go-lapland.html" onclick="closeMenu()">Where to go</a>
+    <a href="/about.html" onclick="closeMenu()">About us</a>
+  </div>
+
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Lapland Tools · Community</span>
+        <h1>How did <em>Lapland</em><br>make you feel?</h1>
+        <p class="subtitle">One word. Any language. Add yours to the wall, or vote for the ones that already feel right. The aurora stays. The word cloud stays. It just belongs to the same site now.</p>
+      </div>
+      <aside class="hero-note">
+        <div class="hero-note-title">Part of the tools hub</div>
+        <p>The Word Wall sits inside Lapland Tools because it is not a guide and it is not a booking aid. It is just a simple community record of what the place felt like.</p>
+      </aside>
+    </section>
+
+    <section class="wall-panel">
+      <div class="panel-head">
+        <div class="panel-dot" style="background:#E05C5C"></div>
+        <div class="panel-dot" style="background:#E0A85C"></div>
+        <div class="panel-dot" style="background:#5CE07A"></div>
+        <div class="panel-title">Lapland Word Wall</div>
+      </div>
+      <div class="panel-body">
+        <div class="counter-wrap">
+          <span class="counter-number" id="voter-count">—</span>
+          <span class="counter-label">people have shared their feeling</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="votes-notice" id="votes-notice">
+          Click up to <strong>2 words</strong> that feel right — or add your own below
+        </p>
+
+        <div class="word-cloud" id="word-cloud">
+          <div class="cloud-loading">Loading the wall…</div>
+        </div>
+
+        <div class="submit-section">
+          <p class="submit-title">Your word isn't on the wall yet?</p>
+          <p class="submit-sub">Type it below in any language. It'll join the wall once approved.</p>
+          <div class="input-row">
+            <input
+              type="text"
+              id="word-input"
+              class="word-input"
+              placeholder="e.g. Awestruck, Luminen, Magisch, Époustouflant…"
+              maxlength="40"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button id="submit-btn" class="submit-btn">Add to Wall</button>
+          </div>
+          <p class="char-count" id="char-count">0 / 40</p>
+          <div class="msg pending" id="msg-pending">
+            ✦ &nbsp;Your word has been sent for approval. It'll appear on the wall once reviewed — thank you.
+          </div>
+          <div class="msg error" id="msg-error"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="admin-wrap">
+      <a href="word-wall-admin.html" class="admin-link">Word Wall admin</a>
+    </div>
+
+    <section class="social-support">
+      <div class="social-title">We'd love your support — let's connect.</div>
+      <p class="social-copy">If you enjoyed the wall, follow the wider project. That support helps more people find the site and keeps the honest Lapland content moving.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://www.instagram.com/laplandlikethis" target="_blank" rel="noreferrer"><div><div class="social-platform">Instagram</div><div class="social-handle">@laplandlikethis</div></div><span class="social-arrow">→</span></a>
+        <a class="social-link" href="https://www.facebook.com/laplandlikethis" target="_blank" rel="noreferrer"><div><div class="social-platform">Facebook</div><div class="social-handle">Lapland Like This</div></div><span class="social-arrow">→</span></a>
+        <a class="social-link" href="https://www.tiktok.com/@laplandlikethis" target="_blank" rel="noreferrer"><div><div class="social-platform">TikTok</div><div class="social-handle">@laplandlikethis</div></div><span class="social-arrow">→</span></a>
+        <a class="social-link" href="https://www.youtube.com/@Levi-Finland" target="_blank" rel="noreferrer"><div><div class="social-platform">YouTube</div><div class="social-handle">@Levi-Finland</div></div><span class="social-arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">Lapland <span>Like This</span></div>
+    <div class="footer-links">
+      <a href="/destinations/">Destinations</a>
+      <a href="/guides/">Guides</a>
+      <a href="lapland-tools.html">Lapland Tools</a>
+      <a href="where-go-lapland.html">Where to go</a>
+      <a href="word-wall.html">Word Wall</a>
+      <a href="about.html">About us</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+    <div class="footer-note">© 2026 Lapland Like This · Colin, Livi, Hugo, Rowan &amp; Finley · Levi, Finnish Lapland</div>
+  </footer>
+
+  <!-- ─────────────────────────────────────────────────────
+       JAVASCRIPT
+  ───────────────────────────────────────────────────── -->
+  <script>
+
+    // ── Config ───────────────────────────────────────────
+    const SUPABASE_URL  = 'https://guvbfsjwjwgvyovvobxo.supabase.co';
+    const SUPABASE_KEY  = 'sb_publishable_U2486DnLRbzbOC5GB911-Q_PTVj5hZh';
+    const MAX_VOTES     = 2;
+    const COOKIE_VOTES  = 'llp_voted_ids';
+    const COOKIE_VOTER  = 'llp_is_voter';
+
+    const { createClient } = supabase;
+    const db = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // ── Cookie helpers ───────────────────────────────────
+    function setCookie(name, value, days) {
+      const exp = new Date();
+      exp.setDate(exp.getDate() + days);
+      document.cookie = `${name}=${encodeURIComponent(value)};expires=${exp.toUTCString()};path=/;SameSite=Lax`;
+    }
+
+    function getCookie(name) {
+      const match = document.cookie.split(';').find(c => c.trim().startsWith(name + '='));
+      return match ? decodeURIComponent(match.split('=').slice(1).join('=')) : null;
+    }
+
+    function getVotedIds() {
+      try { return JSON.parse(getCookie(COOKIE_VOTES) || '[]'); }
+      catch { return []; }
+    }
+
+    function saveVotedIds(ids) {
+      setCookie(COOKIE_VOTES, JSON.stringify(ids), 365);
+    }
+
+    function hasVotedBefore() { return !!getCookie(COOKIE_VOTER); }
+    function markVoter()       { setCookie(COOKIE_VOTER, '1', 365); }
+
+    // ── Font size ─────────────────────────────────────────
+    function getSize(votes, max) {
+      const min = 13, cap = 72;
+      if (max <= 0) return 20;
+      const t = Math.pow(votes / max, 0.55); // gentle curve
+      return Math.round(min + t * (cap - min));
+    }
+
+    // ── Stars ─────────────────────────────────────────────
+    function buildStars() {
+      const el = document.getElementById('stars');
+      for (let i = 0; i < 90; i++) {
+        const s = document.createElement('div');
+        s.className = 'star';
+        const size = Math.random() > 0.75 ? 2 : 1;
+        s.style.cssText = `
+          left:${Math.random()*100}%;
+          top:${Math.random()*100}%;
+          width:${size}px; height:${size}px;
+          --dur:${2.5 + Math.random()*4.5}s;
+          --delay:-${Math.random()*6}s;
+          --b:${(0.25 + Math.random()*0.65).toFixed(2)};
+        `;
+        el.appendChild(s);
+      }
+    }
+
+    // ── Counter animation ──────────────────────────────────
+    function animateCount(target) {
+      const el = document.getElementById('voter-count');
+      const dur = 1600, start = performance.now();
+      (function step(now) {
+        const p = Math.min((now - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target).toLocaleString();
+        if (p < 1) requestAnimationFrame(step);
+      })(start);
+    }
+
+    // ── Load voter count ──────────────────────────────────
+    async function loadVoterCount() {
+      try {
+        const { data } = await db
+          .from('lapland_site_stats')
+          .select('total_voters')
+          .eq('id', 1)
+          .single();
+        if (data) animateCount(data.total_voters);
+      } catch(e) {
+        document.getElementById('voter-count').textContent = '—';
+      }
+    }
+
+    // ── Load + render word cloud ───────────────────────────
+    let wordsCache = [];
+
+    async function loadWords() {
+      const { data, error } = await db
+        .from('lapland_words')
+        .select('id, word, vote_count')
+        .eq('approved', true)
+        .order('vote_count', { ascending: false });
+
+      if (error) {
+        document.getElementById('word-cloud').innerHTML =
+          '<p style="color:rgba(255,255,255,0.3);text-align:center;width:100%">Could not load the wall. Please refresh.</p>';
+        return;
+      }
+
+      wordsCache = data || [];
+      renderCloud();
+    }
+
+    function renderCloud() {
+      const cloud = document.getElementById('word-cloud');
+      const voted = getVotedIds();
+      const maxed = voted.length >= MAX_VOTES;
+      const maxVotes = wordsCache.length ? wordsCache[0].vote_count : 0;
+
+      if (!wordsCache.length) {
+        cloud.innerHTML = '<p style="color:rgba(255,255,255,0.3);text-align:center;width:100%">Be the first to add a word.</p>';
+        return;
+      }
+
+      cloud.innerHTML = '';
+
+      wordsCache.forEach((w, i) => {
+        const isVoted  = voted.includes(w.id);
+        const isLocked = maxed && !isVoted;
+        const size     = getSize(w.vote_count, maxVotes);
+        const colorCls = `wc${i % 8}`;
+
+        const el = document.createElement('span');
+        el.className = [
+          'word-item',
+          colorCls,
+          isVoted  ? 'voted'  : '',
+          isLocked ? 'locked' : '',
+        ].join(' ').trim();
+
+        el.style.cssText = `
+          font-size:${size}px;
+          animation-delay:${Math.min(i * 0.035, 1.2)}s;
+          ${i === 0 && w.vote_count > 10 ? 'color:#C97A5A !important;' : ''}
+        `;
+
+        el.dataset.id = w.id;
+        el.title = isVoted  ? 'You voted for this word ✓'
+                 : isLocked ? `You've used both your votes`
+                 : `Click to vote`;
+
+        el.innerHTML = `${w.word}<sup class="word-count">${w.vote_count}</sup>`;
+
+        if (!isLocked && !isVoted) {
+          el.addEventListener('click', () => doVote(w, el));
+        }
+
+        cloud.appendChild(el);
+      });
+
+      updateNotice();
+    }
+
+    // ── Handle vote ───────────────────────────────────────
+    async function doVote(word, el) {
+      const voted = getVotedIds();
+      if (voted.includes(word.id) || voted.length >= MAX_VOTES) return;
+
+      // Optimistic update
+      const newVoted = [...voted, word.id];
+      saveVotedIds(newVoted);
+      word.vote_count += 1;
+
+      // Visual
+      el.classList.add('voted');
+      el.classList.remove('locked');
+      const sup = el.querySelector('.word-count');
+      if (sup) sup.textContent = word.vote_count;
+
+      const plus = document.createElement('span');
+      plus.className = 'plus-one';
+      plus.textContent = '+1';
+      el.appendChild(plus);
+      setTimeout(() => plus.remove(), 1000);
+
+      // Lock remaining words if maxed
+      if (newVoted.length >= MAX_VOTES) {
+        document.querySelectorAll('.word-item:not(.voted)').forEach(w => {
+          w.classList.add('locked');
+          w.title = `You've used both your votes`;
+        });
+        updateNotice();
+      } else {
+        updateNotice();
+      }
+
+      // Supabase — non-blocking
+      db.rpc('increment_word_vote', { word_id: word.id }).catch(console.error);
+
+      if (!hasVotedBefore()) {
+        markVoter();
+        db.rpc('increment_voter_count').then(() => loadVoterCount()).catch(console.error);
+      }
+    }
+
+    // ── Update votes notice ────────────────────────────────
+    function updateNotice() {
+      const voted = getVotedIds();
+      const left  = MAX_VOTES - voted.length;
+      const el    = document.getElementById('votes-notice');
+
+      if (left <= 0) {
+        el.classList.add('done');
+        el.innerHTML = `You've shared both your words. Thank you ✦`;
+      } else if (left === 1) {
+        el.innerHTML = `You have <strong>1 vote left</strong> — or add a new word below`;
+      } else {
+        el.innerHTML = `Click up to <strong>2 words</strong> that feel right — or add your own below`;
+      }
+    }
+
+    // ── Submit new word ─────────────────────────────────────
+    const inputEl  = document.getElementById('word-input');
+    const submitEl = document.getElementById('submit-btn');
+    const charEl   = document.getElementById('char-count');
+
+    inputEl.addEventListener('input', () => {
+      const n = inputEl.value.length;
+      charEl.textContent = `${n} / 40`;
+      charEl.classList.toggle('near', n >= 32);
+    });
+
+    inputEl.addEventListener('keydown', e => { if (e.key === 'Enter') submitWord(); });
+    submitEl.addEventListener('click', submitWord);
+
+    async function submitWord() {
+      const raw   = inputEl.value.trim();
+      const msgP  = document.getElementById('msg-pending');
+      const msgE  = document.getElementById('msg-error');
+
+      msgP.classList.remove('show');
+      msgE.classList.remove('show');
+
+      if (!raw) return;
+
+      if (raw.length < 2) { return showErr('Please enter at least 2 characters.'); }
+      if (raw.length > 40) { return showErr('Please keep it under 40 characters.'); }
+
+      // Check if word exists
+      const dupe = wordsCache.find(w => w.word.toLowerCase() === raw.toLowerCase());
+      if (dupe) {
+        showErr(`"${dupe.word}" is already on the wall — click it to vote!`);
+        const existing = document.querySelector(`[data-id="${dupe.id}"]`);
+        if (existing) {
+          existing.style.outline = '2px solid #60A5FA';
+          existing.style.borderRadius = '4px';
+          existing.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setTimeout(() => { existing.style.outline = ''; }, 2500);
+        }
+        return;
+      }
+
+      submitEl.disabled = true;
+      submitEl.textContent = 'Sending…';
+
+      const { error } = await db.from('lapland_words').insert({
+        word: raw,
+        vote_count: 0,
+        approved: false,
+        language: 'unknown'
+      });
+
+      if (error) {
+        showErr('Something went wrong. Please try again.');
+        submitEl.disabled = false;
+        submitEl.textContent = 'Add to Wall';
+        return;
+      }
+
+      inputEl.value = '';
+      charEl.textContent = '0 / 40';
+      msgP.classList.add('show');
+      submitEl.textContent = 'Sent ✓';
+      setTimeout(() => {
+        submitEl.disabled = false;
+        submitEl.textContent = 'Add to Wall';
+      }, 4000);
+    }
+
+    function showErr(msg) {
+      const el = document.getElementById('msg-error');
+      el.textContent = msg;
+      el.classList.add('show');
+      setTimeout(() => el.classList.remove('show'), 5000);
+    }
+
+    // ── Init ──────────────────────────────────────────────
+    buildStars();
+    loadVoterCount();
+    loadWords();
+    updateNotice();
+
+  </script>
+  <script>
+    function toggleMenu() {
+      const h = document.getElementById('hamburger');
+      const m = document.getElementById('mobile-menu');
+      const o = !m.classList.contains('open');
+      m.classList.toggle('open', o);
+      h.classList.toggle('open', o);
+      h.setAttribute('aria-expanded', o ? 'true' : 'false');
+      document.body.style.overflow = o ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+      const h = document.getElementById('hamburger');
+      const m = document.getElementById('mobile-menu');
+      m.classList.remove('open');
+      h.classList.remove('open');
+      h.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', function(e) {
+      const h = document.getElementById('hamburger');
+      const m = document.getElementById('mobile-menu');
+      if (m && m.classList.contains('open') && !m.contains(e.target) && !h.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    window.addEventListener('scroll', function() {
+      document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+</body>
+</html>

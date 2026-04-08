@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Where is the best place to go in Lapland? Compare Levi vs Rovaniemi, Saariselka and Yllas, then use our tool to find your best Lapland base.">
+<meta name="keywords" content="where is the best place to go in Lapland, Levi vs Rovaniemi, best place in Lapland, where should I go in Lapland, Lapland destination guide">
+<link rel="canonical" href="https://laplandlikethis.com/where-go-lapland">
+<meta property="og:title" content="Where Is the Best Place to Go in Lapland? — Lapland Like This">
+<meta property="og:description" content="Compare Levi vs Rovaniemi and the other main Lapland destinations, then use our tool to find the best place for your trip.">
+<meta property="og:image" content="https://laplandlikethis.com/images/lapland-aurora-night.png"><meta property="og:url" content="https://laplandlikethis.com/where-go-lapland"><meta property="og:type" content="website"><title>Where Is the Best Place to Go in Lapland? Levi vs Rovaniemi and More — Lapland Like This</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Where Is the Best Place to Go in Lapland?","url":"https://laplandlikethis.com/where-go-lapland","description":"Compare Levi vs Rovaniemi, Saariselka and Yllas, then use our tool to find your best Lapland base.","about":{"@type":"Place","name":"Finnish Lapland"},"author":{"@type":"Person","name":"Colin","jobTitle":"Resident of Levi, Finnish Lapland since 2023"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best place to go in Lapland?","acceptedAnswer":{"@type":"Answer","text":"There is no single best place for everyone. Levi is usually the easiest answer for travellers who want direct flights, skiing and no hire car. Rovaniemi is often better for first-time families and people choosing from a wider range of airports. Saariselka is better if northern lights and wilderness matter more than convenience. Yllas is better if you want quieter skiing and fewer crowds."}},{"@type":"Question","name":"Is Levi or Rovaniemi better?","acceptedAnswer":{"@type":"Answer","text":"Levi is better for a resort-style trip with direct flights into Kittila and easy movement without a car. Rovaniemi is better for wider flight choice, the Santa experience and first-time visitors who want more accommodation range. We live in Levi, but we still send a lot of families to Rovaniemi when it suits their route better."}},{"@type":"Question","name":"How do I choose where to stay in Lapland?","acceptedAnswer":{"@type":"Answer","text":"Start with where you are flying from, who you are travelling with, your budget, and whether you care more about Santa, skiing, aurora, or quiet wilderness. That is exactly what our where-to-go tool below is built around."}}]}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#1F3D2B;--forest-mid:#2A5239;--forest-lt:#3B6B4A;
+  --snow:#F5F7F6;--snow-dim:#E8EBE9;--off:#F0F2F0;
+  --amber:#D9A441;--amber-lt:#F0C06A;--amber-dim:rgba(217,164,65,0.15);
+  --charcoal:#2B2B2B;--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--snow);color:var(--charcoal);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;transition:background .4s,backdrop-filter .4s}
+nav.scrolled{background:rgba(31,61,43,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,247,246,0.08)}
+.nav-logo{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--snow);text-decoration:none;letter-spacing:.01em}
+.nav-logo span{color:var(--amber)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:13px;color:rgba(245,247,246,0.8);text-decoration:none;letter-spacing:.03em;transition:color .2s}
+.nav-links a:hover{color:var(--snow)}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:210}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--snow);border-radius:2px;transition:all .3s}
+.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(20,42,28,0.98);z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:2rem;padding:2rem;backdrop-filter:blur(8px)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--serif);font-size:1.6rem;font-weight:300;color:rgba(245,247,246,0.82);text-decoration:none;transition:color .2s;letter-spacing:-.01em}
+.mobile-menu a:hover{color:var(--amber-lt)}
+.mm-divider{width:40px;height:1px;background:rgba(245,247,246,.12);margin:.5rem 0}
+
+.hero{position:relative;min-height:92vh;overflow:hidden;display:flex;align-items:flex-end;background:#102115}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.18) 0%,rgba(0,0,0,.12) 36%,rgba(10,25,16,.82) 74%,rgba(10,25,16,.96) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 2.5rem 5rem;max-width:1140px;animation:heroIn 1.2s cubic-bezier(.16,1,.3,1) forwards;opacity:0}
+@keyframes heroIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(217,164,65,.2);border:1px solid rgba(217,164,65,.4);border-radius:20px;padding:.4rem 1rem;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-lt);font-weight:500;margin-bottom:1.5rem;backdrop-filter:blur(4px)}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--amber)}
+.hero-h1{font-family:var(--serif);font-size:clamp(2.7rem,6vw,5rem);font-weight:300;color:var(--snow);line-height:1.03;letter-spacing:-.03em;margin-bottom:1.15rem;max-width:800px}
+.hero-h1 em{font-style:italic;color:var(--amber-lt)}
+.hero-sub{font-size:clamp(14px,1.9vw,17px);color:rgba(245,247,246,.74);line-height:1.85;max-width:640px;margin-bottom:2rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-primary{background:var(--amber);color:var(--forest);border:none;border-radius:8px;padding:.95rem 2rem;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;letter-spacing:.01em}
+.btn-primary:hover{background:var(--amber-lt);transform:translateY(-2px)}
+.btn-ghost{background:rgba(245,247,246,.1);color:rgba(245,247,246,.85);border:1px solid rgba(245,247,246,.3);border-radius:8px;padding:.95rem 1.75rem;font-family:var(--sans);font-size:14px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;backdrop-filter:blur(4px)}
+.btn-ghost:hover{background:rgba(245,247,246,.18);color:var(--snow)}
+
+.section-eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-lt);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+.section-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--forest-lt)}
+.section-eyebrow.dark{color:rgba(217,164,65,.72)}
+.section-eyebrow.dark::before{background:rgba(217,164,65,.72)}
+.section-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.18;color:var(--forest);margin-bottom:1.35rem}
+.section-h2 em{font-style:italic;color:var(--forest-lt)}
+.section-h2.light{color:var(--snow)}
+.section-h2.light em{color:var(--amber-lt)}
+.body-p{font-size:15px;line-height:1.9;color:#444;margin-bottom:1.2rem}
+.body-p.light{color:rgba(245,247,246,.68)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+.quick-answer{padding:7rem 2.5rem;background:var(--snow)}
+.quick-inner{max-width:1140px;margin:0 auto}
+.qa-intro{max-width:760px;margin-bottom:2.5rem}
+.qa-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.qa-card{background:var(--off);border:1px solid rgba(31,61,43,.08);border-radius:14px;padding:1.4rem;display:flex;flex-direction:column;gap:.6rem;min-height:100%}
+.qa-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--forest-lt);font-weight:500}
+.qa-dest{font-family:var(--serif);font-size:1.45rem;font-weight:300;color:var(--forest)}
+.qa-best{font-size:13px;line-height:1.75;color:#555}
+
+.levi-vs-rov{padding:7rem 2.5rem;background:var(--forest)}
+.lvr-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:3rem;align-items:start}
+.lvr-panel{background:rgba(245,247,246,.04);border:1px solid rgba(245,247,246,.08);border-radius:18px;padding:1.5rem}
+.lvr-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.lvr-card{background:rgba(245,247,246,.03);border:1px solid rgba(245,247,246,.08);border-radius:14px;padding:1.25rem}
+.lvr-name{font-family:var(--serif);font-size:1.35rem;color:var(--snow);margin-bottom:.35rem}
+.lvr-tag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-bottom:.7rem}
+.lvr-copy{font-size:13px;line-height:1.75;color:rgba(245,247,246,.58)}
+.lvr-verdict{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(245,247,246,.08);font-size:13px;line-height:1.75;color:rgba(245,247,246,.74)}
+
+.tool-section{padding:7rem 2.5rem;background:var(--snow)}
+.tool-section-inner{max-width:1140px;margin:0 auto}
+.tool-intro{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-bottom:4rem}
+.tool-h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;color:var(--forest);margin-bottom:1.25rem}
+.tool-h2 em{font-style:italic}
+.tool-body{font-size:15px;line-height:1.9;color:#444;margin-bottom:1.5rem}
+.tool-checks{display:flex;flex-direction:column;gap:10px;margin-bottom:1.75rem}
+.tc{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#333;line-height:1.5}
+.tc-icon{width:22px;height:22px;border-radius:50%;background:var(--forest);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:var(--snow);margin-top:1px}
+.tool-quote{font-family:var(--serif);font-size:1.05rem;font-style:italic;color:#666;line-height:1.7;margin-bottom:.75rem}
+.tool-quote-attr{font-size:12px;color:#999}
+.quiz-frame{background:var(--forest);border-radius:18px;overflow:hidden;box-shadow:0 32px 64px rgba(31,61,43,.2)}
+.qf-header{background:rgba(255,255,255,.05);padding:1rem 1.5rem;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(245,247,246,.08)}
+.qf-dot{width:11px;height:11px;border-radius:50%}
+.qf-title{font-size:11px;color:rgba(245,247,246,.3);margin-left:auto;letter-spacing:.08em;text-transform:uppercase}
+.quiz-inner{padding:2rem 1.75rem}
+.q-app{font-family:var(--sans);color:var(--snow)}
+.q-step{display:none;animation:qfi .35s ease}.q-step.active{display:block}
+@keyframes qfi{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.q-pbar{display:flex;gap:5px;margin-bottom:2rem}.q-pd{height:3px;flex:1;border-radius:2px;background:rgba(245,247,246,.1);transition:background .4s}.q-pd.done{background:var(--amber)}.q-pd.act{background:rgba(217,164,65,.45)}
+.q-ey{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:.5rem;font-weight:500}.q-title{font-family:var(--serif);font-size:clamp(1.3rem,3.5vw,1.75rem);line-height:1.25;margin-bottom:.55rem}.q-hint{font-size:13px;color:rgba(245,247,246,.5);margin-bottom:1.4rem;line-height:1.6}
+.q-olist{display:flex;flex-direction:column;gap:7px;margin-bottom:1.4rem}.q-or{background:rgba(245,247,246,.05);border:1px solid rgba(245,247,246,.1);border-radius:10px;padding:.8rem 1rem;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .2s}.q-or:hover{border-color:rgba(217,164,65,.4);background:rgba(245,247,246,.08)}.q-or.sel{border-color:var(--amber);background:rgba(217,164,65,.12)}.q-or .rl{font-size:13px;font-weight:500;color:var(--snow)}.q-or .rs{font-size:11px;color:rgba(245,247,246,.45);margin-top:2px}.q-or .ck{margin-left:auto;width:16px;height:16px;border-radius:50%;border:1.5px solid rgba(245,247,246,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s}.q-or.sel .ck{background:var(--amber);border-color:var(--amber)}.q-or.sel .ck::after{content:'';display:block;width:5px;height:5px;border-radius:50%;background:var(--forest)}
+.q-ogrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:7px;margin-bottom:1.4rem}.q-oc{background:rgba(245,247,246,.05);border:1px solid rgba(245,247,246,.1);border-radius:10px;padding:.85rem .8rem;cursor:pointer;transition:all .2s}.q-oc:hover{border-color:rgba(217,164,65,.4);background:rgba(245,247,246,.08)}.q-oc.sel{border-color:var(--amber);background:rgba(217,164,65,.12)}.q-oc .ql{font-size:13px;font-weight:500;color:var(--snow);display:block}.q-oc .qs{font-size:11px;color:rgba(245,247,246,.45);display:block;margin-top:2px}
+.q-btn{width:100%;background:var(--amber);color:var(--forest);border:none;border-radius:9px;padding:.85rem;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s}.q-btn:hover{background:var(--amber-lt);transform:translateY(-1px)}.q-btn:disabled{opacity:.22;cursor:not-allowed;transform:none}
+.q-bk{background:transparent;border:none;color:rgba(245,247,246,.45);font-size:13px;cursor:pointer;padding:.5rem 0;display:flex;align-items:center;gap:5px;margin-bottom:.85rem;font-family:var(--sans)}.q-bk:hover{color:var(--snow)}
+.q-sw{margin-bottom:1.4rem}.q-sl{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.85rem}.q-sv{font-family:var(--serif);font-size:1.4rem;color:var(--amber)}.q-su{font-size:11px;color:rgba(245,247,246,.45)}
+input[type=range]{width:100%;height:4px;background:rgba(245,247,246,.15);border-radius:4px;outline:none;border:none;cursor:pointer;-webkit-appearance:none;appearance:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--amber);border:3px solid var(--forest);cursor:pointer}
+.q-rl{display:flex;justify-content:space-between;margin-top:6px}.q-rl span{font-size:10px;color:rgba(245,247,246,.45)}
+.q-search input[type=text]{width:100%;background:rgba(245,247,246,.07);border:1px solid rgba(245,247,246,.15);border-radius:9px;padding:.75rem 1rem;color:var(--snow);font-size:13px;font-family:var(--sans);outline:none;transition:border .2s;margin-bottom:.5rem}.q-search input[type=text]:focus{border-color:rgba(217,164,65,.5)}.q-search input[type=text]::placeholder{color:rgba(245,247,246,.3)}
+.q-sugg{background:rgba(15,30,20,.97);border:1px solid rgba(245,247,246,.12);border-radius:9px;overflow:hidden;max-height:180px;overflow-y:auto;margin-bottom:.5rem}.q-si{padding:.6rem 1rem;font-size:13px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(245,247,246,.06);transition:background .15s}.q-si:last-child{border-bottom:none}.q-si:hover{background:rgba(245,247,246,.07)}.q-si .sc{color:var(--snow)}.q-si .sk{font-size:10px;color:var(--amber);background:rgba(217,164,65,.15);padding:2px 7px;border-radius:4px}
+.q-sel-orig{background:rgba(217,164,65,.12);border:1px solid rgba(217,164,65,.3);border-radius:9px;padding:.7rem 1rem;font-size:13px;color:var(--amber);display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}.q-clr{background:none;border:none;color:rgba(245,247,246,.4);cursor:pointer;font-size:12px;font-family:var(--sans)}.q-clr:hover{color:var(--snow)}
+.q-gate-icon{width:48px;height:48px;border-radius:50%;background:rgba(217,164,65,.12);border:1px solid rgba(217,164,65,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}.q-gate-title{font-family:var(--serif);font-size:clamp(1.2rem,3vw,1.65rem);margin-bottom:.55rem;line-height:1.3;text-align:center;color:var(--snow)}.q-gate-body{font-size:13px;color:rgba(245,247,246,.5);margin-bottom:1.5rem;line-height:1.7;max-width:400px;margin-left:auto;margin-right:auto;text-align:center}
+.q-field{width:100%;background:rgba(245,247,246,.07);border:1px solid rgba(245,247,246,.12);border-radius:9px;padding:.8rem 1rem;color:var(--snow);font-size:14px;font-family:var(--sans);outline:none;transition:border .2s;margin-bottom:.65rem}.q-field:focus{border-color:rgba(217,164,65,.5)}.q-field::placeholder{color:rgba(245,247,246,.3)}
+.q-consent-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:1.1rem}.q-consent-row input[type=checkbox]{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--amber);cursor:pointer}.q-consent-label{font-size:12px;color:rgba(245,247,246,.45);line-height:1.55;cursor:pointer}.q-consent-label span{color:rgba(245,247,246,.75)}
+.q-err{font-size:12px;color:#E05C6A;margin-bottom:.65rem;display:none}.q-trust{font-size:10px;color:rgba(245,247,246,.25);margin-top:.75rem;line-height:1.6;text-align:center}
+.r-hdr{text-align:center;padding:.5rem 0 1.5rem;border-bottom:1px solid rgba(245,247,246,.1);margin-bottom:1.5rem}.r-ey{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--amber);margin-bottom:.6rem}.r-title{font-family:var(--serif);font-size:clamp(1.4rem,4vw,2rem);line-height:1.2;margin-bottom:.5rem;color:var(--snow)}.r-title em{color:var(--amber-lt);font-style:italic}.r-sub{font-size:12px;color:rgba(245,247,246,.45);line-height:1.6}
+.r-stitle{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,247,246,.35);margin-bottom:.85rem}.rank-card{border-radius:12px;padding:1.15rem;margin-bottom:.85rem;border:1px solid rgba(245,247,246,.08)}.rank-card.rank-1{background:rgba(245,247,246,.06);border:1.5px solid rgba(217,164,65,.35)}.rank-card.rank-2{background:rgba(245,247,246,.03)}.rank-card.rank-3{background:rgba(245,247,246,.02)}.rank-hdr{display:flex;align-items:flex-start;gap:11px;margin-bottom:.8rem}.rank-badge{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:2px}.rank-num{font-family:var(--serif);font-size:1.4rem;line-height:1}.rank-1 .rank-num{color:var(--amber-lt)}.rank-2 .rank-num{color:rgba(245,247,246,.35)}.rank-3 .rank-num{color:rgba(245,247,246,.2)}.rank-lbl{font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,247,246,.3)}.rank-1 .rank-lbl{color:rgba(217,164,65,.6)}.rk-name{font-family:var(--serif);font-size:1.15rem;margin-bottom:3px;color:var(--snow)}.rk-tag{font-size:11px;margin-bottom:.6rem}.rank-1 .rk-tag{color:var(--amber)}.rank-2 .rk-tag,.rank-3 .rk-tag{color:rgba(245,247,246,.4)}.rk-why{font-size:13px;color:rgba(245,247,246,.7);line-height:1.65;margin-bottom:.75rem}.rk-matches{font-size:11px;color:var(--amber);margin-bottom:.6rem;line-height:1.6}.rk-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:.75rem}.rp{background:rgba(245,247,246,.07);border:1px solid rgba(245,247,246,.1);border-radius:20px;padding:3px 10px;font-size:11px;color:var(--snow)}.rp.m{background:rgba(217,164,65,.12);border-color:rgba(217,164,65,.3);color:var(--amber-lt)}
+.rk-flight{background:rgba(245,247,246,.05);border:1px solid rgba(245,247,246,.08);border-radius:8px;padding:.65rem .85rem;font-size:12px;line-height:1.55;color:rgba(245,247,246,.6)}.rk-flight strong{color:var(--snow)}.rank-1 .rk-flight{background:rgba(217,164,65,.08);border-color:rgba(217,164,65,.2)}.avoid-b{background:rgba(212,136,42,.1);border:1px solid rgba(212,136,42,.22);border-radius:8px;padding:.6rem .8rem;font-size:12px;color:rgba(245,247,246,.6);line-height:1.5;margin-top:.6rem;display:flex;gap:8px}.avoid-b::before{content:'!';color:var(--amber);font-weight:500;flex-shrink:0}
+.f-block{background:rgba(245,247,246,.04);border:1px solid rgba(245,247,246,.08);border-radius:11px;padding:1rem;margin-bottom:1.25rem}.f-badge{display:inline-block;background:rgba(217,164,65,.12);border:1px solid rgba(217,164,65,.25);border-radius:20px;padding:3px 9px;font-size:10px;color:var(--amber);margin-bottom:.65rem;letter-spacing:.04em}.f-badge.alt{background:rgba(245,247,246,.06);border-color:rgba(245,247,246,.1);color:rgba(245,247,246,.55)}.f-leg{display:flex;align-items:center;gap:7px;margin-bottom:.55rem;flex-wrap:wrap}.f-ap{background:rgba(245,247,246,.07);border:1px solid rgba(245,247,246,.1);border-radius:7px;padding:4px 9px;min-width:66px;text-align:center}.f-ap-code{font-family:var(--serif);font-size:.95rem;color:var(--snow);display:block}.f-ap-city{font-size:10px;color:rgba(245,247,246,.4);display:block}.f-arr{color:var(--amber);font-size:11px;flex:1;text-align:center}.f-det{font-size:12px;color:rgba(245,247,246,.45);line-height:1.55;margin-bottom:.35rem}.f-det strong{color:var(--snow)}.f-tr{background:rgba(217,164,65,.06);border-radius:6px;padding:.5rem .7rem;font-size:12px;color:rgba(245,247,246,.55);line-height:1.5;margin-top:.4rem}.f-tr strong{color:var(--amber)}
+.r-sep{height:1px;background:rgba(245,247,246,.08);margin:1.25rem 0}.r-cta-b{background:rgba(217,164,65,.1);border:1px solid rgba(217,164,65,.25);border-radius:12px;padding:1.35rem;text-align:center;margin-top:1.5rem}.r-cta-t{font-family:var(--serif);font-size:1.1rem;margin-bottom:.45rem;color:var(--snow)}.r-cta-p{font-size:12px;color:rgba(245,247,246,.45);margin-bottom:1rem;line-height:1.6}.r-cta-btn{background:var(--amber);color:var(--forest);border:none;border-radius:7px;padding:.7rem 1.5rem;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--sans);transition:all .2s}.r-cta-btn:hover{background:var(--amber-lt)}.r-tr{font-size:10px;color:rgba(245,247,246,.25);margin-top:.6rem}.q-restart{width:100%;background:transparent;border:1px solid rgba(245,247,246,.1);border-radius:7px;padding:.55rem;color:rgba(245,247,246,.35);font-size:11px;cursor:pointer;margin-top:.75rem;font-family:var(--sans);transition:all .2s}.q-restart:hover{border-color:rgba(245,247,246,.2);color:rgba(245,247,246,.65)}
+
+.faq{padding:7rem 2.5rem;background:var(--off)}
+.faq-inner{max-width:960px;margin:0 auto}
+.faq-list{display:flex;flex-direction:column;gap:1rem}
+.faq-item{background:var(--snow);border:1px solid rgba(31,61,43,.08);border-radius:14px;padding:1.35rem 1.4rem}
+.faq-q{font-size:15px;font-weight:500;color:var(--forest);margin-bottom:.55rem}
+.faq-a{font-size:14px;line-height:1.8;color:#555}
+
+.social-support{padding:7rem 2.5rem;background:var(--forest)}
+.social-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:2.5rem;align-items:center}
+.social-copy p{font-size:15px;line-height:1.85;color:rgba(245,247,246,.68);max-width:560px}
+.social-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.social-link{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:rgba(245,247,246,.04);border:1px solid rgba(245,247,246,.08);border-radius:14px;padding:1.1rem 1.2rem;text-decoration:none;transition:transform .22s,border-color .22s,background .22s}
+.social-link:hover{transform:translateY(-3px);border-color:rgba(217,164,65,.35);background:rgba(245,247,246,.07)}
+.social-platform{font-family:var(--serif);font-size:1.2rem;font-weight:300;color:var(--snow)}
+.social-handle{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,247,246,.42)}
+.social-arrow{font-size:14px;color:var(--amber)}
+
+footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;border-top:1px solid rgba(245,247,246,.06)}
+.footer-logo{font-family:var(--serif);font-size:1rem;color:rgba(245,247,246,.5)}
+.footer-logo span{color:var(--amber)}
+.footer-links{display:flex;gap:1.75rem;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:rgba(245,247,246,.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:rgba(245,247,246,.65)}
+.footer-note{font-size:11px;color:rgba(245,247,246,.25)}
+
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .hero-content{padding:0 1.25rem 4rem}
+  .quick-answer,.levi-vs-rov,.tool-section,.faq,.social-support{padding:5rem 1.25rem}
+  .qa-grid{grid-template-columns:1fr 1fr}
+  .lvr-inner,.tool-intro,.social-inner{grid-template-columns:1fr;gap:2.5rem}
+  .social-links{grid-template-columns:1fr}
+  footer{flex-direction:column;align-items:center;text-align:center;padding:2rem 1.25rem}
+  .footer-links{justify-content:center}
+}
+@media(max-width:600px){
+  .qa-grid,.lvr-grid{grid-template-columns:1fr}
+  .hero-h1{font-size:clamp(2.1rem,10vw,3.2rem)}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .btn-primary,.btn-ghost{text-align:center;display:block}
+  .q-ogrid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">Lapland <span>Like This</span></a>
+  <div class="nav-links">
+    <a href="/destinations/">Destinations</a>
+    <a href="/guides/">Guides</a>
+    <a href="/lapland-tools.html">Lapland Tools</a>
+    <a href="/where-go-lapland.html" style="color:var(--snow)">Where to go</a>
+    <a href="about.html">About us</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" type="button">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu">
+  <a href="/destinations/" onclick="closeMenu()">Destinations</a>
+  <a href="/guides/" onclick="closeMenu()">Guides</a>
+  <a href="/lapland-tools.html" onclick="closeMenu()">Lapland Tools</a>
+  <a href="/where-go-lapland.html" onclick="closeMenu()">Where to go</a>
+  <div class="mm-divider"></div>
+  <a href="/destinations/levi.html" onclick="closeMenu()">Levi</a>
+  <a href="/destinations/rovaniemi.html" onclick="closeMenu()">Rovaniemi</a>
+  <a href="/destinations/saariselka.html" onclick="closeMenu()">Saariselka</a>
+  <a href="/destinations/yllas.html" onclick="closeMenu()">Yllas</a>
+  <div class="mm-divider"></div>
+  <a href="/about.html" onclick="closeMenu()">About us</a>
+</div>
+
+<section class="hero">
+  <img class="hero-img" src="images/lapland-aurora-night.png" alt="Northern lights over snow-covered forest in Finnish Lapland">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">The honest answer</div>
+    <h1 class="hero-h1">Where is the <em>best place</em><br>to go in Lapland?</h1>
+    <p class="hero-sub">Usually the right answer is not “the most famous one”. It depends on your flights, who you are travelling with, how much you care about Santa versus skiing versus aurora, and whether you want a resort or something quieter. We live in Levi, but we still point plenty of people somewhere else.</p>
+    <div class="hero-actions">
+      <a href="#tool" class="btn-primary">Answer 6 questions</a>
+      <a href="/destinations/" class="btn-ghost">Read all destination guides</a>
+    </div>
+  </div>
+</section>
+
+<section class="quick-answer">
+  <div class="quick-inner">
+    <div class="qa-intro reveal">
+      <div class="section-eyebrow">Quick answer</div>
+      <h2 class="section-h2">There is no one best place.<br><em>There is a best fit.</em></h2>
+      <p class="body-p">If you want the shortest honest version: Levi is often the easiest all-round answer. Rovaniemi is often the safer answer for first-time families. Saariselka is the better answer for people chasing northern lights properly. Yllas is the quieter answer for people who want the same airport as Levi without the same atmosphere.</p>
+    </div>
+    <div class="qa-grid">
+      <div class="qa-card reveal rd1"><div class="qa-label">Best all-rounder</div><div class="qa-dest">Levi</div><p class="qa-best">Best for direct flights, skiing, activity infrastructure and not needing a hire car once you land.</p></div>
+      <div class="qa-card reveal rd2"><div class="qa-label">Best for first timers</div><div class="qa-dest">Rovaniemi</div><p class="qa-best">Best for wider flight choice, the Santa experience and families who want the least route-planning stress.</p></div>
+      <div class="qa-card reveal rd3"><div class="qa-label">Best for aurora</div><div class="qa-dest">Saariselka</div><p class="qa-best">Best if your real priority is northern lights, darker skies and a trip that feels less commercial.</p></div>
+      <div class="qa-card reveal rd1"><div class="qa-label">Best quiet alternative</div><div class="qa-dest">Yllas</div><p class="qa-best">Best if you like the Kittila flight access but want something calmer, more local and better for cross-country skiing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="levi-vs-rov">
+  <div class="lvr-inner">
+    <div class="reveal">
+      <div class="section-eyebrow dark">Levi vs Rovaniemi</div>
+      <h2 class="section-h2 light">This is the comparison people ask for most.<br><em>Here is the short version.</em></h2>
+      <p class="body-p light">Levi is better when you want a proper resort base with direct flights into Kittila, short transfers and no need to rent a car. Rovaniemi is better when your departure airport gives you more RVN options, when Santa matters more than skiing, or when you want more accommodation choice.</p>
+      <p class="body-p light">The mistake people make is assuming one is simply better than the other. It is usually just a route question plus a priorities question.</p>
+    </div>
+    <div class="lvr-panel reveal rd2">
+      <div class="lvr-grid">
+        <div class="lvr-card"><div class="lvr-name">Levi</div><div class="lvr-tag">Best when ease matters</div><p class="lvr-copy">Direct flights into Kittila. Fifteen minutes to the resort. Best ski infrastructure in Finnish Lapland. Easier without a car.</p></div>
+        <div class="lvr-card"><div class="lvr-name">Rovaniemi</div><div class="lvr-tag">Best when flight choice matters</div><p class="lvr-copy">More direct routes from more airports. Stronger Santa infrastructure. Better if your travel day would be awkward via Kittila.</p></div>
+      </div>
+      <div class="lvr-verdict"><strong style="color:var(--snow)">Honest verdict:</strong> if you can fly directly to Kittila and want a smooth resort trip, Levi usually wins. If your airport gives you much better Rovaniemi flights, or you are travelling with young children and want the Santa side done properly, Rovaniemi often becomes the better answer.</div>
+    </div>
+  </div>
+</section>
+
+<section class="tool-section" id="tool">
+  <div class="tool-section-inner">
+    <div class="tool-intro">
+      <div class="reveal">
+        <div class="section-eyebrow">The tool</div>
+        <h2 class="tool-h2">Answer 6 questions.<br>Get your <em>top 3 destinations</em><br>and exactly how to reach them.</h2>
+        <p class="tool-body">Where you're flying from, who you're travelling with, what matters most. We'll give you a personalised top 3 with honest rationale, real flight routes, and what to avoid.</p>
+        <div class="tool-checks">
+          <div class="tc"><div class="tc-icon">✓</div><span>Where to go — Levi, Rovaniemi, Saariselka and more</span></div>
+          <div class="tc"><div class="tc-icon">✓</div><span>Which airport to fly into, from anywhere in the world</span></div>
+          <div class="tc"><div class="tc-icon">✓</div><span>What experiences suit your group</span></div>
+          <div class="tc"><div class="tc-icon">✓</div><span>What to avoid wasting money on</span></div>
+        </div>
+      </div>
+      <div class="reveal rd2">
+        <p class="tool-quote">"We see people make the same expensive mistakes every year. A few honest answers up front changes everything."</p>
+        <p class="tool-quote-attr">— From three years of watching Lapland trips go right and wrong</p>
+      </div>
+    </div>
+
+    <div class="quiz-frame" id="start-tool">
+      <div class="qf-header">
+        <div class="qf-dot" style="background:#E05C5C"></div>
+        <div class="qf-dot" style="background:#E0A85C"></div>
+        <div class="qf-dot" style="background:#5CE07A"></div>
+        <span class="qf-title">Where to Go Tool — Lapland Like This</span>
+      </div>
+      <div class="quiz-inner">
+        <div class="q-app">
+          <div id="qpb"><div class="q-pbar" id="qprog"></div></div>
+
+          <div class="q-step active" id="qs0">
+            <div style="text-align:center;padding:1rem 0 1.25rem">
+              <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem">Lapland Like This</div>
+              <div style="font-family:var(--serif);font-size:clamp(1.5rem,3.5vw,2rem);line-height:1.2;margin-bottom:.75rem;color:var(--snow)">Where should I go<br>in Lapland?<br><em style="color:var(--amber-lt);font-style:italic">We'll tell you honestly.</em></div>
+              <div style="font-size:13px;color:rgba(245,247,246,.45);max-width:340px;margin:0 auto 1.75rem;line-height:1.75">6 questions. Your personalised top 3 — with flights, rationale and what to avoid.</div>
+              <button class="q-btn" onclick="qgo(0)" style="max-width:220px;margin:0 auto;display:block" type="button">Find my Lapland →</button>
+              <div style="font-size:10px;color:rgba(245,247,246,.25);margin-top:.75rem">2 minutes · No sign-up to start</div>
+            </div>
+          </div>
+
+          <div class="q-step" id="qs1">
+            <button class="q-bk" onclick="qback(1)" type="button">← Back</button>
+            <div class="q-ey">Step 1 of 6</div>
+            <div class="q-title">Where are you flying from?</div>
+            <div class="q-hint">Type your city or pick your region below.</div>
+            <div class="q-search" id="qsw">
+              <input type="text" id="qcity" placeholder="e.g. London, New York, Sydney..." oninput="qfilterC(this.value)" autocomplete="off">
+              <div id="qsugg" class="q-sugg" style="display:none"></div>
+            </div>
+            <div id="qorig" style="display:none"></div>
+            <div style="font-size:11px;color:rgba(245,247,246,.35);margin-bottom:.6rem">Or pick your region:</div>
+            <div class="q-ogrid" id="qrg">
+              <div class="q-oc" onclick="qsetReg('uk',this)"><span class="ql">UK</span><span class="qs">London, Manchester...</span></div>
+              <div class="q-oc" onclick="qsetReg('ireland',this)"><span class="ql">Ireland</span><span class="qs">Dublin, Shannon</span></div>
+              <div class="q-oc" onclick="qsetReg('germany',this)"><span class="ql">Germany</span><span class="qs">Frankfurt, Munich...</span></div>
+              <div class="q-oc" onclick="qsetReg('france',this)"><span class="ql">France</span><span class="qs">Paris, Lyon, Nice...</span></div>
+              <div class="q-oc" onclick="qsetReg('netherlands',this)"><span class="ql">Netherlands</span><span class="qs">Amsterdam</span></div>
+              <div class="q-oc" onclick="qsetReg('nordics',this)"><span class="ql">Scandinavia</span><span class="qs">Norway, Sweden, DK</span></div>
+              <div class="q-oc" onclick="qsetReg('italy',this)"><span class="ql">Italy</span><span class="qs">Milan, Rome...</span></div>
+              <div class="q-oc" onclick="qsetReg('switzerland',this)"><span class="ql">Switzerland</span><span class="qs">Zurich</span></div>
+              <div class="q-oc" onclick="qsetReg('austria',this)"><span class="ql">Austria</span><span class="qs">Vienna</span></div>
+              <div class="q-oc" onclick="qsetReg('belgium',this)"><span class="ql">Belgium</span><span class="qs">Brussels</span></div>
+              <div class="q-oc" onclick="qsetReg('poland',this)"><span class="ql">Poland</span><span class="qs">Warsaw</span></div>
+              <div class="q-oc" onclick="qsetReg('usa',this)"><span class="ql">USA</span><span class="qs">Any city</span></div>
+              <div class="q-oc" onclick="qsetReg('canada',this)"><span class="ql">Canada</span><span class="qs">Any city</span></div>
+              <div class="q-oc" onclick="qsetReg('australia',this)"><span class="ql">Australia/NZ</span><span class="qs">Any city</span></div>
+              <div class="q-oc" onclick="qsetReg('asia',this)"><span class="ql">Asia</span><span class="qs">Japan, SE Asia...</span></div>
+              <div class="q-oc" onclick="qsetReg('middle-east',this)"><span class="ql">Middle East</span><span class="qs">UAE, Israel, Turkey</span></div>
+            </div>
+            <button class="q-btn" id="qb1" onclick="qgo(1)" disabled type="button">Continue</button>
+          </div>
+
+          <div class="q-step" id="qs2">
+            <button class="q-bk" onclick="qback(2)" type="button">← Back</button>
+            <div class="q-ey">Step 2 of 6</div>
+            <div class="q-title">Who's making this trip?</div>
+            <div class="q-hint">A couple and a family with toddlers need completely different Laplands.</div>
+            <div class="q-olist">
+              <div class="q-or" onclick="qpick('group','couple',this)"><div><div class="rl">Just the two of us</div><div class="rs">Couple — magic and wilderness</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('group','family-young',this)"><div><div class="rl">Family — young kids</div><div class="rs">Under 8 — Santa age, pure wonder</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('group','family-older',this)"><div><div class="rl">Family — older kids</div><div class="rs">8–15 — want adventure too</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('group','solo',this)"><div><div class="rl">Solo</div><div class="rs">My trip, my pace</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('group','friends',this)"><div><div class="rl">Friends group</div><div class="rs">2–8 adults</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('group','multigem',this)"><div><div class="rl">Multi-generational family</div><div class="rs">Grandparents to grandchildren</div></div><div class="ck"></div></div>
+            </div>
+            <button class="q-btn" id="qb2" onclick="qgo(2)" disabled type="button">Continue</button>
+          </div>
+
+          <div class="q-step" id="qs3">
+            <button class="q-bk" onclick="qback(3)" type="button">← Back</button>
+            <div class="q-ey">Step 3 of 6</div>
+            <div class="q-title">How long, and what's your budget?</div>
+            <div class="q-hint">Lapland is expensive. Knowing your real range stops us recommending things that will disappoint.</div>
+            <div class="q-sw">
+              <div class="q-sl"><span style="font-size:12px;color:rgba(245,247,246,.45)">Trip length</span><span><span class="q-sv" id="qnv">5</span><span class="q-su"> nights</span></span></div>
+              <input type="range" min="3" max="10" value="5" step="1" id="qns" oninput="document.getElementById('qnv').textContent=this.value;QA.nights=+this.value">
+              <div class="q-rl"><span>3 nights</span><span>10 nights</span></div>
+            </div>
+            <div class="q-olist">
+              <div class="q-or" onclick="qpick('budget','low',this)"><div><div class="rl">Under £2,000 / €2,300 pp</div><div class="rs">Tight but possible</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('budget','mid',this)"><div><div class="rl">£2,000–£3,500 / €2,300–€4,000 pp</div><div class="rs">The sweet spot</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('budget','high',this)"><div><div class="rl">£3,500–£6,000 / €4,000–€7,000 pp</div><div class="rs">Glass igloos, private guides</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('budget','luxury',this)"><div><div class="rl">£6,000+ / €7,000+ pp</div><div class="rs">Full Arctic immersion</div></div><div class="ck"></div></div>
+            </div>
+            <button class="q-btn" id="qb3" onclick="qgo(3)" disabled type="button">Continue</button>
+          </div>
+
+          <div class="q-step" id="qs4">
+            <button class="q-bk" onclick="qback(4)" type="button">← Back</button>
+            <div class="q-ey">Step 4 of 6</div>
+            <div class="q-title">When, and what matters most?</div>
+            <div style="font-size:12px;font-weight:500;margin-bottom:.55rem;color:rgba(245,247,246,.8)">When are you going?</div>
+            <div class="q-ogrid" id="qseason">
+              <div class="q-oc" onclick="qpick('season','nov-dec',this)"><span class="ql">Nov–Dec</span><span class="qs">Christmas magic</span></div>
+              <div class="q-oc" onclick="qpick('season','jan-feb',this)"><span class="ql">Jan–Feb</span><span class="qs">Best aurora</span></div>
+              <div class="q-oc" onclick="qpick('season','mar-apr',this)"><span class="ql">Mar–Apr</span><span class="qs">Sun returns</span></div>
+              <div class="q-oc" onclick="qpick('season','flexible',this)"><span class="ql">Flexible</span><span class="qs">Tell me the best</span></div>
+            </div>
+            <div style="font-size:12px;font-weight:500;margin:.75rem 0 .35rem;color:rgba(245,247,246,.8)">Non-negotiables <span style="font-weight:400;color:rgba(245,247,246,.35)">(up to 3)</span></div>
+            <div class="q-ogrid" id="qprio">
+              <div class="q-oc" onclick="qmulti('priority','aurora',this,3)"><span class="ql">Northern lights</span></div>
+              <div class="q-oc" onclick="qmulti('priority','santa',this,3)"><span class="ql">Santa experience</span></div>
+              <div class="q-oc" onclick="qmulti('priority','husky',this,3)"><span class="ql">Husky safari</span></div>
+              <div class="q-oc" onclick="qmulti('priority','reindeer',this,3)"><span class="ql">Reindeer farm</span></div>
+              <div class="q-oc" onclick="qmulti('priority','snowmobile',this,3)"><span class="ql">Snowmobile</span></div>
+              <div class="q-oc" onclick="qmulti('priority','skiing',this,3)"><span class="ql">Skiing</span></div>
+              <div class="q-oc" onclick="qmulti('priority','culture',this,3)"><span class="ql">Sami culture</span></div>
+              <div class="q-oc" onclick="qmulti('priority','sauna',this,3)"><span class="ql">Sauna + ice swim</span></div>
+            </div>
+            <button class="q-btn" id="qb4" onclick="qgo(4)" disabled type="button">Continue</button>
+          </div>
+
+          <div class="q-step" id="qs5">
+            <button class="q-bk" onclick="qback(5)" type="button">← Back</button>
+            <div class="q-ey">Step 5 of 6</div>
+            <div class="q-title">What kind of trip?</div>
+            <div class="q-olist">
+              <div class="q-or" onclick="qpick('accom','igloo',this)"><div><div class="rl">Glass igloo or sky cabin</div><div class="rs">The bucket-list one</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('accom','cabin',this)"><div><div class="rl">Private log cabin</div><div class="rs">Own sauna, forest, space</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('accom','hotel',this)"><div><div class="rl">Hotel or resort</div><div class="rs">Easier with kids</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('accom','mix',this)"><div><div class="rl">Mix — cabin + one igloo night</div><div class="rs">Comfort plus the special moment</div></div><div class="ck"></div></div>
+            </div>
+            <div style="font-size:12px;font-weight:500;margin:.65rem 0 .55rem;color:rgba(245,247,246,.8)">Trip pace</div>
+            <div class="q-olist">
+              <div class="q-or" onclick="qpick('pace','packed',this)"><div><div class="rl">Activity-packed</div><div class="rs">Something every day</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('pace','balanced',this)"><div><div class="rl">Balanced</div><div class="rs">Activities plus space</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('pace','slow',this)"><div><div class="rl">Slow and immersive</div><div class="rs">Fewer things, done properly</div></div><div class="ck"></div></div>
+            </div>
+            <button class="q-btn" id="qb5" onclick="qgo(5)" disabled type="button">Continue</button>
+          </div>
+
+          <div class="q-step" id="qs6">
+            <button class="q-bk" onclick="qback(6)" type="button">← Back</button>
+            <div class="q-ey">Last one — Step 6 of 6</div>
+            <div class="q-title">Any winter travel experience?</div>
+            <div class="q-hint">This is about knowing what −20°C actually means — not fitness.</div>
+            <div class="q-olist">
+              <div class="q-or" onclick="qpick('exp','first',this)"><div><div class="rl">First real winter trip</div><div class="rs">Never worn serious thermal layers</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('exp','some',this)"><div><div class="rl">Done a ski holiday or two</div><div class="rs">Know it's cold, know to layer</div></div><div class="ck"></div></div>
+              <div class="q-or" onclick="qpick('exp','experienced',this)"><div><div class="rl">Comfortable in serious cold</div><div class="rs">Arctic conditions are fine</div></div><div class="ck"></div></div>
+            </div>
+            <button class="q-btn" id="qb6" onclick="qgo(6)" disabled type="button">Continue to my results →</button>
+          </div>
+
+          <div class="q-step" id="qs7">
+            <div style="text-align:center;padding:.5rem 0">
+              <div class="q-gate-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="5" width="18" height="13" rx="2" stroke="#D9A441" stroke-width="1.5"/><path d="M2 8l9 6 9-6" stroke="#D9A441" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+              <div class="q-gate-title">Your top 3 Lapland destinations are ready</div>
+              <p class="q-gate-body">Enter your details to reveal your personalised recommendations — flights, rationale, and what to avoid.</p>
+              <input type="text" class="q-field" id="qfname" placeholder="Your first name">
+              <input type="email" class="q-field" id="qfemail" placeholder="Your email address" oninput="qcheckGate()">
+              <div class="q-consent-row">
+                <input type="checkbox" id="qconsent" onchange="qcheckGate()">
+                <label class="q-consent-label" for="qconsent"><span>Yes, send me Lapland travel tips and honest advice</span> from Lapland Like This. No spam — unsubscribe anytime.</label>
+              </div>
+              <div class="q-err" id="qgate-err">Please enter a valid email address.</div>
+              <button class="q-btn" id="qgate-btn" onclick="qsubmitGate()" disabled type="button">Reveal my top 3 →</button>
+              <div class="q-trust">Your details are never sold or shared · 1–2 emails per month</div>
+            </div>
+          </div>
+
+          <div class="q-step" id="qs8">
+            <div id="qr-header"></div>
+            <div id="qr-top3"></div>
+            <div id="qr-flight"></div>
+            <div id="qr-cta"></div>
+            <button class="q-restart" onclick="qrestart()" type="button">Start over with different answers</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="faq-inner">
+    <div class="section-eyebrow reveal">FAQ</div>
+    <h2 class="section-h2 reveal rd1">The usual questions.<br><em>The same honest answers.</em></h2>
+    <div class="faq-list">
+      <div class="faq-item reveal rd1"><div class="faq-q">What is the best place to go in Lapland?</div><div class="faq-a">Usually Levi is the easiest overall answer, but only if the flights work for you and you want resort infrastructure. Rovaniemi is often better for first-time families. Saariselka is better for serious aurora travellers. Yllas is better for people who want quieter skiing.</div></div>
+      <div class="faq-item reveal rd2"><div class="faq-q">Is Levi or Rovaniemi better for families?</div><div class="faq-a">For families with young children, both can be excellent. Levi is easier if you can fly into Kittila and want minimal transfers. Rovaniemi is often better if Santa is the point of the trip, or if your airport gives you a much simpler route there.</div></div>
+      <div class="faq-item reveal rd3"><div class="faq-q">Should I stay in Levi, Rovaniemi, Saariselka or Yllas?</div><div class="faq-a">That depends on route, season, budget and priorities. If you answer the tool above honestly, it does a better job than generic blog posts because it includes your origin airport and what you actually care about.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="social-support">
+  <div class="social-inner">
+    <div class="social-copy reveal">
+      <div class="section-eyebrow dark">Support the site</div>
+      <h2 class="section-h2 light">We'd love your support.<br><em>Let's connect.</em></h2>
+      <p>If this page helped you work out where to stay in Lapland, follow along on the channels where we share day-to-day life in Levi, practical planning notes, and the parts of Lapland that do not fit neatly into a booking page.</p>
+    </div>
+    <div class="social-links reveal rd2">
+      <a class="social-link" href="https://www.instagram.com/laplandlikethis" target="_blank" rel="noreferrer"><div><div class="social-platform">Instagram</div><div class="social-handle">@laplandlikethis</div></div><span class="social-arrow">→</span></a>
+      <a class="social-link" href="https://www.facebook.com/laplandlikethis" target="_blank" rel="noreferrer"><div><div class="social-platform">Facebook</div><div class="social-handle">Lapland Like This</div></div><span class="social-arrow">→</span></a>
+      <a class="social-link" href="https://www.tiktok.com/@laplandlikethis" target="_blank" rel="noreferrer"><div><div class="social-platform">TikTok</div><div class="social-handle">@laplandlikethis</div></div><span class="social-arrow">→</span></a>
+      <a class="social-link" href="https://www.youtube.com/@Levi-Finland" target="_blank" rel="noreferrer"><div><div class="social-platform">YouTube</div><div class="social-handle">@Levi-Finland</div></div><span class="social-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Lapland <span>Like This</span></div>
+  <div class="footer-links">
+    <a href="/destinations/">Destinations</a>
+    <a href="/guides/">Guides</a>
+    <a href="lapland-tools.html">Lapland Tools</a>
+    <a href="where-go-lapland.html">Where to go</a>
+    <a href="about.html">About us</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+  <div class="footer-note">© 2026 Lapland Like This · Colin, Livi, Hugo, Rowan &amp; Finley · Levi, Finnish Lapland</div>
+</footer>
+
+<script>
+function toggleMenu(){const h=document.getElementById('hamburger');const m=document.getElementById('mobile-menu');const open=!m.classList.contains('open');m.classList.toggle('open',open);h.classList.toggle('open',open);h.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';}
+function closeMenu(){const h=document.getElementById('hamburger');const m=document.getElementById('mobile-menu');m.classList.remove('open');h.classList.remove('open');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+document.addEventListener('click',function(e){const m=document.getElementById('mobile-menu');const h=document.getElementById('hamburger');if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!h.contains(e.target)){closeMenu();}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
+window.addEventListener('scroll',()=>{document.getElementById('main-nav').classList.toggle('scrolled',window.scrollY>60);});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1);const el=document.getElementById(id);if(el){e.preventDefault();window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-80,behavior:'smooth'})}});});
+
+const QA={origin:null,region:null,group:null,budget:null,season:null,priority:[],accom:null,pace:null,exp:null,nights:5,originLabel:''};
+const QCITIES=[
+  {city:'London',country:'UK',region:'uk'},{city:'Manchester',country:'UK',region:'uk'},{city:'Birmingham',country:'UK',region:'uk'},{city:'Bristol',country:'UK',region:'uk'},{city:'Edinburgh',country:'UK',region:'uk'},{city:'Belfast',country:'UK',region:'uk'},{city:'Dublin',country:'Ireland',region:'ireland'},{city:'Shannon',country:'Ireland',region:'ireland'},{city:'Paris',country:'France',region:'france'},{city:'Lyon',country:'France',region:'france'},{city:'Nice',country:'France',region:'france'},{city:'Bordeaux',country:'France',region:'france'},{city:'Amsterdam',country:'Netherlands',region:'netherlands'},{city:'Frankfurt',country:'Germany',region:'germany'},{city:'Munich',country:'Germany',region:'germany'},{city:'Berlin',country:'Germany',region:'germany'},{city:'Düsseldorf',country:'Germany',region:'germany'},{city:'Hamburg',country:'Germany',region:'germany'},{city:'Zurich',country:'Switzerland',region:'switzerland'},{city:'Vienna',country:'Austria',region:'austria'},{city:'Brussels',country:'Belgium',region:'belgium'},{city:'Milan',country:'Italy',region:'italy'},{city:'Rome',country:'Italy',region:'italy'},{city:'Warsaw',country:'Poland',region:'poland'},{city:'Copenhagen',country:'Denmark',region:'nordics'},{city:'Stockholm',country:'Sweden',region:'nordics'},{city:'Oslo',country:'Norway',region:'nordics'},{city:'Barcelona',country:'Spain',region:'spain'},{city:'New York',country:'USA',region:'usa'},{city:'Los Angeles',country:'USA',region:'usa'},{city:'Chicago',country:'USA',region:'usa'},{city:'Toronto',country:'Canada',region:'canada'},{city:'Sydney',country:'Australia',region:'australia'},{city:'Melbourne',country:'Australia',region:'australia'},{city:'Tokyo',country:'Japan',region:'asia'},{city:'Seoul',country:'South Korea',region:'asia'},{city:'Singapore',country:'Singapore',region:'asia'},{city:'Bangkok',country:'Thailand',region:'asia'},{city:'Dubai',country:'UAE',region:'middle-east'},{city:'Tel Aviv',country:'Israel',region:'middle-east'},{city:'Istanbul',country:'Turkey',region:'middle-east'}
+];
+const QDESTS={rovaniemi:{name:'Rovaniemi',tag:'Arctic Capital — best access, most flights, the Circle itself',why:'The gateway to Finnish Lapland. Widest range of flights, widest choice of activities, right on the Arctic Circle. Best for first-timers who want to get it right without guesswork.',bestFor:['First-time visitors','Families with young kids','Widest flight choice','Santa experience'],avoid:"Book Santa at the airport village — it's a theme park. Find a small private farm 30 min outside instead.",airport:'Rovaniemi (RVN)',transfer:'10 min to city. Levi: 170km, 1h45 by car or bus.'},levi:{name:'Levi',tag:"Lapland's most connected ski resort — fly straight in, no car needed",why:'The only Lapland resort where you fly directly in and take a 15-minute bus to your hotel. No hire car required. Best combination of direct international flights and on-resort experience. Finland\'s best ski resort.',bestFor:['Ski + activities combo','UK and European travellers','No hire car needed','Couples and friend groups'],avoid:'The all-inclusive resort packages — they trap you inside the bubble and keep you away from the real Lapland just outside.',airport:'Kittilä (KTT)',transfer:'Direct airport bus to Levi village: 15 min. No car needed.'},saariselka:{name:'Saariselka',tag:'Wilder, darker, further north — best aurora odds in Finland',why:'260km above the Arctic Circle — the best darkness and clear skies for northern lights in Finnish Lapland. Less commercial, more genuine immersion. Fly to Ivalo (IVL), 30 minutes away.',bestFor:['Northern lights priority','Couples wanting wilderness','Jan–Mar travel','Authentic over commercial'],avoid:'Coming in November — minimal snow, very dark, not yet right. December at earliest. Pre-book your Ivalo transfer.',airport:'Ivalo (IVL)',transfer:'30 min from Ivalo. Pre-book your transfer.'},kakslauttanen:{name:'Kakslauttanen Arctic Resort',tag:'The glass igloo you have seen in photos — this is where they are',why:'If you have seen the iconic glass dome photo, this is the place. Deep wilderness near Saariselka. Best for couples with one specific bucket-list moment in mind and the budget to do it properly.',bestFor:['Bucket-list glass igloo','Couples (romantic)','Jan–Mar for aurora under glass','Budget: high or luxury'],avoid:'Booking a glass igloo in December for aurora — peak season is Jan–March.',airport:'Ivalo (IVL)',transfer:'~40 min. Resort arranges transfers.'},yllas:{name:'Yllas',tag:"Quieter, less commercial — Finland's highest fell, fewer crowds",why:"Yllas is Levi's quieter neighbour — same Kittila Airport, same direct flights, half the crowds. Finland's highest fell resort with better cross-country skiing and a more local feel.",bestFor:['Cross-country skiing','Quieter alternative to Levi','Nature over nightlife','Same flights as Levi'],avoid:'Expecting Levi-style après-ski — Yllas is quieter by design. That is its appeal.',airport:'Kittilä (KTT)',transfer:'45–60 min from Kittilä. Transfer or hire car needed.'}};
+const QROUTES={uk:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'London Gatwick / Manchester',to:'Kittilä (KTT)',airlines:'easyJet / TUI',freq:'2–4x/week',season:'Dec–Feb'}],transfer:'15 min bus to Levi.',bestFor:'Levi / Yllas'},a:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'London (LGW/LTN/STN), Manchester, Birmingham, Bristol, Edinburgh, Belfast',to:'Rovaniemi (RVN)',airlines:'easyJet / Ryanair / TUI / Norwegian',freq:'Daily multiple',season:'Nov–Mar'}],transfer:'Levi: hire car or bus 170km, 1h45.',bestFor:'Rovaniemi · Levi with car'}},ireland:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Dublin / Shannon',to:'Rovaniemi (RVN)',airlines:'Ryanair',freq:'3–4x/week',season:'Oct–Mar'}],bestFor:'Rovaniemi · Levi with car'},a:{badge:'Via Helsinki (HEL)',legs:[{from:'Dublin',to:'Helsinki (HEL)',airlines:'Finnair'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair',freq:'Multiple daily'}],bestFor:'All destinations'}},germany:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Frankfurt / Munich / Düsseldorf / Berlin',to:'Kittilä (KTT)',airlines:'Discover / Lufthansa / Eurowings',freq:'1–3x/week',season:'Dec–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Frankfurt / Munich / Berlin / Hamburg',to:'Rovaniemi (RVN)',airlines:'Lufthansa / easyJet / Eurowings / Norwegian',freq:'1–3x/week',season:'Nov–Mar'}],bestFor:'Rovaniemi · Levi with car'}},france:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Paris CDG',to:'Kittilä (KTT)',airlines:'Air France',freq:'Saturdays',season:'Dec–Mar'},{from:'Paris Orly',to:'Kittilä (KTT)',airlines:'Transavia',freq:'2x/week',season:'Dec–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Paris / Lyon / Bordeaux / Nice',to:'Rovaniemi (RVN)',airlines:'easyJet / Transavia',freq:'1–2x/week',season:'Nov–Mar'}],bestFor:'Rovaniemi · Levi with car'}},netherlands:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Amsterdam (AMS)',to:'Kittilä (KTT)',airlines:'KLM / TUI Fly',freq:'4x/week',season:'Nov–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Amsterdam (AMS)',to:'Rovaniemi (RVN)',airlines:'KLM / easyJet',freq:'2–3x/week',season:'Dec–Mar'}],bestFor:'Rovaniemi · Levi with car'}},switzerland:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Zurich (ZRH)',to:'Kittilä (KTT)',airlines:'Edelweiss / Helvetic',freq:'4x/week',season:'Dec–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Via Helsinki',legs:[{from:'Zurich',to:'Helsinki',airlines:'Finnair / SWISS'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair'}],bestFor:'All destinations'}},austria:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Vienna (VIE)',to:'Kittilä (KTT)',airlines:'Austrian Airlines',freq:'Weekly Sun',season:'Dec–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Vienna (VIE)',to:'Rovaniemi (RVN)',airlines:'Austrian Airlines',freq:'Weekly',season:'Nov–Mar'}],bestFor:'Rovaniemi'}},belgium:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Brussels Charleroi (CRL)',to:'Rovaniemi (RVN)',airlines:'Ryanair',freq:'3x/week',season:'Oct–Mar'}],bestFor:'Rovaniemi · Levi with car'},a:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Brussels (BRU)',to:'Kittilä (KTT)',airlines:'TUI Fly Belgium',freq:'1x/week',season:'Jan–Feb'}],transfer:'15 min bus to Levi.',bestFor:'Levi'}},italy:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Milan Bergamo (BGY)',to:'Rovaniemi (RVN)',airlines:'Ryanair',freq:'Year-round'},{from:'Rome FCO / Milan MXP',to:'Rovaniemi (RVN)',airlines:'Neos / easyJet',freq:'1–2x/week',season:'Dec–Feb'}],bestFor:'Rovaniemi · Levi with car'},a:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Milan Malpensa (MXP)',to:'Kittilä (KTT)',airlines:'easyJet',freq:'2x/week',season:'Dec–Feb'}],bestFor:'Levi'}},poland:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Warsaw (WAW)',to:'Rovaniemi (RVN)',airlines:'LOT Polish Airlines',freq:'2x/week',season:'Nov–Feb'}],bestFor:'Rovaniemi · Levi with car'},a:{badge:'Via Helsinki (HEL)',legs:[{from:'Warsaw',to:'Helsinki',airlines:'Finnair / LOT'},{from:'Helsinki',to:'Lapland',airlines:'Finnair',freq:'Multiple daily'}],bestFor:'All destinations'}},nordics:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Copenhagen (CPH)',to:'Rovaniemi (RVN)',airlines:'SAS',freq:'2x/week',season:'Dec–Jan'}],bestFor:'Rovaniemi'},a:{badge:'Via Helsinki (HEL)',legs:[{from:'Scandinavia',to:'Helsinki',airlines:'Finnair / SAS'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair'}],bestFor:'All destinations'}},usa:{p:{badge:'Via Helsinki (HEL) — the smart route',legs:[{from:'New York JFK / Chicago / Boston',to:'Helsinki (HEL)',airlines:'Finnair direct (JFK) / connections'},{from:'Helsinki (HEL)',to:'Rovaniemi / Kittilä',airlines:'Finnair',freq:'Up to 10x/day RVN'}],transfer:'Finnair JFK→HEL direct (8.5hrs). Book as one Finnair ticket.',bestFor:'All destinations'},a:{badge:'Via London then direct',legs:[{from:'US city',to:'London LGW / STN',airlines:'Multiple'},{from:'London',to:'Rovaniemi / Kittilä',airlines:'easyJet / Ryanair',season:'Nov–Mar'}],bestFor:'Rovaniemi · Levi (2-stop)'}},canada:{p:{badge:'Via Helsinki (HEL)',legs:[{from:'Toronto / Montreal / Vancouver',to:'Helsinki (HEL)',airlines:'Finnair / Air Canada via EU hubs'},{from:'Helsinki',to:'Rovaniemi / Kittilä',airlines:'Finnair',freq:'Multiple daily'}],bestFor:'All destinations'},a:{badge:'Via London',legs:[{from:'Canada',to:'London',airlines:'Air Canada / BA'},{from:'London',to:'Rovaniemi / Kittilä',airlines:'easyJet / Ryanair'}],bestFor:'Rovaniemi · Levi'}},australia:{p:{badge:'Via Helsinki (HEL)',legs:[{from:'Sydney / Melbourne',to:'Helsinki (HEL)',airlines:'Finnair via Singapore / Qatar or Emirates'},{from:'Helsinki',to:'Rovaniemi / Kittilä',airlines:'Finnair',freq:'Multiple daily'}],transfer:'~20–24hrs total. Plan 2 nights in Helsinki.',bestFor:'All destinations'},a:{badge:'Via London',legs:[{from:'Australia / NZ',to:'London',airlines:'Qantas / BA'},{from:'London',to:'Rovaniemi / Kittilä',airlines:'easyJet / Ryanair'}],bestFor:'Rovaniemi · Levi'}},asia:{p:{badge:'Via Helsinki (HEL) — Finnair hub',legs:[{from:'Tokyo / Seoul / Singapore / Bangkok',to:'Helsinki (HEL)',airlines:'Finnair direct from all major Asian cities'},{from:'Helsinki',to:'Rovaniemi / Kittilä / Ivalo',airlines:'Finnair',freq:'Up to 10x/day RVN'}],transfer:'HEL layover 1–3hrs.',note:'Book as one Finnair ticket from Asia.',bestFor:'All destinations'},a:{badge:'Via European hub',legs:[{from:'Asian city',to:'London / Amsterdam / Frankfurt',airlines:'Multiple'},{from:'EU hub',to:'Rovaniemi / Kittilä',airlines:'easyJet / KLM / Eurowings'}],bestFor:'Rovaniemi · Levi'}},'middle-east':{p:{badge:'Direct or via Helsinki',legs:[{from:'Istanbul (IST)',to:'Rovaniemi (RVN)',airlines:'Turkish Airlines',season:'Dec–Feb'},{from:'Tel Aviv (TLV)',to:'Rovaniemi (RVN)',airlines:'Israir',season:'Mar–Apr'}],bestFor:'Rovaniemi'},a:{badge:'Via Helsinki (HEL)',legs:[{from:'Dubai / Tel Aviv / Istanbul',to:'Helsinki',airlines:'Emirates / Finnair / Turkish'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair',freq:'Multiple daily'}],bestFor:'All destinations'}},spain:{p:{badge:'Direct to Rovaniemi (RVN)',legs:[{from:'Barcelona (BCN)',to:'Rovaniemi (RVN)',airlines:'Norwegian',freq:'2x/week',season:'Dec–Feb'}],bestFor:'Rovaniemi · Levi with car'},a:{badge:'Via Helsinki',legs:[{from:'Madrid / Barcelona',to:'Helsinki',airlines:'Finnair / Iberia'},{from:'Helsinki',to:'Lapland',airlines:'Finnair'}],bestFor:'All destinations'}},baltics:{p:{badge:'Direct to Kittilä (KTT)',legs:[{from:'Riga (RIX)',to:'Kittilä (KTT)',airlines:'airBaltic',freq:'Saturdays',season:'Dec–Mar'}],transfer:'15 min bus to Levi.',bestFor:'Levi'},a:{badge:'Via Helsinki',legs:[{from:'Riga / Tallinn / Vilnius',to:'Helsinki',airlines:'airBaltic / Finnair'},{from:'Helsinki',to:'RVN / KTT / IVL',airlines:'Finnair'}],bestFor:'All destinations'}}};
+function qfilterC(v){const b=document.getElementById('qsugg');if(!v||v.length<2){b.style.display='none';return}const q=v.toLowerCase();const m=QCITIES.filter(c=>c.city.toLowerCase().includes(q)||c.country.toLowerCase().includes(q)).slice(0,6);if(!m.length){b.style.display='none';return}b.innerHTML=m.map(c=>`<div class="q-si" onclick="qselCity('${c.city}','${c.country}','${c.region}')"><span class="sc">${c.city}, ${c.country}</span><span class="sk">${c.region.toUpperCase()}</span></div>`).join('');b.style.display='block';}
+function qselCity(city,country,region){QA.origin=city;QA.region=region;QA.originLabel=city+', '+country;document.getElementById('qsugg').style.display='none';document.getElementById('qcity').style.display='none';document.getElementById('qorig').style.display='block';document.getElementById('qorig').innerHTML=`<div class="q-sel-orig">${city}, ${country}<button class="q-clr" onclick="qclrOrig()" type="button">Change</button></div>`;document.querySelectorAll('#qrg .q-oc').forEach(e=>e.classList.remove('sel'));document.getElementById('qb1').disabled=false;}
+function qclrOrig(){QA.origin=null;QA.region=null;QA.originLabel='';document.getElementById('qcity').style.display='block';document.getElementById('qcity').value='';document.getElementById('qorig').style.display='none';document.getElementById('qb1').disabled=true;}
+function qsetReg(r,el){QA.region=r;QA.origin=r;const L={uk:'United Kingdom',ireland:'Ireland',germany:'Germany',france:'France',netherlands:'Netherlands',nordics:'Scandinavia',italy:'Italy',switzerland:'Switzerland',austria:'Austria',belgium:'Belgium',poland:'Poland',usa:'USA',canada:'Canada',australia:'Australia/NZ',asia:'Asia',baltics:'Baltic States',spain:'Spain','middle-east':'Middle East'};QA.originLabel=L[r]||r;document.querySelectorAll('#qrg .q-oc').forEach(e=>e.classList.remove('sel'));el.classList.add('sel');document.getElementById('qcity').value='';document.getElementById('qsugg').style.display='none';document.getElementById('qorig').style.display='none';document.getElementById('qcity').style.display='block';document.getElementById('qb1').disabled=false;}
+function qpick(k,v,el){QA[k]=v;const p=el.closest('.q-olist,.q-ogrid');p.querySelectorAll('.q-or,.q-oc').forEach(c=>c.classList.remove('sel'));el.classList.add('sel');const sid=el.closest('.q-step').id.replace('qs','');const btn=document.getElementById('qb'+sid);if(btn)btn.disabled=!qcanGo(+sid);}
+function qmulti(k,v,el,max){const i=QA[k].indexOf(v);if(i>-1){QA[k].splice(i,1);el.classList.remove('sel')}else{if(QA[k].length>=max)return;QA[k].push(v);el.classList.add('sel')}document.getElementById('qb4').disabled=!qcanGo(4);}
+function qcanGo(s){if(s===1)return!!QA.origin;if(s===2)return!!QA.group;if(s===3)return!!QA.budget;if(s===4)return!!QA.season&&QA.priority.length>=1;if(s===5)return!!QA.accom&&!!QA.pace;if(s===6)return!!QA.exp;return true;}
+function qgo(f){if(!qcanGo(f))return;document.getElementById('qs'+f).classList.remove('active');document.getElementById('qs'+(f+1)).classList.add('active');qrProg(f+1);document.getElementById('start-tool').scrollIntoView({behavior:'smooth',block:'start'});}
+function qback(f){document.getElementById('qs'+f).classList.remove('active');document.getElementById('qs'+(f-1)).classList.add('active');qrProg(f-1<=0?0:f-1);}
+function qrProg(cur){const b=document.getElementById('qprog');b.innerHTML='';for(let i=1;i<=7;i++){const d=document.createElement('div');d.className='q-pd'+(i<cur?' done':i===cur?' act':'');b.appendChild(d);}}
+function qcheckGate(){const e=document.getElementById('qfemail').value;const c=document.getElementById('qconsent').checked;document.getElementById('qgate-btn').disabled=!(e&&e.includes('@')&&c);}
+function qsubmitGate(){const email=document.getElementById('qfemail').value.trim();const name=document.getElementById('qfname').value.trim();if(!email||!email.includes('@')){document.getElementById('qgate-err').style.display='block';return}document.getElementById('qgate-err').style.display='none';const top3=qscoreDests();qbuildResult(name,email,top3);qsendQuizEmailSubmission(name,email,top3);}
+function qscoreDests(){const g=QA.group,b=QA.budget,s=QA.season,p=QA.priority,acc=QA.accom,r=QA.region;const sc={rovaniemi:0,levi:0,saariselka:0,kakslauttanen:0,yllas:0};const rs={rovaniemi:[],levi:[],saariselka:[],kakslauttanen:[],yllas:[]};if(p.includes('santa')){sc.rovaniemi+=4;rs.rovaniemi.push('Best Santa experience operators')}if(p.includes('skiing')){sc.levi+=3;rs.levi.push('Best ski slopes in Finnish Lapland');sc.yllas+=3;rs.yllas.push("Finland's highest fell")}if(p.includes('aurora')){sc.saariselka+=3;rs.saariselka.push('Best aurora odds — furthest north');sc.kakslauttanen+=3;rs.kakslauttanen.push('Sleep under aurora in glass igloo')}if(p.includes('culture')){sc.saariselka+=2;rs.saariselka.push('Close to Inari Sami capital')}if(acc==='igloo'){sc.kakslauttanen+=4;rs.kakslauttanen.push('The original glass igloo resort');sc.saariselka+=2}if(acc==='cabin'){sc.levi+=2;rs.levi.push('Best private cabin availability')}if(acc==='hotel'){sc.rovaniemi+=2;rs.rovaniemi.push('Widest hotel and resort range')}if(g==='family-young'){sc.rovaniemi+=3;rs.rovaniemi.push('Best infrastructure for young families');sc.levi+=2}if(g==='couple'){sc.kakslauttanen+=2;rs.kakslauttanen.push('Most romantic destination');sc.levi+=2;rs.levi.push('Easy arrival, romantic cabins')}if(g==='friends'){sc.levi+=2;rs.levi.push('Best group activity mix')}if(g==='multigem'){sc.rovaniemi+=3;rs.rovaniemi.push('Best for mixed age groups')}if(g==='solo'){sc.saariselka+=2;rs.saariselka.push('Best for independent explorers')}if(s==='jan-feb'){sc.saariselka+=3;rs.saariselka.push('Darkest skies, peak aurora Jan–Feb');sc.kakslauttanen+=2}if(s==='nov-dec'){sc.rovaniemi+=3;rs.rovaniemi.push('Best Christmas atmosphere');sc.levi+=1}if(s==='mar-apr'){sc.saariselka+=3;rs.saariselka.push('Best spring snow and sun');sc.levi+=2}if(b==='low'){sc.rovaniemi+=2;rs.rovaniemi.push('Best value — widest budget range')}if(b==='high'||b==='luxury'){sc.kakslauttanen+=3;rs.kakslauttanen.push('Matches your budget perfectly');sc.levi+=2}if(['uk','netherlands','switzerland','austria','germany'].includes(r)){sc.levi+=2;rs.levi.push('Direct flight lands 15 min from resort')}if(['uk','ireland','italy','belgium'].includes(r)){sc.rovaniemi+=1}return Object.keys(sc).sort((a,b2)=>sc[b2]-sc[a]).slice(0,3).map((k,i)=>({key:k,rank:i+1,reasons:rs[k]}));}
+function qbuildResult(name,email,top3){document.getElementById('qs7').classList.remove('active');document.getElementById('qs8').classList.add('active');document.querySelectorAll('#qprog .q-pd').forEach(d=>{d.classList.add('done');d.classList.remove('act')});document.getElementById('start-tool').scrollIntoView({behavior:'smooth',block:'start'});const g=name?name.split(' ')[0]:'';const rL=['Best match','Strong alternative','Also worth considering'];document.getElementById('qr-header').innerHTML=`<div class="r-hdr"><div class="r-ey">Lapland Like This — your results</div><div class="r-title">${g?'<em>'+g+'</em>, your':'Your'} top 3<br>Lapland destinations</div><div class="r-sub">Flying from ${QA.originLabel} · ${QA.nights} nights · ${QA.priority.slice(0,2).join(' + ')}</div></div>`;const t3HTML=top3.map((item,i)=>{const d=QDESTS[item.key];const rank=i+1;const pills=d.bestFor.slice(0,4).map((bf,j)=>`<span class="rp${j<2?' m':''}">${bf}</span>`).join('');const wm=item.reasons.length?`<div class="rk-matches">${item.reasons.slice(0,2).map(r=>'+ '+r).join(' · ')}</div>`:'';return `<div class="rank-card rank-${rank}"><div class="rank-hdr"><div class="rank-badge"><span class="rank-num">${rank}</span><span class="rank-lbl">${rL[i]}</span></div><div><div class="rk-name">${d.name}</div><div class="rk-tag">${d.tag}</div></div></div>${wm}<div class="rk-why">${d.why}</div><div class="rk-pills">${pills}</div><div class="rk-flight"><strong>Fly into:</strong> ${d.airport} · ${d.transfer}</div><div class="avoid-b">${d.avoid}</div></div>`;}).join('');document.getElementById('qr-top3').innerHTML=`<div class="r-stitle">Your personalised top 3</div>${t3HTML}<div class="r-sep"></div>`;const rd=QROUTES[QA.region]||QROUTES['usa'];function fleg(l){const fc=l.from.match(/\(([A-Z]{3})\)/);const tc=l.to.match(/\(([A-Z]{3})\)/);return `<div class="f-leg"><div class="f-ap"><span class="f-ap-code">${fc?fc[1]:'---'}</span><span class="f-ap-city">${l.from.replace(/\s*\([A-Z]{3,}\)/g,'').split('/')[0].trim().substring(0,13)}</span></div><span class="f-arr">──→</span><div class="f-ap"><span class="f-ap-code">${tc?tc[1]:'---'}</span><span class="f-ap-city">${l.to.replace(/\s*\([A-Z]{3,}\)/g,'').split('/')[0].trim().substring(0,13)}</span></div></div><div class="f-det"><strong>${l.airlines}</strong>${l.freq?' · '+l.freq:''}${l.season?' · '+l.season:''}</div>`;}function fcard(r,isAlt){return `<div class="f-block"><div class="f-badge${isAlt?' alt':''}">${r.badge}</div>${r.legs.map(fleg).join('')}${r.transfer?`<div class="f-tr"><strong>Transfer:</strong> ${r.transfer}</div>`:''}${r.note?`<div class="f-det" style="margin-top:5px;font-style:italic">${r.note}</div>`:''}${r.bestFor?`<div class="f-det" style="margin-top:5px"><strong>Best for:</strong> ${r.bestFor}</div>`:''}</div>`;}document.getElementById('qr-flight').innerHTML=`<div class="r-stitle">How to get there from ${QA.originLabel}</div>${fcard(rd.p,false)}${rd.a?fcard(rd.a,true):''}<div class="r-sep"></div>`;document.getElementById('qr-cta').innerHTML=`<div class="r-cta-b"><div class="r-cta-t">Want the full day-by-day plan?</div><p class="r-cta-p">We build detailed Lapland itineraries — specific lodges, operators, honest costs. No packages. No commission.</p><button class="r-cta-btn" onclick="alert('→ Opens itinerary planner')" type="button">Build my full itinerary →</button><div class="r-tr">No obligation · No spam · We reply within 24 hours</div></div>`;}
+function qlabel(key,val){const labels={group:{couple:'Just the two of us','family-young':'Family — young kids','family-older':'Family — older kids',solo:'Solo',friends:'Friends group',multigem:'Multi-generational family'},budget:{low:'Under £2,000 / €2,300 pp',mid:'£2,000–£3,500 / €2,300–€4,000 pp',high:'£3,500–£6,000 / €4,000–€7,000 pp',luxury:'£6,000+ / €7,000+ pp'},season:{'nov-dec':'Nov–Dec','jan-feb':'Jan–Feb','mar-apr':'Mar–Apr',flexible:'Flexible'},accom:{igloo:'Glass igloo or sky cabin',cabin:'Private log cabin',hotel:'Hotel or resort',mix:'Mix — cabin + one igloo night'},pace:{packed:'Activity-packed',balanced:'Balanced',slow:'Slow and immersive'},exp:{first:'First real winter trip',some:'Done a ski holiday or two',experienced:'Comfortable in serious cold'},priority:{aurora:'Northern lights',santa:'Santa experience',husky:'Husky safari',reindeer:'Reindeer farm',snowmobile:'Snowmobile',skiing:'Skiing',culture:'Sami culture',sauna:'Sauna + ice swim'}};return(labels[key]&&labels[key][val])?labels[key][val]:val;}
+async function qsendQuizEmailSubmission(name,email,top3){const payload={submittedAt:new Date().toISOString(),lead:{name:name||'',email,consent:document.getElementById('qconsent').checked},answers:{origin:QA.originLabel,region:QA.region,group:qlabel('group',QA.group),nights:QA.nights,budget:qlabel('budget',QA.budget),season:qlabel('season',QA.season),priorities:QA.priority.map(p=>qlabel('priority',p)),accommodation:qlabel('accom',QA.accom),pace:qlabel('pace',QA.pace),winterExperience:qlabel('exp',QA.exp)},recommendations:top3.map((item,idx)=>({rank:idx+1,destination:QDESTS[item.key].name,tag:QDESTS[item.key].tag,reasons:item.reasons,airport:QDESTS[item.key].airport,transfer:QDESTS[item.key].transfer,avoid:QDESTS[item.key].avoid}))};try{const res=await fetch('/api/quiz-submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(!res.ok){console.error('Quiz submission email failed with status',res.status);}}catch(err){console.error('Quiz submission email request failed',err);}}
+function qrestart(){Object.assign(QA,{origin:null,region:null,group:null,budget:null,season:null,priority:[],accom:null,pace:null,exp:null,nights:5,originLabel:''});document.querySelectorAll('.q-or,.q-oc').forEach(e=>e.classList.remove('sel'));['qb1','qb2','qb3','qb4','qb5','qb6','qgate-btn'].forEach(id=>{const b=document.getElementById(id);if(b)b.disabled=true});document.getElementById('qns').value=5;document.getElementById('qnv').textContent='5';document.getElementById('qfemail').value='';document.getElementById('qfname').value='';document.getElementById('qconsent').checked=false;document.getElementById('qgate-err').style.display='none';document.getElementById('qs8').classList.remove('active');document.getElementById('qs0').classList.add('active');document.getElementById('qcity').style.display='block';document.getElementById('qcity').value='';document.getElementById('qsugg').style.display='none';document.getElementById('qorig').style.display='none';qrProg(0);document.getElementById('start-tool').scrollIntoView({behavior:'smooth',block:'start'});}
+qrProg(0);
+</script>
+</body>
+</html>
