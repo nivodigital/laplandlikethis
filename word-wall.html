@@ -103,10 +103,7 @@
     .panel-title{margin-left:auto;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,247,246,.3)}
     .panel-body{border-radius:18px;border:1px solid rgba(245,247,246,.08);background:linear-gradient(180deg,rgba(14,28,19,.74) 0%,rgba(18,35,24,.62) 100%);padding:2rem 1.5rem}
 
-    .counter-wrap{text-align:center;margin-bottom:20px}
-    .counter-number{display:block;font-family:var(--serif);font-size:clamp(3.1rem,8vw,5.8rem);font-weight:300;color:var(--snow);line-height:1;letter-spacing:-.04em}
-    .counter-label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,247,246,.38);margin-top:10px;display:block}
-    .divider{width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--amber),transparent);margin:30px auto 26px}
+    .divider{width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--amber),transparent);margin:8px auto 22px}
 
     .votes-notice{text-align:center;font-size:13px;color:rgba(245,247,246,.48);margin-bottom:30px;min-height:20px;transition:all .4s}
     .votes-notice strong{color:var(--amber-lt);font-weight:500}
@@ -229,7 +226,7 @@
           <a href="/where-go-lapland">Where to go</a>
         </div>
       </div>
-      <a href="about">About us</a>
+      <a href="/about">About us</a>
     </div>
     <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false" type="button">
       <span></span><span></span><span></span>
@@ -276,15 +273,10 @@
         <div class="panel-title">Lapland Word Wall</div>
       </div>
       <div class="panel-body">
-        <div class="counter-wrap">
-          <span class="counter-number" id="voter-count">—</span>
-          <span class="counter-label">people have shared their feeling</span>
-        </div>
-
         <div class="divider"></div>
 
         <p class="votes-notice" id="votes-notice">
-          Click up to <strong>2 words</strong> that feel right — or add your own below
+          Click up to <strong>2 words</strong> that feel right — vote twice to reveal live vote counts
         </p>
 
         <div class="word-cloud" id="word-cloud">
@@ -364,7 +356,6 @@
     const SUPABASE_KEY  = 'sb_publishable_U2486DnLRbzbOC5GB911-Q_PTVj5hZh';
     const MAX_VOTES     = 2;
     const COOKIE_VOTES  = 'llp_voted_ids';
-    const COOKIE_VOTER  = 'llp_is_voter';
     const SETUP_SQL_URL = 'word-wall-setup.sql';
     const ADMIN_URL     = '/word-wall-admin';
 
@@ -416,9 +407,6 @@
       setCookie(COOKIE_VOTES, JSON.stringify(ids), 365);
     }
 
-    function hasVotedBefore() { return !!getCookie(COOKIE_VOTER); }
-    function markVoter()       { setCookie(COOKIE_VOTER, '1', 365); }
-
     // ── Font size ─────────────────────────────────────────
     function getSize(votes, max) {
       const min = 13, cap = 72;
@@ -443,32 +431,6 @@
           --b:${(0.25 + Math.random()*0.65).toFixed(2)};
         `;
         el.appendChild(s);
-      }
-    }
-
-    // ── Counter animation ──────────────────────────────────
-    function animateCount(target) {
-      const el = document.getElementById('voter-count');
-      const dur = 1600, start = performance.now();
-      (function step(now) {
-        const p = Math.min((now - start) / dur, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(eased * target).toLocaleString();
-        if (p < 1) requestAnimationFrame(step);
-      })(start);
-    }
-
-    // ── Load voter count ──────────────────────────────────
-    async function loadVoterCount() {
-      try {
-        const { data } = await db
-          .from('lapland_site_stats')
-          .select('total_voters')
-          .eq('id', 1)
-          .single();
-        if (data) animateCount(data.total_voters);
-      } catch(e) {
-        document.getElementById('voter-count').textContent = '—';
       }
     }
 
@@ -498,6 +460,7 @@
       const voted = getVotedIds();
       const maxed = voted.length >= MAX_VOTES;
       const maxVotes = wordsCache.length ? wordsCache[0].vote_count : 0;
+      const showCounts = voted.length >= MAX_VOTES;
 
       if (!wordsCache.length) {
         cloud.innerHTML = '<p style="color:rgba(255,255,255,0.3);text-align:center;width:100%">Be the first to add a word.</p>';
@@ -531,7 +494,9 @@
                  : isLocked ? `You've used both your votes`
                  : `Click to vote`;
 
-        el.innerHTML = `${w.word}<sup class="word-count">${w.vote_count}</sup>`;
+        el.innerHTML = showCounts
+          ? `${w.word}<sup class="word-count">${w.vote_count}</sup>`
+          : w.word;
 
         if (!isLocked && !isVoted) {
           el.addEventListener('click', () => doVote(w, el));
@@ -571,18 +536,13 @@
           w.classList.add('locked');
           w.title = `You've used both your votes`;
         });
-        updateNotice();
+        renderCloud();
       } else {
         updateNotice();
       }
 
       // Supabase — non-blocking
       db.rpc('increment_word_vote', { word_id: word.id }).catch(console.error);
-
-      if (!hasVotedBefore()) {
-        markVoter();
-        db.rpc('increment_voter_count').then(() => loadVoterCount()).catch(console.error);
-      }
     }
 
     // ── Update votes notice ────────────────────────────────
@@ -593,11 +553,11 @@
 
       if (left <= 0) {
         el.classList.add('done');
-        el.innerHTML = `You've shared both your words. Thank you ✦`;
+        el.innerHTML = `You've used both votes. Live vote counts are now visible ✦`;
       } else if (left === 1) {
-        el.innerHTML = `You have <strong>1 vote left</strong> — or add a new word below`;
+        el.innerHTML = `You have <strong>1 vote left</strong> — vote once more to reveal live counts`;
       } else {
-        el.innerHTML = `Click up to <strong>2 words</strong> that feel right — or add your own below`;
+        el.innerHTML = `Click up to <strong>2 words</strong> that feel right — vote twice to reveal live vote counts`;
       }
     }
 
@@ -678,7 +638,6 @@
 
     // ── Init ──────────────────────────────────────────────
     buildStars();
-    loadVoterCount();
     loadWords();
     updateNotice();
 
