@@ -105,13 +105,13 @@
 
     .divider{width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--amber),transparent);margin:8px auto 22px}
 
-    .votes-notice{text-align:center;font-size:13px;color:rgba(245,247,246,.48);margin-bottom:30px;min-height:20px;transition:all .4s}
+    .votes-notice{text-align:center;font-size:13px;color:rgba(245,247,246,.48);margin-bottom:24px;min-height:20px;transition:all .4s;line-height:1.6}
     .votes-notice strong{color:var(--amber-lt);font-weight:500}
     .votes-notice.done{color:rgba(240,192,106,.7)}
 
-    .word-cloud{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 14px;padding:12px 8px 42px;min-height:280px}
+    .word-cloud{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:9px 12px;padding:12px 8px 34px;min-height:260px}
     .cloud-loading{width:100%;text-align:center;padding:80px 20px;color:rgba(245,247,246,.3);font-style:italic;font-size:14px}
-    .word-item{position:relative;font-family:var(--serif);font-weight:300;cursor:pointer;border-radius:4px;padding:3px 6px;transition:transform .2s ease,color .2s ease,text-shadow .2s ease;user-select:none;-webkit-user-select:none;opacity:0;animation:wordIn .5s ease forwards;letter-spacing:-.02em}
+    .word-item{position:relative;font-family:var(--serif);font-weight:300;cursor:pointer;border-radius:4px;padding:3px 6px;transition:transform .2s ease,color .2s ease,text-shadow .2s ease;user-select:none;-webkit-user-select:none;opacity:0;animation:wordIn .5s ease forwards;letter-spacing:-.02em;line-height:1.1;max-width:100%;overflow-wrap:anywhere}
     @keyframes wordIn{from{opacity:0;transform:translateY(8px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
     .word-item:hover:not(.locked):not(.voted){transform:translateY(-3px) scale(1.08);text-shadow:0 0 20px rgba(217,164,65,.28)}
     .word-item.voted{color:var(--amber-lt)!important;text-shadow:0 0 16px rgba(217,164,65,.35)}
@@ -199,6 +199,12 @@
       .input-row{flex-direction:column}
       .submit-btn{width:100%;justify-content:center}
       h1{font-size:clamp(2rem,11vw,3rem)}
+      .subtitle{font-size:15px;line-height:1.75}
+      .panel-body{padding:1.3rem .85rem}
+      .votes-notice{font-size:12.5px;margin-bottom:18px;min-height:auto}
+      .word-cloud{gap:7px 9px;padding:8px 2px 24px;min-height:210px}
+      .word-item{padding:2px 4px}
+      .submit-sub{font-size:12.5px;line-height:1.55}
       .social-links{grid-template-columns:1fr}
     }
   </style>
