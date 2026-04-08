@@ -241,9 +241,23 @@ footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space
 .footer-social a:hover{transform:translateY(-2px);border-color:rgba(217,164,65,.35);background:rgba(245,247,246,.08);color:var(--amber-lt)}
 .footer-social svg{width:15px;height:15px;display:block}
 .footer-note{font-size:11px;color:rgba(245,247,246,.25)}
+html{scroll-padding-top:72px}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:210}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--snow);border-radius:2px;transition:all .3s}
+.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(20,42,28,0.98);z-index:190;flex-direction:column;align-items:center;justify-content:flex-start;overflow-y:auto;padding:5rem 2rem 3rem;backdrop-filter:blur(8px)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--serif);font-size:1.35rem;font-weight:300;color:rgba(245,247,246,.85);text-decoration:none;transition:color .2s;padding:.55rem 0;width:100%;text-align:center}
+.mobile-menu a:hover{color:var(--amber-lt)}
+.mm-divider{width:40px;height:1px;background:rgba(245,247,246,.12);margin:.5rem auto}
+.mobile-menu .m-cta{font-family:var(--sans)!important;font-size:.9rem!important;background:var(--amber);color:var(--forest)!important;border-radius:8px;padding:.85rem 2rem;font-weight:500!important;margin-top:1rem;display:inline-block}
+.mm-close{position:fixed;top:1rem;right:1.5rem;background:none;border:none;color:rgba(245,247,246,.6);cursor:pointer;font-size:1.5rem;line-height:1;z-index:200;padding:.5rem}
+.mm-close:hover{color:var(--snow)}
 
 @media(max-width:900px){
-  nav{padding:1rem 1.5rem}.nav-links{display:none}
+  nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-hamburger{display:flex}
   .hero-content{padding:0 1.25rem 3.5rem}
   .hero-facts{grid-template-columns:1fr 1fr}
   .overview-inner,.flights-grid{grid-template-columns:1fr;gap:2.5rem}
@@ -276,6 +290,26 @@ footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space
 </nav>
 
 <!-- HERO -->
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu" type="button">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mm-close" onclick="closeMenu()" aria-label="Close menu">×</button>
+  <a href="/" onclick="closeMenu()">Home</a>
+  <div class="mm-divider"></div>
+    <a href="/destinations/" onclick="closeMenu()">Destinations</a>
+    <a href="/destinations/rovaniemi" onclick="closeMenu()">Rovaniemi</a>
+    <a href="/destinations/saariselka" onclick="closeMenu()">Saariselkä</a>
+    <a href="/destinations/yllas" onclick="closeMenu()">Ylläs</a>
+    <div class="mm-divider"></div>
+    <a href="/guides/" onclick="closeMenu()">Guides</a>
+    <a href="/lapland-tools" onclick="closeMenu()">Lapland Tools</a>
+    <a href="/about" onclick="closeMenu()">About us</a>
+    <a href="/where-go-lapland" class="m-cta" onclick="closeMenu()">Use the where-to-go tool →</a>
+  </div>
+
+  <!-- HERO -->
 <section class="hero">
   <img class="hero-img" src="../images/levi-ski-resort.jpeg" alt="Levi ski resort at night — floodlit slopes in Finnish Lapland">
   <div class="hero-overlay"></div>
@@ -722,6 +756,8 @@ footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function toggleMenu(){const h=document.getElementById('hamburger');const m=document.getElementById('mobile-menu');h.classList.toggle('open');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
+function closeMenu(){document.getElementById('hamburger').classList.remove('open');document.getElementById('mobile-menu').classList.remove('open');document.body.style.overflow='';}
 function toggleFaq(el){
   const a=el.nextElementSibling;
   const isOpen=a.classList.contains('open');
