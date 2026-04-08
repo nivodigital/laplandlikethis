@@ -32,6 +32,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2rem;display
 .nav-links{display:flex;gap:2rem;align-items:center}
 .nav-links a{font-size:13px;color:rgba(245,247,246,0.7);text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--snow)}
+.nav-dropdown{position:relative}
+.nav-dropdown-toggle{display:inline-flex;align-items:center;gap:6px}
+.nav-dropdown-toggle::after{content:'▾';font-size:10px;opacity:.75;transition:transform .2s}
+.nav-dropdown:hover .nav-dropdown-toggle::after,.nav-dropdown:focus-within .nav-dropdown-toggle::after{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 10px);left:0;min-width:190px;display:grid;gap:4px;padding:.45rem;background:rgba(17,28,20,.96);border:1px solid rgba(245,247,246,.08);border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.18);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dropdown-menu a{padding:.65rem .75rem;border-radius:8px;white-space:nowrap;font-size:12px;color:rgba(245,247,246,.74)}
+.nav-dropdown-menu a:hover{background:rgba(245,247,246,.08);color:var(--snow)}
 .nav-cta{background:var(--amber)!important;color:var(--forest)!important;padding:.55rem 1.25rem;border-radius:6px;font-weight:500!important}
 .nav-toggle{display:none;border:none;background:transparent;color:var(--snow);cursor:pointer;width:32px;height:24px;position:relative;align-items:center;justify-content:center;gap:4px}
 .nav-toggle span{display:block;width:100%;height:3px;background:var(--snow);border-radius:999px;transition:transform .2s ease,opacity .2s ease}
@@ -219,6 +227,12 @@ footer{background:#111C14;padding:3rem 2rem;display:flex;justify-content:space-b
 .footer-links{display:flex;gap:1.75rem;flex-wrap:wrap}
 .footer-links a{font-size:12px;color:rgba(245,247,246,.35);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:rgba(245,247,246,.65)}
+.footer-support{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap}
+.footer-support-copy{font-size:12px;color:rgba(245,247,246,.38)}
+.footer-social{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
+.footer-social a{width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:rgba(245,247,246,.04);border:1px solid rgba(245,247,246,.08);color:rgba(245,247,246,.55);transition:transform .2s,border-color .2s,color .2s,background .2s}
+.footer-social a:hover{transform:translateY(-2px);border-color:rgba(217,164,65,.35);background:rgba(245,247,246,.08);color:var(--amber-lt)}
+.footer-social svg{width:15px;height:15px;display:block}
 .footer-note{font-size:11px;color:rgba(245,247,246,.25)}
 
 /* ─── RESPONSIVE ─── */
@@ -226,8 +240,13 @@ footer{background:#111C14;padding:3rem 2rem;display:flex;justify-content:space-b
   nav{padding:1rem 1.25rem}
   .nav-toggle{display:flex}
   .nav-links{position:fixed;top:72px;left:0;right:0;max-height:0;overflow:hidden;background:rgba(31,61,43,0.95);flex-direction:column;align-items:center;gap:0.6rem;padding:0 1.25rem;transition:max-height .35s ease, padding .35s ease;z-index:99}
-  .nav-links.open{max-height:340px;padding:1rem 1.25rem}
+  .nav-links.open{max-height:420px;padding:1rem 1.25rem}
   .nav-links a{display:block;width:100%;padding:.75rem 0;text-align:center}
+  .nav-dropdown{width:100%}
+  .nav-dropdown-toggle{width:100%;justify-content:center;padding:.75rem 0}
+  .nav-dropdown-menu{position:static;min-width:0;opacity:1;visibility:visible;transform:none;background:transparent;border:none;box-shadow:none;padding:0 0 .35rem}
+  .nav-dropdown-menu a{padding:.45rem 0;color:rgba(245,247,246,.58)}
+  .nav-dropdown-menu a:hover{background:transparent;color:var(--snow)}
   .nav-links .nav-cta{width:100%}
   .hero{grid-template-columns:1fr;min-height:auto}.hero-right{height:280px}.hero-left{padding:3rem 1.5rem}
   .the-call-inner,.roots-inner,.parents-grid{grid-template-columns:1fr;gap:3rem}
@@ -251,8 +270,13 @@ footer{background:#111C14;padding:3rem 2rem;display:flex;justify-content:space-b
   <div class="nav-links">
     <a href="/destinations/">Destinations</a>
     <a href="/guides/">Guides</a>
-    <a href="/lapland-tools.html">Lapland Tools</a>
-    <a href="/where-go-lapland.html">Where to go</a>
+    <div class="nav-dropdown">
+      <a href="/lapland-tools.html" class="nav-dropdown-toggle">Lapland Tools</a>
+      <div class="nav-dropdown-menu">
+        <a href="/word-wall.html">Word Wall</a>
+        <a href="/where-go-lapland.html">Where to go</a>
+      </div>
+    </div>
     <a href="about.html" style="color:var(--snow)">About us</a>
   </div>
 </nav>
@@ -630,10 +654,12 @@ footer{background:#111C14;padding:3rem 2rem;display:flex;justify-content:space-b
   <div class="footer-links">
     <a href="/destinations/">Destinations</a>
     <a href="/lapland-tools.html">Lapland Tools</a>
+    <a href="/word-wall.html">Word Wall</a>
     <a href="where-go-lapland.html">Where to go</a>
     <a href="about.html">About us</a>
     <a href="#">Privacy</a>
   </div>
+  <div class="footer-support"><span class="footer-support-copy">We'd love your support — let's connect.</span><div class="footer-social"><a href="https://www.instagram.com/laplandlikethis" target="_blank" rel="noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor"/></svg></a><a href="https://www.facebook.com/laplandlikethis" target="_blank" rel="noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13.2 20v-6.3h2.3l.4-2.7h-2.7V9.3c0-.8.2-1.4 1.4-1.4H16V5.5c-.2 0-.9-.1-1.8-.1-1.8 0-3 1.1-3 3.2V11H9v2.7h2.4V20h1.8Z" fill="currentColor"/></svg></a><a href="https://www.tiktok.com/@laplandlikethis" target="_blank" rel="noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14.8 5.2c.5 1.3 1.4 2.3 2.8 2.9v2.2a6.2 6.2 0 0 1-2.8-.8V14c0 2.8-1.9 4.8-4.8 4.8a4.7 4.7 0 0 1-1.7-9.1v2.4a2.4 2.4 0 1 0 3.3 2.2V5.2h3.2Z" fill="currentColor"/></svg></a><a href="https://www.youtube.com/@Levi-Finland" target="_blank" rel="noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.4 8.3a2.6 2.6 0 0 0-1.8-1.8C17 6 12 6 12 6s-5 0-6.6.5a2.6 2.6 0 0 0-1.8 1.8A27 27 0 0 0 3 12a27 27 0 0 0 .6 3.7 2.6 2.6 0 0 0 1.8 1.8C7 18 12 18 12 18s5 0 6.6-.5a2.6 2.6 0 0 0 1.8-1.8A27 27 0 0 0 21 12a27 27 0 0 0-.6-3.7Z" stroke="currentColor" stroke-width="1.6"/><path d="M10.3 14.8 15 12l-4.7-2.8v5.6Z" fill="currentColor"/></svg></a></div></div>
   <div class="footer-note">© 2026 Lapland Like This · Colin, Livi, Hugo, Rowan &amp; Finley · Levi, Finnish Lapland</div>
 </footer>
 

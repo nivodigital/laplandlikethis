@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Wall Admin — Lapland Like This</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0b2540;
+      --bg2: #0f2f56;
+      --card: #132d50;
+      --card2: #1a3a62;
+      --border: rgba(255,255,255,0.08);
+      --blue: #3B82F6;
+      --blue-light: #60A5FA;
+      --white: #F9FAFB;
+      --grey: rgba(249,250,251,0.5);
+      --green: #34D399;
+      --red: #F87171;
+      --terracotta: #C97A5A;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      min-height: 100vh;
+    }
+
+    /* ── Login Screen ─────────────────────────────────── */
+    #login-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .login-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+    }
+
+    .login-logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      opacity: 0.7;
+      margin-bottom: 16px;
+    }
+
+    .login-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .login-sub {
+      font-size: 13px;
+      color: var(--grey);
+      margin-bottom: 32px;
+    }
+
+    .login-input {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+      color: var(--white);
+      outline: none;
+      margin-bottom: 16px;
+      transition: border-color 0.2s;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+    .login-input:focus { border-color: var(--blue); }
+
+    .login-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--blue), var(--blue-light));
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(59,130,246,0.35);
+    }
+
+    .login-error {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--red);
+      display: none;
+    }
+
+    /* ── Admin App ────────────────────────────────────── */
+    #admin-app { display: none; }
+
+    .top-bar {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .top-bar-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+    }
+
+    .top-bar-title span { color: var(--blue-light); }
+
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logout-btn {
+      font-size: 12px;
+      color: var(--grey);
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 14px;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .logout-btn:hover { color: var(--white); border-color: rgba(255,255,255,0.2); }
+
+    .view-wall-link {
+      font-size: 12px;
+      color: var(--blue-light);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .view-wall-link:hover { text-decoration: underline; }
+
+    /* ── Stats bar ────────────────────────────────────── */
+    .stats-bar {
+      display: flex;
+      gap: 1px;
+      background: var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat-item {
+      flex: 1;
+      background: var(--bg2);
+      padding: 20px 24px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--grey);
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    .stat-num.pending-num { color: var(--terracotta); }
+    .stat-num.live-num    { color: var(--green); }
+    .stat-num.voters-num  { color: var(--blue-light); }
+
+    /* ── Main content ─────────────────────────────────── */
+    .main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+
+    /* ── Tabs ─────────────────────────────────────────── */
+    .tabs {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 28px;
+      background: var(--card);
+      border-radius: 10px;
+      padding: 4px;
+      width: fit-content;
+    }
+
+    .tab-btn {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: var(--grey);
+      background: transparent;
+    }
+
+    .tab-btn.active {
+      background: var(--blue);
+      color: white;
+    }
+
+    .tab-btn .badge {
+      display: inline-block;
+      background: var(--terracotta);
+      color: white;
+      border-radius: 10px;
+      padding: 1px 7px;
+      font-size: 11px;
+      margin-left: 6px;
+    }
+
+    .tab-btn.active .badge { background: rgba(255,255,255,0.25); }
+
+    /* ── Tab panels ───────────────────────────────────── */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── Section titles ───────────────────────────────── */
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 16px;
+    }
+
+    /* ── Empty state ──────────────────────────────────── */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--grey);
+      font-size: 14px;
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px dashed var(--border);
+    }
+
+    .empty-state strong { display: block; font-size: 18px; margin-bottom: 8px; color: var(--white); }
+
+    /* ── Word Cards ───────────────────────────────────── */
+    .word-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .word-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .word-card:hover { border-color: rgba(255,255,255,0.14); }
+
+    .word-card.pending-card { border-left: 3px solid var(--terracotta); }
+    .word-card.approved-card { border-left: 3px solid var(--green); }
+
+    .word-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      flex: 1;
+      min-width: 0;
+    }
+
+    .word-meta {
+      font-size: 12px;
+      color: var(--grey);
+      margin-top: 3px;
+    }
+
+    .vote-badge {
+      background: rgba(59,130,246,0.15);
+      border: 1px solid rgba(59,130,246,0.2);
+      color: var(--blue-light);
+      border-radius: 8px;
+      padding: 4px 12px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* Edit field in pending cards */
+    .edit-input {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(59,130,246,0.35);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--white);
+      outline: none;
+      flex: 1;
+      display: none;
+    }
+
+    .edit-input.show { display: block; }
+    .word-text.hide  { display: none; }
+
+    /* Action buttons */
+    .actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 7px;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-approve {
+      background: rgba(52,211,153,0.15);
+      color: var(--green);
+      border: 1px solid rgba(52,211,153,0.25);
+    }
+    .btn-approve:hover { background: rgba(52,211,153,0.25); }
+
+    .btn-reject, .btn-delete {
+      background: rgba(248,113,113,0.12);
+      color: var(--red);
+      border: 1px solid rgba(248,113,113,0.2);
+    }
+    .btn-reject:hover, .btn-delete:hover { background: rgba(248,113,113,0.22); }
+
+    .btn-edit {
+      background: rgba(59,130,246,0.12);
+      color: var(--blue-light);
+      border: 1px solid rgba(59,130,246,0.2);
+    }
+    .btn-edit:hover { background: rgba(59,130,246,0.22); }
+
+    .btn-save {
+      background: rgba(59,130,246,0.2);
+      color: var(--blue-light);
+      border: 1px solid rgba(59,130,246,0.35);
+    }
+    .btn-save:hover { background: rgba(59,130,246,0.32); }
+
+    .btn:disabled { opacity: 0.4; cursor: default; }
+
+    /* ── Loading ─────────────────────────────────────── */
+    .loading-words {
+      text-align: center;
+      padding: 40px;
+      color: var(--grey);
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    /* ── Refresh btn ────────────────────────────────── */
+    .refresh-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 16px;
+    }
+
+    .refresh-btn {
+      font-size: 12px;
+      color: var(--grey);
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 14px;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      transition: color 0.2s;
+    }
+
+    .refresh-btn:hover { color: var(--white); }
+
+    .setup-alert {
+      display: none;
+      margin: 24px auto 0;
+      max-width: 1000px;
+      padding: 16px 18px;
+      background: rgba(248,113,113,0.08);
+      border: 1px solid rgba(248,113,113,0.24);
+      border-radius: 12px;
+      color: var(--white);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .setup-alert.show { display: block; }
+    .setup-alert strong { color: var(--red); }
+    .setup-alert a { color: var(--blue-light); font-weight: 600; text-decoration: none; }
+    .setup-alert a:hover { text-decoration: underline; }
+
+    /* ── Toast ───────────────────────────────────────── */
+    #toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      z-index: 999;
+      transition: transform 0.3s ease;
+      white-space: nowrap;
+    }
+    #toast.show { transform: translateX(-50%) translateY(0); }
+    #toast.ok   { border-color: rgba(52,211,153,0.4); color: var(--green); }
+    #toast.err  { border-color: rgba(248,113,113,0.4); color: var(--red); }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 640px) {
+      .stats-bar { flex-direction: column; gap: 0; }
+      .word-card  { flex-wrap: wrap; }
+      .actions    { flex-wrap: wrap; }
+      .top-bar    { padding: 0 16px; }
+      .main       { padding: 20px 16px 60px; }
+      .login-card { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Login ─────────────────────────────────────── -->
+  <div id="login-screen">
+    <div class="login-card">
+      <p class="login-logo">Lapland Like This</p>
+      <h1 class="login-title">Word Wall Admin</h1>
+      <p class="login-sub">Enter the admin password to continue</p>
+      <input
+        type="password"
+        id="password-input"
+        class="login-input"
+        placeholder="Password"
+        autocomplete="current-password"
+      />
+      <button class="login-btn" id="login-btn">Sign In</button>
+      <p class="login-error" id="login-error">Incorrect password. Try again.</p>
+    </div>
+  </div>
+
+  <!-- ── Admin App ──────────────────────────────────── -->
+  <div id="admin-app">
+
+    <div class="top-bar">
+      <p class="top-bar-title">Word Wall Admin &nbsp;·&nbsp; <span>Lapland Like This</span></p>
+      <div class="top-bar-right">
+        <a href="word-wall.html" class="view-wall-link" target="_blank">↗ View live wall</a>
+        <button class="logout-btn" id="logout-btn">Sign out</button>
+      </div>
+    </div>
+
+    <div class="setup-alert" id="setup-alert"></div>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-num pending-num" id="stat-pending">—</span>
+        <span class="stat-label">Awaiting approval</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num live-num" id="stat-live">—</span>
+        <span class="stat-label">Live on the wall</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num voters-num" id="stat-voters">—</span>
+        <span class="stat-label">Total voters</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" id="stat-votes">—</span>
+        <span class="stat-label">Total votes cast</span>
+      </div>
+    </div>
+
+    <div class="main">
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="pending">
+          Pending <span class="badge" id="pending-badge">0</span>
+        </button>
+        <button class="tab-btn" data-tab="live">Live Words</button>
+      </div>
+
+      <!-- Pending Panel -->
+      <div class="tab-panel active" id="panel-pending">
+        <div class="refresh-row">
+          <button class="refresh-btn" id="refresh-btn">↻ Refresh</button>
+        </div>
+        <p class="section-title">Words waiting for approval</p>
+        <div class="word-list" id="pending-list">
+          <div class="loading-words">Loading…</div>
+        </div>
+      </div>
+
+      <!-- Live Panel -->
+      <div class="tab-panel" id="panel-live">
+        <div class="refresh-row">
+          <button class="refresh-btn" id="refresh-live-btn">↻ Refresh</button>
+        </div>
+        <p class="section-title">All approved words</p>
+        <div class="word-list" id="live-list">
+          <div class="loading-words">Loading…</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast"></div>
+
+  <!-- ─────────────────────────────────────────────────
+       JAVASCRIPT
+  ───────────────────────────────────────────────── -->
+  <script>
+
+    // ── Config ───────────────────────────────────────
+    const SUPABASE_URL  = 'https://guvbfsjwjwgvyovvobxo.supabase.co';
+    const SUPABASE_KEY  = 'sb_publishable_U2486DnLRbzbOC5GB911-Q_PTVj5hZh';
+    const ADMIN_PASS    = 'lapland2026';   // ← Change this if you want
+
+    const { createClient } = supabase;
+    const db = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    function isSetupError(error) {
+      if (!error) return false;
+      const text = `${error.code || ''} ${error.message || ''} ${error.details || ''} ${error.hint || ''}`.toLowerCase();
+      return text.includes('lapland_words')
+        || text.includes('lapland_site_stats')
+        || text.includes('schema cache')
+        || text.includes('relation')
+        || text.includes('pgrst205');
+    }
+
+    function setSetupAlert(error) {
+      const alert = document.getElementById('setup-alert');
+      if (!error) {
+        alert.classList.remove('show');
+        alert.innerHTML = '';
+        return;
+      }
+      alert.classList.add('show');
+      alert.innerHTML = `<strong>Word Wall is not configured in Supabase yet.</strong> Run <a href="word-wall-setup.sql" target="_blank" rel="noreferrer">word-wall-setup.sql</a> in your Supabase SQL editor, then reload this page. The current error was: ${error.message || 'Unknown error.'}`;
+    }
+
+    // ── Login ─────────────────────────────────────────
+    const loginScreen = document.getElementById('login-screen');
+    const adminApp    = document.getElementById('admin-app');
+
+    function checkLogin() {
+      if (sessionStorage.getItem('llp_admin') === '1') showApp();
+    }
+
+    document.getElementById('login-btn').addEventListener('click', tryLogin);
+    document.getElementById('password-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') tryLogin();
+    });
+
+    function tryLogin() {
+      const val = document.getElementById('password-input').value;
+      const err = document.getElementById('login-error');
+      if (val === ADMIN_PASS) {
+        sessionStorage.setItem('llp_admin', '1');
+        showApp();
+      } else {
+        err.style.display = 'block';
+        document.getElementById('password-input').value = '';
+        setTimeout(() => { err.style.display = 'none'; }, 3000);
+      }
+    }
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      sessionStorage.removeItem('llp_admin');
+      adminApp.style.display = 'none';
+      loginScreen.style.display = 'flex';
+    });
+
+    function showApp() {
+      loginScreen.style.display = 'none';
+      adminApp.style.display = 'block';
+      loadAll();
+    }
+
+    // ── Tabs ─────────────────────────────────────────
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // ── Load everything ───────────────────────────────
+    async function loadAll() {
+      await Promise.all([loadStats(), loadPending(), loadLive()]);
+    }
+
+    document.getElementById('refresh-btn').addEventListener('click', loadAll);
+    document.getElementById('refresh-live-btn').addEventListener('click', loadAll);
+
+    async function loadStats() {
+      const [words, stats] = await Promise.all([
+        db.from('lapland_words').select('id, vote_count, approved'),
+        db.from('lapland_site_stats').select('total_voters').eq('id', 1).single()
+      ]);
+
+      if (words.error || stats.error) {
+        setSetupAlert(words.error || stats.error);
+      } else {
+        setSetupAlert(null);
+      }
+
+      const all      = words.data || [];
+      const pending  = all.filter(w => !w.approved).length;
+      const live     = all.filter(w =>  w.approved).length;
+      const votes    = all.filter(w =>  w.approved).reduce((s,w) => s + w.vote_count, 0);
+      const voters   = stats.data?.total_voters || 0;
+
+      document.getElementById('stat-pending').textContent = pending;
+      document.getElementById('stat-live').textContent    = live;
+      document.getElementById('stat-votes').textContent   = votes.toLocaleString();
+      document.getElementById('stat-voters').textContent  = voters.toLocaleString();
+      document.getElementById('pending-badge').textContent = pending;
+    }
+
+    // ── Pending words ─────────────────────────────────
+    async function loadPending() {
+      const list = document.getElementById('pending-list');
+      list.innerHTML = '<div class="loading-words">Loading…</div>';
+
+      const { data, error } = await db
+        .from('lapland_words')
+        .select('*')
+        .eq('approved', false)
+        .order('submitted_at', { ascending: true });
+
+      if (error || !data) {
+        if (isSetupError(error)) setSetupAlert(error);
+        list.innerHTML = '<div class="loading-words">Error loading words.</div>';
+        return;
+      }
+
+      if (!data.length) {
+        list.innerHTML = `
+          <div class="empty-state">
+            <strong>All clear ✓</strong>
+            No words waiting for approval right now.
+          </div>`;
+        return;
+      }
+
+      list.innerHTML = '';
+      data.forEach(word => list.appendChild(buildPendingCard(word)));
+    }
+
+    function buildPendingCard(word) {
+      const date = new Date(word.submitted_at).toLocaleDateString('en-GB', {
+        day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit'
+      });
+
+      const card = document.createElement('div');
+      card.className = 'word-card pending-card';
+      card.dataset.id = word.id;
+
+      card.innerHTML = `
+        <div style="flex:1;min-width:0">
+          <div class="word-text">${escHtml(word.word)}</div>
+          <input class="edit-input" value="${escHtml(word.word)}" maxlength="40" />
+          <p class="word-meta">Submitted ${date}${word.language && word.language !== 'unknown' ? ' · ' + word.language : ''}</p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-edit" data-action="edit">Edit</button>
+          <button class="btn btn-approve" data-action="approve">Approve</button>
+          <button class="btn btn-reject" data-action="reject">Reject</button>
+        </div>
+      `;
+
+      const wordText  = card.querySelector('.word-text');
+      const editInput = card.querySelector('.edit-input');
+      const editBtn   = card.querySelector('[data-action="edit"]');
+      const approveBtn= card.querySelector('[data-action="approve"]');
+      const rejectBtn = card.querySelector('[data-action="reject"]');
+
+      let editing = false;
+
+      editBtn.addEventListener('click', () => {
+        editing = !editing;
+        wordText.classList.toggle('hide', editing);
+        editInput.classList.toggle('show', editing);
+        editBtn.textContent = editing ? 'Cancel' : 'Edit';
+        if (editing) { editInput.focus(); editInput.select(); }
+      });
+
+      approveBtn.addEventListener('click', async () => {
+        approveBtn.disabled = true;
+        approveBtn.textContent = '…';
+        const finalWord = editing ? editInput.value.trim() : word.word;
+        if (!finalWord) return;
+
+        const { error } = await db
+          .from('lapland_words')
+          .update({ approved: true, word: finalWord })
+          .eq('id', word.id);
+
+        if (error) {
+          showToast('Error approving word', 'err');
+          approveBtn.disabled = false;
+          approveBtn.textContent = 'Approve';
+        } else {
+          showToast(`"${finalWord}" is now live ✓`, 'ok');
+          card.remove();
+          loadStats();
+        }
+      });
+
+      rejectBtn.addEventListener('click', async () => {
+        if (!confirm(`Delete "${word.word}"? This cannot be undone.`)) return;
+        rejectBtn.disabled = true;
+
+        const { error } = await db.from('lapland_words').delete().eq('id', word.id);
+
+        if (error) {
+          showToast('Error deleting word', 'err');
+          rejectBtn.disabled = false;
+        } else {
+          showToast(`"${word.word}" deleted`, 'err');
+          card.remove();
+          loadStats();
+        }
+      });
+
+      return card;
+    }
+
+    // ── Live words ────────────────────────────────────
+    async function loadLive() {
+      const list = document.getElementById('live-list');
+      list.innerHTML = '<div class="loading-words">Loading…</div>';
+
+      const { data, error } = await db
+        .from('lapland_words')
+        .select('*')
+        .eq('approved', true)
+        .order('vote_count', { ascending: false });
+
+      if (error || !data) {
+        if (isSetupError(error)) setSetupAlert(error);
+        list.innerHTML = '<div class="loading-words">Error loading words.</div>';
+        return;
+      }
+
+      if (!data.length) {
+        list.innerHTML = `<div class="empty-state"><strong>No live words yet</strong>Approve some words from the Pending tab.</div>`;
+        return;
+      }
+
+      list.innerHTML = '';
+      data.forEach((word, i) => list.appendChild(buildLiveCard(word, i)));
+    }
+
+    function buildLiveCard(word, rank) {
+      const date = new Date(word.submitted_at).toLocaleDateString('en-GB', {
+        day: 'numeric', month: 'short', year: 'numeric'
+      });
+
+      const card = document.createElement('div');
+      card.className = 'word-card approved-card';
+      card.dataset.id = word.id;
+
+      card.innerHTML = `
+        <div style="flex:1;min-width:0">
+          <div class="word-text">#${rank + 1} &nbsp;${escHtml(word.word)}</div>
+          <p class="word-meta">Added ${date}${word.language && word.language !== 'unknown' ? ' · ' + word.language : ''}</p>
+        </div>
+        <span class="vote-badge">${word.vote_count} vote${word.vote_count !== 1 ? 's' : ''}</span>
+        <div class="actions">
+          <button class="btn btn-delete" data-action="delete">Remove</button>
+        </div>
+      `;
+
+      card.querySelector('[data-action="delete"]').addEventListener('click', async (e) => {
+        if (!confirm(`Remove "${word.word}" from the live wall? This cannot be undone.`)) return;
+        e.target.disabled = true;
+
+        const { error } = await db.from('lapland_words').delete().eq('id', word.id);
+
+        if (error) {
+          showToast('Error removing word', 'err');
+          e.target.disabled = false;
+        } else {
+          showToast(`"${word.word}" removed`, 'err');
+          card.remove();
+          loadStats();
+        }
+      });
+
+      return card;
+    }
+
+    // ── Toast ─────────────────────────────────────────
+    let toastTimer;
+    function showToast(msg, type = '') {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.className = `show ${type}`;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => { el.className = type; }, 3000);
+    }
+
+    // ── Escape HTML ───────────────────────────────────
+    function escHtml(str) {
+      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    // ── Init ──────────────────────────────────────────
+    checkLogin();
+
+  </script>
+</body>
+</html>
