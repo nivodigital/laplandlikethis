@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lapland planning guides — when to go, Lapland with kids, what to pack. Honest practical advice from a family who lives in Finnish Lapland.">
+
+
+<meta property="og:description" content="Lapland planning guides — when to go, Lapland with kids, what to pack. Honest practical advice from a family who lives in Finnish Lapland.">
+
+
+<meta property="og:image" content="https://laplandlikethis.com/images/lapland-aurora-night.png"><meta property="og:url" content="https://laplandlikethis.com/guides"><meta property="og:type" content="website"><meta property="og:title" content="Lapland Planning Guides — When to Go, With Kids, What to Pack — Lapland Like This"><title>Lapland Planning Guides — Lapland Like This</title>
+<link rel="canonical" href="https://laplandlikethis.com/guides">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Lapland Planning Guides","url":"https://laplandlikethis.com/guides","description":"Practical, honest Lapland planning guides covering timing, family travel and what to pack — from a family who lives here.","author":{"@type":"Person","name":"Colin and Livi","jobTitle":"Residents of Levi, Finnish Lapland"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#1F3D2B;--forest-mid:#2A5239;--forest-lt:#3B6B4A;
+  --snow:#F5F7F6;--off:#F0F2F0;--amber:#D9A441;--amber-lt:#F0C06A;
+  --charcoal:#2B2B2B;--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--snow);color:var(--charcoal);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(31,61,43,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,247,246,0.08)}
+.nav-logo{font-family:var(--serif);font-size:1.1rem;color:var(--snow);text-decoration:none}
+.nav-logo span{color:var(--amber)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:13px;color:rgba(245,247,246,0.7);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--snow)}
+.nav-cta{background:var(--amber)!important;color:var(--forest)!important;padding:.55rem 1.25rem;border-radius:6px;font-weight:500!important}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--snow);border-radius:2px;transition:all .3s}
+.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(20,42,28,0.98);z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:1.75rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--serif);font-size:1.5rem;font-weight:300;color:rgba(245,247,246,0.82);text-decoration:none}
+.mobile-menu a:hover{color:var(--amber-lt)}
+.mobile-menu .mm-cta{font-family:var(--sans)!important;font-size:1rem!important;background:var(--amber);color:var(--forest)!important;border-radius:8px;padding:.85rem 2rem;font-weight:500!important;margin-top:.5rem}
+.mm-div{width:36px;height:1px;background:rgba(245,247,246,.12)}
+
+/* PAGE HERO */
+.page-hero{padding:9rem 2.5rem 5rem;background:var(--forest);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('../images/IMG_3184.jpeg') center/cover no-repeat;opacity:.15}
+.page-hero-inner{position:relative;z-index:2;max-width:760px}
+.crumb{font-size:12px;color:rgba(245,247,246,.45);margin-bottom:1.25rem;display:flex;align-items:center;gap:8px}
+.crumb a{color:rgba(245,247,246,.45);text-decoration:none;transition:color .2s}
+.crumb a:hover{color:var(--amber)}
+.crumb span{color:rgba(245,247,246,.2)}
+.eyebrow-lt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(217,164,65,.7);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+.eyebrow-lt::before{content:'';display:block;width:24px;height:1px;background:rgba(217,164,65,.7)}
+.page-h1{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:300;color:var(--snow);line-height:1.1;letter-spacing:-.02em;margin-bottom:1rem}
+.page-h1 em{font-style:italic;color:var(--amber-lt)}
+.page-sub{font-size:16px;color:rgba(245,247,246,.65);line-height:1.8;max-width:580px}
+
+/* GUIDES GRID */
+.guides-section{padding:6rem 2.5rem;background:var(--snow)}
+.guides-inner{max-width:1140px;margin:0 auto}
+.eyebrow-dk{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-lt);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+.eyebrow-dk::before{content:'';display:block;width:24px;height:1px;background:var(--forest-lt)}
+h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;margin-bottom:2.5rem}
+h2.dark{color:var(--forest)} h2.dark em{font-style:italic;color:var(--forest-lt)}
+
+/* Full guide cards — large format */
+.guide-full{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden;box-shadow:0 4px 32px rgba(31,61,43,.08);margin-bottom:2.5rem}
+.guide-full.flip .gf-img{order:2}
+.guide-full.flip .gf-content{order:1}
+.gf-img{position:relative;min-height:420px}
+.gf-img img{width:100%;height:100%;object-fit:cover;display:block}
+.gf-img-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,25,16,.45) 0%,transparent 55%)}
+.gf-tag{position:absolute;top:1.5rem;left:1.5rem;background:rgba(217,164,65,.22);border:1px solid rgba(217,164,65,.45);color:var(--amber-lt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;backdrop-filter:blur(6px);font-weight:500}
+.gf-content{background:var(--snow);padding:3rem;display:flex;flex-direction:column;justify-content:center}
+.gf-icon{font-size:28px;margin-bottom:1rem;display:block}
+.gf-title{font-family:var(--serif);font-size:1.75rem;font-weight:300;color:var(--forest);margin-bottom:.5rem;line-height:1.2}
+.gf-desc{font-size:14px;line-height:1.8;color:#555;margin-bottom:1.25rem}
+.gf-bullets{display:flex;flex-direction:column;gap:8px;margin-bottom:1.75rem}
+.gf-bullet{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#444;line-height:1.5}
+.gf-bullet::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0;margin-top:5px}
+.gf-verdict{border-left:3px solid var(--amber);padding:.75rem 0 .75rem 1rem;font-family:var(--serif);font-size:.95rem;font-style:italic;color:var(--forest);line-height:1.6;margin-bottom:1.75rem}
+.btn-forest{background:var(--forest);color:var(--snow);border:none;border-radius:8px;padding:.85rem 1.75rem;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-forest:hover{background:var(--forest-mid);transform:translateY(-2px)}
+.btn-amber{background:var(--amber);color:var(--forest);border:none;border-radius:8px;padding:.85rem 1.75rem;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-amber:hover{background:var(--amber-lt);transform:translateY(-2px)}
+
+/* QUICK FACTS STRIP */
+.facts-strip{background:var(--off);padding:4rem 2.5rem}
+.facts-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem}
+.fact-item{text-align:center;padding:1.5rem}
+.fact-n{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:var(--amber);display:block;line-height:1;margin-bottom:.4rem}
+.fact-l{font-size:13px;color:#555;line-height:1.5}
+
+/* ALSO FROM US */
+.also{padding:5rem 2.5rem;background:var(--forest)}
+.also-inner{max-width:1140px;margin:0 auto}
+.also-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:2.5rem}
+.also-card{background:rgba(245,247,246,.04);border:1px solid rgba(245,247,246,.08);border-radius:12px;padding:1.5rem;text-decoration:none;display:block;transition:background .2s,border-color .2s}
+.also-card:hover{background:rgba(245,247,246,.08);border-color:rgba(217,164,65,.3)}
+.also-dest{font-family:var(--serif);font-size:1.15rem;color:var(--snow);margin-bottom:.35rem}
+.also-desc{font-size:13px;color:rgba(245,247,246,.5);line-height:1.6;margin-bottom:.75rem}
+.also-link{font-size:12px;color:var(--amber);display:flex;align-items:center;gap:5px}
+.also-link::after{content:'→';transition:transform .2s}
+.also-card:hover .also-link::after{transform:translateX(4px)}
+
+/* TRIP BUILDER CTA */
+.tool-cta{padding:6rem 2.5rem;background:var(--snow);text-align:center}
+.tc-inner{max-width:620px;margin:0 auto}
+.tc-h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;color:var(--forest);line-height:1.2;margin-bottom:1rem}
+.tc-h2 em{font-style:italic}
+.tc-body{font-size:15px;line-height:1.8;color:#555;margin-bottom:2rem}
+.tc-trust{font-size:12px;color:#aaa;margin-top:1rem}
+
+/* FOOTER */
+footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;border-top:1px solid rgba(245,247,246,.06)}
+.footer-logo{font-family:var(--serif);font-size:1rem;color:rgba(245,247,246,.5)}
+.footer-logo span{color:var(--amber)}
+.footer-links{display:flex;gap:1.75rem;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:rgba(245,247,246,.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:rgba(245,247,246,.65)}
+.footer-note{font-size:11px;color:rgba(245,247,246,.25)}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}
+
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-hamburger{display:flex}
+  .page-hero{padding:7rem 1.25rem 3.5rem}
+  .guides-section,.also,.tool-cta,.facts-strip{padding:4rem 1.25rem}
+  .guide-full,.guide-full.flip{grid-template-columns:1fr}
+  .guide-full.flip .gf-img{order:0}
+  .guide-full.flip .gf-content{order:1}
+  .gf-img{min-height:260px}
+  .gf-content{padding:2rem 1.5rem}
+  footer{flex-direction:column;align-items:center;text-align:center;padding:2rem 1.25rem}
+  .footer-links{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="../index.html" class="nav-logo">Lapland <span>Like This</span></a>
+  <div class="nav-links">
+    <a href="../destinations/">Destinations</a>
+    <a href="../guides/">Guides</a>
+    <a href="../about.html">About us</a>
+    <a href="../index.html#tool">Trip builder</a>
+    <a href="../index.html#tool" class="nav-cta">Plan my trip</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" type="button">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="when-to-go.html" onclick="closeMenu()">When to go</a>
+  <a href="lapland-with-kids.html" onclick="closeMenu()">Lapland with kids</a>
+  <a href="what-to-pack.html" onclick="closeMenu()">What to pack</a>
+  <div class="mm-div"></div>
+  <a href="../destinations/" onclick="closeMenu()">Destinations</a>
+  <a href="../about.html" onclick="closeMenu()">About us</a>
+  <a href="../index.html#tool" class="mm-cta" onclick="closeMenu()">Plan my trip →</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="crumb"><a href="../index.html">Home</a><span>/</span>Guides</div>
+    <div class="eyebrow-lt">Planning guides</div>
+    <h1 class="page-h1">Everything you need<br><em>to plan properly.</em></h1>
+    <p class="page-sub">Three guides that answer the questions we get asked most often. Written from three winters living here — not from a single week's visit.</p>
+  </div>
+</section>
+
+<!-- FACTS STRIP -->
+<div class="facts-strip">
+  <div class="facts-inner">
+    <div class="fact-item reveal rd1">
+      <span class="fact-n">3</span>
+      <div class="fact-l">Winters living in Levi — every season, properly</div>
+    </div>
+    <div class="fact-item reveal rd2">
+      <span class="fact-n">500+</span>
+      <div class="fact-l">Travellers we've spoken to and learned from</div>
+    </div>
+    <div class="fact-item reveal rd1">
+      <span class="fact-n">0</span>
+      <div class="fact-l">Commercial partnerships — no affiliate links, no agenda</div>
+    </div>
+    <div class="fact-item reveal rd2">
+      <span class="fact-n">−32°C</span>
+      <div class="fact-l">Coldest we've seen in Levi. We know what cold means here.</div>
+    </div>
+  </div>
+</div>
+
+<!-- GUIDES -->
+<section class="guides-section">
+  <div class="guides-inner">
+    <div class="reveal">
+      <div class="eyebrow-dk">The guides</div>
+      <h2 class="dark">Three things most people<br><em>get wrong before they book</em></h2>
+    </div>
+
+    <!-- WHEN TO GO -->
+    <div class="guide-full reveal">
+      <div class="gf-img">
+        <img src="../images/lapland-aurora-night.png" alt="Northern lights aurora over pine forest in Finnish Lapland — best time to visit">
+        <div class="gf-img-overlay"></div>
+        <div class="gf-tag">Most asked question</div>
+      </div>
+      <div class="gf-content">
+        <span class="gf-icon">📅</span>
+        <div class="gf-title">When to go to Lapland</div>
+        <p class="gf-desc">December isn't always the right answer. January to March gives you better aurora odds, deeper snow, and often lower prices. March is genuinely our favourite month and most people don't know about it.</p>
+        <div class="gf-bullets">
+          <div class="gf-bullet">Month by month breakdown — October through April</div>
+          <div class="gf-bullet">Aurora statistics from the Finnish Meteorological Institute</div>
+          <div class="gf-bullet">Temperature guide and honest cold weather advice</div>
+          <div class="gf-bullet">Why December isn't the best aurora month</div>
+          <div class="gf-bullet">Why March is underrated</div>
+        </div>
+        <div class="gf-verdict">"The number one mistake: booking December for aurora. The data doesn't support it. January and February are the months — we see this go wrong every year."</div>
+        <a href="when-to-go.html" class="btn-forest">Read the guide →</a>
+      </div>
+    </div>
+
+    <!-- LAPLAND WITH KIDS -->
+    <div class="guide-full flip reveal">
+      <div class="gf-img">
+        <img src="../images/lapland_like_this.JPG" alt="Family with children and reindeer in Finnish Lapland — Lapland with kids guide">
+        <div class="gf-img-overlay"></div>
+        <div class="gf-tag">Our strongest authority</div>
+      </div>
+      <div class="gf-content">
+        <span class="gf-icon">👨‍👩‍👧‍👦</span>
+        <div class="gf-title">Lapland with kids</div>
+        <p class="gf-desc">We moved here with Hugo (7), Rowan (3) and Finley (1). We know what works at each age, what doesn't, what to book first, and how to handle −20°C with small children. No one else has written this from the inside.</p>
+        <div class="gf-bullets">
+          <div class="gf-bullet">Age by age guide — under 2 through to teenagers</div>
+          <div class="gf-bullet">Activity suitability table by age group</div>
+          <div class="gf-bullet">How to keep children warm at −20°C (the most important thing)</div>
+          <div class="gf-bullet">What to book first and how far ahead</div>
+          <div class="gf-bullet">The Santa experience — honest advice on avoiding the crowds</div>
+        </div>
+        <div class="gf-verdict">"Lapland with children is extraordinary. But it requires more preparation than a summer holiday. Get the clothing right and don't over-programme. We'll tell you exactly how."</div>
+        <a href="lapland-with-kids.html" class="btn-forest">Read the guide →</a>
+      </div>
+    </div>
+
+    <!-- WHAT TO PACK -->
+    <div class="guide-full reveal">
+      <div class="gf-img">
+        <img src="../images/IMG_9561 (1).jpeg" alt="Snow texture on groomed ski slope — Finnish Lapland winter conditions">
+        <div class="gf-img-overlay"></div>
+        <div class="gf-tag">Practical and specific</div>
+      </div>
+      <div class="gf-content">
+        <span class="gf-icon">🎒</span>
+        <div class="gf-title">What to pack</div>
+        <p class="gf-desc">Most packing lists are wrong in at least two ways. Cotton base layers are dangerous. Fashion snow boots are inadequate. And you almost certainly don't need to buy half of what you think — most operators provide the outer layers. Here's what you actually need.</p>
+        <div class="gf-bullets">
+          <div class="gf-bullet">The three rules that matter before anything else</div>
+          <div class="gf-bullet">Full layering system — what goes where and why</div>
+          <div class="gf-bullet">Hands, feet and head — where most people go wrong</div>
+          <div class="gf-bullet">What operators provide so you don't over-buy</div>
+          <div class="gf-bullet">Complete prioritised packing list — must bring vs hire vs skip</div>
+        </div>
+        <div class="gf-verdict">"The most common mistake we see: cotton base layers. Second most common: fashion snow boots at −20°C. Both are avoidable. This guide tells you exactly what you need."</div>
+        <a href="what-to-pack.html" class="btn-forest">Read the guide →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALSO FROM US -->
+<section class="also">
+  <div class="also-inner reveal">
+    <div class="eyebrow-lt">Also worth reading</div>
+    <h2 style="font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:var(--snow);margin-bottom:.5rem;line-height:1.2">Our destination guides —<br><em style="font-style:italic;color:var(--amber-lt)">one for each resort</em></h2>
+    <div class="also-grid">
+      <a href="../destinations/levi.html" class="also-card">
+        <div class="also-dest">Levi</div>
+        <p class="also-desc">Our home. Direct flights, no hire car, Finland's best ski resort. The honest version.</p>
+        <div class="also-link">Read guide</div>
+      </a>
+      <a href="../destinations/rovaniemi.html" class="also-card">
+        <div class="also-dest">Rovaniemi</div>
+        <p class="also-desc">The gateway — most flights, widest choice. And the traps most visitors fall into.</p>
+        <div class="also-link">Read guide</div>
+      </a>
+      <a href="../destinations/saariselka.html" class="also-card">
+        <div class="also-dest">Saariselkä</div>
+        <p class="also-desc">Best aurora odds in Finland. Genuine wilderness. Further north. For people who mean it.</p>
+        <div class="also-link">Read guide</div>
+      </a>
+      <a href="../destinations/yllas.html" class="also-card">
+        <div class="also-dest">Ylläs</div>
+        <p class="also-desc">Same flights as Levi. Finland's highest fell. Half the crowds. The underrated one.</p>
+        <div class="also-link">Read guide</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRIP BUILDER CTA -->
+<section class="tool-cta">
+  <div class="tc-inner reveal">
+    <div class="eyebrow-dk" style="justify-content:center">Ready to plan the trip itself?</div>
+    <h2 class="tc-h2">Answer 6 questions.<br><em>Get your personalised top 3.</em></h2>
+    <p class="tc-body">Tell us where you're flying from, who you're with and what matters most. We'll give you a personalised destination recommendation with real flight routes and honest rationale.</p>
+    <a href="../index.html#tool" class="btn-amber">Start the trip builder →</a>
+    <p class="tc-trust">No sign-up to start · No selling · Honest guidance from people who live here</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Lapland <span>Like This</span></div>
+  <div class="footer-links">
+    <a href="when-to-go.html">When to go</a>
+    <a href="lapland-with-kids.html">With kids</a>
+    <a href="what-to-pack.html">What to pack</a>
+    <a href="../destinations/">Destinations</a>
+    <a href="../about.html">About us</a>
+    <a href="../index.html#tool">Trip builder</a>
+    <a href="../privacy.html">Privacy</a>
+  </div>
+  <div class="footer-note">© 2025 Lapland Like This · Colin, Livi, Hugo, Rowan &amp; Finley · Levi, Finnish Lapland</div>
+</footer>
+
+<script>
+function toggleMenu(){const h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu'),o=!m.classList.contains('open');m.classList.toggle('open',o);h.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';}
+function closeMenu(){const h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu');m.classList.remove('open');h.classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

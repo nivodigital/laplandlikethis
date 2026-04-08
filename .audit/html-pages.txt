@@ -1,0 +1,13 @@
+404.html
+about.html
+destinations/index.html
+destinations/levi.html
+destinations/rovaniemi.html
+destinations/saariselka.html
+destinations/yllas.html
+guides/index.html
+guides/lapland-with-kids.html
+guides/what-to-pack.html
+guides/when-to-go.html
+index.html
+privacy.html

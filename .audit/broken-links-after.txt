@@ -1,0 +1,64 @@
+Getting links from: http://localhost:3000/
+├───OK─── http://localhost:3000/about.html
+├───OK─── http://localhost:3000/destinations/levi.html
+├───OK─── http://localhost:3000/destinations/rovaniemi.html
+├───OK─── http://localhost:3000/destinations/saariselka.html
+├───OK─── http://localhost:3000/destinations/yllas.html
+├───OK─── http://localhost:3000/guides/when-to-go.html
+├───OK─── http://localhost:3000/guides/lapland-with-kids.html
+├───OK─── http://localhost:3000/guides/what-to-pack.html
+├───OK─── http://localhost:3000/images/lapland-aurora-night.png
+├───OK─── http://localhost:3000/images/lapland_like_this.JPG
+├───OK─── http://localhost:3000/images/levi-ski-resort.jpeg
+├───OK─── http://localhost:3000/images/IMG_1797.jpeg
+├───OK─── http://localhost:3000/images/IMG_8744-3.jpeg
+├───OK─── http://localhost:3000/images/IMG_3184.jpeg
+├───OK─── http://localhost:3000/images/IMG_1849-1.JPG
+├───OK─── http://localhost:3000/images/IMG_3814.jpg
+├───OK─── http://localhost:3000/images/IMG_1870.JPG
+└───OK─── http://localhost:3000/privacy.html
+Finished! 53 links found. 35 excluded. 0 broken.
+
+Getting links from: http://localhost:3000/index.html
+Finished! 53 links found. 53 excluded. 0 broken.
+
+Getting links from: http://localhost:3000/about.html
+Finished! 13 links found. 13 excluded. 0 broken.
+
+Getting links from: http://localhost:3000/destinations/levi.html
+├───OK─── http://localhost:3000/images/IMG_3183-1.jpg
+├───OK─── https://en.ilmatieteenlaitos.fi/northern-lights
+├───OK─── http://localhost:3000/images/IMG_9396.jpg
+├───OK─── http://localhost:3000/images/IMG_9559-2.jpeg
+├───OK─── http://localhost:3000/images/IMG_8642.jpeg
+├───OK─── http://localhost:3000/images/IMG_1879.JPG
+Finished! 27 links found. 21 excluded. 0 broken.
+
+Getting links from: http://localhost:3000/destinations/rovaniemi.html
+├───OK─── http://localhost:3000/images/IMG_1865.JPG
+├───OK─── http://localhost:3000/images/levi_finland.jpg
+Finished! 32 links found. 30 excluded. 0 broken.
+
+Getting links from: http://localhost:3000/destinations/saariselka.html
+├───OK─── http://localhost:3000/images/IMG_9267.jpeg
+Finished! 21 links found. 20 excluded. 0 broken.
+
+Getting links from: http://localhost:3000/destinations/yllas.html
+├───OK─── http://localhost:3000/images/IMG_9560.jpeg
+Finished! 21 links found. 20 excluded. 0 broken.
+
+Getting links from: http://localhost:3000/guides/when-to-go.html
+Finished! 17 links found. 17 excluded. 0 broken.
+
+Getting links from: http://localhost:3000/guides/lapland-with-kids.html
+Finished! 16 links found. 16 excluded. 0 broken.
+
+Getting links from: http://localhost:3000/guides/what-to-pack.html
+├───OK─── http://localhost:3000/images/IMG_9561-1.jpeg
+Finished! 16 links found. 15 excluded. 0 broken.
+
+Getting links from: http://localhost:3000/privacy.html
+Finished! 7 links found. 7 excluded. 0 broken.
+
+Finished! 276 links found. 247 excluded. 0 broken.
+Elapsed time: 1 second

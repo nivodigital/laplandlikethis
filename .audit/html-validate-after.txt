@@ -1,0 +1,233 @@
+
+/Users/colin/claude1/about.html
+  245:4   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  253:26  error  Inline style is not allowed                       no-inline-style
+  479:36  error  Inline style is not allowed                       no-inline-style
+  615:34  error  Inline style is not allowed                       no-inline-style
+  615:71  error  Inline style is not allowed                       no-inline-style
+  622:10  error  Inline style is not allowed                       no-inline-style
+  634:80  error  Raw "&" must be encoded as "&amp;"                no-raw-characters
+
+/Users/colin/claude1/index.html
+  410:4    error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  556:10   error  Inline style is not allowed                       no-inline-style
+  557:66   error  Inline style is not allowed                       no-inline-style
+  558:115  error  Inline style is not allowed                       no-inline-style
+  560:32   error  Inline style is not allowed                       no-inline-style
+  564:16   error  Inline style is not allowed                       no-inline-style
+  608:30   error  Inline style is not allowed                       no-inline-style
+  665:29   error  Inline style is not allowed                       no-inline-style
+  666:29   error  Inline style is not allowed                       no-inline-style
+  667:29   error  Inline style is not allowed                       no-inline-style
+  675:18   error  Inline style is not allowed                       no-inline-style
+  676:20   error  Inline style is not allowed                       no-inline-style
+  677:20   error  Inline style is not allowed                       no-inline-style
+  677:183  error  Inline style is not allowed                       no-inline-style
+  678:20   error  Inline style is not allowed                       no-inline-style
+  679:16   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  679:54   error  Inline style is not allowed                       no-inline-style
+  680:20   error  Inline style is not allowed                       no-inline-style
+  685:14   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  694:18   error  Inline style is not allowed                       no-inline-style
+  713:14   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  717:14   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  729:14   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  733:14   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  738:39   error  Inline style is not allowed                       no-inline-style
+  748:14   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  752:14   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  755:18   error  Inline style is not allowed                       no-inline-style
+  762:18   error  Inline style is not allowed                       no-inline-style
+  762:129  error  Inline style is not allowed                       no-inline-style
+  773:14   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  777:14   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  786:18   error  Inline style is not allowed                       no-inline-style
+  792:14   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  796:14   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  805:14   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  809:18   error  Inline style is not allowed                       no-inline-style
+  820:16   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  830:14   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  841:26   error  Inline style is not allowed                       no-inline-style
+  882:95   error  Raw "&" must be encoded as "&amp;"                no-raw-characters
+  891:26   error  Inline style is not allowed                       no-inline-style
+  898:10   error  Inline style is not allowed                       no-inline-style
+  917:80   error  Raw "&" must be encoded as "&amp;"                no-raw-characters
+
+/Users/colin/claude1/destinations/index.html
+   12:420  error  title text cannot be longer than 70 characters    long-title
+  160:4    error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  324:9    error  Inline style is not allowed                       no-inline-style
+  324:176  error  Inline style is not allowed                       no-inline-style
+  325:10   error  Inline style is not allowed                       no-inline-style
+  329:17   error  Inline style is not allowed                       no-inline-style
+  358:29   error  Inline style is not allowed                       no-inline-style
+  378:61   error  Raw "&" must be encoded as "&amp;"                no-raw-characters
+
+/Users/colin/claude1/destinations/levi.html
+    7:95  error  title text cannot be longer than 70 characters  long-title
+  341:14  error  Inline style is not allowed                     no-inline-style
+  349:38  error  Inline style is not allowed                     no-inline-style
+  351:14  error  Inline style is not allowed                     no-inline-style
+  352:16  error  Inline style is not allowed                     no-inline-style
+  353:14  error  Inline style is not allowed                     no-inline-style
+  357:25  error  Inline style is not allowed                     no-inline-style
+  358:10  error  Inline style is not allowed                     no-inline-style
+  393:37  error  Inline style is not allowed                     no-inline-style
+  670:32  error  Inline style is not allowed                     no-inline-style
+  687:80  error  Raw "&" must be encoded as "&amp;"              no-raw-characters
+
+/Users/colin/claude1/destinations/rovaniemi.html
+  189:4   error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  226:22  error  Inline style is not allowed                       no-inline-style
+  246:22  error  Inline style is not allowed                       no-inline-style
+  253:10  error  Inline style is not allowed                       no-inline-style
+  275:34  error  Inline style is not allowed                       no-inline-style
+  303:22  error  Inline style is not allowed                       no-inline-style
+  318:22  error  Inline style is not allowed                       no-inline-style
+  359:22  error  Inline style is not allowed                       no-inline-style
+  402:22  error  Inline style is not allowed                       no-inline-style
+  408:10  error  Inline style is not allowed                       no-inline-style
+  430:22  error  Inline style is not allowed                       no-inline-style
+  431:26  error  Inline style is not allowed                       no-inline-style
+  448:29  error  Inline style is not allowed                       no-inline-style
+  490:80  error  Raw "&" must be encoded as "&amp;"                no-raw-characters
+
+/Users/colin/claude1/destinations/saariselka.html
+   12:445  error  title text cannot be longer than 70 characters  long-title
+  175:22   error  Inline style is not allowed                     no-inline-style
+  184:10   error  <bq> is not a valid element name                element-name
+  190:35   error  Inline style is not allowed                     no-inline-style
+  204:22   error  Inline style is not allowed                     no-inline-style
+  211:10   error  Inline style is not allowed                     no-inline-style
+  226:14   error  Inline style is not allowed                     no-inline-style
+  227:14   error  Inline style is not allowed                     no-inline-style
+  229:14   error  Inline style is not allowed                     no-inline-style
+  230:19   error  Inline style is not allowed                     no-inline-style
+  238:22   error  Inline style is not allowed                     no-inline-style
+  279:22   error  Inline style is not allowed                     no-inline-style
+  302:22   error  Inline style is not allowed                     no-inline-style
+  319:24   error  Inline style is not allowed                     no-inline-style
+  324:10   error  Inline style is not allowed                     no-inline-style
+  331:80   error  Raw "&" must be encoded as "&amp;"              no-raw-characters
+
+/Users/colin/claude1/destinations/yllas.html
+  170:22  error  Inline style is not allowed         no-inline-style
+  179:10  error  <bq> is not a valid element name    element-name
+  185:29  error  Inline style is not allowed         no-inline-style
+  212:22  error  Inline style is not allowed         no-inline-style
+  219:10  error  Inline style is not allowed         no-inline-style
+  237:31  error  Inline style is not allowed         no-inline-style
+  239:33  error  Inline style is not allowed         no-inline-style
+  240:14  error  Inline style is not allowed         no-inline-style
+  242:14  error  Inline style is not allowed         no-inline-style
+  243:19  error  Inline style is not allowed         no-inline-style
+  251:22  error  Inline style is not allowed         no-inline-style
+  289:22  error  Inline style is not allowed         no-inline-style
+  308:22  error  Inline style is not allowed         no-inline-style
+  325:24  error  Inline style is not allowed         no-inline-style
+  330:10  error  Inline style is not allowed         no-inline-style
+  337:80  error  Raw "&" must be encoded as "&amp;"  no-raw-characters
+
+/Users/colin/claude1/guides/index.html
+   12:422  error  title text cannot be longer than 70 characters    long-title
+  157:4    error  <button> is missing recommended "type" attribute  no-implicit-button-type
+  286:9    error  Inline style is not allowed                       no-inline-style
+  286:179  error  Inline style is not allowed                       no-inline-style
+  315:29   error  Inline style is not allowed                       no-inline-style
+  334:61   error  Raw "&" must be encoded as "&amp;"                no-raw-characters
+
+/Users/colin/claude1/guides/lapland-with-kids.html
+  152:22  error  Inline style is not allowed         no-inline-style
+  160:8   error  <bq> is not a valid element name    element-name
+  166:22  error  Inline style is not allowed         no-inline-style
+  208:22  error  Inline style is not allowed         no-inline-style
+  214:10  error  Inline style is not allowed         no-inline-style
+  234:22  error  Inline style is not allowed         no-inline-style
+  242:30  error  Inline style is not allowed         no-inline-style
+  243:33  error  Inline style is not allowed         no-inline-style
+  244:32  error  Inline style is not allowed         no-inline-style
+  245:32  error  Inline style is not allowed         no-inline-style
+  246:32  error  Inline style is not allowed         no-inline-style
+  249:30  error  Inline style is not allowed         no-inline-style
+  250:33  error  Inline style is not allowed         no-inline-style
+  251:32  error  Inline style is not allowed         no-inline-style
+  252:32  error  Inline style is not allowed         no-inline-style
+  253:32  error  Inline style is not allowed         no-inline-style
+  254:32  error  Inline style is not allowed         no-inline-style
+  255:32  error  Inline style is not allowed         no-inline-style
+  257:30  error  Inline style is not allowed         no-inline-style
+  258:33  error  Inline style is not allowed         no-inline-style
+  259:32  error  Inline style is not allowed         no-inline-style
+  260:32  error  Inline style is not allowed         no-inline-style
+  261:32  error  Inline style is not allowed         no-inline-style
+  264:30  error  Inline style is not allowed         no-inline-style
+  265:33  error  Inline style is not allowed         no-inline-style
+  266:32  error  Inline style is not allowed         no-inline-style
+  267:32  error  Inline style is not allowed         no-inline-style
+  268:32  error  Inline style is not allowed         no-inline-style
+  269:32  error  Inline style is not allowed         no-inline-style
+  276:22  error  Inline style is not allowed         no-inline-style
+  311:22  error  Inline style is not allowed         no-inline-style
+  312:22  error  Inline style is not allowed         no-inline-style
+  329:24  error  Inline style is not allowed         no-inline-style
+  333:10  error  Inline style is not allowed         no-inline-style
+  340:80  error  Raw "&" must be encoded as "&amp;"  no-raw-characters
+
+/Users/colin/claude1/guides/what-to-pack.html
+  175:22  error  Inline style is not allowed         no-inline-style
+  198:22  error  Inline style is not allowed         no-inline-style
+  276:22  error  Inline style is not allowed         no-inline-style
+  283:10  error  Inline style is not allowed         no-inline-style
+  291:38  error  Inline style is not allowed         no-inline-style
+  318:22  error  Inline style is not allowed         no-inline-style
+  328:34  error  Inline style is not allowed         no-inline-style
+  329:31  error  Inline style is not allowed         no-inline-style
+  333:34  error  Inline style is not allowed         no-inline-style
+  334:31  error  Inline style is not allowed         no-inline-style
+  338:34  error  Inline style is not allowed         no-inline-style
+  339:31  error  Inline style is not allowed         no-inline-style
+  343:34  error  Inline style is not allowed         no-inline-style
+  344:31  error  Inline style is not allowed         no-inline-style
+  348:34  error  Inline style is not allowed         no-inline-style
+  349:31  error  Inline style is not allowed         no-inline-style
+  353:34  error  Inline style is not allowed         no-inline-style
+  354:31  error  Inline style is not allowed         no-inline-style
+  357:6   error  <bq> is not a valid element name    element-name
+  357:19  error  Inline style is not allowed         no-inline-style
+  361:22  error  Inline style is not allowed         no-inline-style
+  392:22  error  Inline style is not allowed         no-inline-style
+  398:10  error  Inline style is not allowed         no-inline-style
+  432:22  error  Inline style is not allowed         no-inline-style
+  433:22  error  Inline style is not allowed         no-inline-style
+  449:24  error  Inline style is not allowed         no-inline-style
+  453:10  error  Inline style is not allowed         no-inline-style
+  460:80  error  Raw "&" must be encoded as "&amp;"  no-raw-characters
+
+/Users/colin/claude1/guides/when-to-go.html
+  165:22  error  Inline style is not allowed         no-inline-style
+  189:22  error  Inline style is not allowed         no-inline-style
+  209:6   error  <bq> is not a valid element name    element-name
+  209:19  error  Inline style is not allowed         no-inline-style
+  213:22  error  Inline style is not allowed         no-inline-style
+  219:10  error  Inline style is not allowed         no-inline-style
+  250:10  error  <bq> is not a valid element name    element-name
+  317:10  error  <bq> is not a valid element name    element-name
+  338:22  error  Inline style is not allowed         no-inline-style
+  345:10  error  Inline style is not allowed         no-inline-style
+  359:18  error  Inline style is not allowed         no-inline-style
+  363:22  error  Inline style is not allowed         no-inline-style
+  364:22  error  Inline style is not allowed         no-inline-style
+  381:24  error  Inline style is not allowed         no-inline-style
+  385:10  error  Inline style is not allowed         no-inline-style
+  392:80  error  Raw "&" must be encoded as "&amp;"  no-raw-characters
+
+✖ 201 problems (201 errors, 0 warnings)
+
+More information:
+  https://html-validate.org/rules/no-implicit-button-type.html
+  https://html-validate.org/rules/no-inline-style.html
+  https://html-validate.org/rules/no-raw-characters.html
+  https://html-validate.org/rules/long-title.html
+  https://html-validate.org/rules/element-name.html
+

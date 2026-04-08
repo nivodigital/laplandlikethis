@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="All Lapland destinations — honest guides to Levi, Rovaniemi, Saariselkä and Ylläs from a family who lives here. Which one is right for you?">
+
+
+<meta property="og:description" content="All Lapland destinations — honest guides to Levi, Rovaniemi, Saariselkä and Ylläs from a family who lives here. Which one is right for you?">
+
+
+<meta property="og:image" content="https://laplandlikethis.com/images/lapland-aurora-night.png"><meta property="og:url" content="https://laplandlikethis.com/destinations"><meta property="og:type" content="website"><meta property="og:title" content="Lapland Destinations — Levi, Rovaniemi, Saariselkä, Ylläs — Lapland Like This"><title>Levi, Rovaniemi, Saariselkä &amp; Ylläs — Lapland Like This</title>
+<link rel="canonical" href="https://laplandlikethis.com/destinations">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Lapland Destinations","url":"https://laplandlikethis.com/destinations","description":"Honest guides to all four main Finnish Lapland destinations — Levi, Rovaniemi, Saariselkä and Ylläs.","author":{"@type":"Person","name":"Colin and Livi","jobTitle":"Residents of Levi, Finnish Lapland"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#1F3D2B;--forest-mid:#2A5239;--forest-lt:#3B6B4A;
+  --snow:#F5F7F6;--off:#F0F2F0;--amber:#D9A441;--amber-lt:#F0C06A;
+  --charcoal:#2B2B2B;--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--snow);color:var(--charcoal);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(31,61,43,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,247,246,0.08)}
+.nav-logo{font-family:var(--serif);font-size:1.1rem;color:var(--snow);text-decoration:none}
+.nav-logo span{color:var(--amber)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:13px;color:rgba(245,247,246,0.7);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--snow)}
+.nav-cta{background:var(--amber)!important;color:var(--forest)!important;padding:.55rem 1.25rem;border-radius:6px;font-weight:500!important}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--snow);border-radius:2px;transition:all .3s}
+.nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(20,42,28,0.98);z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:1.75rem}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--serif);font-size:1.5rem;font-weight:300;color:rgba(245,247,246,0.82);text-decoration:none}
+.mobile-menu a:hover{color:var(--amber-lt)}
+.mobile-menu .mm-cta{font-family:var(--sans)!important;font-size:1rem!important;background:var(--amber);color:var(--forest)!important;border-radius:8px;padding:.85rem 2rem;font-weight:500!important;margin-top:.5rem}
+.mm-div{width:36px;height:1px;background:rgba(245,247,246,.12)}
+
+/* PAGE HERO */
+.page-hero{padding:9rem 2.5rem 5rem;background:var(--forest);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('images/lapland-aurora-night.png') center/cover no-repeat;opacity:.18}
+.page-hero-inner{position:relative;z-index:2;max-width:760px}
+.crumb{font-size:12px;color:rgba(245,247,246,.45);margin-bottom:1.25rem;display:flex;align-items:center;gap:8px}
+.crumb a{color:rgba(245,247,246,.45);text-decoration:none;transition:color .2s}
+.crumb a:hover{color:var(--amber)}
+.crumb span{color:rgba(245,247,246,.2)}
+.eyebrow-lt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(217,164,65,.7);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+.eyebrow-lt::before{content:'';display:block;width:24px;height:1px;background:rgba(217,164,65,.7)}
+.page-h1{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:300;color:var(--snow);line-height:1.1;letter-spacing:-.02em;margin-bottom:1rem}
+.page-h1 em{font-style:italic;color:var(--amber-lt)}
+.page-sub{font-size:16px;color:rgba(245,247,246,.65);line-height:1.8;max-width:580px}
+
+/* QUICK ANSWER */
+.quick{background:var(--snow);padding:5rem 2.5rem}
+.quick-inner{max-width:960px;margin:0 auto}
+.eyebrow-dk{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest-lt);font-weight:500;display:flex;align-items:center;gap:10px;margin-bottom:1.25rem}
+.eyebrow-dk::before{content:'';display:block;width:24px;height:1px;background:var(--forest-lt)}
+h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.2;margin-bottom:1.5rem}
+h2.dark{color:var(--forest)} h2.dark em{font-style:italic;color:var(--forest-lt)}
+p.body{font-size:15px;line-height:1.9;color:#444;margin-bottom:1.25rem}
+.qa-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2rem}
+.qa-item{background:var(--off);border-radius:10px;padding:1.25rem;border-left:3px solid var(--amber)}
+.qa-dest{font-family:var(--serif);font-size:1.1rem;color:var(--forest);margin-bottom:.35rem}
+.qa-best{font-size:13px;color:#555;line-height:1.55}
+
+/* DESTINATION CARDS */
+.dest-section{padding:5rem 2.5rem;background:var(--off)}
+.dest-section:nth-child(even){background:var(--snow)}
+.dest-inner{max-width:1140px;margin:0 auto}
+.dest-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden;box-shadow:0 4px 32px rgba(31,61,43,.1)}
+.dest-grid.flip .dest-img{order:2}
+.dest-grid.flip .dest-content{order:1}
+.dest-img{position:relative;min-height:480px}
+.dest-img img{width:100%;height:100%;object-fit:cover;display:block}
+.dest-img-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,25,16,.5) 0%,transparent 60%)}
+.dest-badge-img{position:absolute;top:1.5rem;left:1.5rem;background:rgba(217,164,65,.25);border:1px solid rgba(217,164,65,.5);color:var(--amber-lt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;backdrop-filter:blur(6px);font-weight:500}
+.dest-content{background:var(--snow);padding:3rem 3rem;display:flex;flex-direction:column;justify-content:center}
+.dest-num{font-family:var(--serif);font-size:3.5rem;font-weight:300;color:rgba(31,61,43,.08);line-height:1;margin-bottom:.5rem}
+.dest-name{font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--forest);margin-bottom:.5rem;line-height:1.1}
+.dest-tag{font-size:13px;color:var(--amber);font-weight:500;margin-bottom:1.25rem}
+.dest-body{font-size:14px;line-height:1.8;color:#555;margin-bottom:1.5rem}
+.dest-facts{display:flex;flex-wrap:wrap;gap:.65rem;margin-bottom:1.75rem}
+.fact{background:var(--off);border-radius:6px;padding:.4rem .85rem;font-size:12px;color:#444;display:flex;align-items:center;gap:5px}
+.fact strong{color:var(--charcoal);font-weight:500}
+.dest-verdict{border-left:3px solid var(--amber);padding:.75rem 0 .75rem 1rem;font-family:var(--serif);font-size:.95rem;font-style:italic;color:var(--forest);line-height:1.6;margin-bottom:1.75rem}
+.btn-forest{background:var(--forest);color:var(--snow);border:none;border-radius:8px;padding:.85rem 1.75rem;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-forest:hover{background:var(--forest-mid);transform:translateY(-2px)}
+.btn-amber{background:var(--amber);color:var(--forest);border:none;border-radius:8px;padding:.85rem 1.75rem;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-amber:hover{background:var(--amber-lt);transform:translateY(-2px)}
+
+/* COMPARISON TABLE */
+.compare{padding:5rem 2.5rem;background:var(--forest)}
+.compare-inner{max-width:1140px;margin:0 auto}
+.comp-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:2.5rem;overflow:hidden;border-radius:12px}
+.comp-table th{text-align:left;padding:1rem 1.25rem;background:rgba(245,247,246,.08);color:rgba(245,247,246,.9);font-weight:500;font-size:13px;border-bottom:1px solid rgba(245,247,246,.08)}
+.comp-table td{padding:.9rem 1.25rem;border-bottom:1px solid rgba(245,247,246,.06);color:rgba(245,247,246,.65);vertical-align:top;line-height:1.5;font-size:13px;background:rgba(245,247,246,.02)}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table td:first-child{color:rgba(245,247,246,.4);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+.comp-table tr:hover td{background:rgba(245,247,246,.04)}
+.comp-note{font-size:13px;color:rgba(245,247,246,.4);margin-top:1.5rem;line-height:1.7}
+
+/* NOT SURE */
+.not-sure{padding:6rem 2.5rem;background:var(--snow);text-align:center}
+.ns-inner{max-width:620px;margin:0 auto}
+.ns-h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;color:var(--forest);line-height:1.2;margin-bottom:1rem}
+.ns-h2 em{font-style:italic}
+.ns-body{font-size:15px;line-height:1.8;color:#555;margin-bottom:2rem}
+.ns-trust{font-size:12px;color:#aaa;margin-top:1rem}
+
+/* FOOTER */
+footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;border-top:1px solid rgba(245,247,246,.06)}
+.footer-logo{font-family:var(--serif);font-size:1rem;color:rgba(245,247,246,.5)}
+.footer-logo span{color:var(--amber)}
+.footer-links{display:flex;gap:1.75rem;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:rgba(245,247,246,.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:rgba(245,247,246,.65)}
+.footer-note{font-size:11px;color:rgba(245,247,246,.25)}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}
+
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}.nav-links{display:none}.nav-hamburger{display:flex}
+  .page-hero{padding:7rem 1.25rem 3.5rem}
+  .quick,.not-sure,.compare{padding:4rem 1.25rem}
+  .dest-section{padding:3rem 1.25rem}
+  .dest-grid,.dest-grid.flip{grid-template-columns:1fr}
+  .dest-grid.flip .dest-img{order:0}
+  .dest-grid.flip .dest-content{order:1}
+  .dest-img{min-height:280px}
+  .dest-content{padding:2rem 1.5rem}
+  .comp-table td:first-child{display:none}
+  footer{flex-direction:column;align-items:center;text-align:center;padding:2rem 1.25rem}
+  .footer-links{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="../index.html" class="nav-logo">Lapland <span>Like This</span></a>
+  <div class="nav-links">
+    <a href="../destinations/">Destinations</a>
+    <a href="../guides/">Guides</a>
+    <a href="../about.html">About us</a>
+    <a href="../index.html#tool">Trip builder</a>
+    <a href="../index.html#tool" class="nav-cta">Plan my trip</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" type="button">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="levi.html" onclick="closeMenu()">Levi</a>
+  <a href="rovaniemi.html" onclick="closeMenu()">Rovaniemi</a>
+  <a href="saariselka.html" onclick="closeMenu()">Saariselkä</a>
+  <a href="yllas.html" onclick="closeMenu()">Ylläs</a>
+  <div class="mm-div"></div>
+  <a href="../guides/" onclick="closeMenu()">Guides</a>
+  <a href="../about.html" onclick="closeMenu()">About us</a>
+  <a href="../index.html#tool" class="mm-cta" onclick="closeMenu()">Plan my trip →</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="crumb"><a href="../index.html">Home</a><span>/</span>Destinations</div>
+    <div class="eyebrow-lt">All destinations</div>
+    <h1 class="page-h1">Four destinations.<br><em>Which one is<br>right for you?</em></h1>
+    <p class="page-sub">We've spent real time in all of them — and we live in one. Here's the honest comparison, with no incentive to point you anywhere in particular.</p>
+  </div>
+</section>
+
+<!-- QUICK ANSWER -->
+<section class="quick">
+  <div class="quick-inner reveal">
+    <div class="eyebrow-dk">Quick answer</div>
+    <h2 class="dark">Not sure where to go?<br><em>Start here.</em></h2>
+    <p class="body">Every destination in Finnish Lapland is genuinely good. The question is which one suits your specific situation — where you're flying from, what you want to do, who you're travelling with. Here's the one-line honest answer for each.</p>
+    <div class="qa-grid">
+      <div class="qa-item">
+        <div class="qa-dest">Levi</div>
+        <div class="qa-best">Best for: direct flights, no hire car, skiing, resort feel. Our home.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-dest">Rovaniemi</div>
+        <div class="qa-best">Best for: widest flight choice, Santa experience, first-timers, families.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-dest">Saariselkä</div>
+        <div class="qa-best">Best for: northern lights priority, genuine wilderness, serious aurora hunters.</div>
+      </div>
+      <div class="qa-item">
+        <div class="qa-dest">Ylläs</div>
+        <div class="qa-best">Best for: cross-country skiing, quieter alternative to Levi, fewer crowds.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEVI -->
+<section class="dest-section">
+  <div class="dest-inner reveal">
+    <div class="dest-grid">
+      <div class="dest-img">
+        <img src="../images/levi-ski-resort.jpeg" alt="Levi ski resort at night — floodlit slopes in Finnish Lapland">
+        <div class="dest-img-overlay"></div>
+        <div class="dest-badge-img">We live here</div>
+      </div>
+      <div class="dest-content">
+        <div class="dest-num">01</div>
+        <div class="dest-name">Levi</div>
+        <div class="dest-tag">Finland's best-connected ski resort</div>
+        <p class="dest-body">Levi is the most practical Lapland destination for most European travellers. Direct flights land at Kittilä Airport — 15 minutes from the resort by free bus. No hire car needed. Finland's largest ski resort, voted best in the country multiple times. 590,000 skier days in 2024–25 — an all-time record.</p>
+        <div class="dest-facts">
+          <div class="fact"><strong>Airport:</strong> Kittilä (KTT)</div>
+          <div class="fact"><strong>Transfer:</strong> 15 min, no car needed</div>
+          <div class="fact"><strong>Latitude:</strong> 67.8°N</div>
+          <div class="fact"><strong>Slopes:</strong> 43 ski runs</div>
+        </div>
+        <div class="dest-verdict">"We live in Levi and would still recommend it honestly — best access, best resort infrastructure, no hire car. But it is a resort. Go knowing that."</div>
+        <a href="levi.html" class="btn-forest">Read our Levi guide →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROVANIEMI -->
+<section class="dest-section">
+  <div class="dest-inner reveal">
+    <div class="dest-grid flip">
+      <div class="dest-img">
+        <img src="../images/IMG_1797.jpeg" alt="Northern lights aurora over Lapland landscape — Rovaniemi Finnish Lapland">
+        <div class="dest-img-overlay"></div>
+        <div class="dest-badge-img">Arctic Circle</div>
+      </div>
+      <div class="dest-content">
+        <div class="dest-num">02</div>
+        <div class="dest-name">Rovaniemi</div>
+        <div class="dest-tag">The gateway — most flights, widest choice</div>
+        <p class="dest-body">Rovaniemi is right on the Arctic Circle and has more direct flight connections than any other Lapland destination — 38 international airports in winter 2025–26. Best for first-timers, families wanting the Santa experience, and travellers from airports without direct Levi routes. Hire car recommended to get the most from it.</p>
+        <div class="dest-facts">
+          <div class="fact"><strong>Airport:</strong> Rovaniemi (RVN)</div>
+          <div class="fact"><strong>Transfer:</strong> 10 min to city</div>
+          <div class="fact"><strong>Direct routes:</strong> 38 airports</div>
+          <div class="fact"><strong>Hire car:</strong> Recommended</div>
+        </div>
+        <div class="dest-verdict">"We send many families to Rovaniemi — especially those from smaller UK airports, or families where Santa is the priority. Just skip the airport village."</div>
+        <a href="rovaniemi.html" class="btn-forest">Read our Rovaniemi guide →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAARISELKÄ -->
+<section class="dest-section">
+  <div class="dest-inner reveal">
+    <div class="dest-grid">
+      <div class="dest-img">
+        <img src="../images/IMG_8744-3.jpeg" alt="Aurora borealis northern lights — Saariselkä Finnish Lapland">
+        <div class="dest-img-overlay"></div>
+        <div class="dest-badge-img">Best aurora odds</div>
+      </div>
+      <div class="dest-content">
+        <div class="dest-num">03</div>
+        <div class="dest-name">Saariselkä</div>
+        <div class="dest-tag">Wilder, darker, further north</div>
+        <p class="dest-body">260km above the Arctic Circle — the furthest north of all four destinations. The best northern lights odds in Finnish Lapland, genuine wilderness, and access to the Sámi cultural heartland at Inari. Less commercial than Levi or Rovaniemi. For people who mean it. Fly into Ivalo (IVL), 30 minutes north.</p>
+        <div class="dest-facts">
+          <div class="fact"><strong>Airport:</strong> Ivalo (IVL)</div>
+          <div class="fact"><strong>Transfer:</strong> 30 min south</div>
+          <div class="fact"><strong>Latitude:</strong> 68.4°N</div>
+          <div class="fact"><strong>Aurora odds:</strong> Best in Finland</div>
+        </div>
+        <div class="dest-verdict">"If northern lights are the reason you're going — genuinely the reason — Saariselkä gives you the best odds. Come in January or February, not November."</div>
+        <a href="saariselka.html" class="btn-forest">Read our Saariselkä guide →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YLLÄS -->
+<section class="dest-section">
+  <div class="dest-inner reveal">
+    <div class="dest-grid flip">
+      <div class="dest-img">
+        <img src="../images/IMG_3184.jpeg" alt="Cross-country skiing through pine forest — Ylläs Finnish Lapland">
+        <div class="dest-img-overlay"></div>
+        <div class="dest-badge-img">The quiet one</div>
+      </div>
+      <div class="dest-content">
+        <div class="dest-num">04</div>
+        <div class="dest-name">Ylläs</div>
+        <div class="dest-tag">Finland's highest fell — half the crowds</div>
+        <p class="dest-body">Ylläs is Levi's underrated neighbour — same Kittilä Airport, same direct European flights, but quieter, more local and with better cross-country skiing. Finland's highest fell at 718m, 63 ski runs, 330km of cross-country trails. For travellers who want what Levi offers in atmosphere, but without the resort crowd.</p>
+        <div class="dest-facts">
+          <div class="fact"><strong>Airport:</strong> Kittilä (KTT)</div>
+          <div class="fact"><strong>Transfer:</strong> 45–60 min</div>
+          <div class="fact"><strong>Fell height:</strong> 718m</div>
+          <div class="fact"><strong>XC trails:</strong> 330km</div>
+        </div>
+        <div class="dest-verdict">"Same flights as Levi, a third of the visitors. If you want to ski or cross-country without the busy resort atmosphere, this is the answer."</div>
+        <a href="yllas.html" class="btn-forest">Read our Ylläs guide →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="compare">
+  <div class="compare-inner reveal">
+    <div class="eyebrow-lt">Side by side</div>
+    <h2 style="color:var(--snow);font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:300;line-height:1.2;margin-bottom:.5rem">All four destinations<br><em style="font-style:italic;color:var(--amber-lt)">compared honestly</em></h2>
+    <div style="overflow-x:auto">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th style="width:160px"></th>
+            <th>Levi</th>
+            <th>Rovaniemi</th>
+            <th>Saariselkä</th>
+            <th>Ylläs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Airport</td><td>Kittilä (KTT)</td><td>Rovaniemi (RVN)</td><td>Ivalo (IVL)</td><td>Kittilä (KTT)</td></tr>
+          <tr><td>Transfer</td><td>15 min — free bus</td><td>10 min to city</td><td>30 min — pre-book</td><td>45–60 min — car needed</td></tr>
+          <tr><td>Hire car?</td><td>Not needed</td><td>Recommended</td><td>Recommended</td><td>Recommended</td></tr>
+          <tr><td>Direct UK flights</td><td>Gatwick, Manchester</td><td>9+ airports</td><td>Via Helsinki</td><td>Gatwick, Manchester</td></tr>
+          <tr><td>Skiing</td><td>Finland's best, 43 slopes</td><td>Small hill only</td><td>Small resort</td><td>63 slopes, highest fell</td></tr>
+          <tr><td>Aurora odds</td><td>Good (67.8°N)</td><td>Good (66.5°N)</td><td>Best (68.4°N)</td><td>Good (similar to Levi)</td></tr>
+          <tr><td>Santa experience</td><td>Small + personal</td><td>Best infrastructure</td><td>Minimal</td><td>Minimal</td></tr>
+          <tr><td>Wilderness feel</td><td>Resort with forest</td><td>City + forest resorts</td><td>Genuine wilderness</td><td>Quieter resort</td></tr>
+          <tr><td>Cross-country skiing</td><td>Good — 230km</td><td>Limited</td><td>Good — fell terrain</td><td>Best — 330km</td></tr>
+          <tr><td>Sámi culture</td><td>Limited</td><td>Limited</td><td>Inari 30 min away</td><td>Limited</td></tr>
+          <tr><td>Best for</td><td>Easy access, skiing, couples, groups</td><td>First-timers, families, Santa, widest choice</td><td>Aurora, wilderness, couples, Jan–Mar</td><td>XC skiing, quiet alternative, fewer crowds</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="comp-note">Routes and flight schedules change seasonally — always verify directly with airlines before booking. Pages updated October 2025 for winter 2025–26.</p>
+  </div>
+</section>
+
+<!-- NOT SURE -->
+<section class="not-sure">
+  <div class="ns-inner reveal">
+    <div class="eyebrow-dk" style="justify-content:center">Still not sure?</div>
+    <h2 class="ns-h2">Answer 6 questions.<br><em>Get your personalised top 3.</em></h2>
+    <p class="ns-body">Tell us where you're flying from, who you're travelling with and what matters most. We'll tell you honestly which of these destinations suits you — with real flight routes and what to avoid.</p>
+    <a href="../index.html#tool" class="btn-amber">Start the trip builder →</a>
+    <p class="ns-trust">No sign-up to start · No selling · Honest guidance from people who live here</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Lapland <span>Like This</span></div>
+  <div class="footer-links">
+    <a href="levi.html">Levi</a>
+    <a href="rovaniemi.html">Rovaniemi</a>
+    <a href="saariselka.html">Saariselkä</a>
+    <a href="yllas.html">Ylläs</a>
+    <a href="../guides/">Guides</a>
+    <a href="../about.html">About us</a>
+    <a href="../index.html#tool">Trip builder</a>
+    <a href="../privacy.html">Privacy</a>
+  </div>
+  <div class="footer-note">© 2025 Lapland Like This · Colin, Livi, Hugo, Rowan &amp; Finley · Levi, Finnish Lapland</div>
+</footer>
+
+<script>
+function toggleMenu(){const h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu'),o=!m.classList.contains('open');m.classList.toggle('open',o);h.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';}
+function closeMenu(){const h=document.getElementById('hamburger'),m=document.getElementById('mobile-menu');m.classList.remove('open');h.classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

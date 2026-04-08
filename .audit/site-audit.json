@@ -1,0 +1,518 @@
+{
+  "pageAudit": [
+    {
+      "page": "404.html",
+      "title": "Page Not Found — Lapland Like This",
+      "metaDescPresent": false,
+      "h1Count": 1,
+      "ogTags": {
+        "title": true,
+        "description": true,
+        "type": true,
+        "url": true,
+        "image": true
+      },
+      "design": {
+        "fontsOk": true,
+        "hasNav": false,
+        "hasFooter": false,
+        "hasRootTokens": true,
+        "navFingerprint": "",
+        "footerFingerprint": ""
+      }
+    },
+    {
+      "page": "about.html",
+      "title": "About Us — Lapland Like This",
+      "metaDescPresent": true,
+      "h1Count": 1,
+      "ogTags": {
+        "title": true,
+        "description": true,
+        "type": true,
+        "url": true,
+        "image": true
+      },
+      "design": {
+        "fontsOk": true,
+        "hasNav": true,
+        "hasFooter": true,
+        "hasRootTokens": true,
+        "navFingerprint": "Lapland Like This       Destinations Trip builder About us Plan my trip",
+        "footerFingerprint": "Lapland Like This  Destinations Trip builder About us Privacy  © 2025 Lapland Like This · Colin, Livi, Hugo, Rowan & Finley · Levi, Finnish Lapland"
+      }
+    },
+    {
+      "page": "destinations/index.html",
+      "title": "Lapland Destinations — Levi, Rovaniemi, Saariselkä, Ylläs — Lapland Like This",
+      "metaDescPresent": true,
+      "h1Count": 1,
+      "ogTags": {
+        "title": true,
+        "description": true,
+        "type": true,
+        "url": true,
+        "image": true
+      },
+      "design": {
+        "fontsOk": true,
+        "hasNav": true,
+        "hasFooter": true,
+        "hasRootTokens": true,
+        "navFingerprint": "Lapland Like This  Destinations Guides About us Trip builder Plan my trip",
+        "footerFingerprint": "Lapland Like This  Levi Rovaniemi Saariselkä Ylläs Guides About us Trip builder Privacy  © 2025 Lapland Like This · Colin & Livi · Levi, Finnish Lapland"
+      }
+    },
+    {
+      "page": "destinations/levi.html",
+      "title": "Levi Lapland Guide — Honest Advice from People Who Live Here — Lapland Like This",
+      "metaDescPresent": true,
+      "h1Count": 1,
+      "ogTags": {
+        "title": true,
+        "description": true,
+        "type": true,
+        "url": true,
+        "image": true
+      },
+      "design": {
+        "fontsOk": true,
+        "hasNav": true,
+        "hasFooter": true,
+        "hasRootTokens": true,
+        "navFingerprint": "Lapland Like This  Destinations About us Trip builder Plan my trip",
+        "footerFingerprint": "Lapland Like This  Destinations About us Trip builder Privacy  © 2025 Lapland Like This · Colin, Livi, Hugo, Rowan & Finley · Levi, Finnish Lapland"
+      }
+    },
+    {
+      "page": "destinations/rovaniemi.html",
+      "title": "Rovaniemi Travel Guide — What to Do, See and Avoid — Lapland Like This",
+      "metaDescPresent": true,
+      "h1Count": 1,
+      "ogTags": {
+        "title": true,
+        "description": true,
+        "type": true,
+        "url": true,
+        "image": true
+      },
+      "design": {
+        "fontsOk": true,
+        "hasNav": true,
+        "hasFooter": true,
+        "hasRootTokens": true,
+        "navFingerprint": "Lapland Like This  Destinations About us Trip builder Plan my trip",
+        "footerFingerprint": "Lapland Like This DestinationsAbout usTrip builderPrivacy © 2025 Lapland Like This · Colin, Livi, Hugo, Rowan & Finley · Levi, Finnish Lapland"
+      }
+    },
+    {
+      "page": "destinations/saariselka.html",
+      "title": "Saariselkä Guide — Northern Lights, Aurora and Arctic Wilderness — Lapland Like This",
+      "metaDescPresent": true,
+      "h1Count": 1,
+      "ogTags": {
+        "title": true,
+        "description": true,
+        "type": true,
+        "url": true,
+        "image": true
+      },
+      "design": {
+        "fontsOk": true,
+        "hasNav": true,
+        "hasFooter": true,
+        "hasRootTokens": true,
+        "navFingerprint": "Lapland Like This  Destinations About us Trip builder Plan my trip",
+        "footerFingerprint": "Lapland Like This DestinationsAbout usTrip builderPrivacy © 2025 Lapland Like This · Colin, Livi, Hugo, Rowan & Finley · Levi, Finnish Lapland"
+      }
+    },
+    {
+      "page": "destinations/yllas.html",
+      "title": "Ylläs Lapland — The Quieter Alternative to Levi — Lapland Like This",
+      "metaDescPresent": true,
+      "h1Count": 1,
+      "ogTags": {
+        "title": true,
+        "description": true,
+        "type": true,
+        "url": true,
+        "image": true
+      },
+      "design": {
+        "fontsOk": true,
+        "hasNav": true,
+        "hasFooter": true,
+        "hasRootTokens": true,
+        "navFingerprint": "Lapland Like This  Destinations About us Trip builder Plan my trip",
+        "footerFingerprint": "Lapland Like This DestinationsAbout usTrip builderPrivacy © 2025 Lapland Like This · Colin, Livi, Hugo, Rowan & Finley · Levi, Finnish Lapland"
+      }
+    },
+    {
+      "page": "guides/index.html",
+      "title": "Lapland Planning Guides — When to Go, With Kids, What to Pack — Lapland Like This",
+      "metaDescPresent": true,
+      "h1Count": 1,
+      "ogTags": {
+        "title": true,
+        "description": true,
+        "type": true,
+        "url": true,
+        "image": true
+      },
+      "design": {
+        "fontsOk": true,
+        "hasNav": true,
+        "hasFooter": true,
+        "hasRootTokens": true,
+        "navFingerprint": "Lapland Like This  Destinations Guides About us Trip builder Plan my trip",
+        "footerFingerprint": "Lapland Like This  When to go With kids What to pack Destinations About us Trip builder Privacy  © 2025 Lapland Like This · Colin & Livi · Levi, Finnish Lapland"
+      }
+    },
+    {
+      "page": "guides/lapland-with-kids.html",
+      "title": "Lapland with Kids — Honest Family Travel Guide — Lapland Like This",
+      "metaDescPresent": true,
+      "h1Count": 1,
+      "ogTags": {
+        "title": true,
+        "description": true,
+        "type": true,
+        "url": true,
+        "image": true
+      },
+      "design": {
+        "fontsOk": true,
+        "hasNav": true,
+        "hasFooter": true,
+        "hasRootTokens": true,
+        "navFingerprint": "Lapland Like This  Destinations About us Trip builder Plan my trip",
+        "footerFingerprint": "Lapland Like This DestinationsAbout usTrip builderPrivacy © 2025 Lapland Like This · Colin, Livi, Hugo, Rowan & Finley · Levi, Finnish Lapland"
+      }
+    },
+    {
+      "page": "guides/what-to-pack.html",
+      "title": "What to Pack for Lapland — Honest Packing Guide — Lapland Like This",
+      "metaDescPresent": true,
+      "h1Count": 1,
+      "ogTags": {
+        "title": true,
+        "description": true,
+        "type": true,
+        "url": true,
+        "image": true
+      },
+      "design": {
+        "fontsOk": true,
+        "hasNav": true,
+        "hasFooter": true,
+        "hasRootTokens": true,
+        "navFingerprint": "Lapland Like This  Destinations About us Trip builder Plan my trip",
+        "footerFingerprint": "Lapland Like This DestinationsAbout usTrip builderPrivacy © 2025 Lapland Like This · Colin, Livi, Hugo, Rowan & Finley · Levi, Finnish Lapland"
+      }
+    },
+    {
+      "page": "guides/when-to-go.html",
+      "title": "When to Go to Lapland — Season by Season Guide — Lapland Like This",
+      "metaDescPresent": true,
+      "h1Count": 1,
+      "ogTags": {
+        "title": true,
+        "description": true,
+        "type": true,
+        "url": true,
+        "image": true
+      },
+      "design": {
+        "fontsOk": true,
+        "hasNav": true,
+        "hasFooter": true,
+        "hasRootTokens": true,
+        "navFingerprint": "Lapland Like This  Destinations About us Trip builder Plan my trip",
+        "footerFingerprint": "Lapland Like This DestinationsAbout usTrip builderPrivacy © 2025 Lapland Like This · Colin, Livi, Hugo, Rowan & Finley · Levi, Finnish Lapland"
+      }
+    },
+    {
+      "page": "index.html",
+      "title": "Where Should I Go in Lapland? — Lapland Like This",
+      "metaDescPresent": true,
+      "h1Count": 1,
+      "ogTags": {
+        "title": true,
+        "description": true,
+        "type": true,
+        "url": true,
+        "image": true
+      },
+      "design": {
+        "fontsOk": true,
+        "hasNav": true,
+        "hasFooter": true,
+        "hasRootTokens": true,
+        "navFingerprint": "Lapland Like This  Destinations Guides About us Trip builder Plan my trip",
+        "footerFingerprint": "Lapland Like This  Destinations Levi Rovaniemi Saariselkä Ylläs When to go With kids What to pack About us Trip builder Privacy  © 2025 Lapland Like This · Colin, Livi, Hugo, Rowan & Finley · Levi, Fi"
+      }
+    },
+    {
+      "page": "privacy.html",
+      "title": "Privacy Policy — Lapland Like This",
+      "metaDescPresent": true,
+      "h1Count": 1,
+      "ogTags": {
+        "title": true,
+        "description": true,
+        "type": true,
+        "url": true,
+        "image": true
+      },
+      "design": {
+        "fontsOk": true,
+        "hasNav": true,
+        "hasFooter": true,
+        "hasRootTokens": true,
+        "navFingerprint": "Lapland Like This ← Back to home",
+        "footerFingerprint": "Lapland Like This © 2025 Lapland Like This · Levi, Finnish Lapland"
+      }
+    }
+  ],
+  "duplicateTitles": [],
+  "oversizedImages": [
+    {
+      "file": ".audit/optimized-images/images__levi-ski-resort.jpeg",
+      "originalKB": 2527.2,
+      "optimizedKB": 2523.2,
+      "savingsKB": 4.1,
+      "savingsPct": 0.2
+    },
+    {
+      "file": "images/levi-ski-resort.jpeg",
+      "originalKB": 2527.2,
+      "optimizedKB": 2523.2,
+      "savingsKB": 4.1,
+      "savingsPct": 0.2
+    },
+    {
+      "file": ".audit/optimized-images/images__IMG_9396.jpg",
+      "originalKB": 2204.1,
+      "optimizedKB": 2183.1,
+      "savingsKB": 21,
+      "savingsPct": 1
+    },
+    {
+      "file": "images/IMG_9396.jpg",
+      "originalKB": 2204.1,
+      "optimizedKB": 2183.1,
+      "savingsKB": 21,
+      "savingsPct": 1
+    },
+    {
+      "file": ".audit/optimized-images/images__Screenshot 2026-03-29 at 18.48.47.png",
+      "originalKB": 1527.1,
+      "optimizedKB": 1454.1,
+      "savingsKB": 73,
+      "savingsPct": 4.8
+    },
+    {
+      "file": "images/Screenshot 2026-03-29 at 18.48.47.png",
+      "originalKB": 1527.1,
+      "optimizedKB": 1454.1,
+      "savingsKB": 73,
+      "savingsPct": 4.8
+    },
+    {
+      "file": ".audit/optimized-images/images__lapland-aurora-night.png",
+      "originalKB": 1277.3,
+      "optimizedKB": 1121.3,
+      "savingsKB": 156,
+      "savingsPct": 12.2
+    },
+    {
+      "file": "images/lapland-aurora-night.png",
+      "originalKB": 1277.3,
+      "optimizedKB": 1121.3,
+      "savingsKB": 156,
+      "savingsPct": 12.2
+    },
+    {
+      "file": ".audit/optimized-images/images__IMG_9267.jpeg",
+      "originalKB": 1172.4,
+      "optimizedKB": 1171.3,
+      "savingsKB": 1.1,
+      "savingsPct": 0.1
+    },
+    {
+      "file": "images/IMG_9267.jpeg",
+      "originalKB": 1172.4,
+      "optimizedKB": 1171.3,
+      "savingsKB": 1.1,
+      "savingsPct": 0.1
+    },
+    {
+      "file": ".audit/optimized-images/images__Screenshot 2026-03-29 at 18.50.32.png",
+      "originalKB": 1162.9,
+      "optimizedKB": 973.1,
+      "savingsKB": 189.8,
+      "savingsPct": 16.3
+    },
+    {
+      "file": "images/Screenshot 2026-03-29 at 18.50.32.png",
+      "originalKB": 1162.9,
+      "optimizedKB": 973.1,
+      "savingsKB": 189.8,
+      "savingsPct": 16.3
+    },
+    {
+      "file": ".audit/optimized-images/images__IMG_8642.jpeg",
+      "originalKB": 1073.9,
+      "optimizedKB": 1072.1,
+      "savingsKB": 1.8,
+      "savingsPct": 0.2
+    },
+    {
+      "file": "images/IMG_8642.jpeg",
+      "originalKB": 1073.9,
+      "optimizedKB": 1072.1,
+      "savingsKB": 1.8,
+      "savingsPct": 0.2
+    },
+    {
+      "file": ".audit/optimized-images/images__IMG_3184.jpeg",
+      "originalKB": 1072.7,
+      "optimizedKB": 1070.1,
+      "savingsKB": 2.6,
+      "savingsPct": 0.2
+    },
+    {
+      "file": "images/IMG_3184.jpeg",
+      "originalKB": 1072.7,
+      "optimizedKB": 1070.1,
+      "savingsKB": 2.6,
+      "savingsPct": 0.2
+    },
+    {
+      "file": ".audit/optimized-images/images__IMG_9561-1.jpeg",
+      "originalKB": 1061.7,
+      "optimizedKB": 1060.3,
+      "savingsKB": 1.4,
+      "savingsPct": 0.1
+    },
+    {
+      "file": "images/IMG_9561-1.jpeg",
+      "originalKB": 1061.7,
+      "optimizedKB": 1060.3,
+      "savingsKB": 1.4,
+      "savingsPct": 0.1
+    },
+    {
+      "file": ".audit/optimized-images/images__IMG_9559-2.jpeg",
+      "originalKB": 961.1,
+      "optimizedKB": 960.2,
+      "savingsKB": 0.9,
+      "savingsPct": 0.1
+    },
+    {
+      "file": "images/IMG_9559-2.jpeg",
+      "originalKB": 961.1,
+      "optimizedKB": 960.2,
+      "savingsKB": 0.9,
+      "savingsPct": 0.1
+    },
+    {
+      "file": ".audit/optimized-images/images__IMG_3183-1.jpg",
+      "originalKB": 958.1,
+      "optimizedKB": 957.5,
+      "savingsKB": 0.6,
+      "savingsPct": 0.1
+    },
+    {
+      "file": "images/IMG_3183-1.jpg",
+      "originalKB": 958.1,
+      "optimizedKB": 957.5,
+      "savingsKB": 0.6,
+      "savingsPct": 0.1
+    },
+    {
+      "file": ".audit/optimized-images/images__IMG_9560.jpeg",
+      "originalKB": 933.9,
+      "optimizedKB": 932.5,
+      "savingsKB": 1.4,
+      "savingsPct": 0.1
+    },
+    {
+      "file": "images/IMG_9560.jpeg",
+      "originalKB": 933.9,
+      "optimizedKB": 932.5,
+      "savingsKB": 1.4,
+      "savingsPct": 0.1
+    },
+    {
+      "file": ".audit/optimized-images/images__IMG_1797.jpeg",
+      "originalKB": 681,
+      "optimizedKB": 681.1,
+      "savingsKB": -0.1,
+      "savingsPct": 0
+    },
+    {
+      "file": "images/IMG_1797.jpeg",
+      "originalKB": 681,
+      "optimizedKB": 681.1,
+      "savingsKB": -0.1,
+      "savingsPct": 0
+    },
+    {
+      "file": ".audit/optimized-images/images__IMG_3814.jpg",
+      "originalKB": 519,
+      "optimizedKB": 516.6,
+      "savingsKB": 2.4,
+      "savingsPct": 0.5
+    },
+    {
+      "file": "images/IMG_3814.jpg",
+      "originalKB": 519,
+      "optimizedKB": 516.6,
+      "savingsKB": 2.4,
+      "savingsPct": 0.5
+    },
+    {
+      "file": ".audit/optimized-images/images__IMG_8744-3.jpeg",
+      "originalKB": 480.4,
+      "optimizedKB": 480.2,
+      "savingsKB": 0.2,
+      "savingsPct": 0
+    },
+    {
+      "file": "images/IMG_8744-3.jpeg",
+      "originalKB": 480.4,
+      "optimizedKB": 480.2,
+      "savingsKB": 0.2,
+      "savingsPct": 0
+    },
+    {
+      "file": ".audit/optimized-images/images__IMG_1865.JPG",
+      "originalKB": 456.6,
+      "optimizedKB": 454.2,
+      "savingsKB": 2.4,
+      "savingsPct": 0.5
+    },
+    {
+      "file": "images/IMG_1865.JPG",
+      "originalKB": 456.6,
+      "optimizedKB": 454.2,
+      "savingsKB": 2.4,
+      "savingsPct": 0.5
+    },
+    {
+      "file": ".audit/optimized-images/images__levi_finland.jpg",
+      "originalKB": 360.4,
+      "optimizedKB": 358.8,
+      "savingsKB": 1.6,
+      "savingsPct": 0.5
+    },
+    {
+      "file": "images/levi_finland.jpg",
+      "originalKB": 360.4,
+      "optimizedKB": 358.8,
+      "savingsKB": 1.6,
+      "savingsPct": 0.5
+    }
+  ]
+}

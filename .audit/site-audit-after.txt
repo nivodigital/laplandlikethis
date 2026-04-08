@@ -1,0 +1,60 @@
+=== META + STRUCTURE SUMMARY ===
+404.html | title:yes meta:NO h1:1 og-missing:none
+about.html | title:yes meta:yes h1:1 og-missing:none
+destinations/index.html | title:yes meta:yes h1:1 og-missing:none
+destinations/levi.html | title:yes meta:yes h1:1 og-missing:none
+destinations/rovaniemi.html | title:yes meta:yes h1:1 og-missing:none
+destinations/saariselka.html | title:yes meta:yes h1:1 og-missing:none
+destinations/yllas.html | title:yes meta:yes h1:1 og-missing:none
+guides/index.html | title:yes meta:yes h1:1 og-missing:none
+guides/lapland-with-kids.html | title:yes meta:yes h1:1 og-missing:none
+guides/what-to-pack.html | title:yes meta:yes h1:1 og-missing:none
+guides/when-to-go.html | title:yes meta:yes h1:1 og-missing:none
+index.html | title:yes meta:yes h1:1 og-missing:none
+privacy.html | title:yes meta:yes h1:1 og-missing:none
+
+=== DUPLICATE TITLES === none
+
+=== DESIGN CONSISTENCY CHECK ===
+Missing brand font import: none
+Missing <nav>: 404.html
+Missing <footer>: 404.html
+Missing key brand tokens: none
+Nav variants detected: 5
+Footer variants detected: 8
+
+=== OVERSIZED IMAGES (>300KB) + SHARP OPT PREVIEW ===
+.audit/optimized-images/images__levi-ski-resort.jpeg | 2527.2KB -> 2523.2KB | saved 4.1KB (0.2%)
+images/levi-ski-resort.jpeg | 2527.2KB -> 2523.2KB | saved 4.1KB (0.2%)
+.audit/optimized-images/images__IMG_9396.jpg | 2204.1KB -> 2183.1KB | saved 21KB (1%)
+images/IMG_9396.jpg | 2204.1KB -> 2183.1KB | saved 21KB (1%)
+.audit/optimized-images/images__Screenshot 2026-03-29 at 18.48.47.png | 1527.1KB -> 1454.1KB | saved 73KB (4.8%)
+images/Screenshot 2026-03-29 at 18.48.47.png | 1527.1KB -> 1454.1KB | saved 73KB (4.8%)
+.audit/optimized-images/images__lapland-aurora-night.png | 1277.3KB -> 1121.3KB | saved 156KB (12.2%)
+images/lapland-aurora-night.png | 1277.3KB -> 1121.3KB | saved 156KB (12.2%)
+.audit/optimized-images/images__IMG_9267.jpeg | 1172.4KB -> 1171.3KB | saved 1.1KB (0.1%)
+images/IMG_9267.jpeg | 1172.4KB -> 1171.3KB | saved 1.1KB (0.1%)
+.audit/optimized-images/images__Screenshot 2026-03-29 at 18.50.32.png | 1162.9KB -> 973.1KB | saved 189.8KB (16.3%)
+images/Screenshot 2026-03-29 at 18.50.32.png | 1162.9KB -> 973.1KB | saved 189.8KB (16.3%)
+.audit/optimized-images/images__IMG_8642.jpeg | 1073.9KB -> 1072.1KB | saved 1.8KB (0.2%)
+images/IMG_8642.jpeg | 1073.9KB -> 1072.1KB | saved 1.8KB (0.2%)
+.audit/optimized-images/images__IMG_3184.jpeg | 1072.7KB -> 1070.1KB | saved 2.6KB (0.2%)
+images/IMG_3184.jpeg | 1072.7KB -> 1070.1KB | saved 2.6KB (0.2%)
+.audit/optimized-images/images__IMG_9561-1.jpeg | 1061.7KB -> 1060.3KB | saved 1.4KB (0.1%)
+images/IMG_9561-1.jpeg | 1061.7KB -> 1060.3KB | saved 1.4KB (0.1%)
+.audit/optimized-images/images__IMG_9559-2.jpeg | 961.1KB -> 960.2KB | saved 0.9KB (0.1%)
+images/IMG_9559-2.jpeg | 961.1KB -> 960.2KB | saved 0.9KB (0.1%)
+.audit/optimized-images/images__IMG_3183-1.jpg | 958.1KB -> 957.5KB | saved 0.6KB (0.1%)
+images/IMG_3183-1.jpg | 958.1KB -> 957.5KB | saved 0.6KB (0.1%)
+.audit/optimized-images/images__IMG_9560.jpeg | 933.9KB -> 932.5KB | saved 1.4KB (0.1%)
+images/IMG_9560.jpeg | 933.9KB -> 932.5KB | saved 1.4KB (0.1%)
+.audit/optimized-images/images__IMG_1797.jpeg | 681KB -> 681.1KB | saved -0.1KB (0%)
+images/IMG_1797.jpeg | 681KB -> 681.1KB | saved -0.1KB (0%)
+.audit/optimized-images/images__IMG_3814.jpg | 519KB -> 516.6KB | saved 2.4KB (0.5%)
+images/IMG_3814.jpg | 519KB -> 516.6KB | saved 2.4KB (0.5%)
+.audit/optimized-images/images__IMG_8744-3.jpeg | 480.4KB -> 480.2KB | saved 0.2KB (0%)
+images/IMG_8744-3.jpeg | 480.4KB -> 480.2KB | saved 0.2KB (0%)
+.audit/optimized-images/images__IMG_1865.JPG | 456.6KB -> 454.2KB | saved 2.4KB (0.5%)
+images/IMG_1865.JPG | 456.6KB -> 454.2KB | saved 2.4KB (0.5%)
+.audit/optimized-images/images__levi_finland.jpg | 360.4KB -> 358.8KB | saved 1.6KB (0.5%)
+images/levi_finland.jpg | 360.4KB -> 358.8KB | saved 1.6KB (0.5%)
