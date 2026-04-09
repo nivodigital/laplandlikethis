@@ -162,6 +162,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;displ
 .boys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .boy-card{background:var(--snow);border-radius:16px;overflow:hidden;border:1px solid rgba(31,61,43,0.08)}
 .boy-photo{height:200px;background:var(--forest);position:relative;overflow:hidden;display:flex;align-items:flex-end}
+.boy-img{width:100%;height:100%;object-fit:cover;object-position:center}
 .boy-sky{position:absolute;inset:0;background:linear-gradient(180deg,#0D1F16 0%,#1F3D2B 100%)}
 .boy-trees{position:absolute;bottom:0;left:0;right:0;height:50%;background:#162E1F;clip-path:polygon(0 100%,0 45%,8% 15%,16% 45%,24% 12%,32% 42%,40% 18%,48% 44%,56% 14%,64% 40%,72% 18%,80% 44%,88% 12%,96% 38%,100% 20%,100% 100%)}
 .boy-glow{position:absolute;top:20%;left:10%;width:80%;height:35%;background:radial-gradient(ellipse,rgba(62,200,130,0.12) 0%,transparent 70%)}
@@ -182,6 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;displ
 .parents-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
 .parent-card{display:grid;grid-template-columns:90px 1fr;gap:1.5rem;align-items:start}
 .parent-photo{width:90px;height:110px;background:var(--forest);border-radius:10px;overflow:hidden;position:relative;flex-shrink:0}
+.parent-img{width:100%;height:100%;object-fit:cover;object-position:center}
 .pp-sky{position:absolute;inset:0;background:linear-gradient(160deg,#0F2518,#1F3D2B)}
 .pp-trees{position:absolute;bottom:0;left:0;right:0;height:40%;background:#162E1F;clip-path:polygon(0 100%,0 50%,15% 20%,30% 50%,45% 18%,60% 46%,75% 15%,90% 42%,100% 22%,100% 100%)}
 .pp-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2}
@@ -520,8 +522,7 @@ footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space
     <div class="boys-grid">
       <div class="boy-card reveal rd1">
         <div class="boy-photo">
-          <div class="boy-sky"></div><div class="boy-glow"></div><div class="boy-trees"></div>
-          <div class="boy-ph"><p>Hugo's photo here</p></div>
+          <img class="boy-img" src="images/hugo.png" alt="Hugo outdoors in Levi, Finnish Lapland">
         </div>
         <div class="boy-body">
           <div class="boy-name">Hugo</div>
@@ -532,8 +533,7 @@ footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space
       </div>
       <div class="boy-card reveal rd2">
         <div class="boy-photo">
-          <div class="boy-sky"></div><div class="boy-glow"></div><div class="boy-trees"></div>
-          <div class="boy-ph"><p>Rowan's photo here</p></div>
+          <img class="boy-img" src="images/rowan.png" alt="Rowan outdoors in Levi, Finnish Lapland">
         </div>
         <div class="boy-body">
           <div class="boy-name">Rowan</div>
@@ -544,8 +544,7 @@ footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space
       </div>
       <div class="boy-card reveal rd3">
         <div class="boy-photo">
-          <div class="boy-sky"></div><div class="boy-glow"></div><div class="boy-trees"></div>
-          <div class="boy-ph"><p>Finley's photo here</p></div>
+          <img class="boy-img" src="images/finny.png" alt="Finley outdoors in Levi, Finnish Lapland">
         </div>
         <div class="boy-body">
           <div class="boy-name">Finley</div>
@@ -565,8 +564,7 @@ footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space
     <div class="parents-grid">
       <div class="parent-card reveal rd1">
         <div class="parent-photo">
-          <div class="pp-sky"></div><div class="pp-trees"></div>
-          <div class="pp-hint"><p>Colin's photo here</p></div>
+          <img class="parent-img" src="images/colin.png" alt="Colin in Levi, Finnish Lapland">
         </div>
         <div>
           <div class="parent-name">Colin</div>
@@ -579,8 +577,7 @@ footer{background:#111C14;padding:3rem 2.5rem;display:flex;justify-content:space
       </div>
       <div class="parent-card reveal rd2">
         <div class="parent-photo">
-          <div class="pp-sky"></div><div class="pp-trees"></div>
-          <div class="pp-hint"><p>Livi's photo here</p></div>
+          <img class="parent-img" src="images/livi.png" alt="Livi in Levi, Finnish Lapland">
         </div>
         <div>
           <div class="parent-name">Livi</div>
