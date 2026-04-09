@@ -172,14 +172,11 @@ html{scroll-padding-top:72px}
     </div>
     <a href="/about">About us</a>
   </div>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu" type="button">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-
-<section class="hero">
-    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu" type="button">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-  <div class="mobile-menu" id="mobile-menu">
+<div class="mobile-menu" id="mobile-menu">
     <button class="mm-close" onclick="closeMenu()" aria-label="Close menu">×</button>
     <a href="/" onclick="closeMenu()">Home</a>
     <div class="mm-divider"></div>
@@ -189,11 +186,11 @@ html{scroll-padding-top:72px}
     <a href="/guides/what-to-pack" onclick="closeMenu()">What to pack</a>
     <div class="mm-divider"></div>
     <a href="/lapland-tools" onclick="closeMenu()">Lapland Tools</a>
-    <a href="/about" onclick="closeMenu()">About us</a>
-    <a href="/where-go-lapland" class="m-cta" onclick="closeMenu()">Use the where-to-go tool →</a>
-  </div>
+  <a href="/about" onclick="closeMenu()">About us</a>
+  <a href="/where-go-lapland" class="m-cta" onclick="closeMenu()">Use the where-to-go tool →</a>
+</div>
 
-  <section class="hero">
+<section class="hero">
   <img class="hero-img" src="../images/lapland_like_this.JPG" alt="Family with young children at a reindeer farm in Finnish Lapland — genuine family moment">
   <div class="hero-overlay"></div>
   <div class="hero-content">
