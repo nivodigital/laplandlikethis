@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Community · Levi Finland Adventures</title>
+  <meta name="description" content="Levi in the words of the people who know it. Share your trip, your local knowledge, or your voice as a Levi operator." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       tokens.css — Arctic Hero System v2.3 (DESIGN_SYSTEM.md §3.1)
+       ============================================================ */
+    :root {
+      --polar-night:    #04131C;
+      --arctic-deep:    #091E2C;
+      --glacier-shadow: #0F2E42;
+      --glacial-blue:   #1A4F62;
+      --arctic-hover:   #1F6278;
+      --ice-shimmer:    #4A8EA8;
+      --arctic-tint:    #B8D6E4;
+      --frost-veil:     #EBF4F8;
+      --arctic-white:   #F4F7F9;
+      --carbon:         #181C20;
+      --badge-ink:      #0A2F3F;
+
+      --eyebrow-grey:   #56707c;
+      --card-border:    #d8e3e9;
+
+      --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --font-chrome:  "Roboto Condensed", "Helvetica Neue", Arial, sans-serif;
+
+      --wrap: 1280px;
+      --wrap-narrow: 880px;
+
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 48px;
+      --space-6: 64px;
+      --space-7: 96px;
+      --space-8: 120px;
+
+      --hero-overlay: linear-gradient(180deg, rgba(4,19,28,.15) 0%, rgba(4,19,28,.55) 55%, rgba(4,19,28,.82) 100%);
+    }
+
+    /* reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-display);
+      font-weight: 400;
+      color: var(--carbon);
+      background: var(--frost-veil);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+
+    /* ============================================================
+       nav
+       ============================================================ */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      z-index: 50;
+      background: transparent;
+      transition: background .2s ease, border-color .2s ease;
+      border-bottom: 1px solid transparent;
+    }
+    .nav.on-scroll {
+      background: var(--glacier-shadow);
+      border-bottom-color: rgba(184,214,228,.12);
+    }
+    .nav__logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--arctic-white);
+    }
+    .nav__mark {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 1.5px solid currentColor;
+      display: grid; place-items: center;
+    }
+    .nav__mark svg { width: 14px; height: 14px; fill: currentColor; }
+    .nav__wordmark {
+      font-family: var(--font-chrome);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      max-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      opacity: 0;
+      transition: max-width .25s ease, opacity .25s ease;
+    }
+    .nav__logo:hover .nav__wordmark {
+      max-width: 260px;
+      opacity: 1;
+    }
+    .nav__links {
+      display: flex;
+      gap: 36px;
+      color: var(--arctic-white);
+      font-family: var(--font-chrome);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .nav__links a { opacity: .85; transition: opacity .2s ease; }
+    .nav__links a:hover { opacity: 1; }
+    .nav__links a.is-current { opacity: 1; color: var(--arctic-tint); }
+    .nav__cta {
+      font-family: var(--font-chrome);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 14px 22px;
+      color: var(--arctic-white);
+      border: 1px solid rgba(244,247,249,.35);
+      transition: border-color .2s ease, background .2s ease;
+    }
+    .nav__cta:hover { border-color: var(--arctic-white); }
+
+    /* ============================================================
+       buttons — DESIGN_SYSTEM.md §6.2
+       ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-chrome);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 16px 24px;
+      border-radius: 0;
+      transition: background .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .btn-primary {
+      background: var(--glacial-blue);
+      color: var(--arctic-white);
+    }
+    .btn-primary:hover { background: var(--arctic-hover); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--arctic-white);
+      border: 1px solid rgba(244,247,249,.35);
+    }
+    .btn-ghost:hover { border-color: var(--arctic-white); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--carbon);
+      border: 1px solid var(--card-border);
+    }
+    .btn-secondary:hover { border-color: var(--carbon); }
+    .btn__arrow { font-size: 14px; letter-spacing: 0; }
+
+    /* ============================================================
+       eyebrows — DESIGN_SYSTEM.md §2.5
+       ============================================================ */
+    .eyebrow {
+      font-family: var(--font-chrome);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--arctic-tint);
+    }
+    .eyebrow.on-light { color: var(--eyebrow-grey); }
+    .eyebrow--with-rule {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .eyebrow--with-rule::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--ice-shimmer);
+    }
+
+    /* ============================================================
+       h1 — DESIGN_SYSTEM.md §2.3 — two-colour pattern mandatory
+       ============================================================ */
+    .h1 {
+      font-family: var(--font-display);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      margin: 0;
+      font-weight: 300;
+    }
+    .h1 .brand-line {
+      display: block;
+      color: var(--arctic-tint);
+      font-weight: 300;
+    }
+    .h1 .action-line {
+      display: block;
+      color: var(--arctic-white);
+      font-weight: 700;
+    }
+    /* editorial scale (§2.4 h1-editorial) — appropriate for this page */
+    .h1-editorial {
+      font-size: clamp(36px, 4.4vw, 64px);
+      letter-spacing: -0.03em;
+    }
+
+    .h2 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(32px, 3.4vw, 48px);
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin: 0;
+      color: var(--carbon);
+    }
+    .h3 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin: 0;
+      color: var(--carbon);
+    }
+    .h4 {
+      font-family: var(--font-chrome);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .lede {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(18px, 1.3vw, 20px);
+      line-height: 1.6;
+      color: var(--carbon);
+      text-wrap: pretty;
+    }
+
+    /* ============================================================
+       hero — editorial 50vh-ish per §1.2
+       ============================================================ */
+    .hero {
+      position: relative;
+      min-height: 520px;
+      height: 50vh;
+      max-height: 640px;
+      background: var(--arctic-deep);
+      overflow: hidden;
+      color: var(--arctic-white);
+    }
+    .hero__media {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(120% 80% at 20% 0%, rgba(74,142,168,.22) 0%, transparent 55%),
+        radial-gradient(80% 60% at 85% 25%, rgba(184,214,228,.18) 0%, transparent 60%),
+        radial-gradient(100% 90% at 50% 100%, rgba(4,19,28,.55) 0%, transparent 60%),
+        var(--arctic-deep);
+    }
+    .hero__starfield {
+      position: absolute;
+      inset: 0;
+      opacity: .4;
+      background-image:
+        radial-gradient(1px 1px at 12% 18%, rgba(244,247,249,.9), transparent 60%),
+        radial-gradient(1px 1px at 34% 40%, rgba(244,247,249,.7), transparent 60%),
+        radial-gradient(1.5px 1.5px at 58% 22%, rgba(244,247,249,.85), transparent 60%),
+        radial-gradient(1px 1px at 72% 55%, rgba(184,214,228,.8), transparent 60%),
+        radial-gradient(1px 1px at 88% 30%, rgba(244,247,249,.75), transparent 60%),
+        radial-gradient(1.2px 1.2px at 22% 68%, rgba(184,214,228,.7), transparent 60%),
+        radial-gradient(1px 1px at 48% 82%, rgba(244,247,249,.6), transparent 60%),
+        radial-gradient(1px 1px at 80% 78%, rgba(244,247,249,.8), transparent 60%);
+    }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: var(--hero-overlay);
+    }
+    .hero__content {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 0 48px var(--space-7);
+    }
+    .hero__eyebrow { margin-bottom: var(--space-3); }
+    .hero__subline {
+      margin-top: var(--space-3);
+      max-width: 620px;
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(16px, 1.2vw, 19px);
+      line-height: 1.55;
+      color: var(--arctic-tint);
+    }
+
+    /* ============================================================
+       intro section
+       ============================================================ */
+    .intro {
+      background: var(--frost-veil);
+      padding: var(--space-8) 48px var(--space-7);
+    }
+    .intro__wrap {
+      max-width: var(--wrap-narrow);
+      margin: 0 auto;
+    }
+    .intro__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: var(--space-3);
+    }
+    .intro__eyebrow::before {
+      content: "";
+      width: 40px;
+      height: 1px;
+      background: var(--ice-shimmer);
+    }
+    .intro__heading {
+      margin-bottom: var(--space-4);
+    }
+    .intro__body {
+      max-width: 720px;
+      font-size: 17px;
+    }
+    .intro__body p + p { margin-top: 1em; }
+
+    /* ============================================================
+       role grid
+       ============================================================ */
+    .roles {
+      background: var(--frost-veil);
+      padding: 0 48px var(--space-8);
+    }
+    .roles__wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+    }
+    .roles__header {
+      margin-bottom: var(--space-5);
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: var(--space-6);
+      align-items: end;
+    }
+    .roles__heading {
+      max-width: 480px;
+    }
+    .roles__helper {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 16px;
+      color: var(--carbon);
+      line-height: 1.55;
+      max-width: 520px;
+    }
+    .roles__helper strong { font-weight: 500; }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--card-border);
+      border: 1px solid var(--card-border);
+    }
+
+    .role-card {
+      background: var(--arctic-white);
+      padding: 44px 36px 40px;
+      display: flex;
+      flex-direction: column;
+      min-height: 560px;
+      position: relative;
+      transition: background .2s ease;
+    }
+    .role-card:hover {
+      background: #fff;
+    }
+    .role-card__marker {
+      font-family: var(--font-chrome);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--eyebrow-grey);
+      margin-bottom: var(--space-4);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .role-card__marker::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--ice-shimmer);
+      border-radius: 50%;
+      opacity: .7;
+    }
+    .role-card__role {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 38px;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+      color: var(--carbon);
+      margin-bottom: var(--space-2);
+    }
+    .role-card__role .accent {
+      display: block;
+      font-weight: 500;
+    }
+    .role-card__pitch {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--carbon);
+      margin-bottom: var(--space-4);
+      text-wrap: pretty;
+    }
+    .role-card__list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-5);
+      border-top: 1px solid var(--card-border);
+    }
+    .role-card__list li {
+      padding: 14px 0 14px 0;
+      border-bottom: 1px solid var(--card-border);
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--carbon);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .role-card__list li::before {
+      content: "";
+      flex: 0 0 8px;
+      height: 1px;
+      background: var(--glacial-blue);
+      margin-top: 12px;
+    }
+    .role-card__gate {
+      margin-top: auto;
+      padding: 16px 0;
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-2);
+      margin-bottom: var(--space-3);
+    }
+    .role-card__gate-label {
+      font-family: var(--font-chrome);
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--eyebrow-grey);
+    }
+    .role-card__gate-value {
+      font-family: var(--font-chrome);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--carbon);
+    }
+    .role-card__gate-value .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-right: 8px;
+      vertical-align: middle;
+      opacity: .9;
+    }
+    .role-card__gate-value .dot.instant { background: #3e8a5c; }
+    .role-card__gate-value .dot.review { background: var(--ice-shimmer); }
+    .role-card__cta {
+      align-self: stretch;
+    }
+    .role-card__cta .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ============================================================
+       login strip
+       ============================================================ */
+    .loginstrip {
+      background: var(--arctic-white);
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      padding: var(--space-5) 48px;
+    }
+    .loginstrip__wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+    .loginstrip__label {
+      font-family: var(--font-chrome);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--eyebrow-grey);
+    }
+    .loginstrip__text {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 16px;
+      color: var(--carbon);
+    }
+    .loginstrip__link {
+      font-family: var(--font-chrome);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--glacial-blue);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--glacial-blue);
+      padding-bottom: 2px;
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .loginstrip__link:hover { color: var(--arctic-hover); border-color: var(--arctic-hover); }
+
+    /* ============================================================
+       closing / principles
+       ============================================================ */
+    .principles {
+      background: var(--polar-night);
+      color: var(--arctic-white);
+      padding: var(--space-8) 48px;
+    }
+    .principles__wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+    }
+    .principles__header {
+      margin-bottom: var(--space-6);
+      max-width: 720px;
+    }
+    .principles__header .h2 { color: var(--arctic-white); }
+    .principles__header .h2 .accent { color: var(--arctic-tint); font-weight: 300; display: block; }
+    .principles__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(184,214,228,.15);
+      border: 1px solid rgba(184,214,228,.15);
+    }
+    .principle {
+      background: var(--polar-night);
+      padding: 36px 32px;
+    }
+    .principle__num {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 48px;
+      letter-spacing: -0.04em;
+      color: var(--ice-shimmer);
+      line-height: 1;
+      margin-bottom: var(--space-3);
+    }
+    .principle__label {
+      font-family: var(--font-chrome);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--arctic-tint);
+      margin-bottom: var(--space-2);
+    }
+    .principle__body {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--arctic-white);
+      opacity: .88;
+    }
+
+    /* ============================================================
+       footer stub
+       ============================================================ */
+    .footer {
+      background: var(--polar-night);
+      color: var(--arctic-tint);
+      padding: var(--space-5) 48px var(--space-4);
+      border-top: 1px solid rgba(184,214,228,.12);
+      font-family: var(--font-chrome);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+    .footer__wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-4);
+      opacity: .7;
+    }
+
+    /* ============================================================
+       responsive
+       ============================================================ */
+    @media (max-width: 1024px) {
+      .roles__header { grid-template-columns: 1fr; gap: var(--space-3); }
+      .role-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav { padding: 0 24px; }
+      .nav__links { display: none; }
+      .nav__wordmark { max-width: 200px; opacity: 1; }
+      .hero__content { padding: 0 24px var(--space-5); }
+      .intro, .roles { padding-left: 24px; padding-right: 24px; }
+      .loginstrip { padding: var(--space-4) 24px; }
+      .loginstrip__wrap { flex-direction: column; align-items: flex-start; }
+      .principles { padding: var(--space-7) 24px; }
+      .principles__grid { grid-template-columns: 1fr; }
+      .role-card { min-height: auto; padding: 36px 28px 32px; }
+      .role-card__role { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================= NAV ========================= -->
+  <header class="nav" id="nav" aria-label="Primary navigation">
+    <a href="/" class="nav__logo" aria-label="Levi Finland Adventures — home">
+      <span class="nav__mark" aria-hidden="true">
+        <!-- placeholder mark; real build uses /public/assets/tree.svg -->
+        <svg viewBox="0 0 20 20"><path d="M10 2 L13 8 L11 8 L14 13 L12 13 L15 18 L5 18 L8 13 L6 13 L9 8 L7 8 Z"/></svg>
+      </span>
+      <span class="nav__wordmark">Levi · Finland · Adventures</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="/experiences">Experiences</a>
+      <a href="/accommodation">Stay</a>
+      <a href="/guides">Guides</a>
+      <a href="/itineraries">Itineraries</a>
+      <a href="/community" class="is-current">Community</a>
+    </nav>
+    <a href="/login" class="nav__cta">Log in</a>
+  </header>
+
+  <!-- ========================= HERO ========================= -->
+  <section class="hero" aria-labelledby="hero-h1">
+    <div class="hero__media" aria-hidden="true"></div>
+    <div class="hero__starfield" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <span class="eyebrow eyebrow--with-rule hero__eyebrow">The Levi Community</span>
+      <h1 class="h1 h1-editorial" id="hero-h1">
+        <span class="brand-line">From the people</span>
+        <span class="action-line">who actually know Levi.</span>
+      </h1>
+      <p class="hero__subline">
+        Levi is answered best by three voices — travellers who have just been,
+        locals who live the seasons, and the operators who run the cabins, the
+        sleds, the kitchens. This page is where those voices join.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================= INTRO ========================= -->
+  <section class="intro" aria-labelledby="intro-h2">
+    <div class="intro__wrap">
+      <span class="eyebrow on-light intro__eyebrow">What the community is</span>
+      <h2 class="h2 intro__heading" id="intro-h2">
+        Real knowledge, attributed — not a review wall.
+      </h2>
+      <div class="intro__body">
+        <p class="lede">
+          Everything published in Levi Finland Adventures' community area comes from a named,
+          real person. Travellers share their own trip. Local residents share
+          what it's like to live here. Local businesses speak in their own operator voice.
+        </p>
+        <p>
+          The community has two tiers. The traveller tier is open — anyone returning
+          from a trip can share their itinerary, photos, videos, and tips about the
+          places they used. The local tier, for residents and operators, is reviewed
+          by us before access. The gate protects the trust value of local-voice content:
+          "insight from a local" only carries weight if the name is verified.
+        </p>
+        <p>
+          No AI content, no fabricated quotes, no ghost-written tips. If it's attributed
+          to a person, they said it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= ROLES ========================= -->
+  <section class="roles" aria-labelledby="roles-h2">
+    <div class="roles__wrap">
+      <div class="roles__header">
+        <div class="roles__heading">
+          <span class="eyebrow on-light" style="display:block; margin-bottom: 16px;">Choose your path</span>
+          <h2 class="h2" id="roles-h2">Which one are you?</h2>
+        </div>
+        <p class="roles__helper">
+          Each path is different. Travellers join instantly. Local residents and
+          local businesses apply and we review within <strong>48 hours</strong>. Once in,
+          you can only contribute as your role — we don't let accounts cross over.
+        </p>
+      </div>
+
+      <div class="role-grid" role="list">
+
+        <!-- Traveller -->
+        <article class="role-card" role="listitem">
+          <span class="role-card__marker">Path 01 · Traveller</span>
+          <h3 class="role-card__role">
+            You've been
+            <span class="accent">to Levi.</span>
+          </h3>
+          <p class="role-card__pitch">
+            You've just come back, or your trip is still in your phone. Share what
+            you did, what worked, what you'd skip — attributed to you, not anonymised.
+          </p>
+          <ul class="role-card__list">
+            <li>Publish your itinerary, day by day</li>
+            <li>Upload photos and videos from your trip (Cloudinary)</li>
+            <li>Leave tips on the listings you actually used</li>
+            <li>Comment on your own published content</li>
+          </ul>
+          <div class="role-card__gate">
+            <span class="role-card__gate-label">Gate</span>
+            <span class="role-card__gate-value"><span class="dot instant"></span>Instant</span>
+          </div>
+          <div class="role-card__cta">
+            <a href="/community/join/traveller" class="btn btn-primary">
+              <span>Join as traveller</span><span class="btn__arrow">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Local Resident -->
+        <article class="role-card" role="listitem">
+          <span class="role-card__marker">Path 02 · Local Resident</span>
+          <h3 class="role-card__role">
+            You live
+            <span class="accent">in or around Levi.</span>
+          </h3>
+          <p class="role-card__pitch">
+            You know the seasons, the quiet routes, the small places that don't show
+            up in OTA results. Your voice lands on guides, category pages, and the
+            Local voices surfaces across the platform.
+          </p>
+          <ul class="role-card__list">
+            <li>Submit local tips — not tied to a single trip</li>
+            <li>Comment on listings, guides, and itineraries</li>
+            <li>Appear on Local voices pullquotes and featured surfaces</li>
+            <li>Verified local badge on your profile</li>
+          </ul>
+          <div class="role-card__gate">
+            <span class="role-card__gate-label">Gate</span>
+            <span class="role-card__gate-value"><span class="dot review"></span>48-hour review</span>
+          </div>
+          <div class="role-card__cta">
+            <a href="/community/join/local-resident" class="btn btn-primary">
+              <span>Apply as local</span><span class="btn__arrow">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Local Business -->
+        <article class="role-card" role="listitem">
+          <span class="role-card__marker">Path 03 · Local Business</span>
+          <h3 class="role-card__role">
+            You run
+            <span class="accent">a business in Levi.</span>
+          </h3>
+          <p class="role-card__pitch">
+            Speak in your own operator voice — your craft, your seasons, your take
+            on what guests actually need. Separate from managing a business page
+            and listings, which lives in the provider dashboard.
+          </p>
+          <ul class="role-card__list">
+            <li>Contribute attributed operator voice on your business page</li>
+            <li>Answer category and seasonal questions in your own words</li>
+            <li>Appear in "Local insight from [Business]" pullquotes</li>
+            <li>Voice notes, photos, short video accepted</li>
+          </ul>
+          <div class="role-card__gate">
+            <span class="role-card__gate-label">Gate</span>
+            <span class="role-card__gate-value"><span class="dot review"></span>48-hour review</span>
+          </div>
+          <div class="role-card__cta">
+            <a href="/community/join/local-business" class="btn btn-primary">
+              <span>Apply as business</span><span class="btn__arrow">→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= LOGIN STRIP ========================= -->
+  <section class="loginstrip" aria-label="Already a member">
+    <div class="loginstrip__wrap">
+      <div>
+        <div class="loginstrip__label" style="margin-bottom: 8px;">Already a member</div>
+        <div class="loginstrip__text">Sign in to pick up where you left off — your itinerary drafts, your tips, your profile.</div>
+      </div>
+      <a href="/login" class="loginstrip__link">
+        Log in<span>→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================= PRINCIPLES ========================= -->
+  <section class="principles" aria-labelledby="principles-h2">
+    <div class="principles__wrap">
+      <div class="principles__header">
+        <span class="eyebrow" style="margin-bottom: 20px; display: inline-block;">How the community works</span>
+        <h2 class="h2">
+          <span class="accent">Three rules that make this</span>
+          a trustworthy place to share.
+        </h2>
+      </div>
+      <div class="principles__grid">
+
+        <div class="principle">
+          <div class="principle__num">01</div>
+          <div class="principle__label">Real voices only</div>
+          <p class="principle__body">
+            Everything attributed is written by the person it's attributed to. We never
+            generate content in someone's voice or paraphrase a provider into platform speak.
+          </p>
+        </div>
+
+        <div class="principle">
+          <div class="principle__num">02</div>
+          <div class="principle__label">Two tiers, by design</div>
+          <p class="principle__body">
+            Travellers join instantly so the publish-back loop stays frictionless. Locals
+            and operators are reviewed — because "local insight" only means something if
+            the name is verified.
+          </p>
+        </div>
+
+        <div class="principle">
+          <div class="principle__num">03</div>
+          <div class="principle__label">Light editorial hand</div>
+          <p class="principle__body">
+            We fix typos, tighten length, and check facts. We don't flatten the way you
+            speak. Rough-edged real beats polished fake, every time.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= FOOTER STUB ========================= -->
+  <footer class="footer">
+    <div class="footer__wrap">
+      <span>Levi · Finland · Adventures</span>
+      <span>Community · /community</span>
+    </div>
+  </footer>
+
+  <script>
+    // nav on-scroll — matches DESIGN_SYSTEM.md nav state behaviour
+    (function () {
+      var nav = document.getElementById('nav');
+      var threshold = 80;
+      function onScroll() {
+        if (window.scrollY > threshold) nav.classList.add('on-scroll');
+        else nav.classList.remove('on-scroll');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
